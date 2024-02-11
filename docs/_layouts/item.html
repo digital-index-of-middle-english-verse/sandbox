@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+<!-- Liquid treats empty strings as True, so conditions have not result as written.-->
+
+<style>
+.indent {
+	margin-left: 1em;
+}
+</style>
+
+<h1>{{ page.itemIncipit }}</h1>
+<h2>Descriptive details</h2>
+
+{% if page.itemTitle or page.description or page.descNote %}
+<p>
+{% if page.itemTitle %} {{ page.itemTitle }}. {% endif %}
+{% if page.description %} {{ page.description }}. {% endif %}
+{% if page.descNote %} {{ page.descNote }} {% endif %}
+</p>
+{% endif %}
+
+{% if page.authors or page.verseForms or page.versePatterns or page.subjects%}
+<ul>
+	{% if page.authors %}
+	<li>Authors:
+        {% for author in page.authors %}
+        {{ author.firstName }}
+        {{ author.lastName | append: ";" }} <!-- yields terminal punctuation, wrongly -->
+        {% endfor %}
+	</li>
+        {% endif %}
+
+        {% if page.verseForms or page.versePatterns %}
+        <li>
+        Formal characteristics:
+            {{ page.verseForms | join: "; " }}{% if page.verseForms and page.versePatterns %};{% endif %}
+            {{ page.versePatterns | join: "; "}}
+        </li>
+        {% endif %}
+
+        {% if page.subjects %}
+	<li>Subject keywords: {{ page.subjects | join: "; "}}</li>
+        {% endif %}
+</ul>
+{% endif %}
+ 
+<h2>Bibliography</h2>
+<!-- <h3>Repertories</h3> -->
+<ul>
+	<li> {% if page.DIMEV %}DIMEV: {{page.DIMEV}}{% endif %} </li>
+	<li> {% if page.IMEV %}IMEV: {{page.IMEV}}{% endif %} </li>
+	<li> {% if page.NIMEV %}NIMEV: {{page.NIMEV}}{% endif %} </li>
+</ul>
+
+<!--
+{% if page.bibliography.zotero == true %}
+<h3>Additional bibliography</h3>
+<p>Additional bibliography is available <a href="https://www.zotero.org/groups/5168357/dimev/tags/DIMEV_{{ page.DIMEV }}/library">here</a>.
+{% endif %}
+-->
+
+{% if page.witnesses %}
+<h2>Witnesses</h2>
+{% for wit in page.witnesses %}
+<h3>{{ wit.wit_id}}. <a href="{{ site.baseurl }}/sources/{{ wit.identifier }}">{{ wit.sourceKey }}</a>, {{ wit.range.prefix }} {{ wit.range.start }}{% if wit.range.end %}–{{ wit.range.end}}{% endif %}</h3>
+
+<div class='indent'>
+{% if wit.note or wit.MSTitle or wit.music or wit.illust %}
+{% if wit.music == 'n' and wit.illust == 'n' %}
+    {% assign musicIllust = 'No music or illustration.' %}
+{% elsif wit.music == 'n' and wit.illust == 'y' %}
+    {% assign musicIllust = 'Illustration present; no music.' %}
+{% elsif wit.music == 'y' and wit.illust == 'n' %}
+    {% assign musicIllust = 'Musical notation present; no illustration.' %}
+{% elsif wit.music == 'y' and wit.illust == 'y' %}
+    {% assign musicIllust = 'Musical notation and illustration present.' %}
+{% endif %}
+<p>
+{% if wit.note %}{{ wit.note | append: "." }}{% endif %}
+{% if wit.MSTitle %}Attributed title: {{ wit.MSTitle | append: "." }}{% endif %}
+{% if musicIllust %}{{ musicIllust }} {% endif %}
+</p>
+{% endif %}
+
+{% if wit.firstLines %}
+First lines:
+<blockquote>
+	{{ wit.firstLines }}
+</blockquote>
+{% endif %}
+
+{% if wit.lastLines %}
+Last lines:
+<blockquote>
+	{{ wit.lastLines }}
+</blockquote>
+{% endif %}
+
+{% if wit.allLines %}
+<blockquote>
+	{{ wit.allLines }}
+</blockquote>
+{% endif %}
+
+{% if wit.editions or wit.facsimiles %}
+<h4>Bibliographical references:</h4>
+<ul>
+	{% if wit.editions %}
+	<li>Editions:
+		{% for edition in wit.editions %}
+		{{ edition.key }}{%if edition.point_locators %}{{ edition.point_locators | prepend: ', ' }}{% endif %};
+		{% endfor %}
+	</li>
+	{% endif %}
+	{% if wit.facsimiles %}
+	<li>Facsimiles:
+		{% for facsimile in wit.facsimiles %}
+		{{ facsimile.key }}{%if facsimile.point_locators %}{{ facsimile.point_locators | prepend: ', ' }}{% endif %};
+		{% endfor %}
+	</li>
+	{% endif %}
+</ul>
+{% endif %}
+</div>
+{% endfor %}
+
+{% endif %}
+
+{% if page.ghosts %}
+<h2>Bibliographical ghosts</h2>
+<p>Prior scholarly tradition erroneously attributes copies of this item to the following documents.</p>
+<ul>
+{% for ghost in page.ghosts %}
+<li>
+	<a href="{{ site.baseurl }}/sources/{{ wit.identifier }}">{{ ghost.key }}</a>
+	{{ ghost.point_locators }}
+	{%if ghost.note %}{{ ghost.note | prepend: 'Note: ' }}{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
