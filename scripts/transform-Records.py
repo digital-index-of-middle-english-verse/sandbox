@@ -13,8 +13,8 @@ import yaml
 source = '../DIMEV_XML/Records.xml'
 destination = '../docs/_items/'
 test_sample= ['357', '2324', '2458', '2651', '2677', '6654']
-warning_log = []
-log_file = 'python-warnings.txt'
+warning_log = ['Warnings from the latest run of `transform-Records.py`.\n']
+log_file = '../artefacts/warnings.txt'
 
 # Target data structure
 record_target = \
@@ -441,8 +441,8 @@ def warn(warning_type, field, parent_field, dimev_id, data):
         warning_text = f'WARNING: Unexpected field {field} in DIMEV {dimev_id}{parent_field}. Skipping.'
         print(warning_text)
         warning_log.append(warning_text)
-    print('\t', data)
-    warning_log.append('\t' + str(data))
+    print(data, '\n')
+    warning_log.append(str(data) + '\n')
 
 def validate_yaml(dimev_id, conversion):
     print(f'Validating YAML conversion for DIMEV {dimev_id}...')
