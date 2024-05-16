@@ -3,4 +3,4 @@ Gemfile.lock
 .jekyll-cache/
 _site/
 temp*
-python-warnings.txt
+warnings.txt
