@@ -1,17 +1,21 @@
 # This script extracts a small sample of item records from Records.xml and
 # transforms them into individual YAML files with consistent data structure.
 # Warnings are emitted for known irregularities not yet accommodated.
-# Successful transformations may be written to `../docs/_items`, where they are
-# available to Jekyll's website builder
+# Successful transformations may be validated against a target schema and
+# written to `../docs/_items`, where they are available to Jekyll's website
+# builder
 
 import os
 import xmltodict
 import re
 import yaml
+import json
+import jsonschema
 
 # Top-level variables
 source = '../DIMEV_XML/Records.xml'
 destination = '../docs/_items/'
+records_schema = '../schemas/records.json'
 test_sample= ['357', '2324', '2458', '2651', '2677', '6654']
 warning_log = ['Warnings from the latest run of `transform-Records.py`.\n']
 log_file = '../artefacts/warnings.txt'
@@ -446,20 +450,14 @@ def warn(warning_type, field, parent_field, dimev_id, data):
 
 def validate_yaml(dimev_id, conversion):
     print(f'Validating YAML conversion for DIMEV {dimev_id}...')
-    #TODO: Validate against the specific target, not just general syntax
-    string = '\n'.join(conversion)
+    with open(records_schema) as f:
+        schema = json.load(f)
     try:
-        yaml.safe_load(string)
+        jsonschema.validate(instance=conversion, schema=schema)
         return True
-    except yaml.YAMLError as e:
+    except jsonschema.ValidationError as e:
         print(e)
         return False
-
-def yaml_dump(new_record):
-    yml_out = yaml.dump(new_record, sort_keys=False, allow_unicode=True)
-    print('---')
-    print(yml_out)
-    print('---')
 
 def write_to_file(dimev_id, conversion):
     output_filename = destination + '0' * (4 - len(dimev_id)) + dimev_id + '.md'
@@ -506,7 +504,10 @@ else:
     if len(dimev_id) == 0:
         dimev_id = '2677'
     conversion = transform_item(dimev_id)
-    yaml_dump(conversion)
+    # Print the converted record to terminal
+    print('---')
+    print(yaml.dump(conversion, sort_keys=False, allow_unicode=True))
+    print('---')
     prompt = f'Validate this conversion and write it to `{destination}`? (Y/n) '
     options = ['y', 'n', '']
     decision = get_valid_input(prompt, options)
