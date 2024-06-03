@@ -372,8 +372,6 @@ while n < 5:
 # Summarize keyword usage
 print('Preparing summary of keyword usage...')
 
-# TODO: alphabetize the lists of keywords
-
 keyword_labels = ['subjects', 'verseForms', 'versePatterns']
 subjects = {}
 verseForms = {}
@@ -385,12 +383,13 @@ for dimevID in item_records:
         container = keyword_dicts[idx]
         item_keywords = item_records[dimevID][keyword_labels[idx]]
         for keyword in item_keywords:
-            if keyword in container:
-                count = container[keyword]
-                count += 1
-                container[keyword] = count
-            else:
-                container[keyword] = 1
+            if keyword is not None:
+                if keyword in container:
+                    count = container[keyword]
+                    count += 1
+                    container[keyword] = count
+                else:
+                    container[keyword] = 1
 
 ## Format for csv
 subjects_csv_parts = ['subject,count']
@@ -401,9 +400,9 @@ csv_parts = [subjects_csv_parts, verseForms_csv_parts, versePatterns_csv_parts]
 for index in range(len(keyword_dicts)):
     container = keyword_dicts[index]
     keyword_list = list(container.keys())
-    counts = list(container.values())
-    for idx in range(len(container)):
-        line = '"' + str(keyword_list[idx]) + '"' + ',' + str(counts[idx])
+    keywords_alpha = sorted(keyword_list, key=str.casefold)
+    for keyword in keywords_alpha:
+        line = '"' + str(keyword) + '"' + ',' + str(container[keyword])
         csv_parts[index].append(line)
 
 # Write artefacts
