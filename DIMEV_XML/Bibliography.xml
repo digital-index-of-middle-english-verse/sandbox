@@ -3418,7 +3418,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Bodleian1949">
+    <bibl xml:id="Bodl1949">
         <authorstmt/>
         <titlestmt>
             <title level="a">J. O. Halliwell and the Bodleian.</title>
@@ -3433,10 +3433,10 @@
     <bibl xml:id="Bodmer48">
         <authorstmt/>
         <titlestmt>
-            <title level="a"><ref type="url" n="http://www.e-codices.unifr.ch/en/cb/0048">Digital
+            <title level="m"><ref type="url" n="http://www.e-codices.unifr.ch/en/cb/0048">Digital
                     Facsimile of Cologny, Fondation Martin Bodmer, Cod. Bodmer 48</ref></title>
         </titlestmt>
-        <pubstmt/>
+        <pubstmt>http://www.e-codices.unifr.ch/en/cb/0048</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -6898,7 +6898,7 @@
             <title level="a">Prayers and Charms in Certain Middle English Scrolls.</title>
             <title level="j">Speculum</title>
         </titlestmt>
-        <pubstmt date="j">39 (1964): 270-78</pubstmt>
+        <pubstmt date="1964">39 (1964): 270-78</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -7728,7 +7728,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Cat.Add.MSS">
+    <!--<bibl xml:id="Cat.Add.MSS">
         <authorstmt/>
         <titlestmt/>
         <pubstmt> See <biblio key="BM-Cat."/></pubstmt>
@@ -7736,7 +7736,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Cautley1938">
         <authorstmt>
             <author>
@@ -8228,7 +8228,7 @@
             <vols> 3 vols. </vols>
             <title level="s">Chaucer Society</title>
         </titlestmt>
-        <pubstmt date="n.d.">1st. ser. 21, 57, 58. London: Tr&#252;bner, n.d. repr. New York and
+        <pubstmt date="1967">1st. ser. 21, 57, 58. London: Tr&#252;bner, n.d. repr. New York and
             London: Johnson, 1967</pubstmt>
         <index>
             <topic/>
@@ -8248,7 +8248,7 @@
             <vols> 2 vols. </vols>
             <title level="s">Chaucer Society</title>
         </titlestmt>
-        <pubstmt date="n.d.">1st ser. 22, 59. London: Tr&#252;bner, n.d.; repr. New York and London:
+        <pubstmt date="1967">1st ser. 22, 59. London: Tr&#252;bner, n.d.; repr. New York and London:
             Johnson, 1967</pubstmt>
         <index>
             <topic/>
@@ -8694,7 +8694,7 @@
             <title level="m">&#222;e Liflade of St. Juliana</title>
             <title level="s">EETS</title>
         </titlestmt>
-        <pubstmt date="19=872">o.s. 51 (1872)</pubstmt>
+        <pubstmt date="1872">o.s. 51 (1872)</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -9018,7 +9018,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Conner">
+    <!--<bibl xml:id="Conner">
         <authorstmt>
             <editor>
                 <last>Conner</last>
@@ -9034,7 +9034,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Conlee1991">
         <authorstmt>
             <editor>
@@ -12890,7 +12890,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="EllisH1841-42">
+   <!-- <bibl xml:id="EllisH1841-42">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="Brand1849"/></pubstmt>
@@ -12898,7 +12898,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Embree1991">
         <authorstmt><editor><last>Embree</last><first>Dan</first></editor><editor><last>Urquhart</last><first>Elizabeth</first></editor></authorstmt>
         <titlestmt><title level="m">The Simonie: A Parallel Text Edition ed. from MSS Advocates
@@ -13586,11 +13586,11 @@
     <bibl xml:id="Balliol354">
         <authorstmt/>
         <titlestmt>
-            <title level="m">Early Manuscripts at Oxford University: <ref type="url"
-                    n="http://image.ox.ac.uk/show?collection=balliol&amp;manuscript=ms354">Facsimile
+            <title level="m"><ref type="url"
+                    n="http://image.ox.ac.uk/show?collection=balliol&amp;manuscript=ms354">Digital Facsimile
                     of Oxford, Balliol MS 354.</ref></title>
         </titlestmt>
-        <pubstmt>(http://image.ox.ac.uk/show?collection=balliol&amp;manuscript=ms354)</pubstmt>
+        <pubstmt>http://image.ox.ac.uk/show?collection=balliol&amp;manuscript=ms354</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -16388,7 +16388,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Furnivall1909">
+    <!--<bibl xml:id="Furnivall1909">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="Furnivall1887b"/></pubstmt>
@@ -16396,7 +16396,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Furnivall1911">
         <authorstmt>
             <editor>
@@ -18864,6 +18864,22 @@
         </titlestmt>
         <pubstmt date="1848"> Oxford: Published for the Architectural Society and sold by Parker,
             1848</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Haines1989">
+        <authorstmt>
+            <author><last>Haines</last>
+                <first>Roy M.</first>
+            </author>
+        </authorstmt>
+        <titlestmt>
+            <title level="m">Ecclesia Anglicana: Studies in the English Church of the Later 
+                Middle Ages.</title>
+        </titlestmt>
+        <pubstmt date="1989">Toronto: Toronto Univ. Press, 1989</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -22571,7 +22587,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Holinshed1808">
+   <!-- <bibl xml:id="Holinshed1808">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="EllisH1807-08"/></pubstmt>
@@ -22579,7 +22595,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Hollander1961">
         <authorstmt>
             <author>
@@ -23747,7 +23763,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Horstmann188-">
+    <!--<bibl xml:id="Horstmann188-">
         <authorstmt>
             <author>
                 <last>Horstmann</last>
@@ -23755,7 +23771,7 @@
             </author>
         </authorstmt>
         <titlestmt>
-            <!-- Note: incomplete entry -->
+            <!-\- Note: incomplete entry -\->
             <title level="a">**.</title>
             <title level="j">Archiv f&#252;r das Studium der neueren Sprachen und
                 Literaturen</title>
@@ -23765,7 +23781,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Horstmann1883a">
         <authorstmt>
             <author>
@@ -25202,7 +25218,7 @@
             <title level="m">The Isle of Ladies: or, The Ile of Pleasaunce.</title>
             <title level="s">Garland Medieval Texts</title>
         </titlestmt>
-        <pubstmt date="198">2. New York: Garland, 1980</pubstmt>
+        <pubstmt date="1980">2. New York: Garland, 1980</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -28191,14 +28207,14 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="lEstrange">
+   <!-- <bibl xml:id="lEstrange">
         <authorstmt>
             <author>
                 <last>L&#8217;Estrange.</last>
             </author>
         </authorstmt>
         <titlestmt>
-            <!-- Note: missing data -->
+            <!-\- Note: missing data -\->
             <title level="j">East Anglian</title>
         </titlestmt>
         <pubstmt date="">3 (1867): 319. [faulty reference?: not in n.s. 3 (1889-90)]</pubstmt>
@@ -28206,7 +28222,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Levy1951">
         <authorstmt>
             <author>
@@ -30776,7 +30792,7 @@
             <title level="a">Early English Verses on St. Benedict.</title>
             <title level="j">Downside Review</title>
         </titlestmt>
-        <pubstmt date="">41 (1928): 44-56</pubstmt>
+        <pubstmt date="1928">41 (1928): 44-56</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -31210,7 +31226,7 @@
                 D.VIII.</title>
             <title level="s">Leeds Texts and Monographs. Medieval Drama Facsimiles</title>
         </titlestmt>
-        <pubstmt date="19787">4. Leeds: University of Leeds, 1977</pubstmt>
+        <pubstmt date="1977">4. Leeds: University of Leeds, 1977</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -34328,7 +34344,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="OxfordBkCarols">
+   <!-- <bibl xml:id="OxfordBkCarols">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="Dearmer1928"/></pubstmt>
@@ -34336,8 +34352,8 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
-    <bibl xml:id="OxfordBkLightV">
+    </bibl>-->
+   <!-- <bibl xml:id="OxfordBkLightV">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="Auden1938"/></pubstmt>
@@ -34399,7 +34415,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="PR1849">
         <authorstmt/>
         <titlestmt>
@@ -34860,10 +34876,10 @@
     <bibl xml:id="Parker2008">
         <authorstmt/>
         <titlestmt><title level="m"><ref type="url"
-                    n="http://parkerweb.stanford.edu/parker/actions/page_turner.do?ms_no=61">Corpus
+                    n="https://parker.stanford.edu/parker/catalog/dh967mz5785">A Digital Facsimile of Corpus
                     Christi College, Cambridge, MS 61 of Troilus &amp; Criseyde</ref></title>
         </titlestmt>
-        <pubstmt date="2008"/>
+        <pubstmt date="2008">https://parker.stanford.edu/parker/catalog/dh967mz5785</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -35270,6 +35286,28 @@
             <title level="m">A Companion to Gower.</title>
         </titlestmt>
         <pubstmt date="2004">Ed. S&#238;an Echard. Cambridge: D.S.Brewer, 2004. 73-99.</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Pearsall2021">
+        <authorstmt>
+            <editor>
+                <last>Pearsall</last>
+                <first>Derek</first>
+            </editor>
+            <editor>
+                <last>Mooney</last>
+                <first>Linne</first>
+            </editor>
+        </authorstmt>
+        <titlestmt>
+            
+            <title level="m">A Descriptive Catalogue of the English Manuscripts of John 
+                Gower's Confessio Amantis.</title>
+        </titlestmt>
+        <pubstmt date="2021">Cambridge: D.S. Brewer, 2021.</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -36178,6 +36216,57 @@
             <title level="j">Leeds Studies in English</title>
         </titlestmt>
         <pubstmt date="1994">n.s. 25 (1994): 159-66</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Pickering2004">
+        <authorstmt>
+            <author>
+                <last>Pickering</last>
+                <first>Oliver S.</first>
+            </author>
+        </authorstmt>
+        <titlestmt>
+            <title level="a">Brotherton Collection MS 18 and its Riddling Middle English Verses.</title>
+            <title level="m">The Medieval Book and a Modern Collector: Essays in Honour of Toshiyuki Takamiya.</title>
+        </titlestmt>
+        <pubstmt date="2004">Ed. Takami Matsuda, Richard A. Linenthal, and John Scahill. Cambridge and Tokyo, 2004. 223-32</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Pickering2013">
+        <authorstmt>
+            <author>
+                <last>Pickering</last>
+                <first>Oliver S.</first>
+            </author>
+        </authorstmt>
+        <titlestmt>
+            <title level="a">Preaching in the <i>South English Legendary</i>: A Study and Edition of the Text for All Souls&#8217; Day.</title>
+            <title level="m">Preaching the Word in Manuscript and Print in Late Medieval England: Essays in Honour of Susan Powell.</title>
+        </titlestmt>
+        <pubstmt date="2013">Ed. Martha W. Driver and Veronica O&#8217;Mara. Brepols, 2013. 277-316</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Pickering2014">
+        <authorstmt>
+            <author>
+                <last>Pickering</last>
+                <first>Oliver S.</first>
+            </author>
+        </authorstmt>
+        <titlestmt>
+            <title level="a">How Good is the Outspoken <i>South English Legendary</i> Poet? A New Edition of the Prologue to the <i>Conception of Mary</i>.</title>
+            <title level="m">New Directions in Medieval Manuscript Studies and Reading Practices: Essays in Honour of Derek Pearsall.</title>
+        </titlestmt>
+        <pubstmt date="2014">Ed. Kathryn Kerby-Fulton, John J. Thompson, and Sarah Baechle. University of Notre Dame Press, 2014. 34-54</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -37853,7 +37942,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Ringler1992">
+    <bibl xml:id="Ringler1992">= TM
         <authorstmt>
             <author>
                 <last>Ringler Jr.</last>
@@ -39463,8 +39552,8 @@
             </author>
         </authorstmt>
         <titlestmt>
-            <title>Three Early English Metrical Romances.</title>
-            <title level="m">Camden Society</title>
+            <title level="m">Three Early English Metrical Romances.</title>
+            <title level="s">Camden Society</title>
         </titlestmt>
         <pubstmt date="1842">o.s. 18 (1842)</pubstmt>
         <index>
@@ -39633,7 +39722,7 @@
             <title level="a">Verses in the Hall at Launceston.</title>
             <title level="j">Devon and Cornwall Notes and Queries</title>
         </titlestmt>
-        <pubstmt>19 (1937): 154-6</pubstmt>
+        <pubstmt date=" 1937">19 (1937): 154-6</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -41502,6 +41591,23 @@
             <person/>
         </index>
     </bibl>
+    <bibl xml:id="ScottMcnab2010">
+        <authorstmt>
+            <author>
+                <last>Scott-Macnab</last>
+                <first>David</first>
+            </author>
+        </authorstmt>
+        <titlestmt>
+            <title level="a"><i>The Hunttyng of the Hare</i> in the Heege Manuscript.</title>
+            <title level="j">Anglia</title>
+        </titlestmt>
+        <pubstmt date="2010">128 (2010): 102-23</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
     <bibl xml:id="ScottT1970">
         <authorstmt>
             <editor>
@@ -41914,7 +42020,7 @@
                 <first>Jennifer</first>
             </author>
             <author>
-                <last>Nicholaus</last>
+                <first>Nicholaus</first>
                 <last>Pevsner</last>
             </author>
         </authorstmt>
@@ -42391,7 +42497,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Skeat1871b">
+  <!--  <bibl xml:id="Skeat1871b">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="Morris1882-94"/></pubstmt>
@@ -42399,7 +42505,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Skeat1873">
         <authorstmt>
             <editor>
@@ -42521,7 +42627,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Skeat1887">
+    <!--<bibl xml:id="Skeat1887">
         <authorstmt/>
         <titlestmt/>
         <pubstmt>See <biblio key="Morris1882-94"/></pubstmt>
@@ -42529,7 +42635,7 @@
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Skeat1888">
         <authorstmt>
             <author>
@@ -42891,7 +42997,7 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Skeat14">
+   <!-- <bibl xml:id="Skeat14">
         <authorstmt>
             <author>
                 <last>Skeat</last>
@@ -42901,14 +43007,14 @@
         <titlestmt>
             <title level="a">British Museum Quarterly</title>
         </titlestmt>
-        <!-- Note: bad data -->
+        <!-\- Note: bad data -\->
         <pubstmt> 16 [faulty reference: this vol. contains no article by Skeat: <ref
                 xml:target="3224.5">3224.5</ref>]</pubstmt>
         <index>
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="SkeatB1897">
         <authorstmt>
             <author>
@@ -46538,7 +46644,7 @@
             <title level="a">Poems by Chaucer in John Harpur&#8217;s Psalter.</title>
             <title level="j">Studies in the Age of Chaucer</title>
         </titlestmt>
-        <pubstmt date="1999">21 (1999): 301-15</pubstmt>
+        <pubstmt date="1999">21 (1999): 301-14</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -47298,6 +47404,22 @@
                 Garmonsway.</title>
         </titlestmt>
         <pubstmt date="1969">London: Athlone, 1969</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Waldron2004">
+        <authorstmt>
+            <editor>
+                <last>Waldron</last>
+                <first>R. A.</first>
+            </editor>
+        </authorstmt>
+        <titlestmt>
+            <title level="m">John Trevisa&#8217;s Translation of the Polchronichon of Ranulph Higden, Book VI: An Edition based on British Library MS Cotton Tiberius D.VII..</title>
+        </titlestmt>
+        <pubstmt date="2004">Middle English Texts series 35 .Heidelberg: Universitatsverlag Winter, 2004.</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -51232,14 +51354,14 @@
             <person/>
         </index>
     </bibl>
-    <bibl xml:id="Penn111">
+   <!-- <bibl xml:id="Penn111">
         <authorstmt/>
         <titlestmt>
             <title level="m"><ref type="url"
                     n="http://dla.library.upenn.edu/dla/medren/pageturn.html?q=Codex%20111&amp;id=MEDREN_1580457&amp;"
                     >Facsimile of UPenn Ms. Codex 111</ref></title>
         </titlestmt>
-        <pubstmt/>
+        <pubstmt>http://dla.library.upenn.edu/dla/medren/pageturn.html?q=Codex%20111&amp;id=MEDREN_1580457&amp;</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -51252,7 +51374,7 @@
                     n="http://dla.library.upenn.edu/dla/medren/pageturn.html?q=%22English%201%22&amp;id=MEDREN_1551783&amp;"
                     >Facsimile of UPenn Ms. Codex 196</ref></title>
         </titlestmt>
-        <pubstmt/>
+        <pubstmt>http://dla.library.upenn.edu/dla/medren/pageturn.html?q=%22English%201%22&amp;id=MEDREN_1551783&amp;</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -51265,7 +51387,7 @@
                     n="http://dla.library.upenn.edu/dla/medren/pageturn.html?q=%22English%206%22&amp;id=MEDREN_1551783&amp;"
                     >Facsimile of UPenn Ms. Codex 201</ref></title>
         </titlestmt>
-        <pubstmt/>
+        <pubstmt>http://dla.library.upenn.edu/dla/medren/pageturn.html?q=%22English%206%22&amp;id=MEDREN_1551783&amp;</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -51279,12 +51401,12 @@
                     >Digital Scriptorium: Facsimile of New York, Columbia University, Rare Book and
                     Manuscript Library, Plimpton MS 256</ref></title>
         </titlestmt>
-        <pubstmt/>
+        <pubstmt>http://app.cul.columbia.edu:8080/exist/scriptorium/ds.xq?querytype=basic&amp;stringtype1=phrase&amp;field1=sh&amp;term1=Plimpton%20MS%20256</pubstmt>
         <index>
             <topic/>
             <person/>
         </index>
-    </bibl>
+    </bibl>-->
     <bibl xml:id="Griffin1923">
         <authorstmt><author><last>Griffin</last> <first>Robert</first></author>
             <author><last>Stephenson</last><first>Mill</first></author></authorstmt>
@@ -51731,6 +51853,18 @@
             <person/>
         </index>
     </bibl> 
+    <bibl xml:id="BLLan204">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://www.bl.uk/manuscripts/Viewer.aspx?ref=lansdowne_ms_204">Digital Facsimile of British Library Lansdowne MS 204</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://www.bl.uk/manuscripts/Viewer.aspx?ref=lansdowne_ms_204</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
     <bibl xml:id="BLLan762">
         <authorstmt/>
         <titlestmt>
@@ -51832,7 +51966,7 @@
             <title level="m"><ref type="url"
                 n="https://lccn.loc.gov/2013659153">Digital Facsimile of Washington, Library of Congress MS 4 [BX3004 .E66 1400]</ref> (Benedict, Saint, Abbot of Monte Cassino. Regula. Selections.).</title>
         </titlestmt>
-        <pubstmt date="2000+">https://lccn.loc.gov/2013659153</pubstmt>
+        <pubstmt date="2000">https://lccn.loc.gov/2013659153</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -52234,6 +52368,66 @@
             <person/>
         </index>
     </bibl>
+    <bibl xml:id="NLWPork10">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://viewer.library.wales/4398349#?xywh=-660%2C-227%2C5399%2C4533">Digital Facsimile of National Library of Wales Brogyntyn MS ii.1</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://viewer.library.wales/4398349#?xywh=-660%2C-227%2C5399%2C45335</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC301">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/B.14.15">Digital Facsimile of Cambridge, Trinity College, MS B.14.15</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/B.14.15</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC305">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/B.14.19">Digital Facsimile of Cambridge, Trinity College, MS B.14.19</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/B.14.19</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC335">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/B.14.52">Digital Facsimile of Cambridge, Trinity College, MS B.14.52</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/B.14.52</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC181">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.39">Digital Facsimile of Cambridge, Trinity College, MS B.15.39</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.39</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
     <bibl xml:id="CamTCC1037">
         <authorstmt/>
         <titlestmt>
@@ -52265,6 +52459,102 @@
                 n="https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.19">Digital Facsimile of Trinity College Cambridge MS R.3.19</ref>.</title>
         </titlestmt>
         <pubstmt date="2022">https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.19</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC323">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/manuscripts/uv/view.php?n=B.14.39-40&amp;n=B.14.39-40#?c=0&amp;m=0&amp;s=0&amp;cv=0&amp;xywh=-1504%2C-275%2C6840%2C5486">Digital Facsimile of Trinity College Cambridge MS B.14.39 (bound together with B.14.40)</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://mss-cat.trin.cam.ac.uk/manuscripts/uv/view.php?n=B.14.39-40&amp;n=B.14.39-40#?c=0&amp;m=0&amp;s=0&amp;cv=0&amp;xywh=-1504%2C-275%2C6840%2C5486</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC731">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/R.5.43">Digital Facsimile of Trinity College Cambridge MS R.5.43</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/R.5.43</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC759">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/R.7.23">Digital Facsimile of Trinity College Cambridge MS R.7.23</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/R.7.23</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC905">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.32">Digital Facsimile of Trinity College Cambridge MS R.14.32</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.32</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC1413">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/O.9.1">Digital Facsimile of Trinity College Cambridge MS O.9.1</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/O.9.1</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamTCC1486">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://mss-cat.trin.cam.ac.uk/Manuscript/O.10.34">Digital Facsimile of Trinity College Cambridge MS O.10.34</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/O.10.34</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+        <bibl xml:id="TCCFragment">
+            <authorstmt/>
+            <titlestmt>
+                <title level="m"><ref type="url"
+                    n="https://mss-cat.trin.cam.ac.uk/Manuscript/R.11.2">Digital Facsimile of Trinity College Cambridge MS R.11.2</ref>.</title>
+            </titlestmt>
+            <pubstmt date="2024">https://mss-cat.trin.cam.ac.uk/Manuscript/R.11.2</pubstmt>
+            <index>
+                <topic/>
+                <person/>
+            </index>
+    </bibl>
+    <bibl xml:id="Lam260">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://images.lambethpalacelibrary.org.uk/luna/servlet/detail/LPLIBLPL~17~17~180816~133236?sort=creator%2Ctype%2Cdate%2Ctitle&amp;qvq=q:MS%20260;sort:creator%2Ctype%2Cdate%2Ctitle;lc:LPLIBLPL~17~17&amp;mi=4&amp;trs=12">Digital Facsimile of Lambeth Palace MS 260</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://images.lambethpalacelibrary.org.uk/luna/servlet/detail/LPLIBLPL~17~17~180816~133236?sort=creator%2Ctype%2Cdate%2Ctitle&amp;qvq=q:MS%20260;sort:creator%2Ctype%2Cdate%2Ctitle;lc:LPLIBLPL~17~17&amp;mi=4&amp;trs=12</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -52330,6 +52620,54 @@
             <person/>
         </index>
     </bibl>
+    <bibl xml:id="TokyoTak12">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371207">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 12</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371207</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak15">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16037447">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 15</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16037447</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak17">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371210">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 17</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371210</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak18">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371211">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 18</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371211</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
     <bibl xml:id="TokyoTak22">
         <authorstmt/>
         <titlestmt>
@@ -52342,6 +52680,18 @@
             <person/>
         </index>
     </bibl>
+    <bibl xml:id="TokyoTak23">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16037448">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 23</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16037448</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
     <bibl xml:id="TokyoTak24">
         <authorstmt/>
         <titlestmt>
@@ -52349,6 +52699,18 @@
                 n="https://collections.library.yale.edu/catalog/16147032">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 24</ref>.</title>
         </titlestmt>
         <pubstmt date="2023">https://collections.library.yale.edu/catalog/16147032</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak29">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371217">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 29</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371217</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -52378,6 +52740,30 @@
             <person/>
         </index>
     </bibl>
+    <bibl xml:id="TokyoTak33">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371220">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 33</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371220</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak35">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/15482966">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 35</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/15482966</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
     <bibl xml:id="TokyoTak40">
         <authorstmt/>
         <titlestmt>
@@ -52385,6 +52771,114 @@
                 n="https://collections.library.yale.edu/catalog/16371223">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 40</ref>.</title>
         </titlestmt>
         <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371223</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak46">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16156709">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 46</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16156709</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak51">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371229">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 51</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371229</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak52">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371230">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 52</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371230</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak54">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16154681">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 54</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16154681</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak61">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371237">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 61</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371237</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak64">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371239">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 64</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371239</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak65">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371240">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 65</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371240</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak66">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/15473172">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 66</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/15473172</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak67">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16154682">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 67</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16154682</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -52409,6 +52903,54 @@
                 n="https://collections.library.yale.edu/catalog/16371251">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 79</ref>.</title>
         </titlestmt>
         <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371251</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak94">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16371265">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 94</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16371265</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak96">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/15605268">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 96</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/15605268</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak97">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16156712">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 97</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16156712</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="TokyoTak98">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://collections.library.yale.edu/catalog/16037446">Digital Facsimile of Yale, Beinecke Library, Takamiya MS 98</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://collections.library.yale.edu/catalog/16037446</pubstmt>
         <index>
             <topic/>
             <person/>
@@ -52553,6 +53095,223 @@
                 n="https://digital.bodleian.ox.ac.uk/objects/f5602959-7c12-4a87-b2a8-3f5f296a9fd3/">Digital Facsimile of Oxford, Corpus Christi College MS 198</ref>.</title>
         </titlestmt>
         <pubstmt date="2023">https://digital.bodleian.ox.ac.uk/objects/f5602959-7c12-4a87-b2a8-3f5f296a9fd3/</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="BodJunius1">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://digital.bodleian.ox.ac.uk/objects/90a06f70-880a-4b5b-bd30-798710afff11/">Digital Facsimile of Oxford, Bodleian Library MS. Junius 1</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2023">https://digital.bodleian.ox.ac.uk/objects/90a06f70-880a-4b5b-bd30-798710afff11/</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Wellcome225">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://wellcomecollection.org/search/works?query=MS.225/">Digital Facsimile of London, Wellcome Historical Medical Library, Wellcome MS.225</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://wellcomecollection.org/search/works?query=MS.225</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Wellcome406">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://wellcomecollection.org/search/works?query=MS.406/">Digital Facsimile of London, Wellcome Historical Medical Library, Wellcome MS.406</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://wellcomecollection.org/search/works?query=MS.406</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Wellcome542">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://wellcomecollection.org/search/works?query=MS.542/">Digital Facsimile of London, Wellcome Historical Medical Library, Wellcome MS.542</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://wellcomecollection.org/search/works?query=MS.542</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Wellcome692">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://wellcomecollection.org/works/b38k86ch">Digital Facsimile of London, Wellcome Historical Medical Library, Wellcome MS.692</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://wellcomecollection.org/works/b38k86ch</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Wellcome693">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://wellcomecollection.org/works/m4h6yewy">Digital Facsimile of London, Wellcome Historical Medical Library, Wellcome MS.693</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://wellcomecollection.org/works/m4h6yewy</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Wellcome5650">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://wellcomecollection.org/search/works?query=MS.5650">Digital Facsimile of London, Wellcome Historical Medical Library, Wellcome MS.5650</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://wellcomecollection.org/search/works?query=MS.5650</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamCCC7">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://parker.stanford.edu/parker/catalog/fm985xq3462">Digital Facsimile of Cambridge, Corpus Christi College, MS 007</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://parker.stanford.edu/parker/catalog/fm985xq3462</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamCCC167">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://parker.stanford.edu/parker/catalog/bj906vx3707">Digital Facsimile of Cambridge, Corpus Christi College, MS 167</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://parker.stanford.edu/parker/catalog/bj906vx3707</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    
+    <bibl xml:id="CamCCC354">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://parker.stanford.edu/parker/catalog/vr711fc2241">Digital Facsimile of Cambridge, Corpus Christi College, MS 354</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://parker.stanford.edu/parker/catalog/vr711fc2241</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="CamCCC357">
+        <authorstmt/>
+        <titlestmt>
+            <title level="m"><ref type="url"
+                n="https://parker.stanford.edu/parker/catalog/dd998pq6752">Digital Facsimile of Cambridge, Corpus Christi College, MS 357</ref>.</title>
+        </titlestmt>
+        <pubstmt date="2024">https://parker.stanford.edu/parker/catalog/dd998pq6752</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Clark1882">
+        <authorstmt/>
+        <titlestmt>
+            <title level="a">The Song of Chaucer&#8217;s
+                Clerk of Oxenford, &#8216;Angelus ad Virginem&#8217;.</title>
+            <title level="j">The Month</title>
+        </titlestmt>
+        <pubstmt date="1882">44 (1882): 100-1</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Nelson1955">
+        <authorstmt>
+            <editor>
+                <last>Nelson</last>
+                <first>W.</first>
+            </editor>
+        </authorstmt>
+        <titlestmt>
+            <title level="m">The Life of St George by Alexander Barclay</title>
+            <title level="s">EETS</title>
+        </titlestmt>
+        <pubstmt date="1955">o.s. 230 (1955)</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Hirsh2014">
+        <authorstmt>
+            <author>
+                <last>Hirsh</last>
+                <first>John C.</first>
+            </author>
+        </authorstmt>
+        <titlestmt>
+            <title level="a">The Rawlinson Lyrics: Context, Memory and Performance.</title>
+          
+        </titlestmt>
+        <pubstmt date="2014">In <biblio key="Horobin2014"/></pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Horobin2014">
+        <authorstmt>
+            <editor>
+                <last>Horobin</last>
+                <first>Simon</first>
+            </editor>
+            <editor>
+                <last>Mooney</last>
+                <first>Linne</first>
+            </editor>
+        </authorstmt>
+        <titlestmt>
+            <title level="m">Middle English Texts in Transition: A Festschrift Dedicated to Toshiyuki Takamiya on His 70th Birthday</title>
+             </titlestmt>
+        <pubstmt date="2014">York: York Medieval Press, 2014</pubstmt>
+        <index>
+            <topic/>
+            <person/>
+        </index>
+    </bibl>
+    <bibl xml:id="Clark2002">
+        <authorstmt>
+            <editor>
+                <last>Clark</last>
+                <first>James G.</first>
+            </editor>
+        </authorstmt>
+        <titlestmt>
+            <title level="a">Thomas Walsingham Reconsidered: Books and Learning at Late-Medieval St. Albans.</title>
+            <title level="j">Speculum</title>
+        </titlestmt>
+        <pubstmt date="2002">77 (2002): 832-860</pubstmt>
         <index>
             <topic/>
             <person/>

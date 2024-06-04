@@ -1,17 +1,18 @@
 # This script attempts to transform Bibliography.xml into valid CSL data.
-# Complex transformations are tested by round-tripping. The pop() method is
-# used to delete source values successfully converted; warnings are thrown for
-# source items with left-over unconsumed values.
+# Links to on-line facsimiles are sifted out, for separate handling at later
+# date. Transformations of the `pubstmt` element are tested by round-tripping.
+# Warnings are thrown for source items with left-over unconsumed values.
 #
 # The translation validates successfully against the CSL schema but it is lossy
-# and buggy. Just half of items pass the round-tripping test. The rest (~1500)
-# generate a warning of some kind. This mass of warnings is sorted as follows:
+# and buggy. Just over half of items pass the round-tripping test. The rest
+# (~1350) generate a warning of some kind. This mass of warnings is sorted as
+# follows:
 #
-# - Warnings pertaining to date values or to basic data structure or data type
-# are printed to the terminal and written to the log file. There are about 60
-# of these.
+# - Warnings pertaining to date values or to basic data structure or data type.
+# These are printed to the terminal and written to the log file. There are
+# fewer than 10 of these.
 #
-# - The rest (the vast majority) are just written to the log file
+# - Other warnings are just written to the log file
 #
 # Any validation error emitted by jsonschema is written to the end of log file,
 # after warnings thrown during conversion
@@ -22,10 +23,9 @@
 # TODO: fix translation of nested titles (inner elements are dropped in the
 # current translation). See e.g. Albrecht1954a
 #
-# TODO: translate urls (for online editions and digital facsimiles, described
-# in the DIMEV editing manual)
-#
-# TODO: handle cross-references (items without @xml:id)
+# TODO: handle cross-references. Just two of these without xml:id, though many
+# more with @xml:id. These are commented out in recent versions of
+# Bibliography.xml.
 
 import os
 import xmltodict
@@ -42,6 +42,7 @@ csl_schema = '../schemas/csl-data.json'
 warning_log = ['Warnings from the latest run of `transform-Bibl.py`.\n']
 count_warnings = 0
 count_items_without_id = 0
+links_to_online_facs = []
 log_file = '../artefacts/warnings.txt'
 
 def read_xml_to_string(source):
@@ -64,21 +65,37 @@ def xml_to_dict(xml_string):
     return items
 
 def convert_item(sourceItem, count_warnings, warning_log):
+    # Unclutter
     if 'index' in sourceItem:
         sourceItem.pop('index') # NOTE: Ignore keywords, for now
+    # Delete stray orphaned full stops
+    if sourceItem.get('#text') == '.':
+        sourceItem.pop('#text')
+
     newItem = {}
     newItem['id'] = sourceItem.get('@xml:id')
     newItem['type'] = 'book' # set a default value for a required field
     if 'authorstmt' in sourceItem:
         authorstmt = sourceItem['authorstmt']
-        if authorstmt is not None:
-            for agent in ['author', 'editor']:
-                if agent in authorstmt:
-                    newItem[agent] = convert_agents(authorstmt[agent], sourceItem['@xml:id'])
-                    if len(authorstmt[agent]) == 0:
-                        authorstmt.pop(agent)
-            if len(authorstmt) == 0:
+        if authorstmt is None:
+            sourceItem.pop('authorstmt')
+        else:
+            if type(authorstmt) == str:
+                newItem['author'] = [{'literal': authorstmt}] # Data irreg.: item BritLib2014
                 sourceItem.pop('authorstmt')
+            else:
+                for agent in ['author', 'editor']:
+                    if agent in authorstmt:
+                        if type(authorstmt[agent]) == dict:
+                            authorstmt[agent] = [authorstmt[agent]]
+                        newItem[agent] = convert_agents(authorstmt[agent], sourceItem['@xml:id'])
+                        # Clean up authorstmt
+                        sourceItem['authorstmt'][agent] = [item for item in authorstmt[agent] if item]
+                sourceItem['authorstmt'] = {key: value for key, value in sourceItem['authorstmt'].items() if value}
+                if len(sourceItem['authorstmt']) == 0:
+                    sourceItem.pop('authorstmt')
+
+    # Convert titlestmt
     if 'titlestmt' in sourceItem:
         if sourceItem['titlestmt'] is None:
             msg = f'WARNING: Empty `titlestmt` in item {sourceItem["@xml:id"]}.'
@@ -97,20 +114,34 @@ def convert_item(sourceItem, count_warnings, warning_log):
                     print(msg)
                     warning_log.append(msg)
                 else:
-                    if title['@level'] == 'j':
+                    if title['@level'].lower() == 'j': # Lowercase to accommodate data irregularities
                         newItem['type'] = 'article-journal'
                         newItem['container-title'] = title.pop('#text')
-                    if title['@level'] == 's':
+                    if title['@level'].lower() == 's':
                         newItem['type'] = 'book'
                         newItem['collection-title'] = title.pop('#text')
-                    if title['@level'] == 'a' or title['@level'] == 'm':
+                    if title['@level'].lower() == 'a' or title['@level'].lower() == 'm':
                         if '#text' in title:
-                            newItem['title'] = title.pop('#text')
-                    # clean up
-                    if len(title) == 1 and '@level' in title.keys():
+                            if title['#text'] == '.':
+                                title.pop('#text')
+                            if 'ref' in title:
+                                if '#text' in title['ref']:
+                                    newItem['title'] = format_string(title['ref'].pop('#text'))
+                                if title['ref'].get('@type', '') == 'url':
+                                    if title['ref'].get('@n', '') != '':
+                                        newItem['URL'] = title['ref'].pop('@n')
+                                        title['ref'].pop('@type')
+                            else:
+                                newItem['title'] = format_string(title.pop('#text'))
+                    # Clean up titlestmt
+                    if len(title) == 1 and title['@level'].lower() in ['a', 'm', 'j', 's']:
                         title.pop('@level')
-            sourceItem.pop('titlestmt')
+            sourceItem['titlestmt']['title'] = [item for item in titlestmt if item]
+            sourceItem['titlestmt'] = {key: value for key, value in sourceItem['titlestmt'].items() if value}
+            if len(sourceItem['titlestmt']) == 0:
+                sourceItem.pop('titlestmt')
 
+    # Convert pubstmt
     if 'pubstmt' in sourceItem:
         pubstmt = sourceItem['pubstmt']
         if pubstmt is None:
@@ -130,9 +161,9 @@ def convert_item(sourceItem, count_warnings, warning_log):
                 warning_log.append(msg)
             else:
                 dateValue = pubstmt['@date']
-                pattern = '[A-Za-z=\?\+]'
-                regexMatch = re.search(pattern, dateValue)
-                if regexMatch:
+                if dateValue.lower() == 'n.d.' or dateValue == '':
+                    pubstmt.pop('@date')
+                elif re.search('[A-Za-z=\?\+]', dateValue):
                     msg = f'WARNING: Invalid value found for `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
                     print(msg)
                     warning_log.append(msg)
@@ -146,6 +177,7 @@ def convert_item(sourceItem, count_warnings, warning_log):
                     warning_log.append(msg)
                 else:
                     dateValue = re.sub('\[|\]', '', dateValue) # NOTE: strip brackets, for now
+                    dateValue = dateValue.strip() # strip leading and trailing whitespace characters
                     # NOTE: I use the 'more structured' representation of dates permitted by the CSL spec.
                     dateList = []
                     pattern = '^\d\d\d\d$'
@@ -170,8 +202,7 @@ def convert_item(sourceItem, count_warnings, warning_log):
                 warning_log.append(msg)
             else:
                 string = pubstmt['#text']
-                regexMatch = re.search('\(\d\d\d\d\): ', string)
-                if regexMatch:
+                if re.search('\(\d\d\d\d\): ', string):
                     volume = re.sub(' \(\d\d\d\d\): .*$', '', string)
                     newItem['volume'] = volume
                     page = re.sub('^.*\(\d\d\d\d\): ', '', string)
@@ -268,21 +299,28 @@ def uncollapse_date_ranges(dateValue, dateList):
             return dateList
 
 def convert_agents(agents, itemID):
-    if type(agents) == dict:
-        agents = [agents]
     nameList = []
     for nomen in agents:
         nameParts = {}
-        if type(nomen['last']) == list:
-            msg = f'WARNING: Unexpected data structure in the `authorstmt` of {itemID}'
-            print(msg)
-            warning_log.append(msg)
-        else:
-            nameParts['family'] = nomen.pop('last', '')
+        nameParts['family'] = nomen.pop('last', '')
         if 'first' in nomen and nomen['first'] is not None:
             nameParts['given'] = nomen.pop('first', '')
+        # Remove stray orphaned punctuation
+        if nomen.get('#text', '') in ['.', ',']:
+            nomen.pop('#text')
+        # Ignore titles of nobility, academic degree
+        if nomen.get('prefix', '') in ['Dr.', 'Sir', 'Lord']:
+            nomen.pop('prefix')
         nameList.append(nameParts)
     return nameList
+
+def format_string(value):
+    if type(value) == str:
+        value = re.sub('BEGIN_ITALICS', '<i>', value)
+        value = re.sub('END_ITALICS', '</i>', value)
+        value = re.sub('BEGIN_SUP', '<sup>', value)
+        value = re.sub('END_SUP', '</sup>', value)
+    return value
 
 def validate_items(conversion):
     print(f'Validating YAML conversion...')
@@ -315,22 +353,41 @@ items = xml_to_dict(xml_string)
 count_items = len(items)
 print(f'Found {count_items} items.')
 
-# convert items with `@xml:id`
-conversion = []
+# Sort and convert items
 if not 'test_sample' in locals():
     test_sample = range(len(items)) # Convert all items, unless a test_sample is specified previously
+conversion = []
 for idx in test_sample:
     if '@xml:id' in items[idx]:
-        newItem, count_warnings, warning_log = convert_item(items[idx], count_warnings, warning_log)
-        conversion.append(newItem)
+        # Walk the tree; if the item is a link to an on-line facsimile, toss aside for future processing. These are not converted to CSL format
+        conditionsA = 'pubstmt' in items[idx] \
+                     and 'titlestmt' in items[idx] \
+                     and 'title' in items[idx]['titlestmt'] \
+                     and 'ref' in items[idx]['titlestmt']['title'] \
+                     and 'Digital Facsimile of' in items[idx]['titlestmt']['title']['ref'].get('#text', '')
+        conditionsB1 = type(items[idx]['pubstmt']) == dict \
+                     and 'http' in items[idx]['pubstmt'].get('#text', '')
+        conditionsB2 = type(items[idx]['pubstmt']) == str \
+                     and 'http' in items[idx]['pubstmt']
+        if conditionsA and conditionsB1:
+            links_to_online_facs.append(items[idx])
+        elif conditionsA and conditionsB2:
+            links_to_online_facs.append(items[idx])
+        # Convert item
+        else:
+            newItem, count_warnings, warning_log = convert_item(items[idx], count_warnings, warning_log)
+            conversion.append(newItem)
     else:
         count_items_without_id += 1
 
 # Validate and write
 validate_items(conversion)
 
-msg = f'Conversions completed with {count_warnings} warnings and {count_items_without_id} unconverted cross-references.'
+msg = f'Conversions completed with {count_warnings} warnings, \
+{count_items_without_id} unconverted cross-references, \
+and {len(links_to_online_facs)} unconverted links to on-line facsimiles.'
 print(msg)
+
 warning_log.append(msg)
 with open(log_file, 'w') as file:
     for line in warning_log:
