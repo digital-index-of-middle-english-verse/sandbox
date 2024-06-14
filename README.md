@@ -7,7 +7,7 @@ The repository also hosts source files for an experimental new *DIMEV* website, 
 All this is very much work in progress.
 An inspiration is Andrew Dunning's [prototype](https://github.com/medievallibraries/latin-writers) for a digital edition of Richard Sharpe, *A Handlist of Latin Writers of Great Britain and Ireland Before 1540*.
 
-# Assets
+# Repository contents
 - `artefacts/`
   Warnings, reports, and csv artefacts of the scripts in `scripts/`.
   Transformed source data are written instead to `docs/` for use by the Jekyll website builder.
@@ -21,3 +21,24 @@ An inspiration is Andrew Dunning's [prototype](https://github.com/medievallibrar
 - `scripts/`
   Python scripts for review and transformation of the files in `DIMEV_XML`.
   For details see comments at the head of each file.
+
+# Technical direction
+- `Records.xml` will be atomized (one file per `<record>`) to make effective use of `git` distributed version control.
+  Data will be parsed to identify irregularities, remediated (manually where necessary), and written to a new consistent structure.
+  For instance, any field that may be an array must be an array (even if an array of one).
+  After migration, subsequent updates to any file must validate against a schema.
+  Early prototypes of data files are in `docs_items`.
+  An early prototype of the schema is `schemas/records.json`.
+  Cross references (i.e., those `<record>` items without an `@xml:id`) will be handled differently, tbd.
+- `Manuscripts.xml` and `MSSIndex.xml` will be de-duplicated.
+  Data will be atomized (one file per `<item>`), parsed, remediated, and written to a new consistent structure.
+  For an early partial prototype, see the output of `scripts/transform-Manuscripts.py`.
+  `Inscriptions.xml` and `PrintedBooks.xml` will be handled similarly.
+  After migration, subsequent updates to any file must validate against a schema.
+- `Bibliography.xml`.
+  Data will be parsed and remediated (as above), written to a standard bibliographic data format and imported to Zotero for distribution and curation on that platform.
+  For a prototype of this conversion, see `artefacts/bibliography.yaml`; the schema is `schemas/csl-data.json`.
+  To import tags we must target a format other than CSL JSON, per [this discussion](https://forums.zotero.org/discussion/115214/importing-tags-from-bibliographic-data-formats).
+  Tags will be used to link bibliographic items to their objects, as in the Bodleian Library's [bibliographical references for Western manuscripts](https://www.zotero.org/bodleianwmss/library).
+  Links to on-line facsimiles of manuscripts will be handled differently, probably as a field within the data structure for manuscripts.
+- `Glossary.xml` tbd.
