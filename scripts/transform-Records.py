@@ -16,7 +16,8 @@ import jsonschema
 source = '../DIMEV_XML/Records.xml'
 destination = '../docs/_items/'
 records_schema = '../schemas/records.json'
-test_sample= ['357', '2324', '2458', '2651', '2677', '6654']
+test_sample = ['357', '2324', '2458', '2651', '2677', '6654']
+test_range = (0, 15)
 warning_log = ['Warnings from the latest run of `transform-Records.py`.\n']
 log_file = '../artefacts/warnings.txt'
 
@@ -212,6 +213,7 @@ def get_item(dimev_id):
                 return item
 
 def transform_item(dimev_id):
+    print(f'Transforming DIMEV {dimev_id}...')
     item = get_item(dimev_id)
     item_keys = list(item.keys())
     new_record = record_target.copy()
@@ -477,18 +479,19 @@ items = xml_to_dict(xml_string)
 # define job
 print(f'''
 Select from the options below:
-   (1) Enter a DIMEV item number to convert (Default)
-   (2) Convert the test sample and write all results to `{destination}`''')
+   (1) Enter a DIMEV item number to convert
+   (2) Convert the test sample and write all results to `{destination}` (Default)
+   (3) Convert the test range and write results to `{destination}`
+   ''')
 prompt= 'Selection: '
-options = ['1', '2', '']
+options = ['1', '2', '3', '']
 job = get_valid_input(prompt, options)
 print()
 
 # identify item(s) and run conversion(s)
-if job == '2':
+if job == '2' or job == '':
     for idx in range(len(test_sample)):
         dimev_id = test_sample[idx]
-        print(f'Transforming DIMEV {dimev_id}...')
         conversion = transform_item(dimev_id)
         valid_yaml = validate_yaml(dimev_id, conversion)
         if valid_yaml:
@@ -496,6 +499,25 @@ if job == '2':
             write_to_file(dimev_id, conversion)
         else:
             print('  YAML validation failed! Aborting write.')
+elif job == '3':
+    skipped_records = 0
+    transformed_records = 0
+    for idx in range(test_range[0], test_range[1]):
+        item = items[idx]
+        if '@xml:id' not in item:
+            skipped_records += 1
+        else:
+            transformed_records += 1
+            dimev_id = re.sub('record-', '', item['@xml:id'])
+            conversion = transform_item(dimev_id)
+            valid_yaml = validate_yaml(dimev_id, conversion)
+            if valid_yaml:
+                print('  Validation passing.')
+                write_to_file(dimev_id, conversion)
+            else:
+                print('  YAML validation failed! Aborting write.')
+    print(f'Transformed {transformed_records} records.')
+    print(f'Skipped {skipped_records} records without `xml:id`.')
 else:
     prompt = 'Enter a DIMEV item number to convert. (Default is 2677.) '
     options = get_id_list(items) # create a list of dimev numbers to validate input
