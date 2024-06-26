@@ -16,7 +16,7 @@ import jsonschema
 source = '../DIMEV_XML/Records.xml'
 destination = '../docs/_items/'
 records_schema = '../schemas/records.json'
-test_sample = ['357', '2324', '2458', '2651', '2677', '6654']
+test_sample = ['357', '2324', '2458', '2651', '2677', '5459.9', '5459.95', '6654']
 test_range = (0, 15)
 warning_log = ['Warnings from the latest run of `transform-Records.py`.\n']
 log_file = '../artefacts/warnings.txt'
@@ -354,9 +354,8 @@ def transform_witnesses(dimev_id, item):
         for orig_key in witness.keys():
             if orig_key in orig_wit_fields_to_str:
                 if orig_key == '@xml:id':
-                    # TODO: accommodate decimals
-                    formatted_value = re.sub(r'wit-\d*-', '', witness[orig_key]) # strip prefixed DIMEV item number as redundant
-                    transformed_witness['wit_id'] = int(formatted_value) # should this be string? Yes, b/c decimals
+                    formatted_value = re.sub(r'wit-\d*(\.\d*)?-', '', witness[orig_key]) # strip prefixed DIMEV item number as redundant
+                    transformed_witness['wit_id'] = int(formatted_value) # Should this be string?
                 else:
                     for key_pair in x_walk_wit_fields_to_str:
                         if key_pair[0] == orig_key:
@@ -462,7 +461,9 @@ def validate_yaml(dimev_id, conversion):
         return False
 
 def write_to_file(dimev_id, conversion):
-    output_filename = destination + '0' * (4 - len(dimev_id)) + dimev_id + '.md'
+    dimev_id_integer = re.sub('\.\d+$', '', dimev_id)
+    dimev_id_decimal = re.sub('^\d+\.?', '', dimev_id)
+    output_filename = destination + '0' * (4 - len(dimev_id_integer)) + dimev_id_integer + '-' + dimev_id_decimal + '0' * (2 - len(dimev_id_decimal)) + '.md'
     yml_out = yaml.dump(conversion, sort_keys=False, allow_unicode=True)
     with open(output_filename, 'w') as file:
         file.write('---\n')
