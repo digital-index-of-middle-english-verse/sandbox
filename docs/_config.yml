@@ -21,8 +21,8 @@
 title: DIMEV sandbox
 description: >-
   A toy prototype for a future DIMEV website
-baseurl: "/dimev-sandbox" # the subpath of your site, e.g. /blog
-url: "https://icornelius.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/sandbox" # the subpath of your site, e.g. /blog
+url: "https://digital-index-of-middle-english-verse.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en-US
 
 collections:
