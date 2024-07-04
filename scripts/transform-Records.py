@@ -1,9 +1,12 @@
 # This script extracts a small sample of item records from Records.xml and
 # transforms them into individual YAML files with consistent data structure.
 # Warnings are emitted for known irregularities not yet accommodated.
-# Successful transformations may be validated against a target schema and
-# written to `../docs/_items`, where they are available to Jekyll's website
-# builder
+# Successful transformations are validated against a target schema and written
+# to `../docs/_items`, where they are available to Jekyll's website builder.
+#
+# The main flaw is in handling of nested xml. xmltodict joins text and tail
+# into a single `#text` value, with unacceptable losses. Perhaps call lxml in
+# these cases and climb the element tree. See TODOs in the code.
 
 import os
 import xmltodict
@@ -21,73 +24,8 @@ test_range = (0, 15)
 warning_log = ['Warnings from the latest run of `transform-Records.py`.\n']
 log_file = '../artefacts/warnings.txt'
 
-# Target data structure
-record_target = \
-    {
-        'DIMEV': '',
-        'IMEV': '',
-        'NIMEV': '',
-        'itemIncipit': '',
-        'description': '',
-        'descNote': '',
-        'authors': [],
-        'itemTitles': [],
-        'subjects': [],
-        'verseForms': [],
-        'versePatterns': [],
-        'languages': [],
-        'ghosts': [],
-        'witnesses': []
-            }
-
-author_target = \
-    {
-        'lastName': '',
-        'firstName': '',
-        'suffix': '',
-        'key': ''
-    }
-
-ghost_target = \
-    {
-        'key': '',
-        'note': ''
-    }
-
-witness_target = \
-    {
-        'wit_id': '',
-        'illust': '',
-        'music': '',
-        'allLines': '',
-        'firstLines': '',
-        'lastLines': '',
-        'sourceKey': '',
-        'point_locators':
-            {
-                'prefix': '',
-                'range': []
-            },
-        'note': '',
-        'MSAuthor': '',
-        'MSTitle': '',
-        'facsimiles': [],
-        'editions': []
-        }
-
-witness_range_target = \
-    {
-        'start': '',
-        'end': ''
-    }
-
-witness_edFacs_target = \
-    {
-        'key': '',
-        'point_locators': ''
-    }
-
-# Key lists for validation and processing
+# Key lists and crosswalks for processing
+## Key lists
 orig_item_fields_to_str = ['@xml:id', '@imev', '@nimev', 'name', 'description', 'descNote']
 orig_item_fields_to_list = \
     ['title', 'titles', # both tag-forms in use
@@ -97,7 +35,6 @@ orig_keys_for_item_author = ['first', 'last', 'suffix']
 orig_wit_fields_to_str = ['@xml:id', '@illust', '@music', 'allLines', 'firstLines', 'lastLines', 'sourceNote', 'MSAuthor', 'MSTitle']
 orig_keys_for_witness_ranges = ['#text', '@loc', '@pre', '@col']
 
-# Crosswalks
 ## Crosswalks old, to new
 x_walk_item_fields_to_str = \
     [
@@ -123,22 +60,6 @@ x_walk_item_fields_to_list = \
         ('language', 'languages')
     ]
 
-# Unused; omits witnesses, handled separately
-# x_walk_item_fields_to_structured_list = \
-#     [
-#         ('authors', 'authors'), # unchanged
-#         ('author', 'authors'),
-#         ('ghosts', 'ghosts'), # unchanged
-#         ('ghost', 'ghosts')
-#     ]
-
-# Unused
-# x_walk_author_fields = \
-#     [
-#         ('last', 'lastName'),
-#         ('first', 'firstName')
-#     ]
-
 x_walk_wit_fields_to_str = \
     [
         ('@xml:id', 'wit_id'),
@@ -152,7 +73,7 @@ x_walk_wit_fields_to_str = \
         ('MSTitle', 'MSTitle') # unchanged
     ] # omitting 'key', which requires separate treatment
 
-# Cross-walk, parent to child
+## Cross-walk, parent to child
 x_walk_orig_parent_to_orig_child = \
     [
         ('titles', 'title'),
@@ -216,7 +137,7 @@ def transform_item(dimev_id):
     print(f'Transforming DIMEV {dimev_id}...')
     item = get_item(dimev_id)
     item_keys = list(item.keys())
-    new_record = record_target.copy()
+    new_record = {}
     # translate item-level string fields
     # TODO: Accommodate `descNote` values with inline references to witness-keys (e.g., DIMEV 2458)
     for orig_key in item_keys:
@@ -228,9 +149,11 @@ def transform_item(dimev_id):
                     if orig_key == '@xml:id':
                         new_record[key_pair[1]] = re.sub('record-', '', item[orig_key])
                     elif type(item[orig_key]) == str:
-                        new_record[key_pair[1]] = format_string(item[orig_key])
+                        if item[orig_key] == '':
+                            continue
+                        else:
+                            new_record[key_pair[1]] = format_string(item[orig_key])
                     elif item[orig_key] is None:
-                        # TODO: What is the appropriate null value for string fields? `null` or '' or something else?
                         continue
                     else:
                         warn('type', orig_key, '', dimev_id, item[orig_key])
@@ -240,8 +163,11 @@ def transform_item(dimev_id):
             if type(item[orig_key]) == str:
                 for key_pair in x_walk_item_fields_to_list:
                     if key_pair[0] == orig_key:
-                        thislist.append(format_string(item[orig_key]))
-                        new_record[key_pair[1]] = thislist
+                        if item[orig_key] == '':
+                            continue
+                        else:
+                            thislist.append(format_string(item[orig_key]))
+                            new_record[key_pair[1]] = thislist
             elif type(item[orig_key]) == dict:
                 for parentChild in x_walk_orig_parent_to_orig_child:
                     # Walk the structure, parent to child
@@ -261,7 +187,8 @@ def transform_item(dimev_id):
                             # Identify key and assign value
                             for key_pair in x_walk_item_fields_to_list:
                                 if key_pair[0] == orig_key:
-                                    new_record[key_pair[1]] = thislist
+                                    if len(thislist) > 0:
+                                        new_record[key_pair[1]] = thislist
                         else:
                             warn('field', orig_key, '', dimev_id, item[orig_key])
         # translate item-level structured list fields
@@ -271,7 +198,7 @@ def transform_item(dimev_id):
                 new_record['witnesses'] = transform_witnesses(dimev_id, item)
             elif orig_key == 'ghosts':
                 if item[orig_key] is None:
-                    thislist.append(ghost_target)
+                    continue
                 else:
                     ghost_element = item[orig_key]['ghost']
                     if type(ghost_element) == dict:
@@ -282,13 +209,12 @@ def transform_item(dimev_id):
                             transformed_ghost = transform_ghost(ghost, dimev_id)
                             thislist.append(transformed_ghost)
                     else:
-                        thislist.append(ghost_target)
                         warn('type', orig_key, '', dimev_id, item[orig_key])
                 new_record['ghosts'] = thislist
             elif orig_key == 'authors':
                 author_element = item[orig_key]['author']
                 if author_element is None:
-                    thislist.append(author_target)
+                    continue
                 elif type(author_element) == dict:
                     transformed_author = transform_author(author_element, dimev_id)
                     thislist.append(transformed_author)
@@ -297,7 +223,6 @@ def transform_item(dimev_id):
                         transformed_author = transform_author(author, dimev_id)
                         thislist.append(transformed_author)
                 else:
-                    thislist.append(author_target)
                     warn('type', orig_key, '', dimev_id, item[orig_key])
                 new_record['authors'] = thislist
         else:
@@ -325,6 +250,9 @@ def transform_ghost(ghost, dimev_id):
             'key': ghost['mss'].get('@key'),
             'note': note_value
         }
+    # prune non-required empty field
+    if transformed_ghost['note'] == '':
+        transformed_ghost.pop('note')
     return transformed_ghost
 
 def transform_author(author, dimev_id):
@@ -342,6 +270,11 @@ def transform_author(author, dimev_id):
     author_key = transformed_author['lastName'] + transformed_author['firstName']
     author_key = re.sub(' ', '', author_key)
     transformed_author['key'] = author_key
+    # prune non-required empty fields
+    if transformed_author['firstName'] == '':
+        transformed_author.pop('firstName')
+    if transformed_author['suffix'] == '':
+        transformed_author.pop('suffix')
     return transformed_author
 
 def transform_witnesses(dimev_id, item):
@@ -350,7 +283,7 @@ def transform_witnesses(dimev_id, item):
     if type(witness_element) == dict:
         witness_element = [witness_element] # Perhaps use this trick elsewhere?
     for witness in witness_element:
-        transformed_witness = witness_target.copy()
+        transformed_witness = {}
         for orig_key in witness.keys():
             if orig_key in orig_wit_fields_to_str:
                 if orig_key == '@xml:id':
@@ -360,7 +293,10 @@ def transform_witnesses(dimev_id, item):
                     for key_pair in x_walk_wit_fields_to_str:
                         if key_pair[0] == orig_key:
                             if type(witness[orig_key]) == str:
-                                transformed_witness[key_pair[1]] = format_string(witness[orig_key])
+                                if witness[orig_key] == '':
+                                    continue
+                                else:
+                                    transformed_witness[key_pair[1]] = format_string(witness[orig_key])
                             elif witness[orig_key] is None:
                                 continue
                             else:
@@ -371,14 +307,23 @@ def transform_witnesses(dimev_id, item):
                 transformed_witness['sourceKey'] = witness[orig_key]['@key']
                 start_string = transform_wit_point_locators(dimev_id, witness, 'start')
                 end_string = transform_wit_point_locators(dimev_id, witness, 'end')
-                transformed_witness['point_locators'] = {
-                        'prefix': witness[orig_key].get('@prefix', ''),
-                        'range': [ {
-                            'start': start_string,
-                            'end': end_string
-                            }
-                        ]
-                    }
+                if end_string == '': # use end_string only if not empty
+                    transformed_witness['point_locators'] = {
+                            'prefix': witness[orig_key].get('@prefix', ''),
+                            'range': [ {
+                                'start': start_string
+                                }
+                            ]
+                        }
+                else:
+                    transformed_witness['point_locators'] = {
+                            'prefix': witness[orig_key].get('@prefix', ''),
+                            'range': [ {
+                                'start': start_string,
+                                'end': end_string
+                                }
+                            ]
+                        }
             elif orig_key == 'facsimiles' or orig_key == 'editions':
                 new_key = orig_key
                 thislist = []
@@ -394,7 +339,7 @@ def transform_witnesses(dimev_id, item):
                                     transformed_field = transform_edFacs(edFacs, witness, dimev_id)
                                     thislist.append(transformed_field)
                             elif witness[orig_key][key_pair[1]] is None:
-                                thislist.append(witness_edFacs_target.copy())
+                                continue
                             else:
                                 warn('type', orig_key, witness['@xml:id'], dimev_id, witness[orig_key])
                             transformed_witness[new_key] = thislist
@@ -433,6 +378,9 @@ def transform_edFacs(edFacs, witness, dimev_id):
             'key': edFacs.get('@key'),
             'point_locators': edFacs.get('#text', '')
         }
+    # prune non-required empty field
+    if transformed_edFacs['point_locators'] == '':
+        transformed_edFacs.pop('point_locators')
     return transformed_edFacs
 
 def warn(warning_type, field, parent_field, dimev_id, data):

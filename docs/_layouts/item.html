@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<!-- Liquid treats empty strings as True, so conditions have not result as written.-->
-
 <style>
 .indent {
 	margin-left: 1em;
@@ -47,11 +45,10 @@ layout: default
 {% endif %}
  
 <h2>Bibliography</h2>
-<!-- <h3>Repertories</h3> -->
 <ul>
-	<li> {% if page.DIMEV %}DIMEV: {{page.DIMEV}}{% endif %} </li>
-	<li> {% if page.IMEV %}IMEV: {{page.IMEV}}{% endif %} </li>
-	<li> {% if page.NIMEV %}NIMEV: {{page.NIMEV}}{% endif %} </li>
+	<li> DIMEV: {{page.DIMEV}} </li>
+	{% if page.IMEV %}<li> IMEV: {{page.IMEV}} </li>{% endif %}
+	{% if page.NIMEV %}<li> NIMEV: {{page.NIMEV}} </li>{% endif %}
 </ul>
 
 <!--
@@ -64,7 +61,11 @@ layout: default
 {% if page.witnesses %}
 <h2>Witnesses</h2>
 {% for wit in page.witnesses %}
-<h3>{{ wit.wit_id}}. <a href="{{ site.baseurl }}/sources/{{ wit.identifier }}">{{ wit.sourceKey }}</a>, {{ wit.range.prefix }} {{ wit.range.start }}{% if wit.range.end %}–{{ wit.range.end}}{% endif %}</h3>
+<h3>{{ wit.wit_id}}. <a href="{{ site.baseurl }}/sources/{{ wit.identifier }}">{{ wit.sourceKey }}</a>, {{ wit.point_locators.prefix }}
+	{% for range in wit.point_locators.range %}
+	{{ range.start }}{% if range.end %}–{{ range.end}}{% endif %}<!-- delimiter needed-->
+        {% endfor %}
+</h3>
 
 <div class='indent'>
 {% if wit.note or wit.MSTitle or wit.music or wit.illust %}

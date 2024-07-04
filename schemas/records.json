@@ -17,7 +17,7 @@
                     "suffix": {"type": "string"},
                     "key": {"type": "string"}
                 },
-                "required": ["lastName", "firstName", "suffix", "key"]
+                "required": ["lastName", "key"]
             }
         },
         "itemTitles": {
@@ -48,7 +48,7 @@
                     "key": {"type": "string"},
                     "note": {"type": "string"}
                 },
-                "required": ["key", "note"]
+                "required": ["key"]
             }
         },
         "witnesses": {
@@ -75,7 +75,7 @@
                                         "start": {"type": "string"},
                                         "end": {"type": "string"}
                                     },
-                                    "required": ["start", "end"]
+                                    "required": ["start"]
                                 }
                             }
                         },
@@ -92,7 +92,7 @@
                                 "key": {"type": "string"},
                                 "point_locators": {"type": "string"}
                             },
-                            "required": ["key", "point_locators"]
+                            "required": ["key"]
                         }
                     },
                     "editions": {
@@ -103,42 +103,21 @@
                                 "key": {"type": "string"},
                                 "point_locators": {"type": "string"}
                             },
-                            "required": ["key", "point_locators"]
+                            "required": ["key"]
                         }
                     }
                 },
                 "required": [
                     "wit_id",
-                    "illust",
-                    "music",
-                    "allLines",
-                    "firstLines",
-                    "lastLines",
                     "sourceKey",
-                    "point_locators",
-                    "note",
-                    "MSAuthor",
-                    "MSTitle",
-                    "facsimiles",
-                    "editions"
+                    "point_locators"
                 ]
             }
         }
     },
     "required": [
         "DIMEV",
-        "IMEV",
-        "NIMEV",
         "itemIncipit",
-        "description",
-        "descNote",
-        "authors",
-        "itemTitles",
-        "subjects",
-        "verseForms",
-        "versePatterns",
-        "languages",
-        "ghosts",
         "witnesses"
     ]
 }
