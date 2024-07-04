@@ -16,7 +16,7 @@ import jsonschema
 from lxml import etree
 
 # Top-level variables
-source = '../DIMEV_XML/Records.xml'
+source = '../../dimev/data/Records.xml'
 destination = '../docs/_items/'
 records_schema = '../schemas/records.json'
 test_sample = ['357', '2324', '2458', '2651', '2677', '5459.9', '5459.95', '6654']

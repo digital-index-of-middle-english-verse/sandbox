@@ -35,7 +35,7 @@ import json
 import jsonschema
 
 # Top-level variables
-source = '../DIMEV_XML/Bibliography.xml'
+source = '../../dimev/data/Bibliography.xml'
 destination = '../artefacts/'
 csl_schema = '../schemas/csl-data.json'
 # test_sample= range(50)

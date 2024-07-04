@@ -1,6 +1,5 @@
-This repository is a sandbox in which to prototype tools for cleanup, transformation, and validation of data curated by editors of *DIMEV: An Open Access, Digital Edition of the "Index of Middle English Verse"*.
-Researchers interested in Middle English verse should consult [dimev.net](https://www.dimev.net/), not this repository, as the XML source files in this repository are a snapshot and will not be updated.
-They are for testing only.
+This repository is a sandbox in which to prototype tools for cleanup, transformation, and validation of data curated by editors of the *Digital Index of Middle English Verse* (*DIMEV*).
+Files are for testing only: researchers interested in Middle English verse should consult [dimev.net](https://www.dimev.net/).
 Commentary is welcome.
 
 The repository also hosts source files for an experimental new *DIMEV* website, built with Jekyll and hosted by GitHub Pages.
@@ -11,16 +10,15 @@ An inspiration is Andrew Dunning's [prototype](https://github.com/medievallibrar
 - `artefacts/`
   Warnings, reports, and csv artefacts of the scripts in `scripts/`.
   Transformed source data are written instead to `docs/` for use by the Jekyll website builder.
-- `DIMEV_XML/`
-  DIMEV source files as of May 2023.
 - `docs/`
   Source files and templates for a website.
   The contents of `docs/_items/` are written by `scripts/transform-Records.py`.
 - `schemas/`
   JSON schemas for validation of transformed source files.
 - `scripts/`
-  Python scripts for review and transformation of the files in `DIMEV_XML`.
+  Python scripts for review and transformation of the files in the `dimev` repository.
   For details see comments at the head of each file.
+  Scripts presume that the `dimev` repository has been cloned to a directory sibling to this one.
 
 # Technical direction
 - `Records.xml` will be atomized (one file per `<record>`) to make effective use of `git` distributed version control.

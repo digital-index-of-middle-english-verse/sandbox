@@ -13,7 +13,7 @@ import os
 import xmltodict
 import re
 
-source = '../DIMEV_XML/Records.xml'
+source = '../../dimev/data/Records.xml'
 dest_dir = '../artefacts/'
 log_file = 'warnings.txt'
 summary_output = 'summary-analysis-of-Records.md'

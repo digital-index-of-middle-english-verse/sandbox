@@ -8,7 +8,7 @@
 import os
 import xmltodict
 
-src_dir = '../DIMEV_XML/'
+src_dir = '../../dimev/data/'
 file1 = 'Manuscripts.xml'
 file2 = 'MSSIndex.xml'
 source1 = src_dir + file1
