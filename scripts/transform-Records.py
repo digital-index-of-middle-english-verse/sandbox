@@ -4,9 +4,8 @@
 # Successful transformations are validated against a target schema and written
 # to `../docs/_items`, where they are available to Jekyll's website builder.
 #
-# The main flaw is in handling of nested xml. xmltodict joins text and tail
-# into a single `#text` value, with unacceptable losses. Perhaps call lxml in
-# these cases and climb the element tree. See TODOs in the code.
+# Most of the transformation is done with `xmltodict`. Nested XML is handled
+# with `lxml`.
 
 import os
 import xmltodict
@@ -14,6 +13,7 @@ import re
 import yaml
 import json
 import jsonschema
+from lxml import etree
 
 # Top-level variables
 source = '../DIMEV_XML/Records.xml'
@@ -23,6 +23,7 @@ test_sample = ['357', '2324', '2458', '2651', '2677', '5459.9', '5459.95', '6654
 test_range = (0, 15)
 warning_log = ['Warnings from the latest run of `transform-Records.py`.\n']
 log_file = '../artefacts/warnings.txt'
+namespace = '{http://www.w3.org/XML/1998/namespace}'
 
 # Key lists and crosswalks for processing
 ## Key lists
@@ -93,6 +94,7 @@ def read_xml_to_string(source):
     with open(source) as f:
         xml_string = f.read()
     print('Preprocessing string...')
+    xml_string = re.sub('<\?xml version="1.0" encoding="UTF-8"\?>', '', xml_string) # Unicode strings with encoding declaration are not supported by lxml and not required by xmltodict
     xml_string = re.sub(' {2,}', ' ', xml_string) # remove whitespace
     xml_string = re.sub('\\n', '', xml_string) # remove newlines
     xml_string = re.sub('<lb/>', 'LINE_BREAK', xml_string) # replace <lb/> elements with newlines and spaced indent
@@ -101,8 +103,6 @@ def read_xml_to_string(source):
     xml_string = re.sub('</sup>', 'END_SUP', xml_string)
     xml_string = re.sub('<i>', 'BEGIN_ITALICS', xml_string)  # replace <i> tags
     xml_string = re.sub('</i>', 'END_ITALICS', xml_string)
-    xml_string = re.sub(r'<ref xml:target="([\.0-9]+)" *>[0-9]+</ref>', 'DIMEV_' + r'\1', xml_string)
-    # xml_string = re.sub(r'<mss key="([A-Za-z0-9]+)"/>', 'MS_' + r'\1', xml_string) # This substitution disrupts rendering of <ghost>
     return xml_string
 
 def xml_to_dict(xml_string):
@@ -155,6 +155,11 @@ def transform_item(dimev_id):
                             new_record[key_pair[1]] = format_string(item[orig_key])
                     elif item[orig_key] is None:
                         continue
+                    elif type(item[orig_key]) == dict:
+                        string, crossrefs = cherrypick_from_nested_xml(item, key_pair[0])
+                        new_record[key_pair[1]] = string
+                        if len(crossrefs) > 0:
+                            new_record['crossRefs'] = crossrefs
                     else:
                         warn('type', orig_key, '', dimev_id, item[orig_key])
         # translate item-level fields targetted to list
@@ -239,6 +244,47 @@ def format_string(value):
         value = re.sub('LINE_BREAK', '<br />', value)
     return value
 
+def cherrypick_from_nested_xml(dict_object, target_element_tag):
+    # if the dictionary object is a witness, build the record id
+    if 'wit' in dict_object['@xml:id']:
+        dimev_id = re.sub('wit', 'record', dict_object['@xml:id'])
+        dimev_id = re.sub('-\d+$', '', dimev_id)
+    else:
+        dimev_id = dict_object['@xml:id']
+    # find the record node in the element tree
+    if 'wit' in dict_object['@xml:id']:
+        for child in root:
+            if child.attrib.get(namespace + 'id') == dimev_id:
+                target_element = child.find('witnesses')
+                break
+        for child in target_element:
+            if child.attrib.get(namespace + 'id') == dict_object['@xml:id']:
+                target_element = child.find(target_element_tag)
+                break
+    else:
+        for child in root:
+            if child.attrib.get(namespace + 'id') == dimev_id:
+                target_element = child.find(target_element_tag)
+                break
+    container = []
+    crossrefs = []
+    for element in target_element.iter():
+        if element.tag == 'mss':
+            container.append('SOURCE_KEY_' + element.attrib['key'])
+        else:
+            if element.text and isinstance(element.tag, str):
+                if element.tag == 'ref':
+                    crossrefs.append(element.attrib[namespace + 'target'])
+                    container.append('DIMEV ' + element.text)
+                else:
+                    container.append(element.text)
+        if element.tail:
+            container.append(element.tail)
+    string = format_string(''.join(container))
+    crossrefs = list(set(crossrefs))
+    crossrefs.sort()
+    return string, crossrefs
+
 def transform_ghost(ghost, dimev_id):
     # validate top-level keys
     for key in ghost.keys():
@@ -299,8 +345,12 @@ def transform_witnesses(dimev_id, item):
                                     transformed_witness[key_pair[1]] = format_string(witness[orig_key])
                             elif witness[orig_key] is None:
                                 continue
+                            elif type(witness[orig_key]) == dict:
+                                string, crossrefs = cherrypick_from_nested_xml(witness, key_pair[0])
+                                transformed_witness[key_pair[1]] = string
+                                if len(crossrefs) > 0:
+                                    transformed_witness['crossRefs'] = crossrefs
                             else:
-                                # TODO: accommodate `sourceNote` with inline references to other source keys (e.g., DIMEV 6654)
                                 warn('type', orig_key, witness['@xml:id'], dimev_id, witness[orig_key])
             elif orig_key == 'source':
                 # TODO: create for loop to accommodate discontinuous ranges described in XML editing manual, pp. 14-15
@@ -422,8 +472,11 @@ def write_to_file(dimev_id, conversion):
 # read the source file to string and pre-process
 xml_string = read_xml_to_string(source)
 
-# create a dictionary
+print('Parsing the xml as dictionary...')
 items = xml_to_dict(xml_string)
+
+print('Parsing the xml as an element tree...')
+root = etree.fromstring(xml_string)
 
 # define job
 print(f'''

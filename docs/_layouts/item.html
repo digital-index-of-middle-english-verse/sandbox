@@ -19,6 +19,12 @@ layout: default
 </p>
 {% endif %}
 
+{% if page.crossRefs %}
+<p>
+Internal cross references: {{ page.crossRefs | join: ", " }}
+</p>
+{% endif %}
+
 {% if page.authors or page.verseForms or page.versePatterns or page.subjects%}
 <ul>
 	{% if page.authors %}
@@ -82,6 +88,12 @@ layout: default
 {% if wit.note %}{{ wit.note | append: "." }}{% endif %}
 {% if wit.MSTitle %}Attributed title: {{ wit.MSTitle | append: "." }}{% endif %}
 {% if musicIllust %}{{ musicIllust }} {% endif %}
+</p>
+{% endif %}
+
+{% if wit.crossRefs %}
+<p>
+Internal cross references: {{ wit.crossRefs | join: ", " }}
 </p>
 {% endif %}
 

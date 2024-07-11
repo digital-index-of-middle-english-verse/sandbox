@@ -7,6 +7,10 @@
         "itemIncipit": {"type": "string"},
         "description": {"type": "string"},
         "descNote": {"type": "string"},
+	"crossRefs": {
+	    "type": "array",
+	    "items": {"type": "string"}
+	},
         "authors": {
             "type": "array",
             "items": {
@@ -17,7 +21,8 @@
                     "suffix": {"type": "string"},
                     "key": {"type": "string"}
                 },
-                "required": ["lastName", "key"]
+                "required": ["lastName", "key"],
+                "additionalProperties": false
             }
         },
         "itemTitles": {
@@ -48,7 +53,8 @@
                     "key": {"type": "string"},
                     "note": {"type": "string"}
                 },
-                "required": ["key"]
+                "required": ["key"],
+                "additionalProperties": false
             }
         },
         "witnesses": {
@@ -75,13 +81,19 @@
                                         "start": {"type": "string"},
                                         "end": {"type": "string"}
                                     },
-                                    "required": ["start"]
+                                    "required": ["start"],
+                                    "additionalProperties": false
                                 }
                             }
                         },
-                        "required": ["prefix", "range"]
+                        "required": ["prefix", "range"],
+                       "additionalProperties": false
                     },
                     "note": {"type": "string"},
+	            "crossRefs": {
+	                "type": "array",
+	                "items": {"type": "string"}
+	            },
                     "MSAuthor": {"type": "string"},
                     "MSTitle": {"type": "string"},
                     "facsimiles": {
@@ -92,7 +104,8 @@
                                 "key": {"type": "string"},
                                 "point_locators": {"type": "string"}
                             },
-                            "required": ["key"]
+                            "required": ["key"],
+                            "additionalProperties": false
                         }
                     },
                     "editions": {
@@ -103,7 +116,8 @@
                                 "key": {"type": "string"},
                                 "point_locators": {"type": "string"}
                             },
-                            "required": ["key"]
+                            "required": ["key"],
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -111,7 +125,8 @@
                     "wit_id",
                     "sourceKey",
                     "point_locators"
-                ]
+                ],
+               "additionalProperties": false
             }
         }
     },
@@ -119,5 +134,6 @@
         "DIMEV",
         "itemIncipit",
         "witnesses"
-    ]
+    ],
+    "additionalProperties": false
 }
