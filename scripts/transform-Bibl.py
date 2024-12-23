@@ -19,13 +19,6 @@
 #
 # TODO: improve processing, disaggregation of `pubstmt` (a nasty free text
 # field in the source XML)
-#
-# TODO: fix translation of nested titles (inner elements are dropped in the
-# current translation). See e.g. Albrecht1954a
-#
-# TODO: handle cross-references. Just two of these without xml:id, though many
-# more with @xml:id. These are commented out in recent versions of
-# Bibliography.xml.
 
 import os
 import xmltodict
@@ -102,41 +95,66 @@ def convert_item(sourceItem, count_warnings, warning_log):
             print(msg)
             warning_log.append(msg)
         else:
-            titlestmt = sourceItem['titlestmt']['title']
-            if type(titlestmt) == dict:
-                titlestmt = [titlestmt]
-            for title in titlestmt:
-                # NOTE: "a"=Article markup "m" =Monograph "j" =Journal "r" =Review "s" =Series
-                # TODO: accommodate 'r'
-                # TODO: assign other CSL item types
-                if type(title) != dict:
-                    msg = f'WARNING: Unexpected data type for `title` element in item {sourceItem["@xml:id"]}.'
+            # Process 'number-of-volumes', if present
+            if 'vols' in sourceItem['titlestmt']:
+                newItem['number-of-volumes'] = sourceItem['titlestmt'].pop('vols')
+            # Process titles
+            titles = sourceItem['titlestmt']['title']
+            if type(titles) == dict:
+                titles = [titles]
+            title_types = []
+            options = ['a', 'm', 'j', 's']
+            # NOTE: "a"=Article markup "m"=Monograph "j"=Journal "s"=Series
+            for title in titles:
+                if title['@level'] not in options:
+                    msg = f'WARNING: unexpected title type found in item {sourceItem["@xml:id"]}'
+                    print(msg)
+                    warning_log.append(msg)
+                if title['@level'] in title_types:
+                    msg = f'WARNING: duplicate title type found in item {sourceItem["@xml:id"]}'
                     print(msg)
                     warning_log.append(msg)
                 else:
-                    if title['@level'].lower() == 'j': # Lowercase to accommodate data irregularities
-                        newItem['type'] = 'article-journal'
-                        newItem['container-title'] = title.pop('#text')
-                    if title['@level'].lower() == 's':
+                    title_types.append(title['@level'])
+            for title in titles:
+                if title['@level'].lower() == 'j': # lowercase method unnecessary here (after cleannup of source data)
+                    newItem['type'] = 'article-journal'
+                    newItem['container-title'] = title.pop('#text')
+                elif title['@level'].lower() == 's':
+                    if 'j' in title_types:
+                        msg = f'WARNING: unexpected combination of title types found in item {sourceItem["@xml:id"]}'
+                        print(msg)
+                        warning_log.append(msg)
+                    newItem['type'] = 'book'
+                    newItem['collection-title'] = title.pop('#text')
+                elif title['@level'].lower() == 'm':
+                    # get book title and URLs
+                    if 'ref' in title:
+                        title, this_book_title, url = process_ref(title)
+                        newItem['URL'] = url
+                    if '#text' in title:
+                        this_book_title = format_string(title.pop('#text'))
+                    # assign type and title
+                    if 'j' in title_types:
+                        msg = f'WARNING: unexpected combination of title types found in item {sourceItem["@xml:id"]}'
+                        print(msg)
+                        warning_log.append(msg)
+                    elif 'a' in title_types:
+                        newItem['type'] = 'chapter'
+                        newItem['container-title'] = this_book_title
+                    else:
                         newItem['type'] = 'book'
-                        newItem['collection-title'] = title.pop('#text')
-                    if title['@level'].lower() == 'a' or title['@level'].lower() == 'm':
-                        if '#text' in title:
-                            if title['#text'] == '.':
-                                title.pop('#text')
-                            if 'ref' in title:
-                                if '#text' in title['ref']:
-                                    newItem['title'] = format_string(title['ref'].pop('#text'))
-                                if title['ref'].get('@type', '') == 'url':
-                                    if title['ref'].get('@n', '') != '':
-                                        newItem['URL'] = title['ref'].pop('@n')
-                                        title['ref'].pop('@type')
-                            else:
-                                newItem['title'] = format_string(title.pop('#text'))
-                    # Clean up titlestmt
-                    if len(title) == 1 and title['@level'].lower() in ['a', 'm', 'j', 's']:
-                        title.pop('@level')
-            sourceItem['titlestmt']['title'] = [item for item in titlestmt if item]
+                        newItem['title'] = this_book_title
+                else: # if title['@level'].lower() == 'a':
+                    if '#text' in title:
+                        newItem['title'] = format_string(title.pop('#text'))
+                    if 'ref' in title:
+                        title, this_book_title, url = process_ref(title)
+                        newItem['URL'] = url
+                # Clean up titlestmt
+                if len(title) == 1 and title['@level'].lower() in ['a', 'm', 'j', 's']:
+                    title.pop('@level')
+            sourceItem['titlestmt']['title'] = [item for item in titles if item]
             sourceItem['titlestmt'] = {key: value for key, value in sourceItem['titlestmt'].items() if value}
             if len(sourceItem['titlestmt']) == 0:
                 sourceItem.pop('titlestmt')
@@ -153,7 +171,7 @@ def convert_item(sourceItem, count_warnings, warning_log):
             print(msg)
             warning_log.append(msg)
         else:
-            # First, try to extract a four-digit publication year from the '@date' attribute
+            # Try to extract a four-digit publication year from the '@date' attribute
             # Conditions are necessary, as attribute values have date ranges and typos
             if '@date' not in pubstmt:
                 msg = f'WARNING: No `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
@@ -202,6 +220,12 @@ def convert_item(sourceItem, count_warnings, warning_log):
                 warning_log.append(msg)
             else:
                 string = pubstmt['#text']
+
+                # Identify dissertations and theses
+                if 'Diss.' in string or 'thesis' in string:
+                    newItem = format_theses(newItem, string)
+                    # TODO: develop this function and do not run subsequent processes
+
                 if re.search('\(\d\d\d\d\): ', string):
                     volume = re.sub(' \(\d\d\d\d\): .*$', '', string)
                     newItem['volume'] = volume
@@ -274,6 +298,15 @@ def convert_item(sourceItem, count_warnings, warning_log):
         count_warnings += 1
     return newItem, count_warnings, warning_log
 
+def process_ref(title):
+    if '#text' in title['ref']:
+        this_book_title = format_string(title['ref'].pop('#text'))
+    if title['ref'].get('@type', '') == 'url':
+        if title['ref'].get('@n', '') != '':
+            url = title['ref'].pop('@n')
+            title['ref'].pop('@type')
+    return title, this_book_title, url
+
 def format_dates(year, dateList):
     year = int(year)
     dateParts = []
@@ -297,6 +330,22 @@ def uncollapse_date_ranges(dateValue, dateList):
             year = re.sub(range_patterns[idx][2], r'\1\2', dateValue)
             dateList = format_dates(year, dateList)
             return dateList
+
+def format_theses(newItem, string):
+    if 'Diss.' in string:
+        newItem['type'] = 'thesis'
+        newItem['genre'] = 'Ph.D. diss.'
+        string = re.sub('Diss\. ', '', string)
+
+    else: # 'thesis', two items only
+        newItem['type'] = 'thesis'
+        newItem['genre'] = 'M.A. thesis'
+        string = re.sub('MA thesis\. ', '', string)
+        string = re.sub('M\.Litt thesis\. ', '', string)
+
+    # newItem['publisher'] = string.strip()
+
+    return newItem
 
 def convert_agents(agents, itemID):
     nameList = []
