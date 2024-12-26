@@ -6,7 +6,7 @@ subject,count
 "absence, pangs of",2
 "absence/separation of lovers",1
 "abstenance",1
-"abuses of the age",24
+"abuses of the age",25
 "abuses, of the age",10
 "acrostics",26
 "Adam and Eve",2
@@ -20,14 +20,14 @@ subject,count
 "Advent",3
 "adversity",1
 "adversity, patience in",4
-"advice",61
+"advice",63
 "advice to princes",1
 "advice, legal",2
 "advice, mora",1
-"advice, moral",129
+"advice, moral",132
 "advice, on marriage",5
 "advice, political",1
-"advice, spiritual",88
+"advice, spiritual",89
 "advice, to judges",1
 "advice, to lovers",6
 "advice, to magistrates",4
@@ -50,7 +50,7 @@ subject,count
 "Alban, saint, life of",2
 "alchemical poem",1
 "alchemical poems",10
-"alchemy",49
+"alchemy",53
 "Alchemy",1
 "alchemy, failure of",1
 "Alcuin of York",1
@@ -70,7 +70,7 @@ subject,count
 "alliteration",2
 "alliterative unrhymed",2
 "almsgiving",18
-"alphabetic poems",12
+"alphabetic poems",11
 "Alphege, saint, life of",1
 "Ambrose, saint, life of",1
 "Amphibal, saint, life of",1
@@ -100,7 +100,7 @@ subject,count
 "antifeminism",1
 "Antioch, seven virgins of, legend",1
 "antiphons",2
-"aphorisms",112
+"aphorisms",113
 "Apocalypse",2
 "Apocalypse, advice to readers of",1
 "apostles",2
@@ -111,7 +111,7 @@ subject,count
 "Arthur",1
 "Arthur, king",3
 "Arthur, prince of Wales",17
-"Arthurian literature",20
+"Arthurian literature",19
 "Arundel, Thomas, Chancellor of England, archbp. of Canterbury",1
 "Ascension",2
 "Ascension, feast of",5
@@ -226,13 +226,12 @@ subject,count
 "Cantelowe, Margaret, of Streatham (Surrey)",1
 "Canterbury, city of",2
 "Cantlow, John, Prior of Bath",1
-"carols",27
+"carols",28
 "carols, Advent",3
 "carols, amorous",38
 "carols, Annunciation",26
-"carols, boars’ head",4
+"carols, boars’ head",5
 "carols, boar’s head",1
-"carols, boar’s head>",1
 "carols, convivial",15
 "carols, early",2
 "carols, Epiphany",17
@@ -303,7 +302,7 @@ subject,count
 "charity, sixteen points of",1
 "Charlemagne",4
 "Charles VII, King of France",1
-"charms",40
+"charms",41
 "charters",6
 "charters, of Christ",5
 "chastisement",1
@@ -323,10 +322,10 @@ subject,count
 "children’s rhymes",6
 "Christ",5
 "Christ and His Apostles",1
-"Christ, address to humankind",10
+"Christ, address to humankind",11
 "Christ, address to the Virgin Mary",1
 "Christ, address to Virgin Mary",4
-"Christ, appeal of, to man",54
+"Christ, appeal of, to man",56
 "Christ, ascension of",1
 "Christ, Ascension of",1
 "Christ, attributes of",30
@@ -367,7 +366,7 @@ subject,count
 "Christ, mercy of",1
 "Christ, name of",4
 "Christ, Passion",1
-"Christ, Passion of",57
+"Christ, Passion of",56
 "Christ, passion of",11
 "Christ, Passion of, Passion, meditations on",1
 "Christ, plea to the father",1
@@ -375,13 +374,13 @@ subject,count
 "Christ, poverty of",1
 "Christ, praise to",5
 "Christ, prayer to",2
-"Christ, prayers to",69
+"Christ, prayers to",70
 "Christ, presence in the Eucharist",2
 "Christ, seven last words",1
 "Christ, songs in honour of",4
 "Christ, suffering of",3
 "Christ, sufferings",1
-"Christ, sufferings of",18
+"Christ, sufferings of",20
 "Christ, symbols of",1
 "Christ, tears of",1
 "Christ, thanksgivings to",5
@@ -400,8 +399,8 @@ subject,count
 "Christopher, saint",2
 "Christopher, saint, legend of",1
 "Christopher, saint, life of",3
-"chronicles",14
-"chronicles, verse in",95
+"chronicles",17
+"chronicles, verse in",94
 "chronicles, verses in",2
 "Church corruption",2
 "church fathers, sayings of",1
@@ -421,7 +420,7 @@ subject,count
 "clergy, wives of, criticism/satire of",1
 "Clerk, John, of Torrington (Devon)",1
 "clothing",1
-"clothing, against extremes of",14
+"clothing, against extremes of",15
 "Cobham, Eleanor",1
 "cocks",1
 "colophon",1
@@ -433,17 +432,17 @@ subject,count
 "commemorative verse, lovers’",3
 "commerce",1
 "complaint, lovers’",1
-"complaints",43
-"complaints, lovers’",57
+"complaints",44
+"complaints, lovers’",58
 "complaints, on evils of the time",2
 "complaints, on the evils of the time",1
-"complexions, four",3
+"complexions, four",4
 "composite poems",4
 "composite texts",4
 "Conception, feast of",1
 "conclusions",1
-"conclusions, to prose texts",4
-"confession",18
+"conclusions, to prose texts",5
+"confession",19
 "confession, exhortation to",1
 "confession, form of",1
 "confession, forms of",4
@@ -509,7 +508,7 @@ subject,count
 "cuckoldry",3
 "Cupid",7
 "Cupiditas",2
-"curses",8
+"curses",9
 "Cuthbert, Saint",1
 "Cuthbert, saint, life of",3
 "Dalusse, Robert, of London",1
@@ -518,7 +517,7 @@ subject,count
 "de la Pole, William, duke of Suffolk",3
 "de la Pole, William, duke of Suffolk, verses against",1
 "de Mandeville, Geoffrey, earl of Essex",1
-"death",78
+"death",79
 "Death",1
 "death, approach of",44
 "death, dance of",3
@@ -537,8 +536,8 @@ subject,count
 "debates, theological",2
 "debauchery",1
 "deceit, on",2
-"dedications",5
-"Denis, saint",4
+"dedications",6
+"Denis, saint",3
 "Denis, saint, life of",1
 "despair",2
 "Despencer, Hugh",1
@@ -637,6 +636,7 @@ subject,count
 "eight-line",1
 "Eleanor [Cobham], duchess of Gloucester",1
 "elegies",19
+"elements, four",1
 "Elizabeth of York",1
 "Elizabeth of York, queen",4
 "Elizabeth, queen",1
@@ -649,7 +649,7 @@ subject,count
 "England, kings of",4
 "English language",1
 "entertainment",2
-"envoys",232
+"envoys",233
 "envy",1
 "epigrams",2
 "epilogues",20
@@ -660,7 +660,7 @@ subject,count
 "epiptaphs",2
 "epistles",4
 "epitaph",3
-"epitaphs",107
+"epitaphs",110
 "epitaphs, comic",1
 "Equine medicing",1
 "Erasmus, saint, passion of",1
@@ -689,7 +689,7 @@ subject,count
 "Evarist, saint, life of",1
 "Eve",2
 "Eve, creation of",1
-"evil living",3
+"evil living",2
 "evils of the age",3
 "evils of the time",36
 "evils of the times",34
@@ -700,7 +700,7 @@ subject,count
 "exempla",37
 "Exodus",1
 "Fabian and Sebastian, saints, lives of",2
-"fables",8
+"fables",9
 "fables, beast",2
 "fabliau",3
 "fabliaux",6
@@ -762,6 +762,7 @@ subject,count
 "four-line",5
 "four-line, monorhyme",1
 "fragments",45
+"framents",2
 "frames, literary",2
 "France",1
 "France, crown of",1
@@ -778,13 +779,13 @@ subject,count
 "Fraser, Simon, Sir",1
 "Fremund, saint, life of",2
 "friars",14
-"friars, criticism/satire of",14
+"friars, criticism/satire of",13
 "friars, praise of",1
 "Friday, lore concerning",1
 "Frideswitha, saint, life of",2
 "friends",2
 "friends, faithful",2
-"friends, false",8
+"friends, false",7
 "friends, fickleness of",7
 "friendship",16
 "friendship, deceitfulness of",2
@@ -887,10 +888,10 @@ subject,count
 "Henry III, death of",1
 "Henry IV, attack on",1
 "Henry the VIII, reign of",1
-"Henry V",8
+"Henry V",7
 "Henry V, death of",1
-"Henry VI",13
-"Henry VI, coronation",6
+"Henry VI",14
+"Henry VI, coronation",4
 "Henry VI, coronation of",1
 "Henry VI, entry into London, 1432",1
 "Henry VI, foundation of King’s College",1
@@ -987,7 +988,7 @@ subject,count
 "Innocent I, pope, life of",1
 "inscription, brass",3
 "inscription, ownership",1
-"inscriptions",99
+"inscriptions",102
 "inscriptions, in glass",4
 "instruction",3
 "instruction, father to son",11
@@ -997,7 +998,7 @@ subject,count
 "instruction, religious",35
 "instruction, to servants",1
 "instructional verse",1
-"instructions",1
+"instructions",2
 "instructions, father to son",2
 "instructions, to servants",1
 "insults",1
@@ -1130,6 +1131,7 @@ subject,count
 "liturgical texts, translations",1
 "livery companies",1
 "Llewellen",2
+"Llywelyn ap Gruffudd",2
 "lodging, terms of",1
 "Lollardy",4
 "Lollardy, against",1
@@ -1147,14 +1149,14 @@ subject,count
 "Lord’s Prayer, exposition of",6
 "Louis, duke of Orleans",1
 "Louis, saint",1
-"love",20
+"love",27
 "love letters",39
-"love lyrics",198
+"love lyrics",200
 "love lyrics, satiric",5
 "love songs",1
 "love, carnal evils of",1
 "love, carnal, evils of",2
-"love, constancy in",11
+"love, constancy in",13
 "love, courts of",7
 "love, divine and human",14
 "love, faithful",2
@@ -1173,7 +1175,7 @@ subject,count
 "love, unrequited",12
 "love, values of",1
 "love, vicisitudes of",1
-"love, vicissitudes of",41
+"love, vicissitudes of",42
 "Love, vicissitudes of",1
 "love, virtues of",1
 "love, wounds of",4
@@ -1185,7 +1187,7 @@ subject,count
 "lovers, absence/separation of",23
 "lovers, address to beloved",6
 "lovers, addresses to belove",1
-"lovers, addresses to beloved",184
+"lovers, addresses to beloved",185
 "lovers, advice to",9
 "lovers, death of",9
 "lovers, dialogues",2
@@ -1217,7 +1219,8 @@ subject,count
 "lust",10
 "Lydgate, John",1
 "lying",1
-"Lyric",1
+"Lyric",2
+"lyric",7
 "lyrics",8
 "Macarius, saint",1
 "Machor, saint, life of",1
@@ -1280,6 +1283,7 @@ subject,count
 "Mawryne the monk",1
 "May, poems of",7
 "May, songs of",10
+"medecine",1
 "medicine",44
 "medicine, veterinary",3
 "meditations",4
@@ -1288,6 +1292,7 @@ subject,count
 "men, worthy types of",2
 "merchants",7
 "merchants, against",1
+"Mercury",1
 "mercy",10
 "mercy, petition for",2
 "mercy, plea for",4
@@ -1301,7 +1306,7 @@ subject,count
 "millers",1
 "minstrels",1
 "miracle plays",2
-"miracles",41
+"miracles",43
 "mistress, false",1
 "mnemonics",7
 "moderation",5
@@ -1339,6 +1344,7 @@ subject,count
 "Nativity, songs of the (not carols)",2
 "Nature",6
 "Nebuchadnezzar",1
+"Neville, Richard, 16th Earl of Warwick",1
 "Neville, Robert de",1
 "Neville’s Cross, battle of",2
 "New Year",1
@@ -1367,7 +1373,7 @@ subject,count
 "obedience",5
 "Occasional poems",1
 "occasional poems",1
-"occasional verse",76
+"occasional verse",75
 "occupations",7
 "odes",1
 "old age",7
@@ -1395,7 +1401,7 @@ subject,count
 "ownership",1
 "Owre, Donald",1
 "pageant verse",1
-"pageant verses",43
+"pageant verses",42
 "pageants",2
 "pageants, accounts of",1
 "pagent verses",1
@@ -1409,13 +1415,13 @@ subject,count
 "parodies",12
 "parodies, of religious texts",2
 "parody",4
-"Passion",27
+"Passion",28
 "Passion, carols of",1
 "Passion, carols/songs of",7
 "Passion, exhortation to worship by",2
 "Passion, meditations o",1
 "Passion, meditations of",3
-"Passion, meditations on",31
+"Passion, meditations on",30
 "Passion, narratives of",1
 "Passion, prayers of",3
 "Passion, worship of",1
@@ -1448,7 +1454,7 @@ subject,count
 "Pelagia, saint",1
 "Pelagia, saint, life of",1
 "penance",25
-"penitence",18
+"penitence",17
 "Pentecost, feast of",1
 "Percy, Henry",1
 "Percy, Henry (Hotspur)",1
@@ -1475,7 +1481,7 @@ subject,count
 "Piers Toller",1
 "Pilate, life of",1
 "pilgrimage",1
-"pilgrims/pilgrimage",62
+"pilgrims/pilgrimage",66
 "pity",1
 "plague",3
 "pleasures",1
@@ -1497,7 +1503,7 @@ subject,count
 "prayer, abuse of",1
 "prayer, for gifts of the Holy Ghost",1
 "prayer, value of",3
-"prayers",65
+"prayers",71
 "prayers to Christ",1
 "prayers, against peril",5
 "prayers, asked on behalf of scribes",13
@@ -1507,6 +1513,7 @@ subject,count
 "prayers, by Christ and his Passion",1
 "prayers, by the Holy Name",1
 "prayers, domestic",9
+"prayers, for authors/scribes",1
 "prayers, for gifts of the Holy Ghost",2
 "prayers, for pardon",2
 "prayers, for protection",11
@@ -1515,7 +1522,7 @@ subject,count
 "prayers, for use in church",16
 "prayers, occasional",1
 "prayers, of Christ",3
-"prayers, of confession",10
+"prayers, of confession",11
 "prayers, of saints",2
 "prayers, of sinners",2
 "prayers, on sacraments",2
@@ -1523,17 +1530,17 @@ subject,count
 "prayers, special occaisions",1
 "prayers, special occasions",9
 "prayers, thanksgiving",4
-"prayers, to Christ",65
+"prayers, to Christ",66
 "prayers, to God",20
 "prayers, to guardian angel",10
 "prayers, to Holy Ghost",2
-"prayers, to Jesus",3
+"prayers, to Jesus",5
 "prayers, to saints",26
 "prayers, to Trinity",9
 "prayers, to Virgin Mary",76
 "prayers, to Virgin Mary, and saints",3
 "preaching",4
-"precepts",62
+"precepts",61
 "precepts, moral",16
 "prefaces",1
 "prefaces, to prose texts",1
@@ -1541,7 +1548,7 @@ subject,count
 "pride, against",2
 "priesthood",2
 "princes, advice to",8
-"princes, fall of",2
+"princes, fall of",3
 "printers, comments by",3
 "printers’ prologues",1
 "prison/prisoners",7
@@ -1551,9 +1558,10 @@ subject,count
 "prologues",40
 "prologues, printer’s",1
 "prologues, to prose texts",8
-"prophecies",32
+"prophecies",33
 "prophecies, Biblical",1
 "prophecies, political",37
+"prophecy",2
 "prophecy, political",2
 "prophesies",2
 "prophesies, political",1
@@ -1585,7 +1593,7 @@ subject,count
 "rebellion of 1469",1
 "recipes",1
 "recipes, culinary",5
-"recipes, domestic",1
+"recipes, domestic",2
 "recipes, medical",11
 "recipes, medicinal",1
 "redemption",3
@@ -1610,14 +1618,14 @@ subject,count
 "rhetoric",1
 "ribaldry",14
 "ribaudry",1
-"Richard II",2
+"Richard II",3
 "Richard II, burial of",2
 "Richard II, deposition of",2
 "Richard III",2
 "Richard III, as duke of York, attack on",1
 "Richard of Chichester, saint",1
 "Richard, earl of Warwick",1
-"riddles",37
+"riddles",38
 "ring inscriptions",2
 "Ripon, abbey of",1
 "Rivers, Earl, Anthony Woodville, Lord Scales and second Earl Rivers",1
@@ -1632,7 +1640,7 @@ subject,count
 "romance",2
 "Romance",1
 "romances",100
-"Romances",1
+"Romances",2
 "Rome",2
 "Rome, city of",1
 "Rome, example of",1
@@ -1649,7 +1657,7 @@ subject,count
 "sacraments",6
 "sacrifice",1
 "Saint Andrea",1
-"Saint Anne",1
+"Saint Anne",2
 "Saint Bernard",2
 "Saint Cecilia",2
 "saints",2
@@ -1657,7 +1665,7 @@ subject,count
 "saints, prayers to",6
 "saints᾿s lives",1
 "saints’ days",2
-"saints’ lives",250
+"saints’ lives",257
 "saint’s life",2
 "salvation",1
 "salvation, enemies of",1
@@ -1704,7 +1712,7 @@ subject,count
 "scripture, translations of",2
 "Scrope, lady",1
 "Scrope, Richard le, archbishop of York",1
-"seasons",8
+"seasons",9
 "seasons, of church year",4
 "seasons, winter",1
 "Sebastian, saint",2
@@ -1721,8 +1729,8 @@ subject,count
 "sermons",13
 "sermons texts, Gospel",2
 "sermons, verse",1
-"sermons, verse in",371
-"sermons, verses in",3
+"sermons, verse in",376
+"sermons, verses in",6
 "servants",3
 "servants, advice to",2
 "servants, instructions to",3
@@ -1749,7 +1757,7 @@ subject,count
 "sin, consequences of",6
 "sin, results of",1
 "sinner",1
-"sinner, lament of",16
+"sinner, lament of",17
 "sinners",2
 "sinners’ laments",1
 "sins",8
@@ -1869,7 +1877,7 @@ subject,count
 "Thomas of Canterbury, saint, miracles of",1
 "Thomas of Canterbury, saint, prayers to",1
 "Thomas of Canterbury, saint, song in honour of",1
-"Thomas the apostle, saint",2
+"Thomas the apostle, saint",3
 "Thomas the apostle, saint, life of",3
 "Thomas, Duke of Gloucester",1
 "Thomas, saint",1
@@ -1887,7 +1895,7 @@ subject,count
 "tongue, destructive power of",20
 "tongue, hasty",3
 "tongue, wise use of",1
-"tongue, woman’s",2
+"tongue, woman’s",1
 "tools, carpenters’",1
 "toothache",1
 "Tottenham (Gloucs.), feast of",1
@@ -1906,7 +1914,7 @@ subject,count
 "transitoriness, of earthly life",1
 "transitoriness, of earthly love",2
 "transitoriness, of lif",1
-"transitoriness, of life",41
+"transitoriness, of life",42
 "transitoriness, of world",46
 "translating",1
 "translations",325
@@ -1928,7 +1936,7 @@ subject,count
 "Troilus and Cressida, story of",3
 "Troilus and Criseide, story of",1
 "Troilus and Criseyde, story of",1
-"Troy, legends of",5
+"Troy, legends of",7
 "Troy, Matter of",1
 "Troy, tales of",3
 "truth",1
@@ -1965,7 +1973,7 @@ subject,count
 "Victor, William and Grace, of St. Alban’s",1
 "Vincent, saint, life of",2
 "virelais",5
-"Virgin Mary",24
+"Virgin Mary",23
 "Virgin Mary and Christ, hymns/songs to",1
 "Virgin Mary and Christ, song/prayers to",1
 "Virgin Mary and Christ, songs/prayers to",4
@@ -2004,7 +2012,7 @@ subject,count
 "Virgin Mary, praise of",13
 "Virgin Mary, praise to",2
 "Virgin Mary, prayer to",1
-"Virgin Mary, prayers to",81
+"Virgin Mary, prayers to",80
 "Virgin Mary, Purification of",3
 "Virgin Mary, salutation to",19
 "Virgin Mary, songs in honor of",1
@@ -2024,22 +2032,24 @@ subject,count
 "visions, of the afterlife",2
 "Vital, saint, life of",1
 "Wainfleet, William, Bishop of Winchester (1447-86)",1
+"Wales",2
 "Wales, description of",1
 "Wallace, William",1
 "Wallace, William, sir",1
 "Walsingham, chapel of",1
 "warfare",1
 "warning against rash speech",1
-"warnings",31
+"warnings",33
 "warnings, to sinners",3
 "Wars of the Roses",1
+"Warwick, Richard Neville, Earl of",1
 "Waterford (Ireland)",1
 "wealth",5
 "wealth, dangers of",8
 "wealth, evils of",3
 "wealth, inconstancy of",2
 "wealth, wise use of",7
-"weather",9
+"weather",10
 "Wells, John, of London",1
 "Wenlock, John le, of Luton (Beds.)",1
 "Wenlock, William, of Luton (Canon of St. Paul’s)",1
@@ -2077,10 +2087,10 @@ subject,count
 "wives, erring",2
 "wives, shrewish",3
 "wolves",1
-"women",24
+"women",26
 "women as speakers/narrators",1
 "women, advice to",1
-"women, against",57
+"women, against",56
 "women, as speaker/narrators",1
 "women, as speakers/narrators",69
 "women, authors",5

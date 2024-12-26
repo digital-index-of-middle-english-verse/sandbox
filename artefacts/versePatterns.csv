@@ -1,11 +1,11 @@
 versePatterns,count
 "a",4
-"aa",2757
+"aa",2792
 "aa with quatrain, abba, at end",1
-"aaa",121
+"aaa",130
 "aaa + bcccc",1
 "aaa, with internal rhyme",1
-"aaaa",211
+"aaaa",215
 "aaaaa",23
 "aaaaaa",9
 "aaaaaaa",4
@@ -32,7 +32,7 @@ versePatterns,count
 "aaaabcb",2
 "aaaabccb",1
 "aaaabcccb",5
-"aaab",273
+"aaab",276
 "aaab + bb",2
 "aaaba",1
 "aaabaaab",7
@@ -42,7 +42,7 @@ versePatterns,count
 "aaabab",10
 "aaabababab",1
 "aaababcccbcbdbdb",1
-"aaabb",20
+"aaabb",22
 "aaabbab",1
 "aaabbb",7
 "aaabbbb",1
@@ -64,7 +64,7 @@ versePatterns,count
 "aaabccddb",1
 "aab",40
 "aaba",7
-"aabaab",25
+"aabaab",24
 "aabaabaabaabcdddc",1
 "aabaabbaab",2
 "aabaabbab",6
@@ -82,7 +82,7 @@ versePatterns,count
 "aababbab",1
 "aabaccaaa",1
 "aabaccdc",1
-"aabb",115
+"aabb",116
 "aabba",17
 "aabbaa",2
 "aabbaaa",1
@@ -142,7 +142,7 @@ versePatterns,count
 "abaab",3
 "abaabbcdeed",1
 "abaac",1
-"abab",492
+"abab",498
 "abab with all b-rhymes rhyming with each other",1
 "ababa",4
 "ababaa",1
@@ -210,7 +210,6 @@ versePatterns,count
 "ababbcbc",445
 "ababbcbc (roughly)",1
 "ababbcbc with some interlocking rhymes",1
-"ababbcbc>",1
 "ababbcbcbdddb",1
 "ababbcbccdcd",3
 "ababbcbcd",1
@@ -219,7 +218,7 @@ versePatterns,count
 "ababbcbcdedeefef",1
 "ababbcbcdeeed",10
 "ababbcbd",2
-"ababbcc",725
+"ababbcc",732
 "ababbccb",4
 "ababbccbc",1
 "ababbccbcb",1
@@ -273,7 +272,7 @@ versePatterns,count
 "abacc",1
 "abaccca",2
 "abacdcdb",1
-"abb",5
+"abb",6
 "abba",16
 "abba including internal rhyme in second line",1
 "abbaa",1
@@ -322,7 +321,7 @@ versePatterns,count
 "abcdc",1
 "abcdebfd",1
 "acbaa",1
-"alliteration",25
+"alliteration",27
 "alliteration, internal rhyme",1
 "alliterative",4
 "babbcc",1
@@ -345,6 +344,7 @@ versePatterns,count
 "monorhymed",1
 "monorhyming",4
 "nine-line",2
+"quatrain",1
 "rhyme royal",4
 "roughly ababccbddb",1
 "seven-line",4

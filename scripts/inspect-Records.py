@@ -1,6 +1,7 @@
 # This script walks a transect through item records in Records.xml, from the
 # top level down to witness keys. Unexpected data types and structures are
-# reported.
+# reported. (These warnings are less important, now that the XML file is
+# validated by schema.)
 
 # Selected fields (DIMEV numbers, subjects, verse forms, and verse patterns)
 # are extracted into a new dictionary for further analysis. Counts are produced
@@ -43,7 +44,6 @@ def xml_to_dict(xml_string):
 
 def warn(msg, dimevID):
     msg = 'WARNING: ' + msg
-    print(msg)
     warning_log.append(msg)
 
 def get_valid_input(prompt, options):
@@ -117,7 +117,6 @@ for idx in range(len(items)):
     if type(item) != dict:
         msg = 'Unexpected data type. <record> is not a dictionary'
         warn(msg, '')
-        print(item, '\n')
         item_not_dict += 1
     else:
         if '@xml:id' not in item:
@@ -156,19 +155,16 @@ for idx in range(len(items)):
             if 'witnesses' not in item:
                 msg = f'Unexpected data structure. {dimevID} has no element <witnesses>.'
                 warn(msg, dimevID)
-                print(item, '\n')
                 missing_witnesses += 1
             else:
                 if type(item['witnesses']) != dict:
                     msg = f'Unexpected data type. The element <witnesses> in {dimevID} is not a dictionary.'
                     warn(msg, dimevID)
-                    print(item['witnesses'], '\n')
                     witnesses_not_dict += 1
                 else:
                     if 'witness' not in item['witnesses']:
                         msg = f'Unexpected data structure. The element <witnesses> in {dimevID} has no child <witness>.'
                         warn(msg, dimevID)
-                        print(item['witnesses'], '\n')
                         witnesses_without_child += 1
                     else:
                         witnesses = item['witnesses']['witness']
@@ -327,8 +323,6 @@ for dimevID in hit_list:
                     title = item['titles']['title']
                     if type(title) == list:
                         title = title[0]
-                else:
-                    title = item['title']
                 if type(title) == str:
                     title = strip_italics(title)
     msg = '- ' + title + ' (' + dimevID + '): ' + str(len(item_records[dimevID]['witnesses']))

@@ -1,6 +1,6 @@
 verseForms,count
 "66 long lines in groups ranging from a couplet to six mono-rhyming lines; written as short lines in which even-numbered lines rhyme, abcb to abcbdbebfbgb",1
-"8-line",1
+"8-line",2
 "aa",2
 "aaa",1
 "aaaa",4
@@ -10,14 +10,16 @@ verseForms,count
 "ababbcbc",2
 "ababbcc",1
 "alliterating",1
-"alliteration",47
+"alliteration",48
 "alliterative",18
 "alliterative unrhymed",1
 "alliterative, unrhymed",1
-"couplet",30
-"couplets",65
+"blank verse",1
+"carol",1
+"couplet",46
+"couplets",88
 "cross-rhymed quatrain",2
-"eight-line",760
+"eight-line",758
 "eight-line stanza",1
 "eight-line?",1
 "eighteen-line",2
@@ -26,24 +28,25 @@ verseForms,count
 "eleven-line stanza",1
 "envoys",1
 "fifteen-line",3
-"five-line",163
+"five-line",164
 "five-line stanza",2
 "five-line stanzas",2
 "four line",1
-"four-line",1267
+"four-line",1275
 "four-line, mono-rhyme",1
 "four-line, monorhyme",21
 "fourteen-line",73
 "heroic stanza",1
 "irregular",67
 "irregular, mostly two-line",1
+"mixed",7
 "mixed couplets and cross-rhymes quatrains",1
 "mono-rhyme",1
-"monorhyme",33
+"monorhyme",36
 "Monorhymed quatrain",1
 "Monorhymed quatrain with internal rhyme (or eight lines of alternating rhyme)",1
 "Monorhymed quatrain with internal rhyme (or twelve lines of alternating rhyme)",1
-"monorhyming",4
+"monorhyming",14
 "nine lines",2
 "nine-line",62
 "nine-line stanza",1
@@ -51,10 +54,11 @@ verseForms,count
 "occasional verse",1
 "one-line",12
 "prologues",1
-"quatrain",2
+"quatrain",6
 "quatrain, monorhyme",2
 "Quatrain, monorhyming",1
-"rhyme royal",17
+"quatrains",1
+"rhyme royal",24
 "rhyming",1
 "rhyming couplet",1
 "rhyming couplets",3
@@ -69,7 +73,7 @@ verseForms,count
 "seven-line stanza",1
 "seven-line?",1
 "seven=line",1
-"six-line",373
+"six-line",372
 "six-lines",2
 "sixteen-line",11
 "sixteen-line stanza",2
@@ -85,9 +89,10 @@ verseForms,count
 "thirteen-line",24
 "thirteen-line stanza",1
 "Thirty long lines in groups ranging from a couplet to six mono-rhyming lines; written as short lines in which even-numbered lines rhyme, abcb to abcbdbebfbgb",1
-"three-line",178
+"three-line",179
 "three-line stanza",1
 "three-line stanzas",1
+"triplets",1
 "twelve-line",111
 "twelve-line stanza",4
 "twelve-line stanzas",1
@@ -96,8 +101,8 @@ verseForms,count
 "twenty-four-line stanza",1
 "twenty-one line",4
 "twenty-one-line",2
-"two-line",2716
-"two-line>",2
+"two-line",2715
+"two-line>",1
 "two-line?",1
 "two-lines",1
 "unrhymed",1
