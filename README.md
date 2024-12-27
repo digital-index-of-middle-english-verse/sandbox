@@ -7,6 +7,7 @@ All this is very much work in progress.
 An inspiration is Andrew Dunning's [prototype](https://github.com/medievallibraries/latin-writers) for a digital edition of Richard Sharpe, *A Handlist of Latin Writers of Great Britain and Ireland Before 1540*.
 
 # Repository contents
+
 - `artefacts/`
   Warnings, reports, and csv artefacts of the scripts in `scripts/`.
   Transformed source data are written instead to `docs/` for use by the Jekyll website builder.
@@ -21,6 +22,10 @@ An inspiration is Andrew Dunning's [prototype](https://github.com/medievallibrar
   Scripts presume that the `dimev` repository has been cloned to a directory sibling to this one.
 
 # Technical direction
+
+The following is a summary of plans for DIMEV data.
+A fuller treatment is provided in the [Technical Introduction](https://github.com/digital-index-of-middle-english-verse/dimev/releases/latest/download/documentation.pdf).
+
 - `Records.xml` will be atomized (one file per `<record>`) to make effective use of `git` distributed version control.
   Data will be parsed to identify irregularities, remediated (manually where necessary), and written to a new consistent structure.
   For instance, any field that may be an array must be an array (even if an array of one).
