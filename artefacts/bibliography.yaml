@@ -57,11 +57,8 @@
   collection-title: EETS e.s.
   issued:
     date-parts:
-    - - 1973
-  publisher: 51 (1887), repr. 1973
-  original-date:
-    date-parts:
     - - 1887
+  publisher: 51 (1887), repr. 1973
 - id: Adams1924
   type: book
   author:
@@ -567,7 +564,8 @@
   issued:
     date-parts:
     - - 1775
-  publisher: 'London: Blyth, Sewell, Evans, 1775'
+  publisher-place: London
+  publisher: Blyth, Sewell, Evans
 - id: Atkins1922
   type: book
   editor:
@@ -676,7 +674,9 @@
   issued:
     date-parts:
     - - 1990
-  publisher: 'Cambridge: Cambridge University Press, 1990, 179-97'
+  page: 179-97
+  publisher-place: Cambridge
+  publisher: Cambridge University Press
 - id: Aytoun1858
   type: book
   author:
@@ -1039,11 +1039,8 @@
   collection-title: EETS e.s.
   issued:
     date-parts:
-    - - 1965
-  publisher: 76 (1899), repr. 1965
-  original-date:
-    date-parts:
     - - 1889
+  publisher: 76 (1899), repr. 1965
 - id: BatesonH1912
   type: book
   editor:
@@ -1080,7 +1077,9 @@
   issued:
     date-parts:
     - - 1940
-  publisher: 'Long New York: NYU Press, 1940: 167-81'
+  page: 167-81
+  publisher-place: New York
+  publisher: New York University Press
 - id: Baugh1949
   type: chapter
   author:
@@ -1096,7 +1095,9 @@
   issued:
     date-parts:
     - - 1949
-  publisher: 'Baltimore: Johns Hopkins, 1949: 200-07'
+  page: 200-07
+  publisher-place: Baltimore
+  publisher: Johns Hopkins
 - id: Baugh1956
   type: book
   author:
@@ -1282,7 +1283,8 @@
   issued:
     date-parts:
     - - 1950
-  publisher: 'Edinburgh: Edinburgh Bibliographical Society, 1950'
+  publisher-place: Edinburgh
+  publisher: Edinburgh Bibliographical Society
 - id: Beatty1902
   type: book
   editor:
@@ -1968,7 +1970,8 @@
   issued:
     date-parts:
     - - 1881
-  publisher: 'London: Elliot Stock, 1881'
+  publisher-place: London
+  publisher: Elliot Stock
 - id: Blake1972
   type: book
   editor:
@@ -2223,7 +2226,8 @@
   issued:
     date-parts:
     - - 1926
-  publisher: 'Oxford: Clarendon, 1926'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Bodleian1955
   type: article-journal
   title: A Poetry Pasty
@@ -3085,11 +3089,8 @@
   collection-title: EETS o.s.
   issued:
     date-parts:
-    - - 1973
-  publisher: 115 (1900), repr. 1973
-  original-date:
-    date-parts:
     - - 1900
+  publisher: 115 (1900), repr. 1973
 - id: Brandl1880
   type: book
   author:
@@ -3307,7 +3308,8 @@
   issued:
     date-parts:
     - - 1975
-  publisher: 'London: Scolar Press, 1975'
+  publisher-place: London
+  publisher: Scolar Press
 - id: BrewerC1994
   type: chapter
   author:
@@ -3321,7 +3323,8 @@
   issued:
     date-parts:
     - - 1994
-  publisher: 'Cambridge: D. S. Brewer, 1994'
+  publisher-place: Cambridge
+  publisher: D. S. Brewer
 - id: Brewster1858
   type: book
   editor:
@@ -3453,11 +3456,8 @@
   collection-title: EETS o.s.
   issued:
     date-parts:
-    - - 1967
-  publisher: 8 (1865), repr. 1967
-  original-date:
-    date-parts:
     - - 1865
+  publisher: 8 (1865), repr. 1967
 - id: Bronson1907
   type: book
   editor:
@@ -3652,7 +3652,9 @@
   issued:
     date-parts:
     - - 1913
-  publisher: 'Boston and London: Ginn, 1913: 105-17'
+  page: 105-17
+  publisher-place: Boston and London
+  publisher: Ginn
 - id: Brown1915a
   type: article-journal
   author:
@@ -3774,7 +3776,9 @@
   issued:
     date-parts:
     - - 1929
-  publisher: 'Minneapolis: University of Minnesota Press, 1929: 362-74'
+  page: 362-74
+  publisher-place: Minneapolis
+  publisher: University of Minnesota Press
 - id: Brown1931
   type: article-journal
   author:
@@ -3875,7 +3879,9 @@
   issued:
     date-parts:
     - - 1941
-  publisher: 'Chicago: University of Chicago, 1941: 447-85'
+  page: 447-85
+  publisher-place: Chicago
+  publisher: University of Chicago
 - id: BrownJTT1896
   type: book
   author:
@@ -4225,7 +4231,9 @@
   issued:
     date-parts:
     - - 1929
-  publisher: 'Minneapolis: University of Minnesota Press, 1929: 320-39'
+  page: 320-39
+  publisher-place: Minneapolis
+  publisher: University of Minnesota Press
 - id: Brydges1805-09
   type: book
   author:
@@ -4601,7 +4609,9 @@
   issued:
     date-parts:
     - - 1961
-  publisher: 'Philadelphia: University of Pennsylvania Press, 1961: 285-98'
+  page: 285-98
+  publisher-place: Philadelphia
+  publisher: University of Pennsylvania Press
 - id: Buhler1961b
   type: article-journal
   author:
@@ -4770,7 +4780,8 @@
   issued:
     date-parts:
     - - 1902
-  publisher: 'Hallem a.d.S., 1902: 442-78'
+  page: 442-78
+  publisher: Hallem a.d.S., 1902
 - id: Bulbring1905
   type: article-journal
   author:
@@ -5467,7 +5478,8 @@
   issued:
     date-parts:
     - - 1036
-  publisher: 'San Marino, CA: Henry E. Huntington Library, 1936'
+  publisher-place: San Marino, CA
+  publisher: Henry E. Huntington Library
 - id: Champion1923-24
   type: book
   author:
@@ -5547,12 +5559,12 @@
     given: Frederick James
   number-of-volumes: '3'
   title: A Parallel-Text Edition of Chaucer’s Minor Poems
-  collection-title: Chaucer Society
+  collection-title: Chaucer Society, 1st ser.
   issued:
     date-parts:
     - - 1967
-  publisher: '1st. ser. 21, 57, 58. London: Trübner, n.d. repr. New York and London:
-    Johnson, 1967'
+  publisher: '21, 57, 58. London: Trübner, n.d. repr. New York and London: Johnson,
+    1967'
 - id: ChaucerSoc.22
   type: book
   editor:
@@ -5650,11 +5662,13 @@
 - id: ChaucerSoc.1900
   type: book
   title: Essays on Chaucer
-  collection-title: Chaucer Society
+  collection-title: Chaucer Society, 2nd ser.
   issued:
     date-parts:
     - - 1900
-  publisher: '2nd ser. 2, 9, 16, 18-19, 29. London: the Society, 1900'
+  collection-number: 2, 9, 16, 18, 19, 29
+  publisher-place: London
+  publisher: the Society
 - id: Chaytor1907-08
   type: article-journal
   author:
@@ -5693,7 +5707,8 @@
   issued:
     date-parts:
     - - 2003
-  publisher: 'London: V & A; New York: Harry N. Abrams, 2003: 371'
+  page: '371'
+  publisher: 'London: V & A; New York: Harry N. Abrams, 2003'
 - id: Chener1860
   type: article-journal
   author:
@@ -5955,7 +5970,9 @@
   issued:
     date-parts:
     - - 1974
-  publisher: 'Toronto: Pontifical Institute of Medieval Studies, 1974: 248-61'
+  page: 248-61
+  publisher-place: Toronto
+  publisher: Pontifical Institute of Medieval Studies
 - id: Collier1836
   type: book
   author:
@@ -6117,7 +6134,8 @@
   issued:
     date-parts:
     - - 1809
-  publisher: 'Oxford: Collingwood,1809'
+  publisher-place: Oxford
+  publisher: Collingwood
 - id: Conybeare1814
   type: article-journal
   author:
@@ -6486,7 +6504,9 @@
   issued:
     date-parts:
     - - 1922
-  publisher: 'Oxford, Clarendon Press: 1922, 70-89'
+  page: 70-89
+  publisher-place: Oxford
+  publisher: Clarendon Press
 - id: Cowper1875
   type: book
   editor:
@@ -6600,22 +6620,26 @@
   number-of-volumes: '2'
   title: The Maitland Folio Manuscript, Containing Poems by Sir Richard Maitland,
     Dunbar, Douglas, Henryson, and others
-  collection-title: Scottish Text Society
+  collection-title: Scottish Text Society, n.s.
   issued:
     date-parts:
     - - 1919
-  publisher: 'n.s. 7 (1919), 20 (1927); Edinburgh and London: Blackwood, 1919, 1927'
+  collection-number: 7, 20
+  publisher-place: Edinburgh and London
+  publisher: Blackwood
 - id: Craigie1920
   type: book
   author:
   - family: Craigie
     given: William Alexander
   title: The Maitland Quarto Manuscript
-  collection-title: Scottish Text Society
+  collection-title: Scottish Text Society, n.s.
   issued:
     date-parts:
     - - 1920
-  publisher: 'n.s. 9. Edinburgh and London: Blackwood, 1920'
+  collection-number: '9'
+  publisher-place: Edinburgh and London
+  publisher: Blackwood
 - id: Craigie1923
   type: book
   author:
@@ -6633,12 +6657,14 @@
     given: William Alexander
   number-of-volumes: '2'
   title: 'The Asloan Manuscript: A Miscellany in Prose and Verse'
-  collection-title: Scottish Text Society
+  collection-title: Scottish Text Society, n.s.
   issued:
     date-parts:
     - - 1923
     - - 1925
-  publisher: 'n.s. 14, 16. Edinburgh, London: Blackwood, 1923, 1925'
+  collection-number: 14, 16
+  publisher-place: Edinburgh, London
+  publisher: Blackwood
 - id: Craigie1939
   type: book
   editor:
@@ -6846,8 +6872,9 @@
   issued:
     date-parts:
     - - 1995
-  publisher: 'San Marino, CA & Tokyo: Huntington Library & Yushodo Co., Ltd., 1995.
-    307-26'
+  page: 307-26
+  publisher-place: San Marino, CA & Tokyo
+  publisher: Huntington Library & Yushodo Co., Ltd.
 - id: Davidson1988
   type: book
   author:
@@ -7063,7 +7090,8 @@
   issued:
     date-parts:
     - - 1996
-  publisher: 'Kalamazoo, MI: Medieval Institute Publications, 1996'
+  publisher-place: Kalamazoo, MI
+  publisher: Medieval Institute Publications
 - id: Dean2000
   type: book
   editor:
@@ -7559,11 +7587,13 @@
   - family: Clay
     given: John William
   title: Yorkshire church notes, 1619-1631
+  collection-title: Record Series
   issued:
     date-parts:
     - - 1904
-  publisher: '[Leeds]: The Yorkshire Archaeological Society Record Society Series
-    34, 1904'
+  collection-number: '34'
+  publisher-place: '[Leeds]'
+  publisher: The Yorkshire Archaeological Society
 - id: Dolman1886
   type: article-journal
   author:
@@ -7771,7 +7801,8 @@
   issued:
     date-parts:
     - - 1995
-  publisher: 'San Marino, CA & Tokyo: Huntington Library & Yushodo Co., Ltd., 1995'
+  publisher-place: San Marino, CA & Tokyo
+  publisher: Huntington Library & Yushodo Co., Ltd.
 - id: Drake1868
   type: article-journal
   author:
@@ -8491,7 +8522,9 @@
   issued:
     date-parts:
     - - 1997
-  publisher: 'Dublin: Four Courts Press, 1997: 26-43'
+  page: 26-43
+  publisher-place: Dublin
+  publisher: Four Courts Press
 - id: Edwards2001
   type: article-journal
   author:
@@ -8597,14 +8630,11 @@
   collection-title: EETS e.s.
   issued:
     date-parts:
-    - - 1973
+    - - 1867
   publisher: '2 (1867), 7 (1869), 14 (1871), 23 (1874), repr. 1973; issued jointly
     by the Philological Society, the EETS, and the Chaucer Society [2nd ser. 1, 4-5,
     25] London: Trübner; ed. note: with rare exceptions, entries from these volumes
     are identical; where variants occur, both editions are cited'
-  original-date:
-    date-parts:
-    - - 1867
 - id: EllisAJ1868
   type: chapter
   author:
@@ -9467,7 +9497,8 @@
   issued:
     date-parts:
     - - 1987
-  publisher: 'Norman, OK: Pilgrim, 1987'
+  publisher-place: Norman, OK
+  publisher: Pilgrim
 - id: FletcherAJ1976
   type: article-journal
   author:
@@ -9637,7 +9668,9 @@
   issued:
     date-parts:
     - - 1894
-  publisher: 'Leipzig: Deit, 1894: 52-84'
+  page: 52-84
+  publisher-place: Leipzig
+  publisher: Deit
 - id: Flugel1895
   type: book
   editor:
@@ -9647,7 +9680,9 @@
   issued:
     date-parts:
     - - 1895
-  publisher: '1 Bd. Halle: Niemayer, 1895'
+  volume: '1'
+  publisher-place: Halle
+  publisher: Niemayer
 - id: Flugel1903
   type: article-journal
   author:
@@ -9771,7 +9806,9 @@
   issued:
     date-parts:
     - - 1901
-  publisher: 'Oxford: Clarendon, 1901: 86-106'
+  page: 86-106
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Forster1902
   type: article-journal
   author:
@@ -9967,8 +10004,9 @@
   issued:
     date-parts:
     - - 1940
+  page: 149-57
   publisher: 'New York: NYU Press; London: Humphrey Milford, Oxford University Pres,
-    1940: 149-57'
+    1940'
 - id: FosterG1949
   type: article-journal
   author:
@@ -11300,7 +11338,9 @@
   issued:
     date-parts:
     - - 1963
-  publisher: 'London: Methuen, 1963: 77-98'
+  page: 77-98
+  publisher-place: London
+  publisher: Methuen
 - id: Garnett1903
   type: book
   author:
@@ -11732,7 +11772,8 @@
   issued:
     date-parts:
     - - 1901
-  publisher: 'Oxford: Clarendon, 1901'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Gollancz1891
   type: book
   editor:
@@ -11904,11 +11945,13 @@
   - family: Görlach
     given: Manfred
   title: The Textual Tradition of the South English Legendary
-  collection-title: Leeds Texts and Monographs
+  collection-title: Leeds Texts and Monographs, n.s.
   issued:
     date-parts:
     - - 1974
-  publisher: 'n.s. 6. Leeds: University of Leeds, 1974'
+  collection-number: '6'
+  publisher-place: Leeds
+  publisher: University of Leeds
 - id: Gough1901
   type: book
   editor:
@@ -11943,11 +11986,8 @@
   collection-title: EETS e.s.
   issued:
     date-parts:
-    - - 1973
-  publisher: 119 (1935), repr. 1973
-  original-date:
-    date-parts:
     - - 1935
+  publisher: 119 (1935), repr. 1973
 - id: Graves1850
   type: article-journal
   author:
@@ -12056,7 +12096,8 @@
   issued:
     date-parts:
     - - 1974
-  publisher: 'London: Allen and Unwin, 1974'
+  publisher-place: London
+  publisher: Allen and Unwin
 - id: Gray1975
   type: book
   editor:
@@ -12082,7 +12123,8 @@
   issued:
     date-parts:
     - - 1981
-  publisher: 'Oxford: Clarendon, 1981'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Gray1985
   type: book
   author:
@@ -12132,7 +12174,7 @@
   issued:
     date-parts:
     - - 1814
-  publisher: London, 1814
+  publisher-place: London
 - id: Greenberg1961
   type: book
   author:
@@ -12527,7 +12569,9 @@
   issued:
     date-parts:
     - - 2010
-  publisher: 'Donington, Lincolnshire: Shaun Tyas, 2010. 251-70'
+  page: 251-70
+  publisher-place: Donington, Lincolnshire
+  publisher: Shaun Tyas
 - id: Griffiths1995
   type: article-journal
   author:
@@ -13684,7 +13728,8 @@
   issued:
     date-parts:
     - - 1975
-  publisher: 'Oxford: Oxford University Press, 1975'
+  publisher-place: Oxford
+  publisher: Oxford University Press
 - id: Hanford1918
   type: article-journal
   author:
@@ -13774,7 +13819,9 @@
   issued:
     date-parts:
     - - 1996
-  publisher: 'San Marino, Calif.: Huntington Library, 1996. 11-35'
+  page: 11-35
+  publisher-place: San Marino, Calif.
+  publisher: Huntington Library
 - id: Hanna1993
   type: article-journal
   author:
@@ -13849,7 +13896,9 @@
   issued:
     date-parts:
     - - 2013
-  publisher: 'Los Angeles: Marymount Institute Press, 2013. 31-44'
+  page: 31-44
+  publisher-place: Los Angeles
+  publisher: Marymount Institute Press
 - id: Hanna2013b
   type: book
   editor:
@@ -13903,10 +13952,13 @@
     given: Phillipa
   title: 'The Heege Manuscript: A Facsimile of National Library of Scotland MS Advocates
     19.3.1'
+  collection-title: Leeds Texts and Monographs, n.s.
   issued:
     date-parts:
     - - 2000
-  publisher: 'Leeds Texts and Monographs, n.s. 16. Leeds: School of English, 2000'
+  collection-number: '16'
+  publisher-place: Leeds
+  publisher: School of English
 - id: Hardwick1849
   type: book
   author:
@@ -14741,11 +14793,8 @@
   collection-title: EETS o.s.
   issued:
     date-parts:
-    - - 1987
-  publisher: 75 (1881), repr. 1987
-  original-date:
-    date-parts:
     - - 1881
+  publisher: 75 (1881), repr. 1987
 - id: Herrtage1882
   type: book
   editor:
@@ -16502,8 +16551,8 @@
   issued:
     date-parts:
     - - 1982
-  publisher: 'Canberra, London, and Miami, Fla., USA: Australian National University
-    Press, 1982'
+  publisher-place: Canberra, London, and Miami, FL
+  publisher: Australian National University Press
 - id: HughesMJ1943
   type: book
   author:
@@ -17215,7 +17264,8 @@
   issued:
     date-parts:
     - - 1905
-  publisher: 'Cambridge: Cambridge University Press, 1905'
+  publisher-place: Cambridge
+  publisher: Cambridge University Press
 - id: Jenkinson1906
   type: chapter
   author:
@@ -17227,7 +17277,8 @@
   issued:
     date-parts:
     - - 1906
-  publisher: 'Cambridge: Cambridge University Press, 1906'
+  publisher-place: Cambridge
+  publisher: Cambridge University Press
 - id: Jenkinson1906b
   type: book
   author:
@@ -17255,7 +17306,8 @@
   issued:
     date-parts:
     - - 1907
-  publisher: 'Cambridge: Cambridge University Press, 1907'
+  publisher-place: Cambridge
+  publisher: Cambridge University Press
 - id: Jenkinson1907b
   type: book
   author:
@@ -17443,7 +17495,9 @@
   issued:
     date-parts:
     - - 1957
-  publisher: 'Berlin: de Gruyter, 1957: 216-32'
+  page: 216-32
+  publisher-place: Berlin
+  publisher: de Gruyter
 - id: Kalen1923-72
   type: book
   author:
@@ -17838,7 +17892,9 @@
   issued:
     date-parts:
     - - 1920
-  publisher: '1. New York and London: G. P. Putnam’s Sons, 1920'
+  collection-number: '1'
+  publisher-place: New York and London
+  publisher: G. P. Putnam’s Sons
 - id: KingAH1971
   type: article-journal
   author:
@@ -17879,7 +17935,9 @@
   issued:
     date-parts:
     - - 2009
-  publisher: 'Donington: Shaun Tyas, 2009. 182-8'
+  page: 182-8
+  publisher-place: Donington
+  publisher: Shaun Tyas
 - id: Kingdon1879
   type: article-journal
   author:
@@ -18074,7 +18132,8 @@
   issued:
     date-parts:
     - - 2009
-  publisher: 'Kalamazoo, MI: Medieval Institute Publications, 2009'
+  publisher-place: Kalamazoo, MI
+  publisher: Medieval Institute Publications
 - id: Klausner1973
   type: article-journal
   author:
@@ -18632,7 +18691,8 @@
   issued:
     date-parts:
     - - 1986
-  publisher: 'Norman, OK: Pilgrim Books, 1986'
+  publisher-place: Norman, OK
+  publisher: Pilgrim Books
 - id: Kuriyagawa
   type: article-journal
   author:
@@ -19024,7 +19084,7 @@
   issued:
     date-parts:
     - - 1691
-  publisher: London, 1691
+  publisher-place: London
 - id: Lass1965
   type: article-journal
   author:
@@ -19281,7 +19341,8 @@
   issued:
     date-parts:
     - - 1981
-  publisher: Edinburgh, 1981. 251-64
+  page: 251-64
+  publisher-place: Edinburgh
 - id: Lewis2006
   type: article-journal
   author:
@@ -19712,7 +19773,7 @@
   issued:
     date-parts:
     - - 1970
-  publisher: '3\. Berlin: Weidmann, 1881; repr. Zurich: Weidmann, 1970'
+  publisher: '3. Berlin: Weidmann, 1881; repr. Zurich: Weidmann, 1970'
 - id: Luick1917
   type: book
   editor:
@@ -20106,7 +20167,8 @@
   issued:
     date-parts:
     - - 1913
-  publisher: 'Boston and London: Ginn, 1913'
+  publisher-place: Boston and London
+  publisher: Ginn
 - id: MacCracken1913b
   type: article-journal
   author:
@@ -20662,7 +20724,9 @@
   issued:
     date-parts:
     - - 1990
-  publisher: 'Aberdeen: Aberdeen University Press, 1990: 124-42'
+  page: 124-42
+  publisher-place: Aberdeen
+  publisher: Aberdeen University Press
 - id: Markland1818
   type: book
   author:
@@ -20744,7 +20808,8 @@
   issued:
     date-parts:
     - - 1866
-  publisher: 'New York: C. Scribner’s Sons, 1866'
+  publisher-place: New York
+  publisher: C. Scribner’s Sons
 - id: Martin1995
   type: book
   author:
@@ -20983,7 +21048,9 @@
   issued:
     date-parts:
     - - 1901
-  publisher: 'Oxford: Clarendon, 1901: 296-300'
+  page: 296-300
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: McFarlane1957
   type: article-journal
   author:
@@ -21090,7 +21157,8 @@
   issued:
     date-parts:
     - - 1979
-  publisher: 'London: Scolar Press, 1979'
+  publisher-place: London
+  publisher: Scolar Press
 - id: McSparran1979b
   type: book
   editor:
@@ -22210,7 +22278,9 @@
   issued:
     date-parts:
     - - 1997
-  publisher: 'Oxford: Office for Humanities Communication, 1997. 40-54'
+  page: 40-54
+  publisher-place: Oxford
+  publisher: Office for Humanities Communication
 - id: Mosser2004
   type: article-journal
   author:
@@ -22986,7 +23056,8 @@
   issued:
     date-parts:
     - - 1979
-  publisher: 'London: Scolar Press, 1979'
+  publisher-place: London
+  publisher: Scolar Press
 - id: Nott1816
   type: book
   author:
@@ -23540,7 +23611,9 @@
   issued:
     date-parts:
     - - 1957
-  publisher: 'London: Oxford University Press, 1957: 304-19'
+  page: 304-19
+  publisher-place: London
+  publisher: Oxford University Press
 - id: Page1999
   type: book
   editor:
@@ -23723,7 +23796,8 @@
   issued:
     date-parts:
     - - 1978
-  publisher: 'Cambridge: D. S. Brewer, 1978'
+  publisher-place: Cambridge
+  publisher: D. S. Brewer
 - id: Parkes1979-80
   type: chapter
   author:
@@ -23800,7 +23874,9 @@
   issued:
     date-parts:
     - - 1916
-  publisher: 'New York: Columbia University Press, 1916. 431-52'
+  page: 431-52
+  publisher-place: New York
+  publisher: Columbia University Press
 - id: Patterson1916b
   type: article-journal
   author:
@@ -23839,7 +23915,9 @@
   issued:
     date-parts:
     - - 1927
-  publisher: 'New York: Columbia University Press, 1927: 443-88'
+  page: 443-88
+  publisher-place: New York
+  publisher: Columbia University Press
 - id: Paton1912
   type: book
   editor:
@@ -23959,7 +24037,8 @@
   issued:
     date-parts:
     - - 1992
-  publisher: 'Cambridge: D. S. Brewer, 1992'
+  publisher-place: Cambridge
+  publisher: D. S. Brewer
 - id: Pearsall1999
   type: book
   editor:
@@ -23984,7 +24063,9 @@
   issued:
     date-parts:
     - - 2004
-  publisher: 'Cambridge: D.S.Brewer, 2004. 73-99'
+  page: 73-99
+  publisher-place: Cambridge
+  publisher: D.S. Brewer
 - id: Pearsall2021
   type: book
   editor:
@@ -24023,7 +24104,8 @@
   issued:
     date-parts:
     - - 1991
-  publisher: 'Kalamazoo, MI: Western Michigan University for TEAMS, 1991'
+  publisher-place: Kalamazoo, MI
+  publisher: Western Michigan University for TEAMS
 - id: Peck1991
   type: book
   editor:
@@ -24601,7 +24683,9 @@
   issued:
     date-parts:
     - - 1992
-  publisher: 'Tübingen: Francke, 1992: 154-76'
+  page: 154-76
+  publisher-place: Tübingen
+  publisher: Francke
 - id: Pickering1994
   type: article-journal
   author:
@@ -24632,7 +24716,8 @@
   issued:
     date-parts:
     - - 2004
-  publisher: Cambridge and Tokyo, 2004. 223-32
+  page: 223-32
+  publisher-place: Cambridge and Tokyo
 - id: Pickering2013
   type: chapter
   author:
@@ -24650,7 +24735,8 @@
   issued:
     date-parts:
     - - 2013
-  publisher: Brepols, 2013. 277-316
+  page: 277-316
+  publisher-place: Brepols
 - id: Pickering2014
   type: chapter
   author:
@@ -24670,7 +24756,8 @@
   issued:
     date-parts:
     - - 2014
-  publisher: University of Notre Dame Press, 2014. 34-54
+  page: 34-54
+  publisher-place: University of Notre Dame Press
 - id: Pike1883-1911
   type: book
   editor:
@@ -24932,7 +25019,9 @@
   issued:
     date-parts:
     - - 1901
-  publisher: 'Oxford: Clarendon, 1901: 397-407'
+  page: 397-407
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Prinz1911
   type: book
   author:
@@ -25014,7 +25103,8 @@
   issued:
     date-parts:
     - - 1931
-  publisher: 'London: Bernard Quaritch Ltd. 1931'
+  publisher-place: London
+  publisher: Bernard Quaritch Ltd.
 - id: Quiller-Couch1939
   type: book
   author:
@@ -25152,7 +25242,8 @@
   issued:
     date-parts:
     - - 1973
-  publisher: 'Leeds: Boethius Press, 1973'
+  publisher-place: Leeds
+  publisher: Boethius Press
 - id: Rastall1996
   type: book
   author:
@@ -25768,7 +25859,9 @@
   issued:
     date-parts:
     - - 1967
-  publisher: 'Austin, TX: University of Texas, 1967: 131-61'
+  page: 131-61
+  publisher-place: Austin, TX
+  publisher: University of Texas
 - id: Ringler1955
   type: article-journal
   author:
@@ -26739,8 +26832,9 @@
   issued:
     date-parts:
     - - 1975
+  page: 1631-1725
   publisher: 'Vol. 5, fascicle 13. New Haven, CT: Connecticut Academy of Arts and
-    Sciences, 1975: 1385-1536, 1631-1725'
+    Sciences, 1975: 1385-1536'
 - id: Robert1786
   type: book
   editor:
@@ -27814,7 +27908,9 @@
   issued:
     date-parts:
     - - 1887
-  publisher: '114. Vienna, 1887: 231-306'
+  page: 231-306
+  collection-number: '114'
+  publisher-place: Vienna
 - id: Schipper1892-93a-d
   type: book
   editor:
@@ -28282,7 +28378,8 @@
   issued:
     date-parts:
     - - 2000
-  publisher: 'London: British Library, 2000'
+  publisher-place: London
+  publisher: British Library
 - id: Science1927
   type: book
   editor:
@@ -28600,7 +28697,7 @@
   issued:
     date-parts:
     - - 1973
-  publisher: Delmar, NY, 1973
+  publisher-place: Delmar
 - id: Sheeran1975
   type: article-journal
   author:
@@ -29121,7 +29218,9 @@
   issued:
     date-parts:
     - - 1894
-  publisher: '31-33. Edinburgh, London: Blackwood, 1894'
+  collection-number: 31, 32, 33
+  publisher-place: Edinburgh, London
+  publisher: Blackwood
 - id: Skeat1894-97
   type: book
   editor:
@@ -29485,7 +29584,9 @@
   issued:
     date-parts:
     - - 1995
-  publisher: 'Woodbridge, Suffolk and Rochester NY: D. S. Brewer, 1997. 129-41'
+  page: 129-41
+  publisher-place: Woodbridge, Suffolk and Rochester NY
+  publisher: D. S. Brewer
 - id: SmithJS1779
   type: book
   author:
@@ -29849,7 +29950,9 @@
   issued:
     date-parts:
     - - 1991
-  publisher: '11-12. Oxford: Oxford University Press, 1991'
+  collection-number: 11, 12
+  publisher-place: Oxford
+  publisher: Oxford University Press
 - id: Speght1598
   type: book
   editor:
@@ -30893,7 +30996,9 @@
   issued:
     date-parts:
     - - 1995
-  publisher: 'Aldershot, Hampshire: Scolar Press, 1995: 189-206'
+  page: 189-206
+  publisher-place: Aldershot, Hampshire
+  publisher: Scolar Press
 - id: Talbot1961
   type: article-journal
   author:
@@ -31729,8 +31834,9 @@
   issued:
     date-parts:
     - - 1983
-  publisher: 'Cambridge UK and Totowa, NJ: D.S. Brewer and Biblio Distribution Services,
-    1983. 125-41'
+  page: 125-41
+  publisher-place: Cambridge UK and Totowa, NJ
+  publisher: D.S. Brewer and Biblio Distribution Services
 - id: Turville-Petre1989
   type: book
   author:
@@ -31772,11 +31878,12 @@
   - family: Turville-Petre
     given: Thorlac
   title: Pearl
+  collection-title: Exeter Medieval Texts and Studies
   issued:
     date-parts:
     - - 2022
-  publisher: 'Exeter Medieval Texts and Studies. Liverpool: Liverpool University Press,
-    2022'
+  publisher-place: Liverpool
+  publisher: Liverpool University Press
 - id: Turville-Petre2023
   type: article-journal
   author:
@@ -32210,7 +32317,9 @@
   issued:
     date-parts:
     - - 1925
-  publisher: 'Manchester: for the subscribers, 1925: 189-96'
+  page: 189-96
+  publisher-place: Manchester
+  publisher: for the subscribers
 - id: Voigts1985
   type: article-journal
   author:
@@ -32736,7 +32845,9 @@
   issued:
     date-parts:
     - - 2016
-  publisher: 'Kalamazoo, MI: Medieval Institute. 149-79'
+  page: 149-79
+  publisher-place: Kalamazoo, MI
+  publisher: Medieval Institute
 - id: Weis2016c
   type: article-journal
   author:
@@ -32881,7 +32992,9 @@
   issued:
     date-parts:
     - - 1974
-  publisher: 'London: Allen & Unwin, 1974: 230-48'
+  page: 230-48
+  publisher-place: London
+  publisher: Allen & Unwin
 - id: Wenzel1976
   type: article-journal
   author:
@@ -33161,7 +33274,8 @@
   issued:
     date-parts:
     - - 1941
-  publisher: 'Chicago: University of Chicago, 1941'
+  publisher-place: Chicago
+  publisher: University of Chicago
 - id: WhitingBJ1965
   type: chapter
   author:
@@ -33178,7 +33292,8 @@
   issued:
     date-parts:
     - - 1965
-  publisher: 'London: G. Allen and Unwin, 1965'
+  publisher-place: London
+  publisher: G. Allen and Unwin
 - id: WhitingBJ1968
   type: book
   author:
@@ -33517,7 +33632,8 @@
   issued:
     date-parts:
     - - 1981
-  publisher: 'Cambridge: D. S. Brewer, 1981'
+  publisher-place: Cambridge
+  publisher: D. S. Brewer
 - id: WilsonE1983
   type: chapter
   author:
@@ -33534,7 +33650,9 @@
   issued:
     date-parts:
     - - 1983
-  publisher: 'Oxford: Clarendon, 1983: 127-51'
+  page: 127-51
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: WilsonE1990
   type: article-journal
   author:
@@ -34232,7 +34350,7 @@
   issued:
     date-parts:
     - - 1842
-  publisher: Leipzig, 1842
+  publisher-place: Leipzig
 - id: Wright1843
   type: book
   editor:
@@ -34957,7 +35075,8 @@
   issued:
     date-parts:
     - - 1892
-  publisher: 'Berlin: Weidmann, 1892'
+  publisher-place: Berlin
+  publisher: Weidmann
 - id: Zupitza1893a
   type: article-journal
   author:
@@ -35189,7 +35308,9 @@
   issued:
     date-parts:
     - - 2022
-  publisher: 'York: York Medieval Press, 2022, 45-64'
+  page: 45-64
+  publisher-place: York
+  publisher: York Medieval Press
 - id: Connolly2022
   type: book
   editor:
@@ -35402,7 +35523,8 @@
   issued:
     date-parts:
     - - 2014
-  publisher: 'York: York Medieval Press, 2014'
+  publisher-place: York
+  publisher: York Medieval Press
 - id: Horobin2014
   type: book
   editor:
