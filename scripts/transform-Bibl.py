@@ -1,21 +1,20 @@
 # This script attempts to transform Bibliography.xml into valid CSL data.
 # Links to on-line facsimiles are sifted out, for separate handling tbd.
 #
-# Warnings are emitted for unexpected data structures or values.  NOTE:
-# Warnings pertain to irregularities in the bibliographic data itself. Much
-# more relevant: the unprocessed `pubstmt` values. See the option to print
-# those.
+# Warnings are emitted for unexpected data structures or values. This pertains
+# especially to values of `pubstmt`, a nasty free text field in the source XML.
 #
 # Any validation error emitted by jsonschema is written to the end of log file,
 # after warnings thrown during conversion
 #
-# TODO: improve processing, disaggregation of `pubstmt` (a nasty free text
-# field in the source XML)
+# TODO:
 #
-# TODO: improve processing of dates. Extract date range from `pubstmt` content
+# - improve processing, disaggregation of `pubstmt`
+#
+# - improve processing of dates. Extract date range from `pubstmt` content
 # where that field is more accurate than the `date` attribute
 #
-# TODO: decide how to handle reprints
+# - decide how to handle reprints
 
 import os
 import xmltodict
@@ -71,7 +70,7 @@ def convert_item(sourceItem, warning_log):
             authorstmt = sourceItem['authorstmt']
             if authorstmt is None:
                 msg = f'WARNING: Empty `authorstmt` in item {sourceItem["@xml:id"]}.'
-                warning_log.append(msg)
+                # warning_log.append(msg)
             else: # process as dict
                 for agent in ['author', 'editor', 'translator']: # the only valid children of 'authorstmt'
                     if agent in authorstmt:
@@ -241,12 +240,12 @@ def convert_item(sourceItem, warning_log):
                         # Date only
                         if re.fullmatch('\(?' + date_str + '\)?', pubstmt_str):
                             msg = f'WARNING: No publisher or publisher place for monograph {sourceItem["@xml:id"]}'
-                            warning_log.append(msg)
+                            # warning_log.append(msg)
                         # Series number. Date
                         elif re.fullmatch(series_no_str + '\(?' + date_str + '\)?', pubstmt_str):
                             newItem['collection-number'] = re.sub('^' + series_no_str + '\(?' + date_str + '\)?$', r'\1', pubstmt_str).strip()
                             msg = f'WARNING: No publisher or publisher place for monograph {sourceItem["@xml:id"]}'
-                            warning_log.append(msg)
+                            # warning_log.append(msg)
                         # Volume number. Place, Date
                         elif re.fullmatch(vol_str + '\. ' + place_str + ', ' + date_str, pubstmt_str):
                             parts = re.split(',', pubstmt_str)
@@ -295,15 +294,18 @@ def convert_item(sourceItem, warning_log):
                             newItem['publisher'] = re.sub(series_no_str + '[\.,]? ' + place_str + ': ' + publisher_str + ', ' + date_str, r'\3', pubstmt_str)
                         # All other patterns
                         else:
+                            msg = f'WARNING: Unprocessed `pubstmt`: "{pubstmt_str}"'
                             # NOTE: for testing uncomment the next line
-                            # print(pubstmt_str)
+                            # warning_log.append(msg)
                             newItem['publisher'] = pubstmt_str
 
                     # Process book chapters
                     # TODO: parse and disaggregate where possible
+                    # First, extract page ranges where present; then parse with the same logic used for items of type 'book'
                     elif newItem['type'] == 'chapter':
+                        msg = f'WARNING: Unprocessed `pubstmt`: "{pubstmt_str}"'
                         # NOTE: for testing uncomment the next line
-                        # print(pubstmt_str)
+                        warning_log.append(msg)
                         newItem['publisher'] = pubstmt_str
 
                     else:
