@@ -540,6 +540,7 @@
     date-parts:
     - - 1887
   publisher-place: London
+  publisher: Elliot Stock
 - id: Aspin1953
   type: book
   author:
@@ -1411,7 +1412,7 @@
   title: Benham’s Book of Quotations, proverbs, and household words
   issued:
     date-parts:
-    - - 1848
+    - - 1948
   publisher-place: London
   publisher: Harrap
 - id: BenhamA1916
@@ -1790,6 +1791,7 @@
   issued:
     date-parts:
     - - 1885
+    - - 1893
   publisher-place: London
   publisher: Whiting
 - id: Bitterling1977
@@ -1906,7 +1908,7 @@
   collection-title: Percy Society
   issued:
     date-parts:
-    - - 1946
+    - - 1846
   collection-number: '19'
   publisher-place: London
   publisher: Richards
@@ -3101,7 +3103,9 @@
   issued:
     date-parts:
     - - 1880
-  publisher: 'Bnd. 2. Berlin: Weidmann, 1880'
+  volume: '2'
+  publisher-place: Berlin
+  publisher: Weidmann
 - id: Brandl1898
   type: book
   author:
@@ -3149,7 +3153,8 @@
   issued:
     date-parts:
     - - 1917
-  publisher: 2nd ed. Berlin, 1917
+  edition: '2'
+  publisher-place: Berlin
 - id: Brandl1922
   type: article-journal
   author:
@@ -3259,6 +3264,7 @@
   issued:
     date-parts:
     - - 1861
+    - - 1891
   collection-number: '21'
 - id: BrewerJS1867-73
   type: book
@@ -3274,6 +3280,7 @@
   issued:
     date-parts:
     - - 1867
+    - - 1873
   publisher-place: London
 - id: Brewer1960
   type: book
@@ -3445,6 +3452,7 @@
   issued:
     date-parts:
     - - 1801
+    - - 1815
   publisher-place: London
   publisher: Vernor, Hood and Sharpe
 - id: Brock1865
@@ -3479,6 +3487,7 @@
   issued:
     date-parts:
     - - 1910
+    - - 1917
   publisher-place: Chicago
   publisher: University of Chicago Press
 - id: Brook1948
@@ -3505,6 +3514,7 @@
   issued:
     date-parts:
     - - 1963
+    - - 1978
   collection-number: 250, 277
 - id: Brooke1891
   type: book
@@ -3989,6 +3999,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1869
   collection-number: '2'
   publisher-place: London
   publisher: Whittingham and Wilkins
@@ -4268,6 +4279,7 @@
   issued:
     date-parts:
     - - 1814
+    - - 1816
   publisher-place: London
   publisher: Longman
 - id: Buchholz1890
@@ -4842,11 +4854,11 @@
   author:
   - family: Bullrich
     given: Georg
-  title: über Charles d’Orleans und die ihm zugeschribere englische übersetzung seiher
+  title: Über Charles d’Orleans und die ihm zugeschribere englische übersetzung seiner
     gedichte
   issued:
     date-parts:
-    - - 1892
+    - - 1893
   publisher-place: Berlin
 - id: Burney1782
   type: book
@@ -4905,6 +4917,7 @@
   issued:
     date-parts:
     - - 1998
+    - - 1999
   collection-number: 311, 312
 - id: Busbie1609
   type: book
@@ -5477,7 +5490,7 @@
   container-title: 'Piers Plowman: the Hungington Library MS (HM 143)'
   issued:
     date-parts:
-    - - 1036
+    - - 1936
   publisher-place: San Marino, CA
   publisher: Henry E. Huntington Library
 - id: Champion1923-24
@@ -5643,6 +5656,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1877
   collection-number: 8, 9, 10, 13
   publisher-place: London
   publisher: Trübner
@@ -5656,6 +5670,7 @@
   issued:
     date-parts:
     - - 1872
+    - - 1887
   collection-number: 7, 10, 15, 20, 22
   publisher-place: London
   publisher: Trübner
@@ -5742,6 +5757,7 @@
   issued:
     date-parts:
     - - 1882
+    - - 1898
   publisher-place: Boston and New York
   publisher: Houghton, Mifflin
 - id: ChildCG1895
@@ -5802,6 +5818,7 @@
   issued:
     date-parts:
     - - 1835
+    - - 1839
   publisher-place: London
   publisher: T. Tegg
 - id: ClarkeDEM1929
@@ -5942,6 +5959,7 @@
   issued:
     date-parts:
     - - 1957
+    - - 1964
   collection-number: 25, 27, 28, 30
   publisher-place: Edinburgh and London
   publisher: Blackwood
@@ -6416,7 +6434,7 @@
   title: Engravings of Sepulchral Brasses in Norfolk and Suffolk…
   issued:
     date-parts:
-    - - 1838
+    - - 1839
   publisher-place: London
   publisher: H. G. Bohr
 - id: Cottle1963
@@ -6442,6 +6460,7 @@
   issued:
     date-parts:
     - - 1848
+    - - 1860
   publisher-place: Dublin
   publisher: Hodges & Smith
 - id: Coulton1914
@@ -6624,6 +6643,7 @@
   issued:
     date-parts:
     - - 1919
+    - - 1927
   collection-number: 7, 20
   publisher-place: Edinburgh and London
   publisher: Blackwood
@@ -6695,7 +6715,7 @@
   title: The Popular Songs of Ireland
   issued:
     date-parts:
-    - - 1939
+    - - 1839
   publisher-place: London
   publisher: Henry Colburn
 - id: Croft1797
@@ -6849,6 +6869,7 @@
   issued:
     date-parts:
     - - 1841
+    - - 1856
   publisher-place: Halis
 - id: Danielsson1970
   type: article-journal
@@ -6990,6 +7011,7 @@
   issued:
     date-parts:
     - - 1971
+    - - 1976
   publisher-place: Oxford
   publisher: Clarendon
 - id: Davis1979
@@ -7293,6 +7315,7 @@
   issued:
     date-parts:
     - - 1810
+    - - 1818
   publisher-place: London
   publisher: Bulmer
 - id: Dibdin1838
@@ -7565,6 +7588,7 @@
   issued:
     date-parts:
     - - 1780
+    - - 1827
   publisher-place: London
   publisher: H. Nichols
 - id: Dodsley1827
@@ -7576,6 +7600,7 @@
   title: A Select Collection of Old Plays
   issued:
     date-parts:
+    - - 1780
     - - 1827
   publisher-place: London
   publisher: H. Nichols
@@ -7853,6 +7878,7 @@
   issued:
     date-parts:
     - - 1910
+    - - 1925
   collection-number: '59'
   publisher-place: Paris
 - id: Dryden1840
@@ -8009,6 +8035,7 @@
   issued:
     date-parts:
     - - 1804
+    - - 1812
   publisher-place: Hereford
   publisher: E.G. Wright
 - id: Dundas1839
@@ -8166,6 +8193,7 @@
   issued:
     date-parts:
     - - 1877
+    - - 1880
   publisher-place: London
   publisher: the author
 - id: EastAnglian1885
@@ -8737,6 +8765,7 @@
   issued:
     date-parts:
     - - 1807
+    - - 1808
   publisher-place: London
   publisher: Johnson
 - id: EllisH1811
@@ -10154,6 +10183,7 @@
   issued:
     date-parts:
     - - 1843
+    - - 1849
   publisher-place: London
   publisher: Seeley, Burnside, and Seeley
 - id: Foxwell1913
@@ -10433,6 +10463,7 @@
   issued:
     date-parts:
     - - 1861
+    - - 1863
   collection-number: '80'
   publisher-place: London
   publisher: Nichols and Sons
@@ -10575,6 +10606,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1879
   collection-number: 6, 12, 19, 35, 42, 54, 68
   publisher-place: London
   publisher: Trübner
@@ -10588,6 +10620,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1879
   collection-number: 2, 8, 16, 26, 32, 38, 50, 70
   publisher-place: London
   publisher: Trübner
@@ -10601,6 +10634,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1879
   collection-number: 7, 13, 20, 36, 43, 55, 69
   publisher-place: London
   publisher: Trübner
@@ -10614,6 +10648,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1879
   collection-number: 3, 9, 27, 39, 51, 71
   publisher-place: London
   publisher: Trübner
@@ -10685,6 +10720,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1879
   collection-number: 4, 10, 17, 28, 33, 40, 52, 66
   publisher-place: London
   publisher: Trübner
@@ -10698,6 +10734,7 @@
   issued:
     date-parts:
     - - 1868
+    - - 1879
   collection-number: 3, 9, 27, 39, 51, 71
   publisher-place: London
   publisher: Trübner
@@ -10804,6 +10841,7 @@
   issued:
     date-parts:
     - - 1874
+    - - 1878
   collection-number: 20, 24, 28, 30, 95
 - id: Furnivall1877-78
   type: book
@@ -11050,7 +11088,7 @@
   collection-title: The Chaucer Society, 1st ser.
   issued:
     date-parts:
-    - - 1889
+    - - 1899
   collection-number: '92'
   publisher-place: London
   publisher: Trübner
@@ -11066,7 +11104,7 @@
   collection-title: EETS e.s.
   issued:
     date-parts:
-    - - 1889
+    - - 1899
     - - 1904
   collection-number: 77, 83, 92
 - id: Furnivall1900
@@ -11078,7 +11116,7 @@
   collection-title: The Chaucer Society, 1st ser.
   issued:
     date-parts:
-    - - 1889
+    - - 1900
   collection-number: '93'
   publisher-place: London
   publisher: Trübner
@@ -11102,6 +11140,7 @@
   collection-title: The Chaucer Society, 1st ser.
   issued:
     date-parts:
+    - - 1900
     - - 1901
   collection-number: '94'
   publisher-place: London
@@ -11128,6 +11167,7 @@
   issued:
     date-parts:
     - - 1901
+    - - 1903
   collection-number: 119, 123
 - id: Furnivall1902
   type: book
@@ -11806,6 +11846,7 @@
   issued:
     date-parts:
     - - 1897
+    - - 1915
   collection-number: '132'
   publisher-place: London
   publisher: Nichols
@@ -11831,6 +11872,7 @@
   issued:
     date-parts:
     - - 1913
+    - - 1933
   publisher-place: London
   publisher: Oxford University Press
 - id: Gollancz1923
@@ -12676,6 +12718,7 @@
   issued:
     date-parts:
     - - 1879
+    - - 1895
   publisher-place: London, New York
   publisher: Macmillan
 - id: Gruber1887
@@ -12933,6 +12976,7 @@
   issued:
     date-parts:
     - - 1867
+    - - 1868
   publisher-place: London
   publisher: Trübner
 - id: Hales1886
@@ -13386,6 +13430,7 @@
     date-parts:
     - - 1860
   publisher-place: London
+  publisher: printed privately
 - id: Hamel1984
   type: book
   editor:
@@ -13407,6 +13452,7 @@
   issued:
     date-parts:
     - - 1848
+    - - 1849
   publisher-place: London
   publisher: English Historical Society
 - id: Hamilton1870
@@ -14282,6 +14328,7 @@
   issued:
     date-parts:
     - - 1864
+    - - 1866
   publisher-place: London
   publisher: J. R. Smith
 - id: Hazlitt1874
@@ -14296,6 +14343,7 @@
   issued:
     date-parts:
     - - 1874
+    - - 1877
   edition: 4th
   publisher-place: London
   publisher: Reeves and Turner
@@ -14310,6 +14358,7 @@
   title: Select Collection of Old English Plays
   issued:
     date-parts:
+    - - 1874
     - - 1877
   edition: 4th
   publisher-place: London
@@ -14369,6 +14418,7 @@
   issued:
     date-parts:
     - - 1710
+    - - 1770
   publisher-place: Oxford
   publisher: at the Theatre
 - id: Hearne1716
@@ -14380,6 +14430,7 @@
   issued:
     date-parts:
     - - 1716
+    - - 1745
   publisher-place: Oxford
   publisher: Sheldonian
 - id: Hearne1719
@@ -15194,6 +15245,7 @@
   issued:
     date-parts:
     - - 1871
+    - - 1873
   publisher-place: London
   publisher: Reeves and Turner
 - id: Hinds1893
@@ -15318,6 +15370,7 @@
   issued:
     date-parts:
     - - 1877
+    - - 1878
 - id: HMC1883-84
   type: book
   number-of-volumes: '24'
@@ -15327,6 +15380,7 @@
   issued:
     date-parts:
     - - 1883
+    - - 1884
 - id: HMC1885
   type: book
   title: 'Historical Manuscripts Commission, Tenth Report, Appendix, Part V: The Manuscripts
@@ -15349,6 +15403,7 @@
   issued:
     date-parts:
     - - 1898
+    - - 1910
 - id: HMC1907-9
   type: book
   number-of-volumes: 3 vols. in 5; vol. 1 corrected and re-issued in 3 pts
@@ -15356,6 +15411,7 @@
   issued:
     date-parts:
     - - 1907
+    - - 1909
 - id: HMC1911
   type: book
   title: Historical Manuscripts Commission, Report on the Manuscripts of Lord Middleton,
@@ -15371,6 +15427,7 @@
   issued:
     date-parts:
     - - 1928
+    - - 1947
 - id: HMC1956
   type: book
   title: Historical Manuscripts Commission, An Inventory of the Ancient and Historical
@@ -15388,6 +15445,7 @@
   issued:
     date-parts:
     - - 1852
+    - - 1860
   publisher: Paris
 - id: Hobbs1924
   type: article-journal
@@ -15879,6 +15937,7 @@
   issued:
     date-parts:
     - - 1978
+    - - 2000
   volume: '1'
   publisher-place: Ottawa
   publisher: University of Ottawa Press
@@ -16238,6 +16297,7 @@
   issued:
     date-parts:
     - - 1882
+    - - 1883
   publisher-place: Berlin
 - id: Horstmann1882b
   type: article-journal
@@ -16663,6 +16723,7 @@
   issued:
     date-parts:
     - - 1901
+    - - 1914
   publisher-place: London
   publisher: Stock
 - id: Hurry1914
@@ -16948,6 +17009,7 @@
   issued:
     date-parts:
     - - 1900
+    - - 1904
   publisher-place: Cambridge
   publisher: Cambridge University Press
 - id: James1904
@@ -17144,6 +17206,7 @@
   issued:
     date-parts:
     - - 1930
+    - - 1932
   publisher-place: Cambridge
 - id: James1932a
   type: book
@@ -17475,10 +17538,11 @@
   editor:
   - family: Kaiser
     given: Rolf
-  title: Alt- und mittelenglische Anthologie
+  title: 'Medieval English: a Old English and Middle English Anthology'
   issued:
     date-parts:
     - - 1958
+  edition: '3'
   publisher-place: Berlin
 - id: Kaiser1957
   type: chapter
@@ -17703,6 +17767,7 @@
   issued:
     date-parts:
     - - 1839
+    - - 1848
   publisher-place: London
   publisher: Sumptibus Societatis
 - id: Kendall1962
@@ -17855,6 +17920,7 @@
   issued:
     date-parts:
     - - 1969
+    - - 1992
   publisher-place: London
   publisher: Oxford University Press
 - id: Kermode1952
@@ -18302,6 +18368,7 @@
   issued:
     date-parts:
     - - 1878
+    - - 1882
   publisher-place: Heilbronn
   publisher: Henninger
 - id: Kolbing1880
@@ -18326,7 +18393,9 @@
   issued:
     date-parts:
     - - 1883
+    - - 1890
   publisher-place: Heilbronn
+  publisher: Henninger
 - id: Kolbing1884a
   type: article-journal
   author:
@@ -18559,6 +18628,7 @@
   issued:
     date-parts:
     - - 1931
+    - - 1953
   publisher-place: New York
   publisher: Columbia University Press
 - id: Kratzmann1983
@@ -18882,6 +18952,7 @@
   issued:
     date-parts:
     - - 1831
+    - - 1834
   collection-number: '46'
   publisher-place: Edinburgh
 - id: Laing1833
@@ -19013,6 +19084,7 @@
   issued:
     date-parts:
     - - 1872
+    - - 1879
   publisher-place: Edinburgh
   publisher: Edmonston and Douglas
 - id: LaingM1982
@@ -19736,6 +19808,7 @@
   issued:
     date-parts:
     - - 1856
+    - - 1867
   publisher-place: Cambridge
   publisher: Cambridge University Press
 - id: Lucas1981
@@ -19861,6 +19934,7 @@
   issued:
     date-parts:
     - - 1974
+    - - 1986
   collection-number: 3, 9
 - id: Lumiansky1980
   type: book
@@ -20294,6 +20368,7 @@
   issued:
     date-parts:
     - - 1866
+    - - 1868
   publisher-place: London
   publisher: Virture
 - id: Mackenzie1909
@@ -20408,6 +20483,7 @@
   issued:
     date-parts:
     - - 1973
+    - - 1979
   collection-number: 268, 279
 - id: Macray1862-1900
   type: book
@@ -20420,6 +20496,7 @@
   issued:
     date-parts:
     - - 1862
+    - - 1900
   publisher-place: Oxford
   publisher: Clarendon
 - id: Macray1883
@@ -20797,7 +20874,7 @@
   collection-title: Chaucer Society, 1st ser.
   issued:
     date-parts:
-    - - 1888
+    - - 1889
   collection-number: '80'
 - id: Marsh1866
   type: book
@@ -21388,6 +21465,7 @@
   issued:
     date-parts:
     - - 1960
+    - - 1975
   publisher-place: Basel
   publisher: Verlag der Universitätsbibliothek
 - id: Boerlin1960
@@ -21564,6 +21642,7 @@
   issued:
     date-parts:
     - - 2005
+    - - 2006
   collection-number: 325, 326
 - id: MillsJ1891
   type: book
@@ -21753,6 +21832,7 @@
   issued:
     date-parts:
     - - 1855
+    - - 1878
   publisher-place: Paris
   publisher: Jannet
 - id: Montgomery1827
@@ -22000,6 +22080,7 @@
   issued:
     date-parts:
     - - 1864
+    - - 1867
   publisher-place: London
   publisher: Chapman and Hall
 - id: Morley1876
@@ -22807,6 +22888,7 @@
   issued:
     date-parts:
     - - 1834
+    - - 1837
   publisher-place: London
   publisher: Record Commission
 - id: Nicolas1845
@@ -23387,7 +23469,8 @@
   issued:
     date-parts:
     - - 1882
-  publisher: 2nd ed. London, 1882
+  edition: '2'
+  publisher-place: London
 - id: Osberg1996
   type: book
   editor:
@@ -27883,6 +27966,7 @@
   issued:
     date-parts:
     - - 1881
+    - - 1888
   publisher-place: Bonn
   publisher: Strauss
 - id: Schipper1884
@@ -28127,7 +28211,8 @@
   issued:
     date-parts:
     - - 1965
-  publisher-place: Freiburg München
+  publisher-place: Freiburg, München
+  publisher: Karl Alber
 - id: Schoeck1951
   type: article-journal
   author:
@@ -28209,7 +28294,7 @@
   collection-title: Quellen und Forschungen
   issued:
     date-parts:
-    - - 1994
+    - - 1884
   collection-number: '52'
   publisher-place: Strassburg
   publisher: Trübner
@@ -28606,6 +28691,7 @@
   issued:
     date-parts:
     - - 1984
+    - - 1992
   publisher-place: Binghamton, NY
   publisher: MRTS
 - id: Shailor1988
@@ -28697,7 +28783,7 @@
   issued:
     date-parts:
     - - 1973
-  publisher-place: Delmar
+  publisher-place: Delmar, NY
 - id: Sheeran1975
   type: article-journal
   author:
@@ -28812,6 +28898,7 @@
   issued:
     date-parts:
     - - 1903
+    - - 1906
   publisher-place: London
   publisher: Bullen
 - id: Sidgwick1907
@@ -28882,6 +28969,7 @@
   issued:
     date-parts:
     - - 1928
+    - - 1931
   publisher-place: Brussels
   publisher: Lamertin
 - id: Sisam1921
@@ -29231,6 +29319,7 @@
   issued:
     date-parts:
     - - 1894
+    - - 1897
   publisher-place: Oxford
   publisher: Clarendon
 - id: Skeat1896a
@@ -29417,6 +29506,7 @@
   issued:
     date-parts:
     - - 1877
+    - - 1880
   collection-number: 7, 10
   publisher-place: Edinburgh
   publisher: Paterson
@@ -29459,6 +29549,7 @@
   issued:
     date-parts:
     - - 1884
+    - - 1893
   collection-number: 2, 4, 16, 21, 29
   publisher-place: Edinburgh
 - id: Smalley1953
@@ -29580,10 +29671,10 @@
   title: Dialect and Standardisation in the Waseda Manuscript of Nicholas Love’s Mirror
     of the Blessed Life of Jesus Christ
   container-title: 'Nicholas Love at Waseda: Proceedings of the International Conference
-    20-22 July 1997'
+    20-22 July 1995'
   issued:
     date-parts:
-    - - 1995
+    - - 1997
   page: 129-41
   publisher-place: Woodbridge, Suffolk and Rochester NY
   publisher: D. S. Brewer
@@ -29706,6 +29797,7 @@
   issued:
     date-parts:
     - - 1907
+    - - 1910
   publisher-place: London
 - id: SmithMN
   type: book
@@ -30402,7 +30494,7 @@
   collection-title: Maitland Club
   issued:
     date-parts:
-    - - 1838
+    - - 1839
   collection-number: '48'
   publisher-place: Edinburgh
 - id: Stevenson1839b
@@ -30488,6 +30580,7 @@
   issued:
     date-parts:
     - - 1901
+    - - 1914
   collection-number: 44, 62
   publisher-place: Edinburgh and London
   publisher: Blackwood
@@ -30690,6 +30783,7 @@
   issued:
     date-parts:
     - - 1850
+    - - 1859
   publisher-place: Edinburgh, London
   publisher: Blackwood
 - id: Strickland1853
@@ -30714,6 +30808,7 @@
   issued:
     date-parts:
     - - 1775
+    - - 1776
   publisher-place: London
   publisher: B. White
 - id: Strutt1801
@@ -30941,6 +31036,7 @@
   issued:
     date-parts:
     - - 1818
+    - - 1822
   collection-number: 16, 36
   publisher-place: London
   publisher: Shakspeare Press
@@ -30953,6 +31049,7 @@
   collection-title: Roxburghe Club
   issued:
     date-parts:
+    - - 1818
     - - 1822
   collection-number: 16, 36
   publisher-place: London
@@ -31030,8 +31127,9 @@
   title: Our Lady’s Lament, and the lamentation of Saint Mary Magdalene
   issued:
     date-parts:
-    - - 1872
+    - - 1871
   publisher-place: London
+  publisher: Washbourne
 - id: Tame1879
   type: book
   editor:
@@ -31040,8 +31138,9 @@
   title: 'The Life of our Lady: Part I'
   issued:
     date-parts:
-    - - 1872
+    - - 1879
   publisher-place: London
+  publisher: Washbourne
 - id: Tarvers1985
   type: article-journal
   author:
@@ -31148,7 +31247,7 @@
   title: A Medieval Carol Book
   issued:
     date-parts:
-    - - 1831
+    - - 1931
   publisher-place: London
   publisher: Curwen
 - id: Thiemke1919
@@ -31438,7 +31537,7 @@
   title: Illustrations of the Lives and Writings of Gower and Chaucer
   issued:
     date-parts:
-    - - 1910
+    - - 1810
   publisher-place: London
   publisher: Rivington
 - id: Tolkien1925
@@ -31452,6 +31551,7 @@
   issued:
     date-parts:
     - - 1925
+    - - 1949
   publisher-place: Oxford
   publisher: Clarendon
 - id: Tolkien1962
@@ -32287,6 +32387,7 @@
   issued:
     date-parts:
     - - 1893
+    - - 1894
   publisher-place: Marburg
   publisher: N.G. Elwert
 - id: Viles1869
@@ -32502,6 +32603,7 @@
   issued:
     date-parts:
     - - 1963
+    - - 1969
   publisher-place: Göttingen
 - id: Wanley1808-12
   type: book
@@ -32600,6 +32702,7 @@
   issued:
     date-parts:
     - - 1906
+    - - 1908
   publisher-place: London
   publisher: Constable
 - id: Warren1931
@@ -33137,6 +33240,7 @@
     from a MS. contemporary with the author…
   issued:
     date-parts:
+    - - 1813
     - - 1814
   publisher-place: London
   publisher: Murray
@@ -33490,6 +33594,7 @@
   issued:
     date-parts:
     - - 1857
+    - - 1867
   collection-number: 76, 88
   publisher-place: London
 - id: WilliamsJ1860
@@ -33793,6 +33898,7 @@
   issued:
     date-parts:
     - - 1939
+    - - 1951
   publisher-place: London
   publisher: Methuen
 - id: Wilson1952
@@ -34040,6 +34146,7 @@
   issued:
     date-parts:
     - - 1897
+    - - 1913
   publisher-place: London
   publisher: Quaritch
 - id: Wooldridge1901
@@ -34337,6 +34444,7 @@
   issued:
     date-parts:
     - - 1842
+    - - 1846
   publisher-place: London
 - id: Wright1842e
   type: chapter
@@ -34374,6 +34482,7 @@
   issued:
     date-parts:
     - - 1843
+    - - 1847
   publisher-place: London
   publisher: Shakespeare Society
 - id: Wright1844a
@@ -34461,7 +34570,7 @@
   collection-title: Percy Society
   issued:
     date-parts:
-    - - 1848
+    - - 1847
   collection-number: '23'
   publisher-place: London
   publisher: Richards
@@ -34640,6 +34749,7 @@
   issued:
     date-parts:
     - - 1866
+    - - 1868
   collection-number: '47'
 - id: Wright1869
   type: book
@@ -34686,7 +34796,7 @@
   collection-title: Rolls Series
   issued:
     date-parts:
-    - - 1886
+    - - 1887
   collection-number: '86'
 - id: Wulker1874
   type: book
@@ -34698,6 +34808,7 @@
   issued:
     date-parts:
     - - 1874
+    - - 1880
   publisher-place: Halle
   publisher: Lippert
 - id: Wulker1879-82
@@ -34710,6 +34821,7 @@
   issued:
     date-parts:
     - - 1879
+    - - 1882
   publisher-place: Halle
   publisher: Karras
 - id: Wulker1881-97
@@ -34724,6 +34836,7 @@
   issued:
     date-parts:
     - - 1881
+    - - 1897
   publisher-place: Kassel
   publisher: Wigand
 - id: Wulker1889
@@ -35288,6 +35401,7 @@
   issued:
     date-parts:
     - - 1898
+    - - 1901
   publisher-place: Brussels
 - id: KerbyFulton2022
   type: chapter
