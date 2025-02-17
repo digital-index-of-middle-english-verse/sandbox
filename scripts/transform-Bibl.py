@@ -270,14 +270,6 @@ def convert_item(sourceItem, warning_log):
                             newItem['collection-number'] = re.sub(volume_str + '[\.,]? ' + place_str + ': ' + publisher_str + ', ' + date_str, r'\1', pubstmt_str).strip()
                             newItem['publisher-place'] = re.sub(volume_str + '[\.,]? ' + place_str + ': ' + publisher_str + ', ' + date_str, r'\2', pubstmt_str)
                             newItem['publisher'] = re.sub(volume_str + '[\.,]? ' + place_str + ': ' + publisher_str + ', ' + date_str, r'\3', pubstmt_str)
-                        # Other colon-delimited patterns
-                        elif re.search('\w: \w', pubstmt_str):
-                            # print(pubstmt_str)
-                            publisher = re.sub('.*: ([\w&\./ ]+),.+$', r'\1', pubstmt_str)
-                            newItem['publisher'] = publisher
-                            place = re.sub(':.*$', '', pubstmt_str)
-                            place = re.sub('^.*\d\.? ', '', place)
-                            newItem['publisher-place'] = place
                         # All other patterns
                         else:
                             # print(pubstmt_str)
