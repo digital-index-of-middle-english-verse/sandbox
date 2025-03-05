@@ -1,6 +1,7 @@
 # This script accomplishes the first four items listed in Documentation under
 # section 2.2.3 ("Technical direction" for Records.xml)
 
+from pathlib import Path
 from lxml import etree
 import copy
 import os
@@ -100,23 +101,24 @@ def main():
                 new_tree = etree.ElementTree(new_record)
                 # Construct a file name using the xml:id attribute.
                 formatted_id = format_id(xml_id)
-                file_name = os.path.join(output_dir, f"{formatted_id}.xml")
+                filename = formatted_id + '.xml'
+                new_record_path = output_dir / filename
                 # Write the new tree to a file.
-                new_tree.write(file_name, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                new_tree.write(new_record_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
             record_count += 1
     
     print(f'Wrote {record_count} full records to {output_dir}')
     
     # Create a new ElementTree for the cross references and write to a file.
     new_tree = etree.ElementTree(cross_refs)
-    new_tree.write(cross_ref_output_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-    print(f"Wrote {cross_ref_count} cross references to {cross_ref_output_file}")
+    new_tree.write(cross_ref_output_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+    print(f"Wrote {cross_ref_count} cross references to {cross_ref_output_path}")
 
 # Top-level variables
 
-source_file = '../../dimev/data/Records.xml'
-output_dir = '../artefacts/records'
-cross_ref_output_file = os.path.join(output_dir, 'cross_references.xml')
+source_file = Path('../../dimev/data/Records.xml')
+output_dir = Path('../artefacts/records')
+cross_ref_output_path = output_dir / 'cross_references.xml'
 
 tree = etree.parse(source_file)
 root = tree.getroot()  # root element <records>
