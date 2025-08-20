@@ -28,12 +28,12 @@ def read_xml_to_string(source):
     with open(source) as f:
         xml_string = f.read()
     print('Preprocessing string...')
-    xml_string = re.sub(' {2,}', ' ', xml_string) # remove whitespace
-    xml_string = re.sub('\\n', '', xml_string) # remove newlines
-    xml_string = re.sub('<sup>', 'BEGIN_SUP', xml_string) # replace <sup> tags
-    xml_string = re.sub('</sup>', 'END_SUP', xml_string)
-    xml_string = re.sub('<i>', 'BEGIN_ITALICS', xml_string)  # replace <i> tags
-    xml_string = re.sub('</i>', 'END_ITALICS', xml_string)
+    xml_string = re.sub(r' {2,}', ' ', xml_string) # remove whitespace
+    xml_string = re.sub(r'\n', '', xml_string) # remove newlines
+    xml_string = re.sub(r'<sup>', 'BEGIN_SUP', xml_string) # replace <sup> tags
+    xml_string = re.sub(r'</sup>', 'END_SUP', xml_string)
+    xml_string = re.sub(r'<i>', 'BEGIN_ITALICS', xml_string)  # replace <i> tags
+    xml_string = re.sub(r'</i>', 'END_ITALICS', xml_string)
     return xml_string
 
 def xml_to_dict(xml_string):
@@ -162,11 +162,11 @@ def convert_item(sourceItem, warning_log):
                 elif pubstmt['@date'].lower() == 'n.d.' or pubstmt['@date'] == '':
                     msg = f'WARNING: No date value found for `@date` attribute in item {sourceItem["@xml:id"]}'
                     warning_log.append(msg)
-                elif re.search('[A-Za-z=\?\+]', pubstmt['@date']):
+                elif re.search(r'[A-Za-z=\?\+]', pubstmt['@date']):
                     msg = f'WARNING: Invalid value found for `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
                     print(msg)
                     warning_log.append(msg)
-                elif re.search('\d{5,}', pubstmt['@date']):
+                elif re.search(r'\d{5,}', pubstmt['@date']):
                     msg = f'WARNING: Invalid value found for `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
                     print(msg)
                     warning_log.append(msg)
@@ -201,7 +201,7 @@ def convert_item(sourceItem, warning_log):
                     elif newItem['type'] == 'article-journal':
                         if ':' in pubstmt_str:
                             parts = re.split(':', pubstmt_str, maxsplit=1)
-                            newItem['volume'] = re.sub('\(.*\d\d\d\d.*\)', '', parts[0]).strip()
+                            newItem['volume'] = re.sub(r'\(.*\d\d\d\d.*\)', '', parts[0]).strip()
                             newItem['page'] = parts[1].strip()
                         else:
                             msg = f'WARNING: Irregular pubstmt found for journal-article {sourceItem["@xml:id"]}. Skipping.'
@@ -215,10 +215,10 @@ def convert_item(sourceItem, warning_log):
                     # Process book chapters
                     # First, extract page ranges where present; then parse with the same logic used for items of type 'book'
                     elif newItem['type'] == 'chapter':
-                        pattern = '\d\d\d\d(-\d{1,4})?[:,\.] \d+(-\d+)?$'
+                        pattern = r'\d\d\d\d(-\d{1,4})?[:,\.] \d+(-\d+)?$'
                         if re.search(pattern, pubstmt_str):
-                            newItem['page'] = re.sub('^.*\d\d\d\d(-\d{1,4})?[:,\.] ', '', pubstmt_str)
-                            pubstmt_str = re.sub('[:,\.] \d+(-\d+)?$', '', pubstmt_str)
+                            newItem['page'] = re.sub(r'^.*\d\d\d\d(-\d{1,4})?[:,\.] ', '', pubstmt_str)
+                            pubstmt_str = re.sub(r'[:,\.] \d+(-\d+)?$', '', pubstmt_str)
                         newItem, warning_log = parse_pubstmt_books(newItem, pubstmt_str, warning_log)
 
                     else:
@@ -229,37 +229,37 @@ def convert_item(sourceItem, warning_log):
     return newItem, warning_log
 
 def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
-    date_pattern = '(\d\d\d\d[\d\-, ]*)' # imprecise but it works
-    place_pattern = '([A-Z\[][A-Za-zäöü &,\-]+[A-Za-z\]\.])'
-    publisher_pattern = '([A-Za-z][A-Za-zäöüé’ &/,\.\-]+[A-Za-z\.])'
-    series_numb_patt = '(\d*[0-9 ,]+\d*)'
-    vol_pattern = '((V|v)ol\.? [1-9]+)'
+    date_pattern = r'(\d\d\d\d[\d\-, ]*)' # imprecise but it works
+    place_pattern = r'([A-Z\[][A-Za-zäöü &,\-]+[A-Za-z\]\.])'
+    publisher_pattern = r'([A-Za-z][A-Za-zäöüé’ &/,\.\-]+[A-Za-z\.])'
+    series_numb_patt = r'(\d*[0-9 ,]+\d*)'
+    vol_pattern = r'((V|v)ol\.? [1-9]+)'
     # Date only
-    if re.fullmatch('\(?' + date_pattern + '\)?', pubstmt_str):
-        date_str = re.sub('\(|\)', '', pubstmt_str)
+    if re.fullmatch(r'\(?' + date_pattern + r'\)?', pubstmt_str):
+        date_str = re.sub(r'\(|\)', '', pubstmt_str)
         msg = f'WARNING: No publisher or publisher place for monograph {newItem["id"]}'
         # warning_log.append(msg)
     # Series number. Date
-    elif re.fullmatch(series_numb_patt + ' ?\(?' + date_pattern + '\)?', pubstmt_str):
-        this_pattern = '^' + series_numb_patt + '\(?' + date_pattern + '\)?$'
+    elif re.fullmatch(series_numb_patt + r' ?\(?' + date_pattern + r'\)?', pubstmt_str):
+        this_pattern = '^' + series_numb_patt + r'\(?' + date_pattern + r'\)?$'
         newItem['collection-number'] = re.sub(this_pattern, r'\1', pubstmt_str).strip()
         date_str = re.sub(this_pattern, r'\2', pubstmt_str)
         msg = f'WARNING: No publisher or publisher place for monograph {newItem["id"]}'
         # warning_log.append(msg)
     # Volume number. Place, Date
-    elif re.fullmatch(vol_pattern + '\. ' + place_pattern + ', ' + date_pattern, pubstmt_str):
+    elif re.fullmatch(vol_pattern + r'\. ' + place_pattern + ', ' + date_pattern, pubstmt_str):
         substring = re.sub(', ' + date_pattern + '$', '', pubstmt_str)
-        newItem['publisher-place'] = re.sub(vol_pattern + '\. ', '', substring)
-        newItem['volume'] = re.sub('(V|v)ol\.? ([1-9]+)\. .*', r'\2', substring)
-        date_str = re.sub(vol_pattern + '\. ' + place_pattern + ', ' + date_pattern, r'\3', pubstmt_str)
+        newItem['publisher-place'] = re.sub(vol_pattern + r'\. ', '', substring)
+        newItem['volume'] = re.sub(r'(V|v)ol\.? ([1-9]+)\. .*', r'\2', substring)
+        date_str = re.sub(vol_pattern + r'\. ' + place_pattern + ', ' + date_pattern, r'\3', pubstmt_str)
     # Place, Date
     elif re.fullmatch(place_pattern + ', ' + date_pattern, pubstmt_str):
         this_pattern = '^' + place_pattern + ', ' + date_pattern + '$'
         newItem['publisher-place'] = re.sub(this_pattern, r'\1', pubstmt_str).strip()
         date_str = re.sub(this_pattern, r'\2', pubstmt_str)
     # Edition number. Place, Date
-    elif re.fullmatch('[1-9].. ed\.,? ' + place_pattern + ', ' + date_pattern, pubstmt_str):
-        this_pattern = '^' + '([1-9]).. ed\.,? ' + place_pattern + ', ' + date_pattern + '$'
+    elif re.fullmatch(r'[1-9].. ed\.,? ' + place_pattern + ', ' + date_pattern, pubstmt_str):
+        this_pattern = '^' + r'([1-9]).. ed\.,? ' + place_pattern + ', ' + date_pattern + '$'
         newItem['edition'] = re.sub(this_pattern, r'\1', pubstmt_str)
         newItem['publisher-place'] = re.sub(this_pattern, r'\2', pubstmt_str).strip()
         date_str = re.sub(this_pattern, r'\3', pubstmt_str)
@@ -269,15 +269,15 @@ def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
         newItem['publisher'] = parts[0]
         date_str = parts[1]
     # Series number. Publisher: Date
-    elif re.fullmatch(series_numb_patt + '[\.,]? ' + publisher_pattern + ': ' + date_pattern, pubstmt_str):
+    elif re.fullmatch(series_numb_patt + r'[\.,]? ' + publisher_pattern + ': ' + date_pattern, pubstmt_str):
         parts = re.split(':', pubstmt_str)
-        this_pattern = '^' + series_numb_patt + '[\.,]? ' + publisher_pattern + '$'
+        this_pattern = '^' + series_numb_patt + r'[\.,]? ' + publisher_pattern + '$'
         newItem['collection-number'] = re.sub(this_pattern, r'\1', parts[0]).strip()
         newItem['publisher'] = re.sub(this_pattern, r'\2', parts[0]).strip()
         date_str = parts[1]
     # Series number. Place, Date
-    elif re.fullmatch(series_numb_patt + '[\.,]? ' + place_pattern + ', ' + date_pattern, pubstmt_str):
-        this_pattern = '^' + series_numb_patt + '[\.,]? ' + place_pattern + ', ' + date_pattern + '$'
+    elif re.fullmatch(series_numb_patt + r'[\.,]? ' + place_pattern + ', ' + date_pattern, pubstmt_str):
+        this_pattern = '^' + series_numb_patt + r'[\.,]? ' + place_pattern + ', ' + date_pattern + '$'
         newItem['collection-number'] = re.sub(this_pattern, r'\1', pubstmt_str).strip()
         newItem['publisher-place'] = re.sub(this_pattern, r'\2', pubstmt_str).strip()
         date_str = re.sub(this_pattern, r'\3', pubstmt_str)
@@ -288,24 +288,24 @@ def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
         newItem['publisher'] = re.sub(', ' + date_pattern + '$', '', parts[1]).strip()
         date_str = re.sub(publisher_pattern + ', ', '', parts[1])
     # Edition number. Place: Publisher, Date
-    elif re.fullmatch('[1-9].. ed\. ' + place_pattern + ': ' + publisher_pattern + ', ' + date_pattern, pubstmt_str):
+    elif re.fullmatch(r'[1-9].. ed\. ' + place_pattern + ': ' + publisher_pattern + ', ' + date_pattern, pubstmt_str):
         parts = re.split(':', pubstmt_str)
-        newItem['edition'] = re.sub(' ed\..+', '', parts[0])
-        newItem['publisher-place'] = re.sub('[1-9].. ed\. ', '', parts[0])
+        newItem['edition'] = re.sub(r' ed\..+', '', parts[0])
+        newItem['publisher-place'] = re.sub(r'[1-9].. ed\. ', '', parts[0])
         newItem['publisher'] = re.sub(', ' + date_pattern + '$', '', parts[1]).strip()
         date_str = re.sub(publisher_pattern + ', ', '', parts[1])
     # Volume number. Place: Publisher, Date
-    elif re.fullmatch(vol_pattern + '\. ' + place_pattern + ': ' + publisher_pattern + ', ' + date_pattern, pubstmt_str):
+    elif re.fullmatch(vol_pattern + r'\. ' + place_pattern + ': ' + publisher_pattern + ', ' + date_pattern, pubstmt_str):
         parts = re.split(':', pubstmt_str)
-        newItem['volume'] = re.sub('(V|v)ol\.? ([1-9]+)\. .*', r'\2', parts[0])
-        newItem['publisher-place'] = re.sub(vol_pattern + '\. ', '', parts[0])
+        newItem['volume'] = re.sub(r'(V|v)ol\.? ([1-9]+)\. .*', r'\2', parts[0])
+        newItem['publisher-place'] = re.sub(vol_pattern + r'\. ', '', parts[0])
         newItem['publisher'] = re.sub(', ' + date_pattern + '$', '', parts[1]).strip()
         date_str = re.sub(publisher_pattern + ', ', '', parts[1])
     # Series number. Place: Publisher, Date
-    elif re.fullmatch(series_numb_patt + '[\.,]? ' + place_pattern + ': ' + publisher_pattern + ', ' + date_pattern, pubstmt_str):
+    elif re.fullmatch(series_numb_patt + r'[\.,]? ' + place_pattern + ': ' + publisher_pattern + ', ' + date_pattern, pubstmt_str):
         parts = re.split(':', pubstmt_str)
-        newItem['collection-number'] = re.sub(series_numb_patt + '[\.,]? ' + place_pattern, r'\1', parts[0]).strip()
-        newItem['publisher-place'] = re.sub(series_numb_patt + '[\.,]? ' + place_pattern, r'\2', parts[0]).strip()
+        newItem['collection-number'] = re.sub(series_numb_patt + r'[\.,]? ' + place_pattern, r'\1', parts[0]).strip()
+        newItem['publisher-place'] = re.sub(series_numb_patt + r'[\.,]? ' + place_pattern, r'\2', parts[0]).strip()
         newItem['publisher'] = re.sub(publisher_pattern + ', ' + date_pattern, r'\1', parts[1]).strip()
         date_str = re.sub(publisher_pattern + ', ' + date_pattern, r'\2', parts[1])
     # All other patterns
@@ -337,9 +337,9 @@ def process_ref(title):
 
 def create_date_dict(date_str):
     # NOTE: I use the 'more structured' representation of dates permitted by the CSL spec.
-    date_str = re.sub('\[|\]', '', date_str) # NOTE: strip brackets, for now
+    date_str = re.sub(r'\[|\]', '', date_str) # NOTE: strip brackets, for now
     date_str = date_str.strip()
-    if re.search('^\d\d\d\d$', date_str):
+    if re.search(r'^\d\d\d\d$', date_str):
         date_list = [[int(date_str)]]
     elif '-' in date_str:
         date_list = uncollapse_date_ranges(date_str)
@@ -355,9 +355,9 @@ def create_date_dict(date_str):
 def uncollapse_date_ranges(date_str):
     range_patterns = \
         [
-            ('^\d\d\d\d-\d$', '^(\d\d\d\d)-\d$', '^(\d\d\d)\d-(\d)$'),
-            ('^\d\d\d\d-\d\d$', '^(\d\d\d\d)-\d\d$', '^(\d\d)\d\d-(\d\d)$'),
-            ('^\d\d\d\d-\d\d\d\d$', '^(\d\d\d\d)-\d\d\d\d$', '^\d\d\d\d-(\d\d)(\d\d)$')
+            (r'^\d\d\d\d-\d$', r'^(\d\d\d\d)-\d$', r'^(\d\d\d)\d-(\d)$'),
+            (r'^\d\d\d\d-\d\d$', r'^(\d\d\d\d)-\d\d$', r'^(\d\d)\d\d-(\d\d)$'),
+            (r'^\d\d\d\d-\d\d\d\d$', r'^(\d\d\d\d)-\d\d\d\d$', r'^\d\d\d\d-(\d\d)(\d\d)$')
         ]
     for idx in range(len(range_patterns)):
         pattern = range_patterns[idx][0]
@@ -373,18 +373,18 @@ def format_theses(newItem, string):
     newItem['type'] = 'thesis'
     if 'Diss.' in string:
         newItem['genre'] = 'Ph.D. diss.'
-        string = re.sub('Diss\. ', '', string)
+        string = re.sub(r'Diss\. ', '', string)
 
     elif 'B.Litt.' in string:
         newItem['genre'] = 'B.Litt. thesis'
-        string = re.sub('B\.Litt\. thesis\.', '', string)
+        string = re.sub(r'B\.Litt\. thesis\.', '', string)
 
     else: # 'thesis', two items only
         newItem['genre'] = 'M.A. thesis'
-        string = re.sub('MA thesis\. ', '', string)
-        string = re.sub('M\.Litt thesis\. ', '', string)
+        string = re.sub(r'MA thesis\. ', '', string)
+        string = re.sub(r'M\.Litt thesis\. ', '', string)
 
-    string = re.sub(', \d\d\d\d', '', string)
+    string = re.sub(r', \d\d\d\d', '', string)
     newItem['publisher'] = string.strip()
 
     return newItem
