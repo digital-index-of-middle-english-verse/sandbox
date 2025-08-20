@@ -229,10 +229,18 @@ def convert_item(sourceItem, warning_log):
     return newItem, warning_log
 
 def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
+    # pre-process
+    pubstmt_str = re.sub(r'[;,] repr\. \d\d\d\d(\)?)$', r'\1', pubstmt_str) # strip out reprint dates
+    pubstmt_str = re.sub(', and subsequent editions', '', pubstmt_str)
+    pubstmt_str = re.sub(r',? et seq\.?', '', pubstmt_str)
+    if re.match(r'^rev\. ed\.', pubstmt_str):
+        newItem['edition'] = 'revised'
+        pubstmt_str = re.sub(r'^rev\. ed\.,? ', '', pubstmt_str)
+    # set variables
     date_pattern = r'(\d\d\d\d[\d\-, ]*)' # imprecise but it works
     place_pattern = r'([A-Z\[][A-Za-zäöü &,\-]+[A-Za-z\]\.])'
-    publisher_pattern = r'([A-Za-z][A-Za-zäöüé’ &/,\.\-]+[A-Za-z\.])'
-    series_numb_patt = r'(\d*[0-9 ,]+\d*)'
+    publisher_pattern = r'([A-Za-z][A-Za-zäöüé’ &/,\.\-]+[A-Za-zé\.])'
+    series_numb_patt = r'(\d*[0-9 ,\-]+\d*)'
     vol_pattern = r'((V|v)ol\.? [1-9]+)'
     # Date only
     if re.fullmatch(r'\(?' + date_pattern + r'\)?', pubstmt_str):
@@ -241,7 +249,7 @@ def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
         # warning_log.append(msg)
     # Series number. Date
     elif re.fullmatch(series_numb_patt + r' ?\(?' + date_pattern + r'\)?', pubstmt_str):
-        this_pattern = '^' + series_numb_patt + r'\(?' + date_pattern + r'\)?$'
+        this_pattern = '^' + series_numb_patt + r' ?\(?' + date_pattern + r'\)?$'
         newItem['collection-number'] = re.sub(this_pattern, r'\1', pubstmt_str).strip()
         date_str = re.sub(this_pattern, r'\2', pubstmt_str)
         msg = f'WARNING: No publisher or publisher place for monograph {newItem["id"]}'

@@ -58,7 +58,7 @@
   issued:
     date-parts:
     - - 1887
-  publisher: 51 (1887), repr. 1973
+  collection-number: '51'
 - id: Adams1924
   type: book
   author:
@@ -239,7 +239,9 @@
     date-parts:
     - - 1903
     - - 1914
-  publisher: '50, 53-4, 56-7, 63 Edinburgh, London: Blackwood, 1903-14'
+  collection-number: 50, 53-4, 56-7, 63
+  publisher-place: Edinburgh, London
+  publisher: Blackwood
 - id: Ancestor1902
   type: article-journal
   title: A Fifteenth-Century Book of Arms
@@ -936,7 +938,7 @@
   issued:
     date-parts:
     - - 1927
-  publisher: 172 (1927); repr. 1971
+  collection-number: '172'
 - id: Barnum1976
   type: book
   editor:
@@ -1040,8 +1042,8 @@
   collection-title: EETS e.s.
   issued:
     date-parts:
-    - - 1889
-  publisher: 76 (1899), repr. 1965
+    - - 1899
+  collection-number: '76'
 - id: BatesonH1912
   type: book
   editor:
@@ -1191,7 +1193,7 @@
   issued:
     date-parts:
     - - 1953
-  publisher: 228 (1953); repr. 1968
+  collection-number: '228'
 - id: Bazire1982
   type: article-journal
   author:
@@ -1604,7 +1606,8 @@
   issued:
     date-parts:
     - - 1831
-  publisher: 'London: Bentley, 1831; repr. 1833'
+  publisher-place: London
+  publisher: Bentley
 - id: Berdan1920
   type: book
   author:
@@ -1651,7 +1654,7 @@
     date-parts:
     - - 1924
     - - 1927
-  publisher: 121-24 (1924-27)
+  collection-number: 121-24
 - id: Berkhout2006
   type: article-journal
   editor:
@@ -1684,7 +1687,8 @@
   issued:
     date-parts:
     - - 1845
-  publisher: 'Newcastle: Richardson, 1845; repr. 1847'
+  publisher-place: Newcastle
+  publisher: Richardson
 - id: Besserman1970
   type: article-journal
   author:
@@ -2087,7 +2091,7 @@
   issued:
     date-parts:
     - - 1922
-  publisher: 120 (1922); repr. 1961
+  collection-number: '120'
 - id: Blomefield1734-75
   type: book
   author:
@@ -2306,7 +2310,7 @@
   issued:
     date-parts:
     - - 1912
-  publisher: 10 (1912); repr. 1973
+  collection-number: '10'
 - id: Boffey1981
   type: article-journal
   author:
@@ -2946,7 +2950,8 @@
   issued:
     date-parts:
     - - 1906
-  publisher: 'London: Methuen, 1906; repr. 1919'
+  publisher-place: London
+  publisher: Methuen
 - id: Bradley1975
   type: article-journal
   author:
@@ -3081,7 +3086,8 @@
   issued:
     date-parts:
     - - 1849
-  publisher: rev. ed., London, 1849
+  edition: revised
+  publisher-place: London
 - id: Brandeis1900
   type: book
   editor:
@@ -3092,7 +3098,7 @@
   issued:
     date-parts:
     - - 1900
-  publisher: 115 (1900), repr. 1973
+  collection-number: '115'
 - id: Brandl1880
   type: book
   author:
@@ -3302,7 +3308,7 @@
   issued:
     date-parts:
     - - 1969
-  publisher: Cambridge, 1969; repr. 1976
+  publisher-place: Cambridge
 - id: Brewer1975
   type: chapter
   author:
@@ -3400,7 +3406,7 @@
   issued:
     date-parts:
     - - 1906
-  publisher: 131 (1906), 136 (1908); repr. 1987
+  publisher: 131 (1906), 136 (1908)
 - id: Briggs1953
   type: article-journal
   author:
@@ -3465,7 +3471,7 @@
   issued:
     date-parts:
     - - 1865
-  publisher: 8 (1865), repr. 1967
+  collection-number: '8'
 - id: Bronson1907
   type: book
   editor:
@@ -3585,7 +3591,7 @@
   issued:
     date-parts:
     - - 1927
-  publisher: 169 (1927); repr. 1987
+  collection-number: '169'
 - id: BrownBD1932
   type: article-journal
   author:
@@ -3723,7 +3729,9 @@
   issued:
     date-parts:
     - - 1916
-  publisher: 'London: Oxford University Press for the Bibliographical Society: 1916-20'
+    - - 1920
+  publisher-place: London
+  publisher: Oxford University Press for the Bibliographical Society
 - id: Brown1924
   type: book
   editor:
@@ -4035,7 +4043,7 @@
   issued:
     date-parts:
     - - 1903
-  publisher: 88 (1903); repr. 1988
+  collection-number: '88'
 - id: Brunner1913
   type: book
   author:
@@ -4118,8 +4126,8 @@
   collection-title: EETS o.s.
   issued:
     date-parts:
-    - - 1988
-  publisher: 191 (1933); repr. 1988
+    - - 1933
+  collection-number: '191'
 - id: Brunner1933b
   type: article-journal
   author:
@@ -4305,7 +4313,10 @@
   issued:
     date-parts:
     - - 1929
-  publisher: 'rev. ed. London: Oxford University Press, 1929-38'
+    - - 1938
+  edition: revised
+  publisher-place: London
+  publisher: Oxford University Press
 - id: Buckley1862
   type: book
   editor:
@@ -4435,7 +4446,7 @@
   issued:
     date-parts:
     - - 1941
-  publisher: 211 (1941); repr. 1991
+  collection-number: '211'
 - id: Buhler1944
   type: article-journal
   author:
@@ -4836,7 +4847,8 @@
   issued:
     date-parts:
     - - 1933
-  publisher: 'London: J. M. Dent, 1933; repr. 1947'
+  publisher-place: London
+  publisher: J. M. Dent
 - id: Bullock1929
   type: article-journal
   author:
@@ -5241,7 +5253,7 @@
   issued:
     date-parts:
     - - 1949
-  publisher: 221 (1949); repr. 1970
+  collection-number: '221'
 - id: Cautley1938
   type: book
   author:
@@ -5407,7 +5419,9 @@
   issued:
     date-parts:
     - - 1907
-  publisher: 'London: Buller, 1907, 1911 et seq'
+    - - 1911
+  publisher-place: London
+  publisher: Buller
 - id: Chambers1911b
   type: article-journal
   author:
@@ -5431,7 +5445,8 @@
   issued:
     date-parts:
     - - 1932
-  publisher: 'Oxford: Clarendon, 1932, and subsequent editions'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Chambers1939
   type: book
   author:
@@ -5441,7 +5456,8 @@
   issued:
     date-parts:
     - - 1932
-  publisher: 'Oxford: Clarendon, 1932, and subsequent editions'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Chambers1945
   type: book
   author:
@@ -5476,7 +5492,8 @@
   issued:
     date-parts:
     - - 1931
-  publisher: 'Oxford: Clarendon, 1931; repr. 1967'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: ChambersRW1936
   type: chapter
   author:
@@ -5502,7 +5519,9 @@
   issued:
     date-parts:
     - - 1923
-  publisher: 'Paris: Librairie H. Champion, 1923-4; repr. 1966'
+    - - 1924
+  publisher-place: Paris
+  publisher: Librairie H. Champion
 - id: Champollion-Figeac1842
   type: book
   author:
@@ -5746,7 +5765,9 @@
   issued:
     date-parts:
     - - 1857
-  publisher: 'Boston: Houghton, Osgood, also Little, Brown, 1857-58 et seq'
+    - - 1858
+  publisher-place: Boston
+  publisher: Houghton, Osgood, also Little, Brown
 - id: Child1882-98
   type: book
   author:
@@ -5795,8 +5816,7 @@
   issued:
     date-parts:
     - - 1905
-  publisher: 129 (1905; repr. 1971); 130 (1906; repr. with 142, 1971); 142 (1911;
-    repr. 1971)
+  publisher: 129 (1905; repr. 1971); 130 (1906; repr. with 142, 1971); 142 (1911)
 - id: ClarkJW1903-06
   type: article-journal
   author:
@@ -5934,7 +5954,8 @@
   issued:
     date-parts:
     - - 1922
-  publisher: 'Folcroft, PA: Folcroft Library Editions, 1922; repr. 1971'
+  publisher-place: Folcroft, PA
+  publisher: Folcroft Library Editions
 - id: Cohen1973
   type: book
   author:
@@ -6355,7 +6376,7 @@
   issued:
     date-parts:
     - - 1930
-  publisher: 179 (1930); repr. 1971
+  collection-number: '179'
 - id: Cornelius1930b
   type: book
   editor:
@@ -6414,7 +6435,8 @@
   issued:
     date-parts:
     - - 1860
-  publisher: 52, 55, 71, 77, 91, 100-02, 108, 108, 111 (1860-83)
+    - - 1883
+  collection-number: 52, 55, 71, 77, 91, 100-02, 108, 108, 111
 - id: Costello1835
   type: book
   author:
@@ -6537,7 +6559,7 @@
   issued:
     date-parts:
     - - 1875
-  publisher: 60 (1875); repr. 1987
+  collection-number: '60'
 - id: Cox1957
   type: book
   author:
@@ -6607,7 +6629,7 @@
   issued:
     date-parts:
     - - 1902
-  publisher: 87 (1902; 2nd ed. 1957); repr. 1967
+  publisher: 87 (1902; 2nd ed. 1957)
 - id: Craig1916
   type: book
   editor:
@@ -6618,7 +6640,7 @@
   issued:
     date-parts:
     - - 1916
-  publisher: 132 (1916); repr. 1973
+  collection-number: '132'
 - id: Craigie1899
   type: article-journal
   author:
@@ -6669,7 +6691,8 @@
   issued:
     date-parts:
     - - 1923
-  publisher: 'Edinburgh: J. B. Hutcher, 1923; repr. 1931'
+  publisher-place: Edinburgh
+  publisher: J. B. Hutcher
 - id: Craigie1923-25
   type: book
   author:
@@ -6751,7 +6774,7 @@
   issued:
     date-parts:
     - - 1928
-  publisher: 176 (1928; repr. 1973)
+  collection-number: '176'
 - id: Crowther1970
   type: article-journal
   author:
@@ -6787,7 +6810,7 @@
   issued:
     date-parts:
     - - 1929
-  publisher: 178 (1929); repr. 1987
+  collection-number: '178'
 - id: Cust1859
   type: book
   editor:
@@ -7052,7 +7075,7 @@
   issued:
     date-parts:
     - - 1921
-  publisher: 155 (1921; repr. 1971)
+  collection-number: '155'
 - id: Day1936
   type: book
   editor:
@@ -7065,7 +7088,7 @@
   issued:
     date-parts:
     - - 1936
-  publisher: 199 (1936); repr. 1987
+  collection-number: '199'
 - id: Day1939
   type: article-journal
   author:
@@ -7088,7 +7111,7 @@
   issued:
     date-parts:
     - - 1952
-  publisher: 225 (1952); repr. 1957
+  collection-number: '225'
 - id: Dean1991
   type: book
   editor:
@@ -7255,7 +7278,7 @@
   issued:
     date-parts:
     - - 1921
-  publisher: 158 (1921); repr. 1987
+  collection-number: '158'
 - id: dEvelyn1935
   type: book
   author:
@@ -7281,7 +7304,7 @@
   issued:
     date-parts:
     - - 1959
-  publisher: 235 (1959), 236 (1956); repr. 1967
+  publisher: 235 (1959), 236 (1956)
 - id: Devlin1939
   type: article-journal
   author:
@@ -8133,7 +8156,7 @@
   issued:
     date-parts:
     - - 1908
-  publisher: 101 (1908); repr. 1984
+  collection-number: '101'
 - id: Dyboski1936
   type: book
   editor:
@@ -8146,7 +8169,7 @@
   issued:
     date-parts:
     - - 1936
-  publisher: 201 (1936); repr. 1971
+  collection-number: '201'
 - id: Dyce1879
   type: book
   editor:
@@ -8647,7 +8670,7 @@
   issued:
     date-parts:
     - - 1963
-  publisher: 'Oxford: Clarendon, 1963/1974'
+  publisher: 'Oxford: Clarendon, 1963; 2nd ed. 1974'
 - id: EllisAJ1867-74
   type: book
   editor:
@@ -8843,16 +8866,17 @@
   publisher-place: London and New York
   publisher: Macmillan
 - id: Emmerig1906
-  type: chapter
+  type: book
   author:
   - family: Emmerig
     given: Oskar
-  title: The Bataile of Agyncourt
-  container-title: Lichte geschichtlicher Quellenwerke
+  title: '"The Bataile of Agyncourt" im Lichte geschichtlicher Quellenwerke'
   issued:
     date-parts:
     - - 1906
-  publisher: 'I. Nurnberg: Wieser, 1906'
+  volume: '1'
+  publisher-place: Nuremberg
+  publisher: Wieser
 - id: England1897
   type: book
   editor:
@@ -8865,7 +8889,7 @@
   issued:
     date-parts:
     - - 1897
-  publisher: 71 (1897); repr. 1973
+  collection-number: '71'
 - id: Erb1971
   type: article-journal
   author:
@@ -8888,7 +8912,7 @@
   issued:
     date-parts:
     - - 1905
-  publisher: 96 (1905); repr. 1987
+  collection-number: '96'
 - id: Erdmann1911-30
   type: book
   editor:
@@ -8949,7 +8973,8 @@
   issued:
     date-parts:
     - - 1931
-  publisher: London, Oxford University Press, H. Milford, 1931
+  publisher-place: London
+  publisher: Oxford University Press, H. Milford
 - id: EvansT1810
   type: book
   author:
@@ -8973,7 +8998,7 @@
   issued:
     date-parts:
     - - 1933
-  publisher: 190 (1933); repr. 1990
+  collection-number: '190'
 - id: Evans1931
   type: book
   author:
@@ -9418,10 +9443,13 @@
   - family: Fischer
     given: Rudolf Bruno
   title: How the wyse man taught hys sone
+  collection-title: Erlanger Beiträge
   issued:
     date-parts:
     - - 1889
-  publisher: 'Erlanger Beiträge 2. Erlangen and Leipzig: Deichert, 1889'
+  collection-number: '2'
+  publisher-place: Erlangen and Leipzig
+  publisher: Deichert
 - id: Fischer1903-04
   type: article-journal
   author:
@@ -10009,7 +10037,8 @@
   issued:
     date-parts:
     - - 1913
-  publisher: 145, 147 (1913, 1916); repr. 1971
+    - - 1916
+  collection-number: 145, 147
 - id: Foster1926
   type: book
   editor:
@@ -10208,7 +10237,7 @@
   issued:
     date-parts:
     - - 1942
-  publisher: 217 (1942); repr. 1987
+  collection-number: '217'
 - id: Frankis1955
   type: article-journal
   author:
@@ -10347,7 +10376,7 @@
   issued:
     date-parts:
     - - 1964
-  publisher: 254 (1964); repr. 1981
+  collection-number: '254'
 - id: Friend1954
   type: article-journal
   author:
@@ -10500,7 +10529,7 @@
   issued:
     date-parts:
     - - 1864
-  publisher: 2 (1864); repr. 1988
+  collection-number: '2'
 - id: Furnivall1864b
   type: book
   editor:
@@ -10522,7 +10551,7 @@
   issued:
     date-parts:
     - - 1865
-  publisher: 12 (1865); 2nd revised ed.,1869; 3rd ed. 1891; repr. 1965
+  publisher: 12 (1865); 2nd revised ed.,1869; 3rd ed. 1891
 - id: Furnivall1865b
   type: book
   editor:
@@ -10571,7 +10600,7 @@
   issued:
     date-parts:
     - - 1867
-  publisher: 25 (1867); repr. 1973
+  collection-number: '25'
 - id: Furnivall1867b
   type: book
   editor:
@@ -10595,7 +10624,7 @@
   issued:
     date-parts:
     - - 1867
-  publisher: 24 (1867); repr. 1973
+  collection-number: '24'
 - id: Furnivall1868-79
   type: book
   editor:
@@ -11920,7 +11949,7 @@
   issued:
     date-parts:
     - - 1940
-  publisher: 210 (1940); repr. 1966
+  collection-number: '210'
 - id: Gomme1890
   type: article-journal
   editor:
@@ -12029,7 +12058,7 @@
   issued:
     date-parts:
     - - 1935
-  publisher: 119 (1935), repr. 1973
+  collection-number: '119'
 - id: Graves1850
   type: article-journal
   author:
@@ -14140,7 +14169,8 @@
   issued:
     date-parts:
     - - 1907
-  publisher: 134-5, 138, 146 (1907-13); repr. 1971
+    - - 1913
+  collection-number: 134-5, 138, 146
 - id: Hartshorne1829
   type: book
   author:
@@ -14269,7 +14299,7 @@
   issued:
     date-parts:
     - - 1881
-  publisher: 38 (1881); repr. 1969
+  collection-number: '38'
 - id: Hausknecht1885
   type: book
   editor:
@@ -14497,7 +14527,8 @@
   issued:
     date-parts:
     - - 1724
-  publisher: 'Oxford: at the Theatre, 1724; repr. 1810'
+  publisher-place: Oxford
+  publisher: at the Theatre
 - id: Hearne1725
   type: book
   editor:
@@ -14507,7 +14538,8 @@
   issued:
     date-parts:
     - - 1725
-  publisher: 'Oxford: at the Theatre, 1725; repr. 1810'
+  publisher-place: Oxford
+  publisher: at the Theatre
 - id: Hearne1727
   type: book
   editor:
@@ -14798,7 +14830,7 @@
   issued:
     date-parts:
     - - 1879
-  publisher: 33 (1879); repr. 1962
+  collection-number: '33'
 - id: Herrmann1898
   type: book
   editor:
@@ -14820,7 +14852,7 @@
   issued:
     date-parts:
     - - 1879
-  publisher: 34 (1879); repr. 1966
+  collection-number: '34'
 - id: Herrtage1880
   type: book
   editor:
@@ -14832,7 +14864,7 @@
   issued:
     date-parts:
     - - 1880
-  publisher: 35 (1880); repr. 1973
+  collection-number: '35'
 - id: Herrtage1881
   type: book
   editor:
@@ -14845,7 +14877,7 @@
   issued:
     date-parts:
     - - 1881
-  publisher: 75 (1881), repr. 1987
+  collection-number: '75'
 - id: Herrtage1882
   type: book
   editor:
@@ -14857,7 +14889,7 @@
   issued:
     date-parts:
     - - 1882
-  publisher: 39 (1882); repr. 1969
+  collection-number: '39'
 - id: Hertzberg1878
   type: book
   author:
@@ -15057,7 +15089,7 @@
   issued:
     date-parts:
     - - 1930
-  publisher: 183 (1930); repr. 1971
+  collection-number: '183'
 - id: Hewlett1886-89
   type: book
   editor:
@@ -15536,7 +15568,7 @@
   issued:
     date-parts:
     - - 1933
-  publisher: 182 (1933); repr. 1988
+  collection-number: '182'
 - id: Holmyard1928
   type: chapter
   author:
@@ -16391,7 +16423,7 @@
   issued:
     date-parts:
     - - 1887
-  publisher: 87 (1887; repr. 1987)
+  collection-number: '87'
 - id: Horstmann1887b
   type: article-journal
   author:
@@ -16463,7 +16495,7 @@
   issued:
     date-parts:
     - - 1892
-  publisher: 98 (1892; repr. 1973)
+  collection-number: '98'
 - id: Horstmann1893
   type: book
   editor:
@@ -16495,7 +16527,8 @@
   issued:
     date-parts:
     - - 1900
-  publisher: 'London, New York: Longmans, Green, 1900; repr. 1983'
+  publisher-place: London, New York
+  publisher: Longmans, Green
 - id: Hotten1861
   type: book
   author:
@@ -16577,7 +16610,8 @@
   issued:
     date-parts:
     - - 1906
-  publisher: 'Norwich: Jarrold, 1906; repr. 1977'
+  publisher-place: Norwich
+  publisher: Jarrold
 - id: Hughes1924
   type: book
   editor:
@@ -16622,7 +16656,8 @@
   issued:
     date-parts:
     - - 1943
-  publisher: 'Salem, NH: Ayer, 1943; repr. 1991'
+  publisher-place: Salem, NH
+  publisher: Ayer
 - id: Hughes-Hughes1906
   type: book
   editor:
@@ -16632,7 +16667,8 @@
   issued:
     date-parts:
     - - 1906
-  publisher: 'London: Trustees of the Museum, 1906; repr. 1991'
+  publisher-place: London
+  publisher: Trustees of the Museum
 - id: Hughey1935
   type: book
   author:
@@ -16665,7 +16701,7 @@
   issued:
     date-parts:
     - - 1908
-  publisher: 100 (1908); repr. 1976
+  collection-number: '100'
 - id: Hulme1909
   type: article-journal
   author:
@@ -17511,7 +17547,7 @@
   issued:
     date-parts:
     - - 1904
-  publisher: 124 (1904; repr. 1973)
+  collection-number: '124'
 - id: Kaiser1954
   type: book
   editor:
@@ -17745,7 +17781,7 @@
   issued:
     date-parts:
     - - 1890
-  publisher: 58 (1890); repr. 1962
+  collection-number: '58'
 - id: Kemble1848
   type: book
   author:
@@ -17854,11 +17890,13 @@
     given: Neil Ripley
   title: Fragments of Medieval Manuscripts used as Pastedowns in Oxford Bindings,
     with a survey of Oxford Binding c. 1515-1620
-  collection-title: Oxford Bibliographical Society
+  collection-title: Oxford Bibliographical Society, n.s.
   issued:
     date-parts:
     - - 1954
-  publisher: 'n.s. 5. Oxford: Clarendon, 1954'
+  collection-number: '5'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Ker1960
   type: book
   author:
@@ -18103,7 +18141,8 @@
   issued:
     date-parts:
     - - 1958
-  publisher: 'Oxford: Clarendon, 1958; repr. 1979'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Kinsman1969
   type: book
   author:
@@ -18295,7 +18334,7 @@
   issued:
     date-parts:
     - - 1902
-  publisher: 120 (1902); repr. 1987
+  collection-number: '120'
 - id: Kock1904-32
   type: book
   editor:
@@ -18307,8 +18346,7 @@
   issued:
     date-parts:
     - - 1973
-  publisher: e.s. 93 (1904; repr. 1973); e.s. 112 (1913; repr. 1973); o.s. 185 (1932,
-    repr. 1971)
+  publisher: e.s. 93 (1904; repr. 1973); e.s. 112 (1913; repr. 1973); o.s. 185 (1932)
 - id: Kokeritz1948
   type: article-journal
   author:
@@ -18444,7 +18482,7 @@
   issued:
     date-parts:
     - - 1885
-  publisher: 46 (1885), 48 (1886), 65 (1894); repr. 1973
+  publisher: 46 (1885), 48 (1886), 65 (1894)
 - id: Kolbing1886a
   type: article-journal
   author:
@@ -18543,7 +18581,7 @@
   issued:
     date-parts:
     - - 1932
-  publisher: 188 (1932); repr. 1988
+  collection-number: '188'
 - id: KolbingA1904
   type: book
   author:
@@ -18590,7 +18628,7 @@
   issued:
     date-parts:
     - - 1902
-  publisher: 86 (1902); repr. 1973
+  collection-number: '86'
 - id: Kooper2006
   type: book
   editor:
@@ -19237,7 +19275,7 @@
   issued:
     date-parts:
     - - 1937
-  publisher: 203 (1937); repr. 1990
+  collection-number: '203'
 - id: Lee1981
   type: article-journal
   author:
@@ -19696,7 +19734,8 @@
   issued:
     date-parts:
     - - 1872
-  publisher: 52, 72 (1872, 1879); repr. 1988
+    - - 1879
+  collection-number: 52, 72
 - id: Logeman1891
   type: article-journal
   author:
@@ -19881,7 +19920,7 @@
   issued:
     date-parts:
     - - 1870
-  publisher: 42 (1870); repr. 1965
+  collection-number: '42'
 - id: Lumby1870b
   type: book
   editor:
@@ -19892,7 +19931,7 @@
   issued:
     date-parts:
     - - 1870
-  publisher: 43 (1870); repr. 1973
+  collection-number: '43'
 - id: Lumby1889-95
   type: book
   editor:
@@ -20022,7 +20061,8 @@
   issued:
     date-parts:
     - - 1900
-  publisher: 81, 82 (1900, 1901); repr. 1978
+    - - 1901
+  collection-number: 81, 82
 - id: MacCracken1907
   type: article-journal
   author:
@@ -20139,7 +20179,7 @@
   issued:
     date-parts:
     - - 1911
-  publisher: 107 (1911; repr. 1961)
+  collection-number: '107'
 - id: MacCracken1911b
   type: article-journal
   author:
@@ -20301,7 +20341,7 @@
   issued:
     date-parts:
     - - 1934
-  publisher: 192 (1934); repr. 1961
+  collection-number: '192'
 - id: MacDiarmid1973
   type: book
   editor:
@@ -20344,7 +20384,7 @@
   issued:
     date-parts:
     - - 1934
-  publisher: 193 (1934); repr. 1990
+  collection-number: '193'
 - id: Mackay1840
   type: book
   editor:
@@ -20401,7 +20441,8 @@
   issued:
     date-parts:
     - - 1939
-  publisher: 'London: Faber, 1939; repr. 1970'
+  publisher-place: London
+  publisher: Faber
 - id: Mackie1934
   type: book
   editor:
@@ -20422,7 +20463,8 @@
   issued:
     date-parts:
     - - 1958
-  publisher: 'Edinburgh: Oliver and Boyd, 1958; repr. 1976'
+  publisher-place: Edinburgh
+  publisher: Oliver and Boyd
 - id: MacPherson1795
   type: book
   editor:
@@ -20641,7 +20683,8 @@
   issued:
     date-parts:
     - - 1929
-  publisher: 'Cambridge, MA: Harvard University Press, 1929; repr. 1973'
+  publisher-place: Cambridge, MA
+  publisher: Harvard University Press
 - id: Mahir1910
   type: book
   editor:
@@ -21034,7 +21077,7 @@
   issued:
     date-parts:
     - - 1880
-  publisher: 74 (1880); repr. 1973
+  collection-number: '74'
 - id: MatthewsW1963
   type: book
   author:
@@ -21281,7 +21324,7 @@
   issued:
     date-parts:
     - - 1928
-  publisher: 173 (1928); repr. 1971
+  collection-number: '173'
 - id: Mead1960
   type: article-journal
   author:
@@ -21332,7 +21375,7 @@
   issued:
     date-parts:
     - - 1940
-  publisher: 212 (1940); repr. 1961
+  collection-number: '212'
 - id: Meech1940b
   type: article-journal
   author:
@@ -21516,7 +21559,7 @@
   issued:
     date-parts:
     - - 1888
-  publisher: 54 (1888); repr. 1965
+  collection-number: '54'
 - id: Meyer1889
   type: article-journal
   author:
@@ -21808,7 +21851,9 @@
   issued:
     date-parts:
     - - 1889
-  publisher: '6-7, 17. Edinburgh and London: Blackwood, 1889'
+  collection-number: 6-7, 17
+  publisher-place: Edinburgh and London
+  publisher: Blackwood
 - id: Monda1970
   type: article-journal
   author:
@@ -22127,7 +22172,7 @@
   issued:
     date-parts:
     - - 1898
-  publisher: 75 (1898); repr. 1988
+  collection-number: '75'
 - id: Morris1932
   type: book
   author:
@@ -22183,7 +22228,7 @@
   issued:
     date-parts:
     - - 1869
-  publisher: 1 (1869); repr. 1965
+  collection-number: '1'
 - id: Morris1864b
   type: book
   editor:
@@ -22205,7 +22250,7 @@
   issued:
     date-parts:
     - - 1865
-  publisher: 7 (1865); repr. 1973
+  collection-number: '7'
 - id: Morris1866
   type: book
   editor:
@@ -22216,7 +22261,7 @@
   issued:
     date-parts:
     - - 1866
-  publisher: 23 (1866); rev. P. Gradon; repr. 1965
+  publisher: 23 (1866); rev. P. Gradon
 - id: Morris1867
   type: book
   editor:
@@ -22249,7 +22294,7 @@
   issued:
     date-parts:
     - - 1871
-  publisher: 46 (1871); repr. 1973
+  collection-number: '46'
 - id: Morris1872
   type: book
   editor:
@@ -22261,7 +22306,7 @@
   issued:
     date-parts:
     - - 1872
-  publisher: 49 (1872); repr. 1988
+  collection-number: '49'
 - id: Morris1873
   type: book
   editor:
@@ -22273,7 +22318,7 @@
   issued:
     date-parts:
     - - 1873
-  publisher: 53 (1873); repr. 1973
+  collection-number: '53'
 - id: Morris1874-93
   type: book
   editor:
@@ -22285,7 +22330,7 @@
     date-parts:
     - - 1874
   publisher: 57 (1874); repr. 1961; 59 (1875); repr. 1966; 62 (1876); repr. 1966;
-    66 (1877); repr. 1966; 68 (1878); repr. 1966; 101 (1893); repr. 1962
+    66 (1877); repr. 1966; 68 (1878); repr. 1966; 101 (1893)
 - id: Morris1882-94
   type: book
   editor:
@@ -22495,7 +22540,10 @@
   issued:
     date-parts:
     - - 1873
-  publisher: '16, 32, 40, 46, 50, 55-56, 64-67 Glasgow: Anderson, 1873-1896'
+    - - 1896
+  collection-number: 16, 32, 40, 46, 50, 55-56, 64-67
+  publisher-place: Glasgow
+  publisher: Anderson
 - id: Murison1952
   type: book
   editor:
@@ -22551,7 +22599,7 @@
   issued:
     date-parts:
     - - 1911
-  publisher: 141 (1911); repr. 1964
+  collection-number: '141'
 - id: Muses1707
   type: book
   title: The Muses Mercury, or, The monthly miscellany
@@ -22692,7 +22740,7 @@
   issued:
     date-parts:
     - - 1894
-  publisher: 103 (1894); repr. 1973
+  collection-number: '103'
 - id: Napier1916
   type: book
   editor:
@@ -22917,7 +22965,9 @@
   issued:
     date-parts:
     - - 1866
-  publisher: 'rev. ed., London: Bell and Daldy, 1866'
+  edition: revised
+  publisher-place: London
+  publisher: Bell and Daldy
 - id: Nicholls1982
   type: article-journal
   author:
@@ -23024,7 +23074,8 @@
   issued:
     date-parts:
     - - 1916
-  publisher: 'Oxford: Clarendon, 1916, et seq'
+  publisher-place: Oxford
+  publisher: Clarendon
 - id: Nicol1854
   type: book
   title: The Romaunce of the Sowdone of Babyloyne and of Ferumbras his Sone who conquerede
@@ -23239,7 +23290,8 @@
   issued:
     date-parts:
     - - 1942
-  publisher: 'New York: Columbia University Press, 1942; repr. 1967'
+  publisher-place: New York
+  publisher: Columbia University Press
 - id: ODonoghue1980
   type: article-journal
   author:
@@ -23311,7 +23363,7 @@
   issued:
     date-parts:
     - - 1959
-  publisher: 246 (1959); repr. 1967
+  collection-number: '246'
 - id: Ogilvie-Thomson1974
   type: article-journal
   author:
@@ -23518,7 +23570,7 @@
   issued:
     date-parts:
     - - 1935
-  publisher: 198 (1935); repr. 1987
+  collection-number: '198'
 - id: Owen1971
   type: book
   editor:
@@ -23865,7 +23917,7 @@
   issued:
     date-parts:
     - - 1928
-  publisher: 174 (1928); repr. 1987
+  collection-number: '174'
 - id: Parkes1978
   type: chapter
   author:
@@ -24010,7 +24062,8 @@
   issued:
     date-parts:
     - - 1912
-  publisher: 'London: Everyman, 1912; repr. 1936'
+  publisher-place: London
+  publisher: Everyman
 - id: Paues1907
   type: article-journal
   author:
@@ -24059,7 +24112,7 @@
   issued:
     date-parts:
     - - 1868
-  publisher: 31 (1868); repr. 1973
+  collection-number: '31'
 - id: Pearce1891
   type: book
   author:
@@ -24263,7 +24316,8 @@
   issued:
     date-parts:
     - - 1765
-  publisher: 'London: J. Dodsley, 1765, and subsequent editions'
+  publisher-place: London
+  publisher: J. Dodsley
 - id: Percy1775
   type: book
   author:
@@ -24285,7 +24339,8 @@
   issued:
     date-parts:
     - - 1767
-  publisher: 'London: J. Dodsley, 1765, and subsequent editions'
+  publisher-place: London
+  publisher: J. Dodsley
 - id: Percy1794
   type: book
   author:
@@ -24296,7 +24351,8 @@
   issued:
     date-parts:
     - - 1794
-  publisher: 'London: J. Dodsley, 1765, and subsequent editions'
+  publisher-place: London
+  publisher: J. Dodsley
 - id: Percy1811
   type: book
   author:
@@ -24307,7 +24363,8 @@
   issued:
     date-parts:
     - - 1811
-  publisher: 'London: J. Dodsley, 1765, and subsequent editions'
+  publisher-place: London
+  publisher: J. Dodsley
 - id: Perkins1961
   type: article-journal
   author:
@@ -24354,7 +24411,7 @@
   issued:
     date-parts:
     - - 1866
-  publisher: 20 (1866); rev. 1921; repr. 1987
+  publisher: 20 (1866); rev. 1921
 - id: Perry1867
   type: book
   editor:
@@ -24365,7 +24422,7 @@
   issued:
     date-parts:
     - - 1867
-  publisher: 26 (1867); repr. 1973
+  collection-number: '26'
 - id: Perry1925
   type: book
   editor:
@@ -24377,7 +24434,7 @@
   issued:
     date-parts:
     - - 1925
-  publisher: 16 (1925); repr. 1987
+  collection-number: '16'
 - id: Perryman1980
   type: book
   editor:
@@ -24994,7 +25051,7 @@
   issued:
     date-parts:
     - - 1890
-  publisher: 'Oxford: Clarendon, 1890; 2nd ed. 1895 et seq'
+  publisher: 'Oxford: Clarendon, 1890; 2nd ed. 1895'
 - id: Pollard1903
   type: book
   author:
@@ -25267,7 +25324,7 @@
   issued:
     date-parts:
     - - 1908
-  publisher: 98 (1908); repr. 1976
+  collection-number: '98'
 - id: Ramsay1724
   type: book
   editor:
@@ -25750,7 +25807,7 @@
   issued:
     date-parts:
     - - 1908
-  publisher: 99 (1908); repr. 1984
+  collection-number: '99'
 - id: Rickert1910
   type: book
   editor:
@@ -27249,7 +27306,7 @@
   issued:
     date-parts:
     - - 1940
-  publisher: 209 (1940); repr. 1987
+  collection-number: '209'
 - id: RossA1949
   type: article-journal
   author:
@@ -27929,7 +27986,7 @@
   issued:
     date-parts:
     - - 1891
-  publisher: 60 (1891); repr. 1987
+  collection-number: '60'
 - id: Schieberle2020
   type: book
   editor:
@@ -28475,7 +28532,7 @@
   issued:
     date-parts:
     - - 1927
-  publisher: 170 (1927); repr. 1971
+  collection-number: '170'
 - id: Scott1901-02
   type: article-journal
   author:
@@ -28496,7 +28553,8 @@
   issued:
     date-parts:
     - - 1804
-  publisher: 'Edinburgh: Constable, 1804 et seq'
+  publisher-place: Edinburgh
+  publisher: Constable
 - id: Scott1813
   type: book
   author:
@@ -28633,7 +28691,7 @@
   issued:
     date-parts:
     - - 1938
-  publisher: 206 (1938); repr. 1988
+  collection-number: '206'
 - id: SeymourM1964
   type: article-journal
   author:
@@ -28771,7 +28829,7 @@
   issued:
     date-parts:
     - - 1816
-  publisher: 'Durham: Andrews, 1816; 2nd ed. 1851; repr. 1978'
+  publisher: 'Durham: Andrews, 1816; 2nd ed. 1851'
 - id: Sheeran1973
   type: chapter
   author:
@@ -28922,7 +28980,7 @@
   issued:
     date-parts:
     - - 1901
-  publisher: 84 (1901); repr. 1965
+  collection-number: '84'
 - id: Silverstein1971
   type: book
   editor:
@@ -28945,7 +29003,7 @@
   issued:
     date-parts:
     - - 1879
-  publisher: 71 (1879); repr. 1968
+  collection-number: '71'
 - id: Simmons1901
   type: book
   editor:
@@ -28958,7 +29016,7 @@
   issued:
     date-parts:
     - - 1901
-  publisher: 118 (1901); repr. 1987
+  collection-number: '118'
 - id: Singer1928-31
   type: book
   author:
@@ -29053,7 +29111,7 @@
   issued:
     date-parts:
     - - 1865
-  publisher: 6 (1865); repr. 1965
+  collection-number: '6'
 - id: Skeat1866
   type: book
   editor:
@@ -29064,7 +29122,7 @@
   issued:
     date-parts:
     - - 1866
-  publisher: 20 (1866); repr. 1987
+  collection-number: '20'
 - id: Skeat1867a
   type: book
   editor:
@@ -29075,7 +29133,7 @@
   issued:
     date-parts:
     - - 1867
-  publisher: 28 (1867); repr. 1990
+  collection-number: '28'
 - id: Skeat1867b
   type: book
   editor:
@@ -29097,7 +29155,7 @@
   issued:
     date-parts:
     - - 1867
-  publisher: 1 (1867); repr. 1973
+  collection-number: '1'
 - id: Skeat1868
   type: book
   editor:
@@ -29108,7 +29166,7 @@
   issued:
     date-parts:
     - - 1868
-  publisher: 4 (1868); repr. 1973
+  collection-number: '4'
 - id: Skeat1869
   type: book
   editor:
@@ -29119,7 +29177,7 @@
   issued:
     date-parts:
     - - 1869
-  publisher: 38 (1869); repr. 1972
+  collection-number: '38'
 - id: Skeat1870-89
   type: book
   editor:
@@ -29152,7 +29210,7 @@
   issued:
     date-parts:
     - - 1873
-  publisher: 54 (1873); repr. 1978
+  collection-number: '54'
 - id: Skeat1878
   type: book
   editor:
@@ -29163,7 +29221,7 @@
   issued:
     date-parts:
     - - 1878
-  publisher: 31 (1878); repr. 1987
+  collection-number: '31'
 - id: Skeat1884
   type: book
   editor:
@@ -29209,7 +29267,7 @@
   issued:
     date-parts:
     - - 1886
-  publisher: 47 (1886); repr. 1973
+  collection-number: '47'
 - id: Skeat1886c
   type: article-journal
   author:
@@ -29872,7 +29930,7 @@
   issued:
     date-parts:
     - - 1952
-  publisher: 227 (1952), 237 (1957); repr. 1961
+  publisher: 227 (1952), 237 (1957)
 - id: Smithers1987
   type: article-journal
   author:
@@ -30220,7 +30278,7 @@
   issued:
     date-parts:
     - - 1894
-  publisher: 66 (1894); repr. 1973
+  collection-number: '66'
 - id: Steele1894b
   type: article-journal
   author:
@@ -31682,7 +31740,8 @@
   issued:
     date-parts:
     - - 1899
-  publisher: 'London, NY: Longmans, Green, 1899 et seq'
+  publisher-place: London, NY
+  publisher: Longmans, Green
 - id: Trigg1990
   type: book
   editor:
@@ -31718,7 +31777,7 @@
   issued:
     date-parts:
     - - 1896
-  publisher: 69 (1896); repr. 1976
+  collection-number: '69'
 - id: Tristram1955
   type: book
   author:
@@ -31751,7 +31810,7 @@
   issued:
     date-parts:
     - - 1951
-  publisher: 224 (1951); repr. 1987
+  collection-number: '224'
 - id: Tryon1923
   type: article-journal
   author:
@@ -32402,7 +32461,7 @@
   issued:
     date-parts:
     - - 1869
-  publisher: 9 (1869); repr. 1988
+  collection-number: '9'
 - id: Vinogradoff1925
   type: chapter
   author:
@@ -32717,7 +32776,7 @@
   issued:
     date-parts:
     - - 1931
-  publisher: 181 (1931); repr. 1971
+  collection-number: '181'
 - id: Warton1753
   type: book
   editor:
@@ -33312,7 +33371,7 @@
   issued:
     date-parts:
     - - 1932
-  publisher: 187 (1932); repr. 1971
+  collection-number: '187'
 - id: Whiteford1990
   type: book
   author:
@@ -33420,7 +33479,7 @@
   issued:
     date-parts:
     - - 1931
-  publisher: 184 (1931); repr. 1988
+  collection-number: '184'
 - id: Whittington1822
   type: book
   number-of-volumes: '5'
@@ -33523,7 +33582,8 @@
   issued:
     date-parts:
     - - 1846
-  publisher: 'London: Aux dépens de la Société, 1846'
+  publisher-place: London
+  publisher: Aux dépens de la Société
 - id: WilliamsM1984
   type: book
   author:
@@ -34241,7 +34301,7 @@
   issued:
     date-parts:
     - - 1937
-  publisher: 205 (1937); repr. 1988
+  collection-number: '205'
 - id: WrightHG1943
   type: book
   editor:
@@ -34252,7 +34312,7 @@
   issued:
     date-parts:
     - - 1943
-  publisher: 214 (1943); repr. 1970
+  collection-number: '214'
 - id: Wright1836a
   type: book
   editor:
@@ -34596,7 +34656,10 @@
   issued:
     date-parts:
     - - 1847
-  publisher: '24-26. London: Richards, 1847-51'
+    - - 1851
+  collection-number: 24-26
+  publisher-place: London
+  publisher: Richards
 - id: Wright1849
   type: book
   author:
@@ -34971,7 +35034,7 @@
   issued:
     date-parts:
     - - 1935
-  publisher: 196 (1935); repr. 1971
+  collection-number: '196'
 - id: Zielke1880
   type: book
   editor:
@@ -35030,7 +35093,7 @@
   issued:
     date-parts:
     - - 1875
-  publisher: 25 (1875), 26 (1876); repr. 1966
+  publisher: 25 (1875), 26 (1876)
 - id: Zupitza1878a
   type: article-journal
   author:
