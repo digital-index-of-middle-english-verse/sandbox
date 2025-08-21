@@ -52,7 +52,7 @@ def convert_item(sourceItem, warning_log):
 
     # Define newItem
     newItem = {}
-    newItem['id'] = sourceItem.get('@xml:id')
+    newItem['id'] = sourceItem.get('@xml:id') # NOTE: could be mapped also to CSL:citation-key
     newItem['type'] = 'book' # set a default value for a required field
 
     for tag_name in sourceItem.keys():
@@ -436,10 +436,9 @@ def validate_items(conversion):
         return False
 
 def write_to_file(conversion):
-    output_filename = destination + 'bibliography.yaml'
-    yaml_dump = yaml.dump(conversion, sort_keys=False, allow_unicode=True)
-    with open(output_filename, 'w') as file:
-        file.write(yaml_dump)
+    output_filename = destination + 'bibliography.json'
+    with open(output_filename, 'w') as f:
+        json.dump(conversion, f, sort_keys=False, ensure_ascii=False, indent=2)
     print(f'Wrote conversion to `{output_filename}`.')
 
 # Workflow
