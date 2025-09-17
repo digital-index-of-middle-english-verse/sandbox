@@ -8,18 +8,38 @@ An inspiration is Andrew Dunning's [prototype](https://github.com/medievallibrar
 
 # Repository contents
 
-- `artefacts/`
-  Warnings, reports, and csv artefacts of the scripts in `scripts/`.
-  Transformed source data are written instead to `docs/` for use by the Jekyll website builder.
-- `docs/`
-  Source files and templates for a website.
-  The contents of `docs/_items/` are written by `scripts/transform-Records.py`.
-- `schemas/`
-  JSON schemas for validation of transformed source files.
-- `scripts/`
-  Python scripts for review and transformation of the files in the `dimev` repository.
-  For details see comments at the head of each file.
-  Scripts presume that the `dimev` repository has been cloned to a directory sibling to this one.
+Directories are as follows.
+
+## artefacts
+
+Warnings, reports, and csv artefacts of the scripts in `scripts/`.
+This directory also contains transitional files, to be used in cleaning and enrichment of certain data fields.
+
+The file `bibliography.json` is created by `transform-Bibl.py`.
+The file `bibliography.bib` was created from `bibliography.json` by pandoc.
+For comment see this [Zotero forum post](https://forums.zotero.org/discussion/126264/csl-citation-key-zotero-citationkey).
+
+The file `subjects.csv` was created by `inspect-Records.py`, supplying a list of subject terms currently used by DIMEV.
+The output of the script is then edited manually to create a cross-walk from current subject terms to revised ones (WIP).
+
+The file `subject-categories.csv` was created by `update-subjects.py`, supplying a list of revised subject terms.
+The output of the script is edited manually to assign subject-terms to categories.
+The Python script `update-subjects.py` reads this file and keeps it up to date, adding and deleting subject terms as specified in `subjects.csv`.
+
+## docs
+
+Source files and templates for a website.
+The contents of `docs/_items/` are written by `scripts/transform-Records.py`.
+
+## schemas
+
+JSON schemas for validation of transformed source files.
+
+## scripts
+
+Python scripts for review and transformation of the files in the `dimev` repository.
+For details see comments at the head of each file.
+Scripts presume that the `dimev` repository has been cloned to a directory sibling to this one.
 
 # Technical direction
 
