@@ -1,0 +1,94 @@
+# This Python script reads subject terms from the WIP crosswalk
+# (`subjects.csv`), reports added and deleted subject terms, and creates a CSV
+# file `subject-categories.csv`, in which terms will be assigned to categories.
+#
+# The script will need to be updated to read `subject-categories.csv`, once we
+# begin filling the 'categories' field in that file.
+
+import os
+import csv
+
+# Root variables
+
+data_dir = '../artefacts/'
+csv_sources = ['subjects.csv']
+categories_csv = 'subject-categories.csv'
+
+def verify_path(csv_sources, data_dir):
+    print('Verifying presence of data files...')
+    exceptions = 0
+    for file in csv_sources:
+        file_path = data_dir + file
+        if not os.path.exists(file_path):
+            print(f"Source file {file} not found on path {data_dir}.")
+            exit()
+    print('Success')
+
+def load_csv_to_dict(csv_sources, data_dir):
+    subject_crosswalk = []
+    destination_list = [subject_crosswalk]
+    n = 0
+    while n < len(destination_list):
+        file_path = data_dir + csv_sources[n]
+        destination = destination_list[n]
+        with open(file_path, 'r') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                destination.append(row)
+        n += 1
+    return subject_crosswalk
+
+def process_subject_terms(subject_crosswalk):
+    revised_subjects = set()
+    old_subjects = set()
+    deleted_subjects = set()
+    for item in subject_crosswalk:
+        old_subjects.add(item['subject'])
+        if item['new subjects'] == '':
+            revised_subjects.add(item['subject'])
+        elif item['new subjects'] == 'DELETE':
+            deleted_subjects.add(item['subject'])
+        else:
+            new_subject_list = item['new subjects'].split("; ")
+            for subject_term in new_subject_list:
+                revised_subjects.add(subject_term)
+    added_subjects = set()
+    for subject_term in revised_subjects:
+        if subject_term not in old_subjects:
+            added_subjects.add(subject_term)
+    added_subjects = list(added_subjects)
+    added_subjects.sort()
+    deleted_subjects = list(deleted_subjects)
+    deleted_subjects.sort()
+    print(f'\nFound {str(len(subject_crosswalk))} subject terms in DIMEV 1.0')
+    print(f'Of these, {str(len(deleted_subjects))} are marked for deletion')
+    print(f'{str(len(added_subjects))} new subject terms will be added, for a total of {str(len(revised_subjects))} subject terms after revision')
+    print(f'\nThe deleted subject terms are: {deleted_subjects}')
+    print(f'\nThe new subject terms are: {added_subjects}')
+    return revised_subjects
+
+def create_subject_categories(revised_subjects):
+    subject_categories = []
+    revised_subjects = list(revised_subjects)
+    revised_subjects.sort()
+    for item in revised_subjects:
+        subject_categories.append((item, ''))
+    return subject_categories
+
+def write_subject_categories(revised_categories):
+    destination = data_dir + categories_csv
+    with open(destination, 'w') as file:
+        file.write('subject,category\n')
+        for item in revised_categories:
+            if ',' in item[0]:
+                file.write('"' + item[0] + '",' + item[1] + '\n')
+            else:
+                file.write(item[0] + ',' + item[1] + '\n')
+    print(f'\nWrote {str(len(revised_categories))} lines of data to {categories_csv}')
+
+verify_path(csv_sources, data_dir)
+subject_crosswalk = load_csv_to_dict(csv_sources, data_dir)
+revised_subjects = process_subject_terms(subject_crosswalk)
+revised_categories = create_subject_categories(revised_subjects)
+write_subject_categories(revised_categories)
+print('Done')
