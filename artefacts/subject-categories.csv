@@ -1,97 +1,97 @@
 subject,category
-"Abdon, saint",
-Abraham,
-Adam and Eve,
-"Adare, Richard and Marion, of Kelshall (Herts.)",
-"Adrian, saint",
+"Abdon, saint",person
+Abraham,person
+Adam and Eve,person
+"Adare, Richard and Marion, of Kelshall (Herts.)",person
+"Adrian, saint",person
 Advent,
-"Aethelbert, saint",
-"Aethelstan, king",
-"Aethelwold, saint",
-"Agatha, saint",
-"Agincourt, battle of",
-"Agnes, saint",
-Alban,
-"Alban, saint",
-Alcuin of York,
-"Aldhelm, saint",
-"Alexander, king",
-"Alexis, saint",
-"Alexius, saint",
+"Aethelbert, saint",person
+"Aethelstan, king",person
+"Aethelwold, saint",person
+"Agatha, saint",person
+"Agincourt, battle of",event
+"Agnes, saint",person
+Alban,place
+"Alban, saint",person
+Alcuin of York,person
+"Aldhelm, saint",person
+"Alexander, king",person
+"Alexis, saint",person
+"Alexius, saint",person
 "All Saints, feast of",
 All Souls’ Day,
-"Alphege, saint",
-"Ambrose, saint",
-"Amphibal, saint",
-"Amys, Thomas and Margery, of Barton (Norf.)",
-"Anastasia, saint",
-"Andrew, saint",
-"Anicet, saint",
-"Anna de Hem, of Norwich, d. 1503",
-"Anne, saint",
+"Alphege, saint",person
+"Ambrose, saint",person
+"Amphibal, saint",person
+"Amys, Thomas and Margery, of Barton (Norf.)",person
+"Anastasia, saint",person
+"Andrew, saint",person
+"Anicet, saint",person
+"Anna de Hem, of Norwich, d. 1503",person
+"Anne, saint",person
 Annunciation,
-"Anselm, saint",
-"Anthony, saint",
+"Anselm, saint",person
+"Anthony, saint",person
 Apocalypse,
 Apostles,
-"Arthur, king",
-"Arthur, prince of Wales",
-Arthurian literature,
-"Arundel, Thomas, Chancellor of England, archbp. of Canterbury",
+"Arthur, king",person
+"Arthur, prince of Wales",person
+Arthurian literature,genre
+"Arundel, Thomas, Chancellor of England, archbp. of Canterbury",person
 "Ascension, feast of",
 "Assumption, feast of",
-"Athelstan, king",
-"Augustine of Canterbury, saint",
-"Augustine of Hippo, saint",
+"Athelstan, king",person
+"Augustine of Canterbury, saint",person
+"Augustine of Hippo, saint",person
 Ave Maria,
-"Baker, John, of Bridgewater (Soms.)",
-"Balliol, John",
+"Baker, John, of Bridgewater (Soms.)",person
+"Balliol, John",person
 Ballotts,
-"Banknot, William and Anne",
-"Bannockburn, battle of",
-"Barbara, saint",
-"Barber, Geoffrey",
-"Barbor, William, of New Buckenham (Norf.)",
-"Barcroft, George",
-"Baret, John, of Bury St. Edmunds",
+"Banknot, William and Anne",person
+"Bannockburn, battle of",event
+"Barbara, saint",person
+"Barber, Geoffrey",person
+"Barbor, William, of New Buckenham (Norf.)",person
+"Barcroft, George",person
+"Baret, John, of Bury St. Edmunds",person
 Barlaam and Josaphat,
-"Barnabas, saint",
-"Bartholomew, bishop of Exeter",
-"Bartholomew, saint",
-"Barton, John, of London",
-"Bath, Somerset",
+"Barnabas, saint",person
+"Bartholomew, bishop of Exeter",person
+"Bartholomew, saint",person
+"Barton, John, of London",person
+"Bath, Somerset",place
 Beatitudes,
-"Beaufort, John",
-"Bedbere, John",
-"Bede the Venerable, saint",
-"Belers, Roger, sir",
-"Benedict of Nursia, saint",
+"Beaufort, John",person
+"Bedbere, John",person
+"Bede the Venerable, saint",person
+"Belers, Roger, sir",person
+"Benedict of Nursia, saint",person
 Berengarius,
-"Berkeley, John, sir, of Wymondham (Leics.)",
-"Bernard of Clairvaux, saint",
-"Berwick, Scotland",
-"Bettys, Thomas, sir",
+"Berkeley, John, sir, of Wymondham (Leics.)",person
+"Bernard of Clairvaux, saint",person
+"Berwick, Scotland",place
+"Bettys, Thomas, sir",person
 Bible,
-"Bigot, Hugh",
-"Birinus, saint",
+"Bigot, Hugh",person
+"Birinus, saint",person
 Black Agnes of Dunbar,
-"Blasius, saint",
-Boethius,
-"Bontfant, Richard, of Stone (Kent)",
-"Booth, William, bishop of Coventry and Lichfield, 1447-52, tr. York 1452-64.",
-"Botolph, saint",
-"Brampton, battle of",
-"Brasier, Richard, Mayor of Norwich, 1510",
-"Brendan, saint",
-"Brews, Elizabeth",
-"Brice, saint",
-"Bridget, saint",
-"Brigge, John, of Salle (Norf.)",
-Bristol,
-"Burlton, Catherine and Richard, of Dartford (Kent)",
-"Bury St Edmund’s, Benedictine abbey of",
-"Bury, John, OSA, of Clare, Suffolk",
-"Buxton, Norfolk",
+"Blasius, saint",person
+Boethius,person
+"Bontfant, Richard, of Stone (Kent)",person
+"Booth, William, bishop of Coventry and Lichfield, 1447-52, tr. York 1452-64.",person
+"Botolph, saint",person
+"Brampton, battle of",event
+"Brasier, Richard, Mayor of Norwich, 1510",person
+"Brendan, saint",person
+"Brews, Elizabeth",person
+"Brice, saint",person
+"Bridget, saint",person
+"Brigge, John, of Salle (Norf.)",person
+Bristol,place
+"Burlton, Catherine and Richard, of Dartford (Kent)",person
+"Bury St Edmund’s, Benedictine abbey of",person
+"Bury, John, OSA, of Clare, Suffolk",person
+"Buxton, Norfolk",place
 "Caesar, Augustus, emperor",
 "Caesar, Julius",
 Caiaphas,
