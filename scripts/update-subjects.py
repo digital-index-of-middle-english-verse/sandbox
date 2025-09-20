@@ -5,6 +5,7 @@
 
 import os
 import csv
+import re
 
 # Root variables
 
@@ -41,34 +42,40 @@ def process_subject_terms(subject_crosswalk):
     old_subjects = set()
     deleted_subjects = set()
     for item in subject_crosswalk:
-        old_subjects.add(item['subject'])
+        subject_term = re.sub('’|‘', '\'', item['subject']) # replace all curly apostrophes/single quotes
+        old_subjects.add(subject_term) # NOTE: this copy of current subject terms cannot be used for crosswalk. Use the 'crosswalk' object instead.
         if item['new subjects'] == '':
-            revised_subjects.add(item['subject'])
+            revised_subjects.add(subject_term)
         elif item['new subjects'] == 'DELETE':
-            deleted_subjects.add(item['subject'])
+            deleted_subjects.add(subject_term)
         else:
-            new_subject_list = item['new subjects'].split("; ")
-            for subject_term in new_subject_list:
-                revised_subjects.add(subject_term)
+            subject_string = re.sub('’|‘', '\'', item['new subjects']) # replace any curly apostrophes/single quotes
+            subject_list = subject_string.split("; ")
+            for new_subject_term in subject_list:
+                revised_subjects.add(new_subject_term)
     added_subjects = set()
     for subject_term in revised_subjects:
         if subject_term not in old_subjects:
             added_subjects.add(subject_term)
-    added_subjects = list(added_subjects)
-    added_subjects.sort()
+    added_subjects_excluding_saints = set()
+    for subject_term in added_subjects:
+        if ", saint" not in subject_term:
+            added_subjects_excluding_saints.add(subject_term)
+    added_subjects_excluding_saints = list(added_subjects_excluding_saints)
+    added_subjects_excluding_saints.sort(key=str.casefold)
     deleted_subjects = list(deleted_subjects)
-    deleted_subjects.sort()
+    deleted_subjects.sort(key=str.casefold)
     print(f'\nFound {str(len(subject_crosswalk))} subject terms in DIMEV 1.0')
-    print(f'Of these, {str(len(deleted_subjects))} are marked for deletion')
+    print(f'Of these, {str(len(deleted_subjects))} are marked for deletion and mapped to no new subject term')
     print(f'{str(len(added_subjects))} new subject terms will be added, for a total of {str(len(revised_subjects))} subject terms after revision')
-    print(f'\nThe deleted subject terms:\n{"; ".join(deleted_subjects)}')
-    print(f'\nThe new subject terms:\n{"; ".join(added_subjects)}')
+    print(f'\nDeleted subject terms (mapped to no new subject term):\n{"; ".join(deleted_subjects)}')
+    print(f'\nNew subject terms (excluding saints):\n{"; ".join(added_subjects_excluding_saints)}')
     return revised_subjects
 
 def create_subject_categories(revised_subjects, subject_categories):
     revised_subject_categories = []
     revised_subjects = list(revised_subjects)
-    revised_subjects.sort()
+    revised_subjects.sort(key=str.casefold)
     for subject_term in revised_subjects:
         revised_subject_categories.append({'subject': subject_term, 'category': ''})
     for base_item in revised_subject_categories:
