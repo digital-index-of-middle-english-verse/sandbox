@@ -3,12 +3,10 @@
 # reported. (These warnings are less important, now that the XML file is
 # validated by schema.)
 
-# Selected fields (DIMEV numbers, subjects, verse forms, and verse patterns)
-# are extracted into a new dictionary for further analysis. Counts are produced
-# of (1) documentary witnesses bearing each verse item; (2) verse items in each
-# documentary witness; (3) current usage of keywords in the fields "subject",
-# "verse form", and "verse pattern". Results are written to the `artefacts/`
-# directory.
+# Selected fields are extracted into a new dictionary for further analysis.
+# Counts are produced of (1) documentary witnesses bearing each verse item; (2)
+# verse items in each documentary witness. Results are written to the
+# `artefacts/` directory.
 
 import os
 import xmltodict
@@ -18,7 +16,6 @@ source = '../../dimev/data/Records.xml'
 dest_dir = '../artefacts/'
 log_file = 'warnings.txt'
 summary_output = 'summary-analysis-of-Records.md'
-csv_list = ['subjects.csv', 'verseForms.csv', 'versePatterns.csv']
 
 def read_xml_to_string(source):
     print(f'Reading source file `{source}` to string...')
@@ -100,18 +97,6 @@ item_records = {} # a selective record of DIMEV items, expressed as dict (keys a
 ## total hits (all witnesses of all valid items)
 checks = 0
 
-# create crosswalk for keywords
-
-keyword_x_walk = \
-    [
-        ('subject', 'subjects'),
-        ('subjects', 'subjects'),
-        ('versePattern', 'versePattern'),
-        ('versePatterns', 'versePatterns'),
-        ('verseForm', 'verseForms'),
-        ('verseForms', 'verseForms')
-    ]
-
 for idx in range(len(items)):
     item = items[idx]
     if type(item) != dict:
@@ -124,32 +109,6 @@ for idx in range(len(items)):
         else:
             dimevID = item['@xml:id']
             item_records[dimevID] = {}
-            item_records[dimevID]['subjects'] = [] # create a subject-key for all item-records
-            item_records[dimevID]['verseForms'] = [] # likewise for verseForms, versePatterns
-            item_records[dimevID]['versePatterns'] = []
-
-            # extract subject keywords
-            # TODO: warn for unexpected data types
-            for pair in keyword_x_walk:
-                if pair[0] in item:
-                    orig_val = item[pair[0]]
-                    new_val = []
-                    if type(orig_val) == None:
-                        continue
-                    elif type(orig_val) == str:
-                        new_val.append(strip_italics(orig_val))
-                    elif type(orig_val) == dict:
-                        parent_key = pair[0]
-                        child_key = re.sub('s$', '', parent_key)
-                        child_item_val = item[parent_key][child_key]
-                        if type(child_item_val) == None:
-                            continue
-                        elif type(child_item_val) == str:
-                            new_val.append(strip_italics(child_item_val))
-                        elif type(child_item_val) == list:
-                            for keyword in child_item_val:
-                                new_val.append(strip_italics(keyword))
-                    item_records[dimevID][pair[1]] = new_val
 
             # extract witness keys
             if 'witnesses' not in item:
@@ -363,42 +322,6 @@ while n < 5:
     markdown.append(msg)
     n += 1
 
-# Summarize keyword usage
-print('Preparing summary of keyword usage...')
-
-keyword_labels = ['subjects', 'verseForms', 'versePatterns']
-subjects = {}
-verseForms = {}
-versePatterns = {}
-keyword_dicts = [subjects, verseForms, versePatterns]
-
-for dimevID in item_records:
-    for idx in range(len(keyword_labels)):
-        container = keyword_dicts[idx]
-        item_keywords = item_records[dimevID][keyword_labels[idx]]
-        for keyword in item_keywords:
-            if keyword is not None:
-                if keyword in container:
-                    count = container[keyword]
-                    count += 1
-                    container[keyword] = count
-                else:
-                    container[keyword] = 1
-
-## Format for csv
-subjects_csv_parts = ['subject,count']
-verseForms_csv_parts = ['verseForms,count']
-versePatterns_csv_parts = ['versePatterns,count']
-csv_parts = [subjects_csv_parts, verseForms_csv_parts, versePatterns_csv_parts]
-
-for index in range(len(keyword_dicts)):
-    container = keyword_dicts[index]
-    keyword_list = list(container.keys())
-    keywords_alpha = sorted(keyword_list, key=str.casefold)
-    for keyword in keywords_alpha:
-        line = '"' + str(keyword) + '"' + ',' + str(container[keyword])
-        csv_parts[index].append(line)
-
 # Write artefacts
 print(f'Writing output to `{dest_dir}`.')
 with open(dest_dir + log_file, 'w') as file:
@@ -412,10 +335,4 @@ with open(dest_dir + summary_output, 'w') as file:
         file.write(line + '\n')
 print(f'Wrote analysis of distributions to `{summary_output}`.')
 
-for idx in range(len(csv_list)):
-    with open(dest_dir + csv_list[idx], 'w') as file: # start here
-        for line in csv_parts[idx]:
-            file.write(line + '\n')
-csv_files = ', '.join(csv_list)
-print(f'Wrote summaries of keyword usage to `{csv_files}`.')
 print('Goodbye')
