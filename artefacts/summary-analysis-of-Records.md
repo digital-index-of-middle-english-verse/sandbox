@@ -4,9 +4,9 @@ This file is written by `inspect-Records.py`.
 ## Raw counts
 1. Total items found: 9208
 2. Items of type dictionary without `@xml:id` (these are presumed cross-references): 2187
-3. Items with xml:id but no element <witnesses> (these are also presumed cross-refs): 11
-4. Items with child-element <witness> of type dictionary: 4810
-5. Items with child-element <witness> of type list: 2200
+3. Items with xml:id but no element `witnesses` (these are also presumed cross-refs): 11
+4. Items with child-element `witness` of type dictionary: 4810
+5. Items with child-element `witness` of type list: 2200
 6. Items with no recorded edition: 1229
 7. Total unique item-instances (excluding data errors): 19980
 8. Total source keys: 3464

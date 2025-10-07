@@ -171,9 +171,9 @@ markdown.append('# Summary of walk')
 report_parts = [ \
     'Total items found: ' + str(len(items)),
     'Items of type dictionary without `@xml:id` (these are presumed cross-references): ' + str(no_id),
-    'Items with xml:id but no element <witnesses> (these are also presumed cross-refs): ' + str(missing_witnesses),
-    'Items with child-element <witness> of type dictionary: ' + str(child_is_dict),
-    'Items with child-element <witness> of type list: ' + str(child_is_list),
+    'Items with xml:id but no element `witnesses` (these are also presumed cross-refs): ' + str(missing_witnesses),
+    'Items with child-element `witness` of type dictionary: ' + str(child_is_dict),
+    'Items with child-element `witness` of type list: ' + str(child_is_list),
     'Items with no recorded edition: ' + str(len(unedited_items)),
     'Total unique item-instances (excluding data errors): ' + str(checks),
     'Total source keys: ' + str(len(document_contents))
