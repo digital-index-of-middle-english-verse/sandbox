@@ -141,6 +141,8 @@ for idx in range(len(items)):
                             document_contents = create_ms_index(wit_id, dimevID, document_contents)
                             extracted_item['witnesses'] = [wit_id]
                             extracted_item['editions'] = get_editions(dimevID, witnesses)
+                            if 'allLines' in witnesses.keys():
+                                extracted_item['editions'] = True # NOTE: Treat single-witness items, fully transcribed by DIMED, as 'edited'
                             checks += 1
                         else:
                             if type(witnesses) == list:
@@ -341,7 +343,7 @@ while n < 5:
 
 # Unprinted items
 
-markdown.extend(['', '# Verse items with no recorded edition', 'Most are very short; many are transcribed in full within the element "allLines." References are to DIMEV numbers.', ''])
+markdown.extend(['', '# Verse items with no recorded edition', 'References are to DIMEV numbers.', 'This list excludes verse items transmitted in a single witness, transcribed in full in the DIMEV data element "allLines".', ''])
 for item in unedited_items:
     markdown.append(f'- {item}')
 
