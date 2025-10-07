@@ -3,30 +3,26 @@ This file is written by `inspect-Records.py`.
 # Summary of walk
 ## Raw counts
 1. Total items found: 9208
-2. Items of type non-dictionary: 0
-3. Items of type dictionary without `@xml:id` (these are presumed cross-references): 2187
-4. Items with xml:id but no element <witnesses>: 11
-5. Items with element <witnesses> of type other than dictionary: 0
-6. Items with element <witnesses> of type dictionary but without child-element <witness>: 0
-7. Items with child-element <witness> of type dictionary: 4810
-8. Items with child-element <witness> of type list: 2200
-9. Total unique item-instances (excluding data errors): 19980
-10. Total source keys: 3464
+2. Items of type dictionary without `@xml:id` (these are presumed cross-references): 2187
+3. Items with xml:id but no element <witnesses> (these are also presumed cross-refs): 11
+4. Items with child-element <witness> of type dictionary: 4810
+5. Items with child-element <witness> of type list: 2200
+6. Total unique item-instances (excluding data errors): 19980
+7. Total source keys: 3464
 
 ## Interpretation
-11. Data errors (sum of lines 2, 4, 5, 6): 11
-12. Total valid items, excluding cross-references: 7010
+8. Total valid items, excluding cross-references: 7010
 
 # Summary counts for items
 ## Largest fractions
-- 4810 items (68.5%) have 1 witness/es
+- 4810 items (68.6%) have 1 witness/es
 - 882 items (12.6%) have 2 witness/es
 - 352 items (5.0%) have 3 witness/es
 
 ## Upper percentiles
 - 90% of items have 4 or fewer witnesses
 - 95% of items have 10 or fewer witnesses
-- 99% of items have 40 or fewer witnesses
+- 99% of items have 33 or fewer witnesses
 
 ## Items with highest numbers of witnesses
 - Pricke of Conscience (record-5398): 99
