@@ -150,11 +150,8 @@ markdown.append('# Summary of walk')
 ## Gather raw counts
 report_parts = [ \
     'Total items found: ' + str(len(items)),
-    'Items of type non-dictionary: ' + str(item_not_dict),
     'Items of type dictionary without `@xml:id` (these are presumed cross-references): ' + str(no_id),
-    'Items with xml:id but no element <witnesses>: ' + str(missing_witnesses),
-    'Items with element <witnesses> of type other than dictionary: ' + str(witnesses_not_dict),
-    'Items with element <witnesses> of type dictionary but without child-element <witness>: ' + str(witnesses_without_child),
+    'Items with xml:id but no element <witnesses> (these are also presumed cross-refs): ' + str(missing_witnesses),
     'Items with child-element <witness> of type dictionary: ' + str(child_is_dict),
     'Items with child-element <witness> of type list: ' + str(child_is_list),
     'Total unique item-instances (excluding data errors): ' + str(checks),
@@ -174,7 +171,6 @@ report_parts.clear()
 data_errors = item_not_dict + missing_witnesses + witnesses_not_dict
 valid_items = child_is_dict + child_is_list
 report_parts = [ \
-    'Data errors (sum of lines 2, 4, 5, 6): ' + str(data_errors),
     'Total valid items, excluding cross-references: ' + str(valid_items)
     ]
 
