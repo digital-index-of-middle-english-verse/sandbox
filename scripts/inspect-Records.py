@@ -5,8 +5,10 @@
 
 # Selected fields are extracted into a new dictionary for further analysis.
 # Counts are produced of (1) documentary witnesses bearing each verse item; (2)
-# verse items in each documentary witness. Results are written to the
-# `artefacts/` directory.
+# verse items in each documentary witness; (3) verse items with no recorded
+# edition (i.e., as yet unprinted).
+
+# Results are written to the `artefacts/` directory.
 
 import os
 import xmltodict
@@ -70,6 +72,12 @@ def strip_italics(string):
         string = re.sub('END_ITALICS', '', string)
     return string
 
+def get_editions(dimevID, witness):
+    editions = False
+    if 'editions' in witness:
+        editions = True
+    return editions
+
 # read the source file to string and pre-process
 xml_string = read_xml_to_string(source)
 
@@ -132,18 +140,29 @@ for idx in range(len(items)):
                             wit_id = witnesses['source']['@key']
                             document_contents = create_ms_index(wit_id, dimevID, document_contents)
                             extracted_item['witnesses'] = [wit_id]
+                            extracted_item['editions'] = get_editions(dimevID, witnesses)
                             checks += 1
                         else:
                             if type(witnesses) == list:
                                 child_is_list += 1
                                 wit_list = []
+                                ed_dict = {}
                                 for idx in range(len(witnesses)):
                                     wit_id = witnesses[idx]['source']['@key']
                                     document_contents = create_ms_index(wit_id, dimevID, document_contents)
                                     wit_list.append(wit_id)
+                                    ed_dict[wit_id] = get_editions(dimevID, witnesses[idx])
                                     checks += 1
                                 extracted_item['witnesses'] = wit_list
+                                extracted_item['editions'] = any(ed_dict.values())
                         item_records.append(extracted_item)
+
+unedited_items = []
+for item in item_records:
+    if not item['editions']:
+        item_id = re.sub('record-', '', item['id'])
+        unedited_items.append(item_id)
+unedited_items.sort(key=float)
 
 # Write summary of counts
 markdown.append('# Summary of walk')
@@ -155,6 +174,7 @@ report_parts = [ \
     'Items with xml:id but no element <witnesses> (these are also presumed cross-refs): ' + str(missing_witnesses),
     'Items with child-element <witness> of type dictionary: ' + str(child_is_dict),
     'Items with child-element <witness> of type list: ' + str(child_is_list),
+    'Items with no recorded edition: ' + str(len(unedited_items)),
     'Total unique item-instances (excluding data errors): ' + str(checks),
     'Total source keys: ' + str(len(document_contents))
     ]
@@ -318,6 +338,12 @@ while n < 5:
     msg = '- ' + itemID + ': ' + str(count)
     markdown.append(msg)
     n += 1
+
+# Unprinted items
+
+markdown.extend(['', '# Verse items with no recorded edition', 'Most are very short; many are transcribed in full within the element "allLines." References are to DIMEV numbers.', ''])
+for item in unedited_items:
+    markdown.append(f'- {item}')
 
 # Write artefacts
 print(f'Writing output to `{dest_dir}`.')
