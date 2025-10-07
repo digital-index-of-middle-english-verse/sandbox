@@ -92,7 +92,7 @@ child_is_list = 0
 warning_log = ['Warnings from the latest run of `inspect-Records.py`.']
 markdown = []
 document_contents = {} # a "Manuscript Index" to DIMEV, expressed as dict (for each key-value pair, the key is a source identifier, the value is a list of items in that source)
-item_records = {} # a selective record of DIMEV items, expressed as dict (keys are DIMEV item identifiers)
+item_records = [] # a selective record of DIMEV items
 
 ## total hits (all witnesses of all valid items)
 checks = 0
@@ -108,7 +108,6 @@ for idx in range(len(items)):
             no_id += 1
         else:
             dimevID = item['@xml:id']
-            item_records[dimevID] = {}
 
             # extract witness keys
             if 'witnesses' not in item:
@@ -127,11 +126,12 @@ for idx in range(len(items)):
                         witnesses_without_child += 1
                     else:
                         witnesses = item['witnesses']['witness']
+                        extracted_item = {'id': dimevID}
                         if type(witnesses) == dict:
                             child_is_dict += 1
                             wit_id = witnesses['source']['@key']
                             document_contents = create_ms_index(wit_id, dimevID, document_contents)
-                            item_records[dimevID]['witnesses'] = [wit_id]
+                            extracted_item['witnesses'] = [wit_id]
                             checks += 1
                         else:
                             if type(witnesses) == list:
@@ -142,7 +142,8 @@ for idx in range(len(items)):
                                     document_contents = create_ms_index(wit_id, dimevID, document_contents)
                                     wit_list.append(wit_id)
                                     checks += 1
-                                item_records[dimevID]['witnesses'] = wit_list
+                                extracted_item['witnesses'] = wit_list
+                        item_records.append(extracted_item)
 
 # Write summary of counts
 markdown.append('# Summary of walk')
@@ -213,19 +214,17 @@ for n in n_items:
 
 
 witness_counts = []
-for key in item_records:
-    if 'witnesses' in item_records[key].keys(): # accommodate data irregularities
-        witness_counts.append(len(item_records[key]['witnesses']))
+for item in item_records:
+    witness_counts.append(len(item['witnesses']))
 max_wit_count = max(witness_counts)
 n_witnesses = list(range(1, max_wit_count + 1))
 
 items_with_n_witnesses = []
 for n in n_witnesses:
     count = 0
-    for key in item_records.keys():
-        if 'witnesses' in item_records[key].keys(): # accommodate data irregularities
-            if len(item_records[key]['witnesses']) == n:
-                count += 1
+    for item in item_records:
+        if len(item['witnesses']) == n:
+            count += 1
     items_with_n_witnesses.append(count)
 
 total_witnesses = len(document_contents)
@@ -265,10 +264,9 @@ while n < 5:
     n += 1
 hit_list = []
 for count in count_list:
-    for key in item_records.keys():
-        if 'witnesses' in item_records[key].keys(): # accommodate data irregularities
-            if len(item_records[key]['witnesses']) == count:
-                hit_list.append(key)
+    for item in item_records:
+        if len(item['witnesses']) == count:
+            hit_list.append(item['id'])
 for dimevID in hit_list:
     for idx in range(len(items)):
         item = items[idx]
@@ -280,7 +278,10 @@ for dimevID in hit_list:
                         title = title[0]
                 if type(title) == str:
                     title = strip_italics(title)
-    msg = '- ' + title + ' (' + dimevID + '): ' + str(len(item_records[dimevID]['witnesses']))
+    for item in item_records:
+        if item['id'] == dimevID:
+            witness_count = len(item['witnesses'])
+    msg = '- ' + title + ' (' + dimevID + '): ' + str(witness_count)
     markdown.append(msg)
 
 ## Calculate and report summaries for witnesses
