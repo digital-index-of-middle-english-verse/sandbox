@@ -59,7 +59,7 @@ def process_subject_terms(subject_crosswalk):
             added_subjects.add(subject_term)
     added_subjects_excluding_saints = set()
     for subject_term in added_subjects:
-        if ", saint" not in subject_term:
+        if ", saint" not in subject_term and ", pope" not in subject_term:
             added_subjects_excluding_saints.add(subject_term)
     added_subjects_excluding_saints = list(added_subjects_excluding_saints)
     added_subjects_excluding_saints.sort(key=str.casefold)
