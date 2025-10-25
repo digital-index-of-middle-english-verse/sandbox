@@ -8,6 +8,9 @@
 # verse items in each documentary witness; (3) verse items with no recorded
 # edition (i.e., as yet unprinted).
 
+# xml:id values of witnesses are validated against expected patterns and the
+# xml:id value of the parent item
+
 # Results are written to the `artefacts/` directory.
 
 import os
@@ -78,6 +81,25 @@ def get_editions(dimevID, witness):
         editions = True
     return editions
 
+def validate_witness_id(dimevID, wit_id, wit_id_errors):
+    item_id = re.sub('record-', '', dimevID)
+    pattern = "wit-"
+    if not re.match(pattern, wit_id):
+        print(f'WARNING: Witness identifier {wit_id} is malformed (lacks the prefix "wit-")')
+        wit_id_errors += 1
+    else:
+        wit_id = re.sub('wit-', '', wit_id)
+        pattern = r'\d-\d+$'
+        if not re.search(pattern, wit_id):
+            print(f'WARNING: Witness identifier {wit_id} is malformed')
+            wit_id_errors += 1
+        else:
+            wit_id_base = re.sub(r'-\d+$', '', wit_id)
+            if wit_id_base != item_id:
+                print(f'WARNING: Witness identifier {wit_id} does not match the parent identifier {dimevID}')
+                wit_id_errors += 1
+    return wit_id_errors
+
 # read the source file to string and pre-process
 xml_string = read_xml_to_string(source)
 
@@ -104,6 +126,7 @@ item_records = [] # a selective record of DIMEV items
 
 ## total hits (all witnesses of all valid items)
 checks = 0
+wit_id_errors = 0
 
 for idx in range(len(items)):
     item = items[idx]
@@ -136,6 +159,8 @@ for idx in range(len(items)):
                         witnesses = item['witnesses']['witness']
                         extracted_item = {'id': dimevID}
                         if type(witnesses) == dict:
+                            wit_xml_id = witnesses['@xml:id']
+                            wit_id_errors = validate_witness_id(dimevID, wit_xml_id, wit_id_errors)
                             child_is_dict += 1
                             wit_id = witnesses['source']['@key']
                             document_contents = create_ms_index(wit_id, dimevID, document_contents)
@@ -150,6 +175,8 @@ for idx in range(len(items)):
                                 wit_list = []
                                 ed_dict = {}
                                 for idx in range(len(witnesses)):
+                                    wit_xml_id = witnesses[idx]['@xml:id']
+                                    wit_id_errors = validate_witness_id(dimevID, wit_xml_id, wit_id_errors)
                                     wit_id = witnesses[idx]['source']['@key']
                                     document_contents = create_ms_index(wit_id, dimevID, document_contents)
                                     wit_list.append(wit_id)
@@ -209,6 +236,10 @@ check = len(items) - data_errors - no_id == valid_items
 if not check:
     msg = 'Unknown data error. Counts do not add up.'
     warn(msg, '')
+
+## Report wit:id validation
+
+print(f'Validation of witness xml:ids concluded with {wit_id_errors} errors\n')
 
 ## Get input
 prompt = 'Print summary counts to terminal? (y/N) '
