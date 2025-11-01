@@ -5,7 +5,7 @@ import re
 import sys
 from pathlib import Path
 
-NUMBER_LINE = re.compile(r'(?mi)^\s*Number:\s*(\d+)\s*$')   # capture lines like "Number: 10"
+NUMBER_LINE = re.compile(r'(?mi)^\s*Number:\s*(\d+(-\d+)?(,\s+\d+(-\d+)?)*)\s*$')   # capture lines like "Number: 10-11, 13, 200-2"
 
 def extract_numbers_and_clean(text: str):
     """
@@ -19,6 +19,7 @@ def extract_numbers_and_clean(text: str):
         m = NUMBER_LINE.match(line)
         if m:
             numbers.append(m.group(1))
+            print(m.group(1))
         else:
             kept_lines.append(line)
     cleaned = "".join(kept_lines).strip()
@@ -73,7 +74,7 @@ def main(infile: str, outfile: str, in_format: str = None, out_format: str = "xm
 if __name__ == "__main__":
     # Usage:
     #   python move_number_to_series_identifier.py data/Bibliography.rdf out.rdf
-    inpath = sys.argv[1] if len(sys.argv) > 1 else "data/Bibliography.rdf"
+    inpath = sys.argv[1] if len(sys.argv) > 1 else "../../dimev/data/Bibliography.rdf"
     outpath = sys.argv[2] if len(sys.argv) > 2 else str(Path(inpath).with_suffix(".out.rdf"))
     # You can force formats via env or by editing defaults above; otherwise rdflib guesses input; output defaults to RDF/XML.
     main(inpath, outpath)
