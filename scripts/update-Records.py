@@ -1,4 +1,5 @@
 from lxml import etree
+import csv
 import copy
 import os
 import re
@@ -7,6 +8,8 @@ import re
 
 source_file = '../../dimev/data/Records.xml'
 mec_source = '../../external-resources/MEC/bib_all.xml'
+subject_categories_csv = '../artefacts/subject-categories.csv'
+subject_crosswalk_csv = '../artefacts/subjects.csv'
 namespace = '{http://www.w3.org/XML/1998/namespace}'
 
 # Variables for atomization
@@ -16,13 +19,23 @@ namespace = '{http://www.w3.org/XML/1998/namespace}'
 def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
-    mec_to_dimev_xwalk = process_mec(mec_source)
-    for record in root.findall('record'):
-        record = extract_imev_etc(record)
-        record = add_mec_refs(record, mec_to_dimev_xwalk)
+
+    # Create repertories and populate with IMEV, NIMEV, and Ringler
+    root = extract_imev_etc(root)
+
+    # Add ME Compendium as repertory
+    root = add_mec_refs(root)
+
+    # Update subjects
+    root = update_subjects(root)
+
+    # Move formal terms misplaced in subjects
+    root = move_misplaced_form_terms(root)
+
+    print('All transformations complete')
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-    print('Done')
+    print(f'Wrote the revised tree to {source_file}')
 
 def process_mec(mec_source):
     tree = etree.parse(mec_source)
@@ -38,20 +51,139 @@ def process_mec(mec_source):
             mec_to_dimev_xwalk.append(xwalk_item)
     return mec_to_dimev_xwalk
 
-def add_mec_refs(record, mec_to_dimev_xwalk):
-    dimev_id = record.get(namespace + 'id')
-    if dimev_id is not None:
-        dimev_id = re.sub('record-', '', dimev_id)
-        for item in mec_to_dimev_xwalk:
-            if dimev_id in item[1]:
-                new_repertory = etree.Element('repertory', key='MECompendium')
-                new_repertory.text = item[0]
-                if record.find('repertories') is None:
-                    record.insert(2, new_repertory)
+def add_mec_refs(root):
+    print('Creating Middle English Compendium-to-DIMEV crosswalk...')
+    mec_to_dimev_xwalk = process_mec(mec_source)
+    print('Adding references to Middle English Compendium Bibliography as repertory...')
+    for record in root.findall('record'):
+        dimev_id = record.get(namespace + 'id')
+        if dimev_id is not None:
+            dimev_id = re.sub('record-', '', dimev_id)
+            for item in mec_to_dimev_xwalk:
+                if dimev_id in item[1]:
+                    new_repertory = etree.Element('repertory', key='MECompendium')
+                    new_repertory.text = item[0]
+                    if record.find('repertories') is None:
+                        record.insert(2, new_repertory)
+                    else:
+                        repertories = record.find('repertories')
+                        repertories.append(new_repertory)
+    print('Done')
+    return root
+
+def update_subjects(root):
+    print('Updating subject terms...')
+    print('Creating crosswalk from current subject terms to revised subject terms...')
+    deleted_subjects, subject_crosswalk = create_subject_crosswalk(subject_crosswalk_csv)
+    print('Implementing the crosswalk...')
+    for record in root.findall('record'):
+        new_subjects = etree.Element('subjects')
+        old_subjects_element = record.find('subjects')
+        if old_subjects_element is not None:
+            subjects_index = record.index(old_subjects_element)
+            for child in old_subjects_element:
+                if child.text in deleted_subjects:
+                    continue
                 else:
-                    repertories = record.find('repertories')
-                    repertories.append(new_repertory)
+                    for item in subject_crosswalk:
+                        if child.text == item[0]:
+                            new_subject_list = item[1]
+                            break
+                    for subject_term in new_subject_list:
+                        new_subjects = add_unique_terms(new_subjects, 'subject', subject_term)
+            record.insert(subjects_index, new_subjects)
+            record.remove(old_subjects_element)
+    print('Done')
+    return root
+
+def move_misplaced_form_terms(root):
+    print('Moving formal terms misplaced as subject terms...')
+    list_of_formal_terms = get_formal_terms_misplaced_as_subjects(subject_categories_csv)
+    for record in root.findall('record'):
+        new_subjects = etree.Element('subjects')
+        old_subjects_element = record.find('subjects')
+        if old_subjects_element is not None:
+            subjects_index = record.index(old_subjects_element)
+            for child in old_subjects_element:
+                if child.text in list_of_formal_terms:
+                    record = update_forms(record, child.text)
+                else:
+                    new_subjects.append(child)
+            record.insert(subjects_index, new_subjects)
+            record.remove(old_subjects_element)
+    print('Done')
+    return root
+
+def update_forms(record, form_term):
+    formal_terms_to_rewrite_as_singular = ['ballads', 'carols', 'roundels', 'virelais']
+    if form_term in formal_terms_to_rewrite_as_singular:
+        form_term = re.sub('s$', '', form_term)
+    new_forms_element = etree.Element('verseForms')
+    old_forms_element = record.find('verseForms')
+    if old_forms_element is None:
+        index = record.index(record.find('subjects')) + 1
+        new_forms_element = add_unique_terms(new_forms_element, 'verseForm', form_term)
+        record.insert(index, new_forms_element)
+    else:
+        index = record.index(old_forms_element)
+        for child in old_forms_element:
+            if child.text is None:
+                continue
+            else:
+                new_forms_element = add_unique_terms(new_forms_element, 'verseForm', child.text)
+        new_forms_element = add_unique_terms(new_forms_element, 'verseForm', form_term)
+        record.insert(index, new_forms_element)
+        record.remove(old_forms_element)
     return record
+
+def add_unique_terms(parent, tag, term):
+    term_list = []
+    if len(parent):
+        for child in parent:
+            term_list.append(child.text)
+    if term not in term_list:
+        child_element = etree.Element(tag)
+        child_element.text = term
+        parent.append(child_element)
+    return parent
+
+def create_subject_crosswalk(source_file):
+    list_of_dict = load_csv_to_list_of_dict(source_file)
+    deleted_subjects = set()
+    subject_crosswalk = []
+    for item in list_of_dict:
+        current_subject_term = re.sub('’|‘', '\'', item['subject']) # replace curly apostrophes/single quotes to match current character encoding in Records.xml
+        if item['new subjects'] == 'DELETE':
+            deleted_subjects.add(current_subject_term)
+        else:
+            if item['new subjects'] == '':
+                crosswalk_tuple = (current_subject_term, [current_subject_term])
+            else:
+                crosswalk_tuple = (current_subject_term, [])
+                subject_string = re.sub('’|‘', '\'', item['new subjects']) # replace any curly apostrophes/single quotes
+                subject_list = subject_string.split("; ")
+                for new_subject_term in subject_list:
+                    crosswalk_tuple[1].append(new_subject_term)
+            subject_crosswalk.append(crosswalk_tuple)
+    return deleted_subjects, subject_crosswalk
+
+def get_formal_terms_misplaced_as_subjects(source_file):
+    formal_terms_misplaced = []
+    subject_categories = load_csv_to_list_of_dict(source_file)
+    for item in subject_categories:
+        if item['category'] == 'form':
+            formal_terms_misplaced.append(item['subject'])
+    formal_terms_misplaced.sort()
+    print(f'Found misplaced formal terms {", ".join(formal_terms_misplaced)}')
+    return formal_terms_misplaced
+
+def load_csv_to_list_of_dict(file_path):
+    list_of_dict = []
+    with open(file_path, 'r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            list_of_dict.append(row)
+    return list_of_dict
 
 def remove_alpha(record):
     # Remove the <alpha> child element if it exists.
@@ -60,69 +192,72 @@ def remove_alpha(record):
         record.remove(alpha)
     return record
 
-def extract_imev_etc(record):
-    # Extract NIMEV and IMEV references to child element <repertories>, which is created if it does not exist.
-    new_repertories = etree.Element('repertories')
-    junk_values = {'', 'n', 'C16', 'C 19', 'delete', 'delete C16', 'delete: C16', 'delete: prose', 'Dubar', 'Dunbar (?)', 'Dunbar', 'not ME', 'Old English', 'post-1500', 'post medieval', 'post-medieval', 'prose', 'Skelton'} # @imev and @nimev values that map to no repertory
-    dimev_id = record.get(namespace + 'id')
-    if 'imev' in record.attrib:
-        value = record.attrib.pop('imev').strip()
-        if value not in junk_values:
-            validate_numeric(value, dimev_id)
-            if '.' in value: # Decimals are new in the Supplement
-                repertory = etree.Element('repertory', key='Robbins1965b')
-            else:
-                repertory = etree.Element('repertory', key='Brown1943')
-            repertory.text = value
-            new_repertories.append(repertory)
-    if 'nimev' in record.attrib:
-        value = record.attrib.pop('nimev').strip()
-        if value not in junk_values:
-
-            # The 'nimev' attribute has been used inconsistently, for reference
-            # to three different 'repertories'. Most values of 'nimev' are
-            # references 'NIMEV', but some are references to Ringler1992,
-            # others are to Ringer1988 (I refer to the xml:ids of items in
-            # Bibliography.xml), and others reference both Ringler's volumes.
-            # The double references are delimited by a pipe character.
-
-            if '|' in value:
-                reference_list = re.split(r'\|', value)
-                for string in reference_list:
-                    if string.strip() not in junk_values:
-                        if 'TM' in string: # 'TM' is Ringler1992
-                            attr = 'Ringler1992'
-                            value = re.sub('TM', '', string).strip()
-                        elif 'TP' in string: # 'TP' is Ringler 1988
-                            attr = 'Ringler1988'
-                            value = re.sub('TP', '', string).strip()
-                        else:
-                            attr = 'NIMEV' # the corresponding key in Bibliography.XML is all uppercase
-                            value = string.strip()
-                        validate_numeric(value, dimev_id)
-                        repertory = etree.Element('repertory', key=attr)
-                        repertory.text = value
-                        new_repertories.append(repertory)
-            else:
-                if 'TM' in value:
-                    attr = 'Ringler1992'
-                    value = re.sub('TM', '', value).strip()
-                elif 'TP' in value:
-                    attr = 'Ringler1988'
-                    value = re.sub('TP', '', value).strip()
-                else:
-                    attr = 'NIMEV'
+def extract_imev_etc(root):
+    print('Extracting NIMEV and IMEV references to child element repertories...')
+    for record in root.findall('record'):
+        new_repertories = etree.Element('repertories')
+        # @imev and @nimev values that map to no repertory
+        junk_values = {'', 'n', 'C16', 'C 19', 'delete', 'delete C16', 'delete: C16', 'delete: prose', 'Dubar', 'Dunbar (?)', 'Dunbar', 'not ME', 'Old English', 'post-1500', 'post medieval', 'post-medieval', 'prose', 'Skelton'}
+        dimev_id = record.get(namespace + 'id')
+        if 'imev' in record.attrib:
+            value = record.attrib.pop('imev').strip()
+            if value not in junk_values:
                 validate_numeric(value, dimev_id)
-                repertory = etree.Element('repertory', key=attr)
+                if '.' in value: # Decimals are new in the Supplement
+                    repertory = etree.Element('repertory', key='Robbins1965b')
+                else:
+                    repertory = etree.Element('repertory', key='Brown1943')
                 repertory.text = value
                 new_repertories.append(repertory)
-        if len(new_repertories): # test for children
-            if record.find('repertories') is None:
-                record.insert(2, new_repertories)
-            else:
-                repertories = record.find('repertories')
-                repertories.extend(new_repertories)
-    return record
+        if 'nimev' in record.attrib:
+            value = record.attrib.pop('nimev').strip()
+            if value not in junk_values:
+
+                # The 'nimev' attribute has been used inconsistently, for reference
+                # to three different 'repertories'. Most values of 'nimev' are
+                # references 'NIMEV', but some are references to Ringler1992,
+                # others are to Ringer1988 (I refer to the xml:ids of items in
+                # Bibliography.xml), and others reference both Ringler's volumes.
+                # The double references are delimited by a pipe character.
+
+                if '|' in value:
+                    reference_list = re.split(r'\|', value)
+                    for string in reference_list:
+                        if string.strip() not in junk_values:
+                            if 'TM' in string: # 'TM' is Ringler1992
+                                attr = 'Ringler1992'
+                                value = re.sub('TM', '', string).strip()
+                            elif 'TP' in string: # 'TP' is Ringler 1988
+                                attr = 'Ringler1988'
+                                value = re.sub('TP', '', string).strip()
+                            else:
+                                attr = 'NIMEV' # the corresponding key in Bibliography.XML is all uppercase
+                                value = string.strip()
+                            validate_numeric(value, dimev_id)
+                            repertory = etree.Element('repertory', key=attr)
+                            repertory.text = value
+                            new_repertories.append(repertory)
+                else:
+                    if 'TM' in value:
+                        attr = 'Ringler1992'
+                        value = re.sub('TM', '', value).strip()
+                    elif 'TP' in value:
+                        attr = 'Ringler1988'
+                        value = re.sub('TP', '', value).strip()
+                    else:
+                        attr = 'NIMEV'
+                    validate_numeric(value, dimev_id)
+                    repertory = etree.Element('repertory', key=attr)
+                    repertory.text = value
+                    new_repertories.append(repertory)
+            if len(new_repertories): # test for children
+                if record.find('repertories') is None:
+                    record.insert(2, new_repertories)
+                else:
+                    repertories = record.find('repertories')
+                    repertories.extend(new_repertories)
+    print('Done')
+    return root
 
 def validate_numeric(value, dimev_id):
     value = re.sub('^see ', '', value) # Treat "see" as acceptable non-numeric prefix
