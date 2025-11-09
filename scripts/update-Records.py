@@ -78,15 +78,26 @@ def update_subjects(root):
         if old_subjects_element is not None:
             subjects_index = record.index(old_subjects_element)
             for child in old_subjects_element:
-                if child.text in deleted_subjects:
-                    continue
-                else:
-                    for item in subject_crosswalk:
-                        if child.text == item[0]:
-                            new_subject_list = item[1]
-                            break
-                    for subject_term in new_subject_list:
-                        new_subjects = add_unique_terms(new_subjects, 'subject', subject_term)
+                if child.text is not None:
+                    # concatinate child.text to string, stripping inline formatting elements
+                    old_term = etree.tostring(child, encoding='unicode', method='text')
+                    # process string
+                    old_term = re.sub(r'\n', '', old_term) # strip newlines
+                    old_term = re.sub('  +', ' ', old_term) # strip internal runs of space characters
+                    old_term = old_term.strip()
+                    term_found = False # watch for unmatched terms
+                    if old_term in deleted_subjects: # do nothing
+                        term_found = True
+                    else:
+                        for item in subject_crosswalk:
+                            if old_term == item[0]:
+                                new_subject_list = item[1]
+                                for subject_term in new_subject_list:
+                                    new_subjects = add_unique_terms(new_subjects, 'subject', subject_term)
+                                term_found = True
+                                break
+                    if term_found == False:
+                        print(f'WARNING: subject term "{old_term}" not found in cross-walk')
             record.insert(subjects_index, new_subjects)
             record.remove(old_subjects_element)
     print('Done')
