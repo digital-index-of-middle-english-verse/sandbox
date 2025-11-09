@@ -63,11 +63,7 @@ def add_mec_refs(root):
                 if dimev_id in item[1]:
                     new_repertory = etree.Element('repertory', key='MECompendium')
                     new_repertory.text = item[0]
-                    if record.find('repertories') is None:
-                        record.insert(2, new_repertory)
-                    else:
-                        repertories = record.find('repertories')
-                        repertories.append(new_repertory)
+                    record = add_repertory(record, new_repertory)
     print('Done')
     return root
 
@@ -195,7 +191,6 @@ def remove_alpha(record):
 def extract_imev_etc(root):
     print('Extracting NIMEV and IMEV references to child element repertories...')
     for record in root.findall('record'):
-        new_repertories = etree.Element('repertories')
         # @imev and @nimev values that map to no repertory
         junk_values = {'', 'n', 'C16', 'C 19', 'delete', 'delete C16', 'delete: C16', 'delete: prose', 'Dubar', 'Dunbar (?)', 'Dunbar', 'not ME', 'Old English', 'post-1500', 'post medieval', 'post-medieval', 'prose', 'Skelton'}
         dimev_id = record.get(namespace + 'id')
@@ -208,7 +203,7 @@ def extract_imev_etc(root):
                 else:
                     repertory = etree.Element('repertory', key='Brown1943')
                 repertory.text = value
-                new_repertories.append(repertory)
+                record = add_repertory(record, repertory)
         if 'nimev' in record.attrib:
             value = record.attrib.pop('nimev').strip()
             if value not in junk_values:
@@ -236,7 +231,7 @@ def extract_imev_etc(root):
                             validate_numeric(value, dimev_id)
                             repertory = etree.Element('repertory', key=attr)
                             repertory.text = value
-                            new_repertories.append(repertory)
+                            record = add_repertory(record, repertory)
                 else:
                     if 'TM' in value:
                         attr = 'Ringler1992'
@@ -249,15 +244,32 @@ def extract_imev_etc(root):
                     validate_numeric(value, dimev_id)
                     repertory = etree.Element('repertory', key=attr)
                     repertory.text = value
-                    new_repertories.append(repertory)
-            if len(new_repertories): # test for children
-                if record.find('repertories') is None:
-                    record.insert(2, new_repertories)
-                else:
-                    repertories = record.find('repertories')
-                    repertories.extend(new_repertories)
+                    record = add_repertory(record, repertory)
     print('Done')
     return root
+
+def add_repertory(record, new_repertory):
+    repertories = record.find('repertories')
+
+    # Create the element 'repertories' if it does not exist
+    if repertories is None:
+        repertories = etree.Element('repertories')
+        record.insert(2, repertories)
+
+    # Test whether new_repertory already exists
+    found_identical = False
+    if len(repertories):
+        target_text = new_repertory.text
+        target_key = new_repertory.get('key')
+        for child in repertories:
+            if child.text == target_text and child.get('key') == target_key:
+                found_identical = True
+                break
+
+    # Add the child element 'new_repertory' if it does not already exist
+    if found_identical == False:
+        repertories.append(new_repertory)
+    return record
 
 def validate_numeric(value, dimev_id):
     value = re.sub('^see ', '', value) # Treat "see" as acceptable non-numeric prefix
