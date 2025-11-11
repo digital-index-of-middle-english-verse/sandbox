@@ -261,11 +261,13 @@ def extract_imev_etc(root):
 
 def add_repertory(record, new_repertory):
     repertories = record.find('repertories')
+    alpha = record.find('alpha')
 
     # Create the element 'repertories' if it does not exist
     if repertories is None:
         repertories = etree.Element('repertories')
-        record.insert(2, repertories)
+        index = record.index(alpha) + 1
+        record.insert(index, repertories)
 
     # Test whether new_repertory already exists
     found_identical = False
