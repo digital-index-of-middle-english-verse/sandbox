@@ -1,81 +1,75 @@
-# This script loads two partially redundant data files and checks one against
-# the other. It reports manuscript sources included in MSSIndex.xml but not
-# Manuscripts.xml.
-
-# TODO: Write the complementary check, for manuscripts sources in
-# Manuscripts.xml but not MSSIndex.xml
-
 import os
-import xmltodict
+from lxml import etree
+
+# top-level variables
 
 src_dir = '../../dimev/data/'
-file1 = 'Manuscripts.xml'
-file2 = 'MSSIndex.xml'
-source1 = src_dir + file1
-source2 = src_dir + file2
+source_file = 'Manuscripts.xml'
+mssindex_xml = 'MSSIndex.xml'
+namespace = '{http://www.w3.org/XML/1998/namespace}'
 
-def read_xml_to_dict(source):
-    print(f'Reading source file `{source}` to string...')
-    with open(source) as f:
-        xml_string = f.read()
-    print('Parsing string as a Python dictionary...')
-    xml_dict = xmltodict.parse(xml_string)
-    return xml_dict
+def main():
+    tree = etree.parse(src_dir + source_file)
+    root = tree.getroot()
 
-def cross_check(mss, mssIndex):
-    errors = 0
-    checks = 0
-    print(f'Checking keys in {file2}...')
-    for idx in range(len(mssIndex)):
-        if mssIndex[idx]['@key'] != 'Location Unknown':
-            settlement = mssIndex[idx]['repos']
-            if type(settlement) == dict: # settlement with one repository
-                node = settlement['item']
-                checks, errors = get_keys_at_repo(node, checks, errors)
-            elif type(settlement) == list: # settlements with multiple repositories
-                for idx in range(len(settlement)):
-                    node = settlement[idx]['item']
-                    checks, errors = get_keys_at_repo(node, checks, errors)
-    print(f'Checked {checks} manuscript keys')
-    print(f'Checks concluded with {errors} errors')
+    # Create union of Manuscripts.xml and MSSIndex.xml
+    root = unify_files(root)
 
-def get_keys_at_repo(node, checks, errors):
-    if type(node) == dict:
-        key = node['@xml:id']
-        errors = count_keys(key, errors)
-        checks += 1
-    elif type(node) == list: # repositories with multiple items
-        for idx in range(len(node)):
-            key = node[idx]['@xml:id']
-            errors = count_keys(key, errors)
-            checks += 1
-    return checks, errors
+    print('All transformations complete')
+    etree.indent(tree, space="    ", level=0)
+    tree.write(src_dir + source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+    print(f'Wrote the updated tree to {source_file}')
 
-def count_keys(key, errors):
-    count = 0
-    for idx in range(len(mss)):
-        if mss[idx]['@xml:id'] == key:
-            count += 1
-    if count == 0:
-        print(f'WARNING: key {key} not found!')
-        errors += 1
-    elif count > 1:
-        print(f'WARNING: {file1} has multiple entries for key {key}!')
-        errors += 1
-    return errors
+def unify_files(root):
+    print('Reconciling Manuscripts.xml and MSSIndex.xml')
+    tree2 = etree.parse(src_dir + mssindex_xml)
+    root2 = tree2.getroot()
+    count_new = 0
+    for location in root2:
+        loc_val2 = location.get('key')
+        for repository in location:
+            repo_val2 = repository.get('key')
+            for item2 in repository:
+                if item2.get(namespace + 'id') is not None:
+                    root, count_new = write_to_root(root, item2, loc_val2, repo_val2, count_new)
+    print(f'Wrote {count_new} items to Manuscripts.xml')
+    return root
 
-# read first source file to dictionary
-file = source1
-Manuscripts_dict = read_xml_to_dict(file)
-mss = Manuscripts_dict['mss']['item'] # strip outer keys
+def write_to_root(root, item2, loc2_val, repo2_val, count_new):
+    itemID2 = item2.get(namespace + 'id')
+    shelfmark2 = item2.find('desc')
+    lang2 = item2.find('lang')
+    item_id_found = False
+    for item in root:
+        itemID1 = item.get(namespace + 'id')
+        if itemID1 == itemID2:
+            # remove current child elements
+            for child in item:
+                item.remove(child)
+            # create new child elements
+            loc_el = etree.Element('loc')
+            loc_el.text = loc2_val
+            repo_el = etree.Element('repos')
+            repo_el.text = repo2_val
+            # insert new elements
+            item.insert(0, loc_el)
+            item.insert(1, repo_el)
+            item.insert(2, shelfmark2)
+            if lang2 is not None:
+                item.insert(3, lang2)
+            item_id_found = True
+            break
+    if item_id_found == False:
+        loc_el = etree.Element('loc')
+        loc_el.text = loc2_val
+        item2.insert(0, loc_el)
+        repo_el = etree.Element('repos')
+        repo_el.text = repo2_val
+        item2.insert(1, repo_el)
+        count_el = item2.find('count')
+        item2.remove(count_el)
+        root.append(item2)
+        count_new += 1
+    return root, count_new
 
-# read second source file to dictionary
-file = source2
-MSSIndex_dict = read_xml_to_dict(file)
-mssIndex = MSSIndex_dict['records']['loc'] # strip outer keys
-
-# Check Manuscripts.xml against MSSIndex.xml
-print('Verifing `MSSIndex.xml` against `Manuscripts.xml`...')
-cross_check(mss, mssIndex)
-
-print('\nWARNING: The verification just run was unidirectional. Further checks to come.')
+main()
