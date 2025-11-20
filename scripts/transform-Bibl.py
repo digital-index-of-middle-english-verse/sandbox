@@ -467,9 +467,9 @@ for idx in test_sample:
     conditionsB2 = type(items[idx]['pubstmt']) == str \
                  and 'http' in items[idx]['pubstmt']
     if conditionsA and conditionsB1:
-        links_to_online_facs.append(items[idx])
+        links_to_online_facs.append(items[idx].get('@xml:id'))
     elif conditionsA and conditionsB2:
-        links_to_online_facs.append(items[idx])
+        links_to_online_facs.append(items[idx].get('@xml:id'))
     # Convert item
     else:
         newItem, warning_log = convert_item(items[idx], warning_log)
@@ -484,6 +484,8 @@ msg = f'Conversions completed with {count_warnings} warnings \
 and {len(links_to_online_facs)} unconverted links to on-line facsimiles.'
 print(msg)
 print('Wrote log to ../artefacts/warnings.txt')
+
+print(f'xml:id values of on-line facsimiles: {links_to_online_facs}')
 
 warning_log.append(msg)
 with open(log_file, 'w') as file:
