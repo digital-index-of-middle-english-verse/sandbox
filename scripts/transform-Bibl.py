@@ -1,5 +1,5 @@
 # This script transforms Bibliography.xml into valid CSL data.  Links to
-# on-line facsimiles are sifted out, for separate handling tbd.
+# on-line facsimiles are sifted out, for separate handling.
 #
 # Warnings are emitted for unexpected data structures or values. This pertains
 # especially to values of `pubstmt`, a nasty free text field in the source XML.
@@ -8,224 +8,277 @@
 # after warnings thrown during conversion
 
 import os
-import xmltodict
 import re
-import yaml
 import json
 import jsonschema
+from lxml import etree
 
 # Top-level variables
-source = '../../dimev/data/Bibliography.xml'
-destination = '../artefacts/'
+source_dir = '../../dimev/data/'
+source_file = 'Bibliography.xml'
+dest_dir = '../artefacts/'
 csl_schema = '../schemas/csl-data.json'
-# test_sample= range(50)
-warning_log = ['Warnings from the latest run of `transform-Bibl.py`.\n']
-links_to_online_facs = []
-log_file = '../artefacts/warnings.txt'
+log_file = 'warnings.txt'
+namespace = '{http://www.w3.org/XML/1998/namespace}'
 
-def read_xml_to_string(source):
-    print(f'Reading source file `{source}` to string...')
-    with open(source) as f:
-        xml_string = f.read()
-    print('Preprocessing string...')
-    xml_string = re.sub(r' {2,}', ' ', xml_string) # remove whitespace
-    xml_string = re.sub(r'\n', '', xml_string) # remove newlines
-    xml_string = re.sub(r'<sup>', 'BEGIN_SUP', xml_string) # replace <sup> tags
-    xml_string = re.sub(r'</sup>', 'END_SUP', xml_string)
-    xml_string = re.sub(r'<i>', 'BEGIN_ITALICS', xml_string)  # replace <i> tags
-    xml_string = re.sub(r'</i>', 'END_ITALICS', xml_string)
-    return xml_string
+def main():
+    tree = etree.parse(source_dir + source_file)
+    root = tree.getroot()
+    bibl = root.findall('bibl')
+    print(f'Found {len(bibl)} items.')
 
-def xml_to_dict(xml_string):
-    print('Parsing string as a Python dictionary...')
-    xml_dict = xmltodict.parse(xml_string)
-    items = xml_dict['bibliography']['bibl'] # strip outer keys
-    return items
+    csl_items = [] # Empty container for converted items
+    online_facs_keys = [] # Empty container for keys of online facsimiles
+    warning_log = ['Warnings from the latest run of `transform-Bibl.py`.\n']
+
+    for item in bibl:
+
+        # If the item is a link to an on-line facsimile, toss aside for future
+        # processing. These are not converted to CSL format
+        facs, online_facs_keys = extract_online_facs(item, online_facs_keys)
+        if not facs: # Convert item
+            converted_item, warning_log = convert_item(item, warning_log)
+            csl_items.append(converted_item)
+
+    # Validate and write
+    validate_csl(csl_items, warning_log)
+    report_warnings(warning_log, online_facs_keys)
+    write_to_file(csl_items)
+    print('Done')
+    
+def extract_online_facs(item, online_facs_keys):
+    # NOTE: The logic here is identical with that in update-Manuscripts.py.
+    # That file runs a check against an earlier output of this script, prior to
+    # refactoring. Since the two logics have identical results, I use the
+    # simpler one.
+
+    facs = False
+    bib_key = item.get(namespace + 'id')
+    pubstmt = item.find('pubstmt')
+    pubstmt_text = etree.tostring(pubstmt, encoding='unicode', method='text')
+    if 'http' in pubstmt_text:
+        facs = True
+        online_facs_keys.append(bib_key)
+    return facs, online_facs_keys
 
 def convert_item(sourceItem, warning_log):
-    # Unclutter sourceItem
-    if 'index' in sourceItem:
-        sourceItem.pop('index') # NOTE: Ignore keywords, for now
-    # Delete stray orphaned full stops
-    if sourceItem.get('#text') == '.':
-        sourceItem.pop('#text')
+    # NOTE: We ignore contents of the index element
 
     # Define newItem
     newItem = {}
-    newItem['id'] = sourceItem.get('@xml:id') # NOTE: could be mapped also to CSL:citation-key
+    newItem['id'] = sourceItem.get(namespace + 'id') # NOTE: could be mapped also to CSL:citation-key
     newItem['type'] = 'book' # set a default value for a required field
 
-    for tag_name in sourceItem.keys():
-        # process authorstmt
-        if tag_name == 'authorstmt':
-            authorstmt = sourceItem['authorstmt']
-            if authorstmt is None:
-                msg = f'WARNING: Empty `authorstmt` in item {sourceItem["@xml:id"]}.'
-                # warning_log.append(msg)
-            else: # process as dict
-                for agent in ['author', 'editor', 'translator']: # the only valid children of 'authorstmt'
-                    if agent in authorstmt:
-                        if type(authorstmt[agent]) == dict:
-                            authorstmt[agent] = [authorstmt[agent]] # force to list
-                        newItem[agent] = convert_agents(authorstmt[agent], sourceItem['@xml:id'])
+    # Convert authorstmt, if present
+    authorstmt = sourceItem.find('authorstmt')
+    if authorstmt is not None:
+        newItem = convert_authorstmt(authorstmt, newItem)
+    else:
+        msg = f'WARNING: Empty `authorstmt` in item {bibkey}.'
+        warning_log.append(msg)
 
-        # process titlestmt
-        elif tag_name == 'titlestmt':
-            if sourceItem['titlestmt'] is None:
-                msg = f'WARNING: Empty `titlestmt` in item {sourceItem["@xml:id"]}.'
-                warning_log.append(msg)
-            else: # process as dict
+    # Convert titlestmt, if present
+    titlestmt = sourceItem.find('titlestmt')
+    if titlestmt is not None:
+        newItem, warning_log = convert_titlestmt(titlestmt, newItem, warning_log)
+    else:
+        msg = f'WARNING: Empty `titlestmt` in item {bibkey}.'
+        warning_log.append(msg)
 
-                # Map 'vols' to CSL 'number-of-volumes'
-                if 'vols' in sourceItem['titlestmt']:
-                    newItem['number-of-volumes'] = sourceItem['titlestmt'].pop('vols')
+    # Convert pubstmt, if present
+    pubstmt = sourceItem.find('pubstmt')
+    if pubstmt is not None:
+        newItem, warning_log = convert_pubstmt(pubstmt, newItem, warning_log)
+    else:
+        msg = f'WARNING: Empty `pubstmt` in item {bibkey}.'
+        warning_log.append(msg)
 
-                # Process titles
-                titles = sourceItem['titlestmt']['title']
-                if type(titles) == dict:
-                    titles = [titles] # force to list
+    return newItem, warning_log
 
-                # read title types
-                title_types = []
-                options = ['a', 'm', 'j', 's'] # "a"=Article "m"=Monograph "j"=Journal "s"=Series
-                for title in titles:
-                    if title['@level'] not in options:
-                        msg = f'WARNING: unexpected title type found in item {sourceItem["@xml:id"]}'
-                        print(msg)
-                        warning_log.append(msg)
-                    if title['@level'] in title_types:
-                        msg = f'WARNING: duplicate title type found in item {sourceItem["@xml:id"]}'
-                        print(msg)
-                        warning_log.append(msg)
-                    else:
-                        title_types.append(title['@level'])
-                
-                # map titles to CSL
-                for title in titles:
-                    if title['@level'] == 'j':
-                        newItem['type'] = 'article-journal'
-                        newItem['container-title'] = title.pop('#text')
-                    elif title['@level'] == 's':
-                        if 'j' in title_types:
-                            msg = f'WARNING: unexpected combination of title types found in item {sourceItem["@xml:id"]}'
-                            print(msg)
-                            warning_log.append(msg)
-                        if 'a' in title_types and 'm' not in title_types:
-                            msg = f'WARNING: unexpected combination of title types found in item {sourceItem["@xml:id"]}'
-                            print(msg)
-                            warning_log.append(msg)
-                        newItem['type'] = 'book'
-                        newItem['collection-title'] = title.pop('#text')
-                    elif title['@level'] == 'm':
-                        # get book title and URLs
-                        if 'ref' in title:
-                            this_book_title, url = process_ref(title)
-                            newItem['URL'] = url
-                        if '#text' in title:
-                            this_book_title = format_string(title.pop('#text'))
-                        # assign type and title
-                        if 'j' in title_types:
-                            msg = f'WARNING: unexpected combination of title types found in item {sourceItem["@xml:id"]}'
-                            print(msg)
-                            warning_log.append(msg)
-                        elif 'a' in title_types:
-                            newItem['type'] = 'chapter'
-                            newItem['container-title'] = this_book_title
-                        else:
-                            newItem['type'] = 'book'
-                            newItem['title'] = this_book_title
-                    else: # if title['@level'] == 'a':
-                        if '#text' in title:
-                            newItem['title'] = format_string(title.pop('#text'))
-                        if 'ref' in title:
-                            this_title, url = process_ref(title)
-                            newItem['title'] = this_title
-                            newItem['URL'] = url
+def convert_authorstmt(authorstmt, newItem):
+    for agent in ['author', 'editor', 'translator']: # the only valid children of 'authorstmt'
+        agent_list = authorstmt.findall(agent)
+        if agent_list is not None:
+            name_list = convert_agents(agent_list)
+            if len(name_list) > 0:
+                newItem[agent] = name_list
+    return newItem
 
-        # process pubstmt
-        elif tag_name == 'pubstmt':
-            pubstmt = sourceItem['pubstmt']
-            if pubstmt is None:
-                msg = f'WARNING: Empty `pubstmt` in item {sourceItem["@xml:id"]}.'
-                print(msg)
-                warning_log.append(msg)
-            elif type(pubstmt) is not dict:
-                msg = f'WARNING: Unexpected data type for `pubstmt` in item {sourceItem["@xml:id"]}.'
-                print(msg)
-                warning_log.append(msg)
-            else: # process pubstmt
-                # process the date attribute
-                if '@date' not in pubstmt:
-                    msg = f'WARNING: No `@date` attribute in item {sourceItem["@xml:id"]}'
-                    print(msg)
-                    warning_log.append(msg)
-                elif pubstmt['@date'].lower() == 'n.d.' or pubstmt['@date'] == '':
-                    msg = f'WARNING: No date value found for `@date` attribute in item {sourceItem["@xml:id"]}'
-                    warning_log.append(msg)
-                elif re.search(r'[A-Za-z=\?\+]', pubstmt['@date']):
-                    msg = f'WARNING: Invalid value found for `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
-                    print(msg)
-                    warning_log.append(msg)
-                elif re.search(r'\d{5,}', pubstmt['@date']):
-                    msg = f'WARNING: Invalid value found for `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
-                    print(msg)
-                    warning_log.append(msg)
-                elif len(pubstmt['@date']) < 4:
-                    msg = f'WARNING: Invalid value found for `@date` attribute in item {sourceItem["@xml:id"]}. Skipping.'
-                    print(msg)
-                    warning_log.append(msg)
-                else:
-                    # Extract four-digit publication years from the '@date' attribute
-                    date_from_attr = pubstmt['@date']
-                    date_dict = create_date_dict(date_from_attr)
-                    if date_dict['date-parts'] == []:
-                        msg = 'WARNING: Unsupported date pattern in item {sourceItem["@xml:id"]}. Skipping.'
-                        print(msg)
-                        warning_log.append(msg)
-                    else:
-                        newItem['issued'] = date_dict
+def convert_titlestmt(titlestmt, newItem, warning_log):
 
-                # Process the `#text` element
-                if '#text' not in pubstmt:
-                    msg = f'WARNING: No text value for `pubstmt` in item {sourceItem["@xml:id"]}. Skipping.'
-                    print(msg)
-                    warning_log.append(msg)
-                else:
-                    pubstmt_str = pubstmt['#text']
+    # Map 'vols' to CSL 'number-of-volumes'
+    number_of_volumes = titlestmt.find('vols')
+    if number_of_volumes is not None:
+        newItem['number-of-volumes'] = number_of_volumes.text.strip()
 
-                    # Identify and process dissertations and theses
-                    if 'Diss.' in pubstmt_str or 'thesis' in pubstmt_str:
-                        newItem = format_theses(newItem, pubstmt_str)
+    # Process titles
+    level_vals = []
+    options = ['a', 'm', 'j', 's'] # "a"=Article "m"=Monograph "j"=Journal "s"=Series
+    title_list = titlestmt.findall('title')
 
-                    # Process journal articles
-                    elif newItem['type'] == 'article-journal':
-                        if ':' in pubstmt_str:
-                            parts = re.split(':', pubstmt_str, maxsplit=1)
-                            newItem['volume'] = re.sub(r'\(.*\d\d\d\d.*\)', '', parts[0]).strip()
-                            newItem['page'] = parts[1].strip()
-                        else:
-                            msg = f'WARNING: Irregular pubstmt found for journal-article {sourceItem["@xml:id"]}. Skipping.'
-                            print(msg)
-                            warning_log.append(msg)
+    # First, gather values of 'level'
 
-                    # Process books
-                    elif newItem['type'] == 'book':
-                        newItem, warning_log = parse_pubstmt_books(newItem, pubstmt_str, warning_log)
+    for title in title_list:
+        title_level = title.get('level')
+        if title_level in level_vals:
+            msg = f'WARNING: duplicate title type found for item {newItem["id"]}. Values will be overwritten'
+            print(msg)
+            warning_log.append(msg)
+        else:
+            level_vals.append(title_level)
 
-                    # Process book chapters
-                    # First, extract page ranges where present; then parse with the same logic used for items of type 'book'
-                    elif newItem['type'] == 'chapter':
-                        pattern = r'\d\d\d\d(-\d{1,4})?[:,\.] \d+(-\d+)?$'
-                        if re.search(pattern, pubstmt_str):
-                            newItem['page'] = re.sub(r'^.*\d\d\d\d(-\d{1,4})?[:,\.] ', '', pubstmt_str)
-                            pubstmt_str = re.sub(r'[:,\.] \d+(-\d+)?$', '', pubstmt_str)
-                        newItem, warning_log = parse_pubstmt_books(newItem, pubstmt_str, warning_log)
+    # Next, test for illegal combinations of title levels
+    warn_conditions = [
+            's' in level_vals and 'j' in level_vals, # series title and journal title
+            's' in level_vals and 'a' in level_vals and 'm' not in level_vals, # series title, chapter title, but not monograph title
+            'm' in level_vals and 'j' in level_vals # monograph title and journal title
+            ]
+    if any(warn_conditions):
+        msg = f'WARNING: unexpected combination of title types found for item {newItem["id"]}'
+        print(msg)
+        warning_log.append(msg)
 
-                    else:
-                        msg = f'WARNING: Unrecognized CSL type for transform of {sourceItem["@xml:id"]}.'
-                        print(msg)
-                        warning_log.append(msg)
+    # Finally, test for unexpected level values and convert passing titles
+    for title in title_list:
+        if title_level in options:
+            # Convert to CSL
+            newItem = process_title(title, level_vals, newItem)
+        else:
+            msg = f'WARNING: unexpected title type found for item {newItem["id"]}. Skipping'
+            print(msg)
+            warning_log.append(msg)
 
+    return newItem, warning_log
+
+def process_title(title, level_vals, newItem):
+    title_level = title.get('level')
+
+    # Inspect and process title content
+    if title.find('ref') is None:
+        # Force to string (to preserve inset <i> elements)
+        title_text = stringify_content(title)
+    else:
+        ref = title.find('ref')
+        # Add URL
+        newItem['URL'] = ref.get('n')
+        # Force to string (to preserve inset <i> and <sup> elements)
+        title_text = stringify_content(ref)
+
+    # Map to CSL
+    if title_level == 'j':
+        newItem['type'] = 'article-journal'
+        newItem['container-title'] = title_text
+    elif title_level == 's':
+        newItem['type'] = 'book'
+        newItem['collection-title'] = title_text
+    elif title_level == 'm':
+        if 'a' in level_vals:
+            newItem['type'] = 'chapter'
+            newItem['container-title'] = title_text
+        else:
+            newItem['type'] = 'book'
+            newItem['title'] = title_text
+    else: # title_level == 'a'
+        newItem['title'] = title_text
+
+    return newItem
+
+def stringify_content(element):
+    parts = []
+    if len(element):
+        # Iterate through children and their tails, excluding coments
+        for child in element.iter(tag=etree.Element):
+            if child.tag == 'title' or child.tag == 'ref':
+                parts.append(f"{child.text.strip() if child.text else ''}")
+            else: # Add the child's tag and its text
+                parts.append(f"<{child.tag}>{child.text.strip() if child.text else ''}</{child.tag}>")
+            # Add the text following the child
+            if child.tail:
+                parts.append(child.tail.strip())
+        string = ' '.join(parts).strip()
+        string = re.sub(r'> ([,:\)\?])', r'>\1', string)
+        string = re.sub('En <sup>', 'En<sup>', string) # A single case
+        string = remove_whitespace(string)
+        if string == "Epitaphs, &c. ( <i>To the Editor of the Mirror.</i>)":
+            string = "Epitaphs, &c. (<i>To the Editor of the Mirror.</i>)"
+    else:
+        string = remove_whitespace(element.text).strip()
+    return string
+
+def remove_whitespace(text_str):
+    text_str = re.sub(' {2,}', ' ', text_str)
+    text_str = re.sub(r'\n', '', text_str)
+    return text_str
+
+def convert_pubstmt(pubstmt, newItem, warning_log):
+    # Process the date attribute
+    date_val = pubstmt.get('date')
+    newItem, warning_log = process_date_from_attr(date_val, newItem, warning_log)
+
+    # Process text content. pubstmt permits only string content and comment elements
+    pubstmt_str = etree.tostring(pubstmt, encoding='unicode', method='text').strip()
+    pubstmt_str = remove_whitespace(pubstmt_str)
+
+    # Identify and process dissertations and theses
+    if 'Diss.' in pubstmt_str or 'thesis' in pubstmt_str:
+        newItem = format_theses(newItem, pubstmt_str)
+
+    # Process journal articles
+    elif newItem['type'] == 'article-journal':
+        if ':' in pubstmt_str:
+            # NOTE: The script does not disaggregate volume and number
+            parts = re.split(':', pubstmt_str, maxsplit=1)
+            newItem['volume'] = re.sub(r'\(.*\d\d\d\d.*\)', '', parts[0]).strip()
+            newItem['page'] = parts[1].strip()
+        else:
+            msg = f'WARNING: Irregular pubstmt found for journal-article {newItem["id"]}. Skipping.'
+            print(msg)
+            warning_log.append(msg)
+
+    # Process books
+    elif newItem['type'] == 'book':
+        newItem, warning_log = parse_pubstmt_books(newItem, pubstmt_str, warning_log)
+
+    # Process book chapters
+    # First, extract page ranges where present; then parse with the same logic used for items of type 'book'
+    elif newItem['type'] == 'chapter':
+        pattern = r'\d\d\d\d(-\d{1,4})?[:,\.] \d+(-\d+)?$'
+        if re.search(pattern, pubstmt_str):
+            newItem['page'] = re.sub(r'^.*\d\d\d\d(-\d{1,4})?[:,\.] ', '', pubstmt_str)
+            pubstmt_str = re.sub(r'[:,\.] \d+(-\d+)?$', '', pubstmt_str)
+        newItem, warning_log = parse_pubstmt_books(newItem, pubstmt_str, warning_log)
+
+    else:
+        msg = f'WARNING: Unrecognized CSL type for transform of {sourceItem["@xml:id"]}.'
+        print(msg)
+        warning_log.append(msg)
+
+    return newItem, warning_log
+
+def process_date_from_attr(date_val, newItem, warning_log):
+    warn_conditions = [
+            date_val.lower == 'n.d',
+            date_val == '',
+            re.search(r'[A-Za-z=\?\+]', date_val),
+            re.search(r'\d{5,}', date_val),
+            len(date_val) < 4
+        ]
+    if date_val is None:
+        msg = f'WARNING: No `date` attribute in item {newItem["id"]}'
+        print(msg)
+        warning_log.append(msg)
+    elif any(warn_conditions):
+        msg = f'WARNING: Invalid value found for `date` attribute in item {newItem["id"]}. Skipping.'
+        print(msg)
+        warning_log.append(msg)
+    else: # Extract four-digit publication years from the '@date' attribute
+        date_dict = create_date_dict(date_val)
+        if date_dict['date-parts'] == []:
+            msg = 'WARNING: Unsupported date pattern in item {newItem["id"]}. Skipping.'
+            print(msg)
+            warning_log.append(msg)
+        else:
+            newItem['issued'] = date_dict
     return newItem, warning_log
 
 def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
@@ -323,29 +376,23 @@ def parse_pubstmt_books(newItem, pubstmt_str, warning_log):
         newItem['publisher'] = pubstmt_str
         date_str = ''
 
-    # Reconcile dates
+    # NOTE: The date extracted from pubstmt content is preferred. This is
+    # probably ok, as I checked discrepancies item-by-item when first
+    # implemented
+
     extracted_date_dict = create_date_dict(date_str)
     if 'issued' in newItem.keys() and newItem['issued'] != extracted_date_dict:
         if extracted_date_dict['date-parts'] is not None and extracted_date_dict['date-parts'] != []:
             newItem['issued'] = extracted_date_dict
-            # if newItem['issued']['date-parts'][0][0] != extracted_date_dict['date-parts'][0][0]:
-            #     msg = f'WARNING: discrepant dates for item {newItem["id"]}'
-            #     warning_log.append(msg)
+            if newItem['issued']['date-parts'][0][0] != extracted_date_dict['date-parts'][0][0]:
+                 msg = f'WARNING: discrepant dates for item {newItem["id"]}'
+                 warning_log.append(msg)
 
     return newItem, warning_log
 
-def process_ref(title):
-    if '#text' in title['ref']:
-        this_book_title = format_string(title['ref'].pop('#text'))
-    if title['ref'].get('@type', '') == 'url':
-        if title['ref'].get('@n', '') != '':
-            url = title['ref'].pop('@n')
-            title['ref'].pop('@type')
-    return this_book_title, url
-
 def create_date_dict(date_str):
     # NOTE: I use the 'more structured' representation of dates permitted by the CSL spec.
-    date_str = re.sub(r'\[|\]', '', date_str) # NOTE: strip brackets, for now
+    date_str = re.sub(r'\[|\]', '', date_str) # NOTE: strip brackets
     date_str = date_str.strip()
     if re.search(r'^\d\d\d\d$', date_str):
         date_list = [[int(date_str)]]
@@ -397,32 +444,22 @@ def format_theses(newItem, string):
 
     return newItem
 
-def convert_agents(agents, itemID):
-    nameList = []
-    for nomen in agents:
+def convert_agents(agent_list):
+    # Ignore titles of nobility, academic degree
+    new_list = []
+    for agent in agent_list:
         nameParts = {}
-        nameParts['family'] = nomen.pop('last', '')
-        if 'first' in nomen and nomen['first'] is not None:
-            nameParts['given'] = nomen.pop('first', '')
-        # Remove stray orphaned punctuation
-        if nomen.get('#text', '') in ['.', ',']:
-            nomen.pop('#text')
-        # Ignore titles of nobility, academic degree
-        if nomen.get('prefix', '') in ['Dr.', 'Sir', 'Lord']:
-            nomen.pop('prefix')
-        nameList.append(nameParts)
-    return nameList
+        lastname = agent.find('last')
+        if lastname is not None and lastname.text is not None:
+            nameParts['family'] = lastname.text.strip()
+        firstname = agent.find('first')
+        if firstname is not None and firstname.text is not None:
+            nameParts['given'] = firstname.text.strip()
+        new_list.append(nameParts)
+    return new_list
 
-def format_string(value):
-    if type(value) == str:
-        value = re.sub('BEGIN_ITALICS', '<i>', value)
-        value = re.sub('END_ITALICS', '</i>', value)
-        value = re.sub('BEGIN_SUP', '<sup>', value)
-        value = re.sub('END_SUP', '</sup>', value)
-    return value
-
-def validate_items(conversion):
-    print(f'Validating YAML conversion...')
+def validate_csl(conversion, warning_log):
+    print(f'Validating JSON conversion...')
     with open(csl_schema) as f:
         schema = json.load(f)
     try:
@@ -436,60 +473,21 @@ def validate_items(conversion):
         return False
 
 def write_to_file(conversion):
-    output_filename = destination + 'bibliography.json'
+    output_filename = dest_dir + 'bibliography.json'
     with open(output_filename, 'w') as f:
         json.dump(conversion, f, sort_keys=False, ensure_ascii=False, indent=2)
     print(f'Wrote conversion to `{output_filename}`.')
 
-# Workflow
+def report_warnings(warning_log, online_facs_keys):
+    count_warnings = len(warning_log) - 1
 
-# read the source file to string and pre-process
-xml_string = read_xml_to_string(source)
+    msg = f'Conversions completed with {count_warnings} warnings and {len(online_facs_keys)} unconverted links to on-line facsimiles.'
+    print(msg)
+    warning_log.append(msg)
 
-# create a dictionary
-items = xml_to_dict(xml_string)
-count_items = len(items)
-print(f'Found {count_items} items.')
+    with open(dest_dir + log_file, 'w') as file:
+        for line in warning_log:
+            file.write(line + '\n')
+    print(f'Wrote warning log to {log_file}')
 
-# Sort and convert items
-if not 'test_sample' in locals():
-    test_sample = range(len(items)) # Convert all items, unless a test_sample is specified previously
-conversion = []
-for idx in test_sample:
-    # Walk the tree; if the item is a link to an on-line facsimile, toss aside for future processing. These are not converted to CSL format
-    conditionsA = 'pubstmt' in items[idx] \
-                 and 'titlestmt' in items[idx] \
-                 and 'title' in items[idx]['titlestmt'] \
-                 and 'ref' in items[idx]['titlestmt']['title'] \
-                 and 'Digital Facsimile of' in items[idx]['titlestmt']['title']['ref'].get('#text', '')
-    conditionsB1 = type(items[idx]['pubstmt']) == dict \
-                 and 'http' in items[idx]['pubstmt'].get('#text', '')
-    conditionsB2 = type(items[idx]['pubstmt']) == str \
-                 and 'http' in items[idx]['pubstmt']
-    if conditionsA and conditionsB1:
-        links_to_online_facs.append(items[idx].get('@xml:id'))
-    elif conditionsA and conditionsB2:
-        links_to_online_facs.append(items[idx].get('@xml:id'))
-    # Convert item
-    else:
-        newItem, warning_log = convert_item(items[idx], warning_log)
-        conversion.append(newItem)
-
-# Validate and write
-validate_items(conversion)
-
-count_warnings = len(warning_log) - 1
-
-msg = f'Conversions completed with {count_warnings} warnings \
-and {len(links_to_online_facs)} unconverted links to on-line facsimiles.'
-print(msg)
-print('Wrote log to ../artefacts/warnings.txt')
-
-print(f'xml:id values of on-line facsimiles: {links_to_online_facs}')
-
-warning_log.append(msg)
-with open(log_file, 'w') as file:
-    for line in warning_log:
-        file.write(line + '\n')
-
-write_to_file(conversion)
+main()
