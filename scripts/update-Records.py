@@ -20,17 +20,20 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # Create repertories and populate with IMEV, NIMEV, and Ringler
-    root = extract_imev_etc(root)
-
-    # Add ME Compendium as repertory
-    root = add_mec_refs(root)
-
     # Update subjects
     root = update_subjects(root)
 
     # Move formal terms misplaced in subjects
     root = move_misplaced_form_terms(root)
+
+    # Create C16 term from nimev values
+    root = add_post1500_as_term(root)
+
+    # Create repertories and populate with IMEV, NIMEV, and Ringler
+    root = extract_imev_etc(root)
+
+    # Add ME Compendium as repertory
+    root = add_mec_refs(root)
 
     print('All transformations complete')
     etree.indent(tree, space="    ", level=0)
@@ -65,6 +68,24 @@ def add_mec_refs(root):
                     new_repertory.text = item[0]
                     record = add_repertory(record, new_repertory)
     print('Done')
+    return root
+
+def add_post1500_as_term(root):
+    post1500_strings = {'TP', 'TM', 'C16', 'C 19', 'Dubar', 'Dunbar', 'post-1500', 'post medieval', 'post-medieval', 'Skelton'}
+    print('Applying "post-1500" as subject term, extracted from values of the "nimev" attribute...')
+    count = 0
+    for record in root.findall('record'):
+        nimev = record.get('nimev', '')
+        c16 = False
+        for term in post1500_strings:
+            if term in nimev:
+                c16 = True
+                break
+        if c16 and record.find('witnesses') is not None: # Exclude cross-refs
+            subjects_element = record.find('subjects')
+            subjects_element = add_unique_terms(subjects_element, 'subject', 'post-1500')
+            count += 1
+    print(f'Tagged {count} items as post-1500')
     return root
 
 def update_subjects(root):
