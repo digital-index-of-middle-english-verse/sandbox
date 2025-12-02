@@ -8,7 +8,6 @@ namespace = '{http://www.w3.org/XML/1998/namespace}'
 # Find all XML files in the directory
 data_dir = '../../dimev/data/'
 xml_files = glob.glob(data_dir + '*.xml')
-xml_files.remove(data_dir + 'MSSIndex.xml') # MSSIndex.xml is mostly redundant with Manuscripts.xml
 
 for file in xml_files:
     tree = ET.parse(file)
