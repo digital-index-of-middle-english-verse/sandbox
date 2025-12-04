@@ -25,7 +25,7 @@ def export_shelfmarks_as_csv(root):
     # Create container
     data = []
     column_labels = [
-            'xml:id', 'location', 'repository', 'shelfmark', 'alt_id'
+            'xml:id', 'location', 'repository', 'shelfmark', 'alt_id', 'facsimile'
             ]
     data.append(column_labels)
     csv_file = 'manuscript-shelfmarks.csv'
@@ -34,6 +34,7 @@ def export_shelfmarks_as_csv(root):
         ms_id = item.get(namespace + 'id')
         location = item.find('loc')
         repository = item.find('repos')
+        facs_link = get_facs_link(item)
 
         desc = item.find('desc')
         desc_txt = etree.tostring(desc, encoding='unicode', method='text').strip()
@@ -51,13 +52,21 @@ def export_shelfmarks_as_csv(root):
         if complex_value == False:
             shelfmark_txt = desc_txt
             alt_id_txt = ''
-        data_row = [ms_id, location.text, repository.text, shelfmark_txt, alt_id_txt]
+        data_row = [ms_id, location.text, repository.text, shelfmark_txt, alt_id_txt, facs_link]
         data.append(data_row)
 
     with open(write_dir + csv_file, 'w', newline='') as file:
         writer = csv.writer(file, lineterminator='\n')
         writer.writerows(data)
     print(f"Manuscript shelfmarks have been written to '{csv_file}'")
+
+def get_facs_link(item):
+    facs_link = ''
+    surrogates = item.find('surrogates')
+    if surrogates is not None:
+        ref = surrogates.find('ref')
+        facs_link = ref.get('target')
+    return facs_link
 
 def remove_whitespace(text_str):
     text_str = re.sub(' {2,}', ' ', text_str)
