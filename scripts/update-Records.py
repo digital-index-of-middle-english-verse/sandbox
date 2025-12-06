@@ -61,6 +61,7 @@ def add_mec_refs(root):
     print('Creating Middle English Compendium-to-DIMEV crosswalk...')
     mec_to_dimev_xwalk = process_mec(mec_source)
     print('Adding references to Middle English Compendium Bibliography as repertory...')
+    count = 0
     for record in root.findall('record'):
         dimev_id = record.get(namespace + 'id')
         if dimev_id is not None:
@@ -70,7 +71,9 @@ def add_mec_refs(root):
                     new_repertory = etree.Element('repertory', key='MECompendium')
                     new_repertory.text = item[0]
                     record = add_repertory(record, new_repertory)
-    print('Done')
+                    count += 1
+    print(f'Added {count} references to the Middle English Compendium Bibliography')
+    print('Done\n')
     return root
 
 def add_prose_as_term(root):
@@ -82,6 +85,7 @@ def add_prose_as_term(root):
             record = update_forms(record, 'prose, according to NIMEV')
             count += 1
     print(f'Tagged {count} items as "prose, according to NIMEV"')
+    print('Done\n')
     return root
 
 def add_post1500_as_term(root):
@@ -100,6 +104,7 @@ def add_post1500_as_term(root):
             subjects_element = add_unique_terms(subjects_element, 'subject', 'post-1500')
             count += 1
     print(f'Tagged {count} items as post-1500')
+    print('Done\n')
     return root
 
 def update_subjects(root):
@@ -135,12 +140,13 @@ def update_subjects(root):
                         print(f'WARNING: subject term "{old_term}" not found in cross-walk')
             record.insert(subjects_index, new_subjects)
             record.remove(old_subjects_element)
-    print('Done')
+    print('Done\n')
     return root
 
 def move_misplaced_form_terms(root):
     print('Moving formal terms misplaced as subject terms...')
     list_of_formal_terms = get_formal_terms_misplaced_as_subjects(subject_categories_csv)
+    print('NOTE: review items tagged with the verseForm "ballade". Not all are the fixed form.')
     for record in root.findall('record'):
         new_subjects = etree.Element('subjects')
         old_subjects_element = record.find('subjects')
@@ -153,13 +159,19 @@ def move_misplaced_form_terms(root):
                     new_subjects.append(child)
             record.insert(subjects_index, new_subjects)
             record.remove(old_subjects_element)
-    print('Done')
+    print('Done\n')
     return root
 
 def update_forms(record, form_term):
+
+    # pre-process
     formal_terms_to_rewrite_as_singular = ['ballads', 'carols', 'roundels', 'virelais']
     if form_term in formal_terms_to_rewrite_as_singular:
         form_term = re.sub('s$', '', form_term)
+    if form_term == 'ballad': # re-spell
+        form_term = 'ballade'
+
+    # create elements
     new_forms_element = etree.Element('verseForms')
     old_forms_element = record.find('verseForms')
     if old_forms_element is None:
@@ -291,7 +303,7 @@ def extract_imev_etc(root):
                     repertory = etree.Element('repertory', key=attr)
                     repertory.text = value
                     record = add_repertory(record, repertory)
-    print('Done')
+    print('Done\n')
     return root
 
 def add_repertory(record, new_repertory):
