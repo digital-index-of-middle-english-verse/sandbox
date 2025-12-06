@@ -29,6 +29,9 @@ def main():
     # Create C16 term from nimev values
     root = add_post1500_as_term(root)
 
+    # Create a verseForm term for items deleted by NIMEV as prose
+    root = add_prose_as_term(root)
+
     # Create repertories and populate with IMEV, NIMEV, and Ringler
     root = extract_imev_etc(root)
 
@@ -68,6 +71,17 @@ def add_mec_refs(root):
                     new_repertory.text = item[0]
                     record = add_repertory(record, new_repertory)
     print('Done')
+    return root
+
+def add_prose_as_term(root):
+    print('Applying "prose, according to NIMEV" as form term, extracted from values of the "nimev" attribute...')
+    count = 0
+    for record in root.findall('record'):
+        nimev = record.get('nimev', '')
+        if 'prose' in nimev and record.find('witnesses') is not None: # Exclude cross-refs
+            record = update_forms(record, 'prose, according to NIMEV')
+            count += 1
+    print(f'Tagged {count} items as "prose, according to NIMEV"')
     return root
 
 def add_post1500_as_term(root):
