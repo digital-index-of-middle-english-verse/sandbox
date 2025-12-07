@@ -333,7 +333,7 @@ def add_repertory(record, new_repertory):
 
 def validate_numeric(value, dimev_id):
     value = re.sub('^see ', '', value) # Treat "see" as acceptable non-numeric prefix
-    if not re.match(r'\d+(\.\d+)?(/\d+)?$', value): # Refs to NIMEV witnesses use fwd slash as delimiter
+    if not re.match(r'\d+(\.\d+)?(/(A|(\d+(-\d+)?)))?$', value): # Refs to NIMEV witnesses use fwd slash as delimiter
         print(f'WARNING: attrib. "imev"/"nimev" in {dimev_id} has unexpected value "{value}"')
 
 def create_output_dir(output_dir):
