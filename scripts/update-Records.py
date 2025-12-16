@@ -20,23 +20,23 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # Update subjects
-    root = update_subjects(root)
+    ## Update subjects
+    #root = update_subjects(root)
 
-    # Move formal terms misplaced in subjects
-    root = move_misplaced_form_terms(root)
+    ## Move formal terms misplaced in subjects
+    #root = move_misplaced_form_terms(root)
 
-    # Create C16 term from nimev values
-    root = add_post1500_as_term(root)
+    ## Create C16 term from nimev values
+    #root = add_post1500_as_term(root)
 
-    # Create a verseForm term for items deleted by NIMEV as prose
-    root = add_prose_as_term(root)
+    ## Create a verseForm term for items deleted by NIMEV as prose
+    #root = add_prose_as_term(root)
 
-    # Create repertories and populate with IMEV, NIMEV, and Ringler
-    root = extract_imev_etc(root)
+    ## Create repertories and populate with IMEV, NIMEV, and Ringler
+    #root = extract_imev_etc(root)
 
-    # Add ME Compendium as repertory
-    root = add_mec_refs(root)
+    ## Add ME Compendium as repertory
+    #root = add_mec_refs(root)
 
     print('All transformations complete')
     etree.indent(tree, space="    ", level=0)
