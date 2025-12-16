@@ -20,6 +20,9 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
+    # Rebuild the facsimiles element
+    root = update_facsimiles(root)
+
     ## Update subjects
     #root = update_subjects(root)
 
@@ -42,6 +45,29 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def update_facsimiles(root):
+    print('Rebuilding facsimile elements, omitting keys identical to the corresponding source key...')
+    count = 0
+    for witness in root.iter('witness'):
+        source = witness.find('source')
+        source_key = source.get('key')
+        old_facs_elem = witness.find('facsimiles')
+        if old_facs_elem is not None:
+            index = witness.index(old_facs_elem)
+            new_facs_elem = etree.Element('facsimiles')
+            for facs in old_facs_elem.findall('facsimile'):
+                facs_key = facs.get('key')
+                if facs_key == source_key:
+                    count += 1
+                else:
+                    new_facs_elem.append(facs)
+            if len(new_facs_elem):
+                witness.insert(index, new_facs_elem)
+            witness.remove(old_facs_elem)
+    print(f'Found {count} facsimile keys identical to source keys')
+    print('Done')
+    return root
 
 def process_mec(mec_source):
     tree = etree.parse(mec_source)
