@@ -47,8 +47,34 @@ def main():
     print(f'Wrote the revised tree to {source_file}')
 
 def update_facsimiles(root):
-    print('Rebuilding facsimile elements, omitting keys identical to the corresponding source key...')
+    print('Rebuilding facsimile elements, omitting keys for on-line facsimiles of whole manuscripts...')
+
+    # These keys have been checked individually. Facs links are supplied for
+    # the corresponding manuscript items in Manuscripts.xml, or will be
+    # supplied in an upcoming batch update of that file.
+
+    additional_facs_elements_to_delete = [
+            'Balliol354',
+            'BLCottCalaix',
+            'BLHar525',
+            'BLRoy18dii',
+            'BodHatDon1',
+            'BodRawD913',
+            'BodRawPoe223',
+            'BritLib2014',
+            'CamTCC1037',
+            'CamTCC323',
+            'LOCMS4',
+            'Lydgate1451',
+            'Penn111',
+            'Penn196',
+            'PennCodex196',
+            'Penn201',
+            'TokyoTak98'
+            ]
+
     count = 0
+    count2 = 0
     for witness in root.iter('witness'):
         source = witness.find('source')
         source_key = source.get('key')
@@ -60,12 +86,14 @@ def update_facsimiles(root):
                 facs_key = facs.get('key')
                 if facs_key == source_key:
                     count += 1
+                elif facs_key in additional_facs_elements_to_delete:
+                    count2 += 1
                 else:
                     new_facs_elem.append(facs)
             if len(new_facs_elem):
                 witness.insert(index, new_facs_elem)
             witness.remove(old_facs_elem)
-    print(f'Found {count} facsimile keys identical to source keys')
+    print(f'Found {count} facsimile elements with keys identical to source keys and {count2} other facsimile elements to be deleted')
     print('Done')
     return root
 
