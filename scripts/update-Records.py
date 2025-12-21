@@ -23,6 +23,9 @@ def main():
     # Rebuild the facsimiles element
     root = update_facsimiles(root)
 
+    # Strip glosses from <name>
+    root = strip_glosses(root)
+
     ## Update subjects
     #root = update_subjects(root)
 
@@ -45,6 +48,26 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def strip_glosses(root):
+    print('Stripping glosses from the name element')
+    for gloss in root.xpath('.//name/gloss'):
+        parent = gloss.getparent()
+        prev = gloss.getprevious()
+
+        # Full string value of <gloss>, including any nested elements' text
+        gloss_string = ''.join(gloss.itertext())
+
+        # Attach gloss_string + gloss.tail where the <gloss> node sits
+        if prev is not None:
+            prev.tail = (prev.tail or '') + gloss_string + (gloss.tail or '')
+        else:
+            parent.text = (parent.text or '') + gloss_string + (gloss.tail or '')
+
+        # Finally remove the <gloss> element itself
+        parent.remove(gloss)
+    print('Done\n')
+    return root
 
 def update_facsimiles(root):
     print('Rebuilding facsimile elements, omitting keys for on-line facsimiles of whole manuscripts...')
@@ -94,7 +117,7 @@ def update_facsimiles(root):
                 witness.insert(index, new_facs_elem)
             witness.remove(old_facs_elem)
     print(f'Found {count} facsimile elements with keys identical to source keys and {count2} other facsimile elements to be deleted')
-    print('Done')
+    print('Done\n')
     return root
 
 def process_mec(mec_source):
