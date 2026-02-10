@@ -20,14 +20,14 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # Fix bibl keys
-    root = replace_bibl_keys(root)
+    ## Fix bibl keys
+    #root = replace_bibl_keys(root)
 
-    # Rebuild the facsimiles element
-    root = update_facsimiles(root)
+    ## Rebuild the facsimiles element
+    #root = update_facsimiles(root)
 
-    # Strip glosses from <name>
-    root = strip_glosses(root)
+    ## Strip glosses from <name>
+    #root = strip_glosses(root)
 
     ## Update subjects
     #root = update_subjects(root)
