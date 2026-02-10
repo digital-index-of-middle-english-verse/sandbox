@@ -1,13 +1,13 @@
 term,category,count,new term
 "66 long lines in groups ranging from a couplet to six mono-rhyming lines; written as short lines in which even-numbered lines rhyme, abcb to abcbdbebfbgb",verseForms,1,DELETE
 8-line,verseForms,2,8-line stanza
-a,versePattern,4,a; 1-line
-aa,verseForms,2,2-line stanza (couplet)
-aa,versePattern,2792,aa; 2-line stanza (couplet)
-"aa with quatrain, abba, at end",versePattern,1,2-line stanza (couplet); 4-line stanza (quatrain); abba
+a,versePattern,4,1-line
+aa,verseForms,2,2-line (couplet)
+aa,versePattern,2792,2-line (couplet)
+"aa with quatrain, abba, at end",versePattern,1,2-line (couplet)
 aaa,verseForms,1,3-line stanza; monorhyme
 aaa,versePattern,130,monorhyme; 3-line stanza
-aaa + bcccc,versePattern,1,aaabcccc; 3-line stanza; 5-line stanza
+aaa + bcccc,versePattern,1,aaabcccc; 8-line stanza; subdivided stanza
 "aaa, with internal rhyme",versePattern,1,monorhyme; 3-line stanza; internal rhyme
 aaaa,verseForms,4,4-line stanza (quatrain); monorhyme
 aaaa,versePattern,215,monorhyme; 4-line stanza (quatrain)
@@ -38,7 +38,7 @@ aaaabcb,versePattern,2,aaaabcb; 7-line stanza
 aaaabccb,versePattern,1,aaaabccb; 8-line stanza
 aaaabcccb,versePattern,5,aaaabcccb; 9-line stanza
 aaab,versePattern,276,aaab; 4-line stanza (quatrain)
-aaab + bb,versePattern,2,aaabbb; 4-line stanza (quatrain); 2-line stanza (couplet)
+aaab + bb,versePattern,2,aaab; 4-line stanza (quatrain); carol
 aaaba,versePattern,1,aaaba; 5-line stanza
 aaabaaab,versePattern,7,aaabaaab; 8-line stanza
 aaabaaabb,versePattern,1,aaabaaabb; 9-line stanza
@@ -95,9 +95,9 @@ aabba,versePattern,17,aabba; 5-line stanza
 aabbaa,versePattern,2,aabbaa; 6-line stanza
 aabbaaa,versePattern,1,aabbaaa; 7-line stanza
 aabbaaaaabaabbaaab,versePattern,1,aabbaaaaabaabbaaab; 18-line stanza
-aabbaaabaab + aabbaaabba,versePattern,1,aabbaaabaabaababaabba; 11-line stanza; 10-line stanza
-aabbaaabaabaababaabba,versePattern,1,aabbaaabaabaababaabba; 21-line stanza
-aabbaaabaabaabbaaabba,versePattern,2,aabbaaabaabaabbaaabba; 21-line stanza
+aabbaaabaab + aabbaaabba,versePattern,1,roundel; 21-line stanza; through-rhyme
+aabbaaabaabaababaabba,versePattern,1,roundel; 21-line stanza; through-rhyme
+aabbaaabaabaabbaaabba,versePattern,2,roundel; 21-line stanza; through-rhyme
 aabbaabccbddb,versePattern,1,aabbaabccbddb; 12-line stanza
 aabbaac,versePattern,1,aabbaac; 7-line stanza
 aabbb,versePattern,4,aabbb; 5-line stanza
@@ -141,7 +141,7 @@ aabccd,versePattern,1,aabccd; 6-line stanza
 aabccdd,versePattern,1,aabccdd; 7-line stanza
 aabcdd,versePattern,2,aabcdd; 6-line stanza
 aacd,versePattern,1,aacd; 4-line stanza (quatrain)
-ab,versePattern,11,ab; 2-line stanza (couplet)
+ab,versePattern,11,DELETE
 aba,versePattern,8,aba; 3-line stanza
 aba (or abcb),versePattern,1,aba; abcb; 3-line stanza; 4-line stanza (quatrain)
 abaa,versePattern,1,abaa; 4-line stanza (quatrain)
@@ -151,7 +151,7 @@ abaab,versePattern,3,abaab; 5-line stanza
 abaabbcdeed,versePattern,1,abaabbcdeed; 11-line stanza
 abaac,versePattern,1,abaac; 5-line stanza
 abab,versePattern,498,abab; 4-line stanza (quatrain)
-abab with all b-rhymes rhyming with each other,versePattern,1,abab; 4-line stanza (quatrain)
+abab with all b-rhymes rhyming with each other,versePattern,1,abab; 4-line stanza (quatrain); through-rhyme
 ababa,versePattern,4,ababa; 5-line stanza
 ababaa,versePattern,1,ababaa; 6-line stanza
 ababaa(x),versePattern,1,ababaax; 7-line stanza
@@ -162,7 +162,7 @@ abababa,versePattern,1,abababa; 7-line stanza
 abababaab,versePattern,1,abababaab; 9-line stanza
 abababab,versePattern,77,abababab; 8-line stanza
 abababab or abababab,versePattern,1,abababab; 8-line stanza
-abababab+cdddc,versePattern,1,ababababcdddc; 8-line stanza; 5-line stanza
+abababab+cdddc,versePattern,1,ababababcdddc; 13-line stanza; subdivided stanza
 ababababa,versePattern,1,ababababa; 9-line stanza
 ababababab,versePattern,1,ababababab; 10-line stanza
 abababababab,versePattern,5,abababababab; 12-line stanza
@@ -171,7 +171,7 @@ ababababababababcdcd,versePattern,1,ababababababababcdcd; 20-line stanza
 ababababb,versePattern,1,ababababb; 9-line stanza
 ababababba,versePattern,1,ababababba; 10-line stanza
 ababababbaba,versePattern,1,ababababbaba; 12-line stanza
-ababababbbedde,versePattern,1,
+ababababbbedde,versePattern,1,ababababbbcddc
 ababababbcbc,versePattern,27,ababababbcbc; 12-line stanza
 ababababbcccb,versePattern,1,ababababbcccb; 13-line stanza
 ababababcab,versePattern,1,ababababcab; 11-line stanza
@@ -218,7 +218,7 @@ ababbcbbc,versePattern,3,ababbcbbc; 9-line stanza
 ababbcbc,verseForms,2,ababbcbc; 8-line stanza
 ababbcbc,versePattern,445,ababbcbc; 8-line stanza
 ababbcbc (roughly),versePattern,1,ababbcbc; 8-line stanza; irregular
-ababbcbc with some interlocking rhymes,versePattern,1,ababbcbc; 8-line stanza
+ababbcbc with some interlocking rhymes,versePattern,1,ababbcbc; 8-line stanza; through-rhyme
 ababbcbcbdddb,versePattern,1,ababbcbcbdddb; 13-line stanza
 ababbcbccdcd,versePattern,3,ababbcbccdcd; 12-line stanza
 ababbcbcd,versePattern,1,ababbcbcd; 9-line stanza
@@ -249,7 +249,7 @@ ababcbc,versePattern,4,ababcbc; 7-line stanza
 ababcbcb,versePattern,2,ababcbcb; 8-line stanza
 ababcbcbdd,versePattern,1,ababcbcbdd; 10-line stanza
 ababcc,versePattern,28,ababcc; 6-line stanza
-ababcc aabccb,versePattern,1,ababccaabccb; 6-line stanza
+ababcc aabccb,versePattern,1,ababcc; aabccb; 6-line stanza
 ababccbccb,versePattern,1,ababccbccb; 10-line stanza
 ababccbddb,versePattern,2,ababccbddb; 10-line stanza
 ababccc,versePattern,2,ababccc; 7-line stanza
@@ -306,11 +306,11 @@ abbbc,versePattern,2,abbbc; 5-line stanza
 abbcc,versePattern,4,abbcc; 5-line stanza
 abbccc,versePattern,1,abbccc; 6-line stanza
 abbcdcca,versePattern,1,abbcdcca; 8-line stanza
-abc,versePattern,7,abc; 3-line stanza
+abc,versePattern,7,unrhymed; 3-line stanza
 abcaabd,versePattern,1,abcaabd; 7-line stanza
 abcabc,versePattern,1,abcabc; 6-line stanza
 abcb,versePattern,39,abcb; 4-line stanza (quatrain)
-abcb dede fgfg,versePattern,1,abcbdedefgfg; 4-line stanza (quatrain)
+abcb dede fgfg,versePattern,1,abab; 4-line stanza (quatrain); irregular
 abcbac,versePattern,1,abcbac; 6-line stanza
 abcbca,versePattern,1,abcbca; 6-line stanza
 abcbcbcb,versePattern,1,abcbcbcb; 8-line stanza
@@ -340,17 +340,18 @@ alliterative,versePattern,4,
 alliterative unrhymed,verseForms,1,alliterative; unrhymed
 "alliterative, unrhymed",verseForms,1,alliterative; unrhymed
 babbcc,versePattern,1,ababbcc; 7-line stanza
+ballade,,,
 bb,versePattern,1,DELETE
 bbbb,versePattern,1,DELETE
 blank verse,verseForms,1,unrhymed
 carol,verseForms,1,
 cdcc,versePattern,1,abaa; 4-line stanza (quatrain)
 cdcd,versePattern,1,abab; 4-line stanza (quatrain)
-couplet,verseForms,46,2-line stanza (couplet)
-couplet,versePattern,1,2-line stanza (couplet)
-couplet — aa,versePattern,1,2-line stanza (couplet)
-couplets,verseForms,88,2-line stanza (couplet)
-couplets,versePattern,1,2-line stanza (couplet)
+couplet,verseForms,46,2-line (couplet)
+couplet,versePattern,1,2-line (couplet)
+couplet — aa,versePattern,1,2-line (couplet)
+couplets,verseForms,88,2-line (couplet)
+couplets,versePattern,1,2-line (couplet)
 cross-rhymed quatrain,verseForms,2,4-line stanza (quatrain); abab
 eight-line,verseForms,758,8-line stanza
 eight-line stanza,verseForms,1,8-line stanza
@@ -370,18 +371,18 @@ four-line,versePattern,1,4-line stanza (quatrain)
 "four-line, mono-rhyme",verseForms,1,4-line stanza (quatrain); monorhyme
 "four-line, monorhyme",verseForms,21,4-line stanza (quatrain); monorhyme
 fourteen-line,verseForms,73,14-line stanza
-heroic,versePattern,1,heroic stanza
-heroic stanza,verseForms,1,
+heroic,versePattern,1,Monk's Tale stanza
+heroic stanza,verseForms,1,Monk's Tale stanza
 internal,versePattern,3,medial rhyme
 irregular,verseForms,67,irregular
 irregular,versePattern,15,irregular rhyme
 irregular monorhyming,versePattern,1,irregular rhyme; monorhyme
 "irregular rhyme, partly blank verse(?)",versePattern,1,irregular rhyme
-"irregular, mostly two-line",verseForms,1,irregular rhyme; 2-line stanza (couplet)
+"irregular, mostly two-line",verseForms,1,irregular rhyme; 2-line (couplet)
 irregularly rhymed,versePattern,3,irregular rhyme
 medial,versePattern,1,medial rhyme
 mixed,verseForms,7,
-mixed couplets and cross-rhymes quatrains,verseForms,1,2-line stanza (couplet); 4-line stanza (quatrain); abab
+mixed couplets and cross-rhymes quatrains,verseForms,1,2-line (couplet); 4-line stanza (quatrain); abab
 mono-rhyme,verseForms,1,monorhyme
 monorhyme,verseForms,36,
 monorhyme,versePattern,2,
@@ -399,6 +400,7 @@ nineteen-line,verseForms,1,19-line stanza
 occasional verse,verseForms,1,DELETE
 one-line,verseForms,12,1-line
 prologues,verseForms,1,
+"prose, according to NIMEV",,,
 quatrain,verseForms,6,4-line stanza (quatrain)
 quatrain,versePattern,1,4-line stanza (quatrain)
 "quatrain, monorhyme",verseForms,2,4-line stanza (quatrain); monorhyme
@@ -407,9 +409,9 @@ quatrains,verseForms,1,4-line stanza (quatrain)
 rhyme royal,verseForms,24,rhyme royal; 7-line stanza; ababbcc
 rhyme royal,versePattern,4,rhyme royal; 7-line stanza; ababbcc
 rhyming,verseForms,1,DELETE
-rhyming couplet,verseForms,1,2-line stanza (couplet)
-rhyming couplets,verseForms,3,2-line stanza (couplet)
-rhyming half-lines,verseForms,1,
+rhyming couplet,verseForms,1,2-line (couplet)
+rhyming couplets,verseForms,3,2-line (couplet)
+rhyming half-lines,verseForms,1,internal rhyme
 romances,verseForms,1,DELETE
 roughly ababccbddb,versePattern,1,ababccbddb; 10-line stanza; irregular rhyme
 roundel,verseForms,20,
@@ -431,7 +433,7 @@ Skeltonics,verseForms,1,skeltonics
 skeltonics,verseForms,2,
 tail rhyme,verseForms,4,
 tail-rhyme,verseForms,1,tail rhyme
-tail-rhyme couplet,verseForms,1,tail rhyme
+tail-rhyme couplet,verseForms,1,3-line stanza; aab
 tail-rime stanzas,versePattern,1,tail rhyme
 ten-line,verseForms,56,10-line stanza
 ten-line stanza,verseForms,1,10-line stanza
@@ -447,7 +449,7 @@ twelve-line,verseForms,111,12-line stanza
 twelve-line stanza,verseForms,4,12-line stanza
 twelve-line stanzas,verseForms,1,12-line stanza
 "twelve-line, tail-rhymed",verseForms,1,12-line stanza; tail rhyme
-twelve-line?,verseForms,4,12-line stanza; tail rhyme
+twelve-line?,verseForms,4,12-line stanza; tail rhyme; irregular
 twenty-four-line stanza,verseForms,1,24-line stanza
 twenty-one line,verseForms,4,21-line stanza
 twenty-one-line,verseForms,2,21-line stanza
@@ -456,8 +458,9 @@ two-line,versePattern,3,2-line (couplet)
 two-line?,verseForms,1,2-line (couplet); irregular
 two-line>,verseForms,1,2-line (couplet)
 two-lines,verseForms,1,2-line (couplet)
-unrhymed,verseForms,1,2-line (couplet); unrhymed
+unrhymed,verseForms,1,unrhymed
 unrhymed,versePattern,7,
 variable,verseForms,1,irregular
 various,verseForms,2,irregular
 varying rhyme (usually ababcdcd),versePattern,1,ababcdcd; 8-line stanza; irregular rhyme
+virelai,,,
