@@ -20,6 +20,9 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
+    # Combine form terms
+    #root = combine_form_terms(root)
+
     ## Fix bibl keys
     #root = replace_bibl_keys(root)
 
@@ -51,6 +54,34 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def combine_form_terms(root):
+    print('Merging "versePatterns" into "verseForms" and deleting "versePatterns"...')
+    count = 0
+    for record in root.findall('record'):
+        # Define objects
+        verseForms = record.find('verseForms')
+        versePatterns = record.find('versePatterns')
+        if verseForms is not None or versePatterns is not None:
+            if verseForms is None:
+                verseForms = etree.Element('verseForms')
+                forms_index = record.index(versePatterns) - 1
+                record.insert(forms_index, verseForms)
+
+            # Write versePatterns to verseForms
+            if versePatterns is not None:
+                for child in versePatterns:
+                    if child.text is not None:
+                        verseForms = add_unique_terms(verseForms, 'verseForm', child.text)
+                record.remove(versePatterns)
+                count += 1
+
+            # Prune empty verseForms elements
+            if not len(verseForms):
+                record.remove(verseForms)
+    print(f'Merged and deleted {count} "versePatterns" blocks')
+    print('Done\n')
+    return root
 
 def replace_bibl_keys(root):
     print('Replacing bad bibliography keys...')
