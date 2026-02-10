@@ -10,6 +10,7 @@ source_file = '../../dimev/data/Records.xml'
 mec_source = '../../external-resources/MEC/bib_all.xml'
 subject_categories_csv = '../artefacts/subject-categories.csv'
 subject_crosswalk_csv = '../artefacts/subjects.csv'
+form_crosswalk_csv = '../artefacts/form-terms.csv'
 namespace = '{http://www.w3.org/XML/1998/namespace}'
 
 # Variables for atomization
@@ -34,6 +35,9 @@ def main():
 
     ## Update subjects
     #root = update_subjects(root)
+
+    # Update forms
+    root = update_verseForms(root)
 
     ## Move formal terms misplaced in subjects
     #root = move_misplaced_form_terms(root)
@@ -281,6 +285,23 @@ def add_post1500_as_term(root):
             subjects_element = add_unique_terms(subjects_element, 'subject', 'post-1500')
             count += 1
     print(f'Tagged {count} items as post-1500')
+    print('Done\n')
+    return root
+
+def update_verseForms(root):
+    print('Updating form terms...')
+    print('Creating crosswalk from current terms to revised terms...')
+    deleted_terms, term_crosswalk = create_term_crosswalk(form_crosswalk_csv)
+    print('Implementing the crosswalk...')
+    for record in root.findall('record'):
+        old_verseForms = record.find('verseForms')
+        if old_verseForms is not None:
+            new_verseForms = etree.Element('verseForms')
+            index = record.index(old_verseForms)
+            new_verseForms = implement_term_crosswalk(new_verseForms, old_verseForms, deleted_terms, term_crosswalk, 'verseForm')
+            if len(new_verseForms):
+                record.insert(index, new_verseForms)
+            record.remove(old_verseForms)
     print('Done\n')
     return root
 
