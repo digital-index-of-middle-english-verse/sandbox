@@ -287,38 +287,42 @@ def add_post1500_as_term(root):
 def update_subjects(root):
     print('Updating subject terms...')
     print('Creating crosswalk from current subject terms to revised subject terms...')
-    deleted_subjects, subject_crosswalk = create_subject_crosswalk(subject_crosswalk_csv)
+    deleted_subjects, subject_crosswalk = create_term_crosswalk(subject_crosswalk_csv)
     print('Implementing the crosswalk...')
     for record in root.findall('record'):
-        new_subjects = etree.Element('subjects')
         old_subjects_element = record.find('subjects')
         if old_subjects_element is not None:
             subjects_index = record.index(old_subjects_element)
-            for child in old_subjects_element:
-                if child.text is not None:
-                    # concatinate child.text to string, stripping inline formatting elements
-                    old_term = etree.tostring(child, encoding='unicode', method='text')
-                    # process string
-                    old_term = re.sub(r'\n', '', old_term) # strip newlines
-                    old_term = re.sub('  +', ' ', old_term) # strip internal runs of space characters
-                    old_term = old_term.strip()
-                    term_found = False # watch for unmatched terms
-                    if old_term in deleted_subjects: # do nothing
-                        term_found = True
-                    else:
-                        for item in subject_crosswalk:
-                            if old_term == item[0]:
-                                new_subject_list = item[1]
-                                for subject_term in new_subject_list:
-                                    new_subjects = add_unique_terms(new_subjects, 'subject', subject_term)
-                                term_found = True
-                                break
-                    if term_found == False:
-                        print(f'WARNING: subject term "{old_term}" not found in cross-walk')
+            new_subjects = etree.Element('subjects')
+            new_subjects = implement_term_crosswalk(new_subjects, old_subjects_element, deleted_subjects, subject_crosswalk, 'subject')
             record.insert(subjects_index, new_subjects)
             record.remove(old_subjects_element)
     print('Done\n')
     return root
+
+def implement_term_crosswalk(new_term_block, old_term_block, deleted_terms, term_crosswalk, tagname):
+    for child in old_term_block:
+        if child.text is not None:
+            # concatinate child.text to string, stripping inline formatting elements
+            old_term = etree.tostring(child, encoding='unicode', method='text')
+            # process string
+            old_term = re.sub(r'\n', '', old_term) # strip newlines
+            old_term = re.sub('  +', ' ', old_term) # strip internal runs of space characters
+            old_term = old_term.strip()
+            term_found = False # watch for unmatched terms
+            if old_term in deleted_terms: # do nothing
+                term_found = True
+            else:
+                for item in term_crosswalk:
+                    if old_term == item[0]:
+                        new_term_list = item[1]
+                        for term in new_term_list:
+                            new_term_block = add_unique_terms(new_term_block, tagname, term)
+                        term_found = True
+                        break
+            if term_found == False:
+                print(f'WARNING: term "{old_term}" not found in cross-walk. This term will be deleted.')
+    return new_term_block
 
 def move_misplaced_form_terms(root):
     print('Moving formal terms misplaced as subject terms...')
@@ -378,25 +382,25 @@ def add_unique_terms(parent, tag, term):
         parent.append(child_element)
     return parent
 
-def create_subject_crosswalk(source_file):
+def create_term_crosswalk(source_file):
     list_of_dict = load_csv_to_list_of_dict(source_file)
-    deleted_subjects = set()
-    subject_crosswalk = []
+    deleted_terms = set()
+    term_crosswalk = []
     for item in list_of_dict:
-        current_subject_term = re.sub('’|‘', '\'', item['subject']) # replace curly apostrophes/single quotes to match current character encoding in Records.xml
-        if item['new subjects'] == 'DELETE':
-            deleted_subjects.add(current_subject_term)
+        current_term = re.sub('’|‘', '\'', item['term']) # replace curly apostrophes/single quotes to match current character encoding in Records.xml
+        if item['new term'] == 'DELETE':
+            deleted_terms.add(current_term)
         else:
-            if item['new subjects'] == '':
-                crosswalk_tuple = (current_subject_term, [current_subject_term])
+            if item['new term'] == '':
+                crosswalk_tuple = (current_term, [current_term])
             else:
-                crosswalk_tuple = (current_subject_term, [])
-                subject_string = re.sub('’|‘', '\'', item['new subjects']) # replace any curly apostrophes/single quotes
-                subject_list = subject_string.split("; ")
-                for new_subject_term in subject_list:
-                    crosswalk_tuple[1].append(new_subject_term)
-            subject_crosswalk.append(crosswalk_tuple)
-    return deleted_subjects, subject_crosswalk
+                crosswalk_tuple = (current_term, [])
+                term_string = re.sub('’|‘', '\'', item['new term']) # replace any curly apostrophes/single quotes
+                term_list = term_string.split("; ")
+                for new_term in term_list:
+                    crosswalk_tuple[1].append(new_term)
+            term_crosswalk.append(crosswalk_tuple)
+    return deleted_terms, term_crosswalk
 
 def get_formal_terms_misplaced_as_subjects(source_file):
     formal_terms_misplaced = []
