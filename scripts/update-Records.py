@@ -25,7 +25,17 @@ def main():
     #root = combine_form_terms(root)
 
     ## Fix bibl keys
-    #root = replace_bibl_keys(root)
+    target_tags = ['mss']
+    crosswalk = {
+        ('BodEngPoed27', 'BodEngPoetd27'),
+        ('STC2996.7', 'STC29967'),
+        ('CoventryAcc351', 'CovAcc351'),
+        ('HM127', 'HunHM127'),
+        ('OxfLin52', 'OxfLinLat52'),
+        ('BLLan704', 'BLLan204'),
+        ('CamFitz41-1950', 'CamFitz41-1951')
+            }
+    root = replace_bibl_keys(root, target_tags, crosswalk)
 
     ## Rebuild the facsimiles element
     #root = update_facsimiles(root)
@@ -37,7 +47,7 @@ def main():
     #root = update_subjects(root)
 
     # Update forms
-    root = update_verseForms(root)
+    # root = update_verseForms(root)
 
     ## Move formal terms misplaced in subjects
     #root = move_misplaced_form_terms(root)
@@ -87,60 +97,9 @@ def combine_form_terms(root):
     print('Done\n')
     return root
 
-def replace_bibl_keys(root):
-    print('Replacing bad bibliography keys...')
+def replace_bibl_keys(root, target_tags, crosswalk):
+    print('Replacing bad keys...')
     count = 0
-    target_tags = ['edition', 'facsimile', 'biblio']
-    crosswalk = {
-            ('Baskervill1929', 'Baskerville1929'),
-            ('Brown1943/', 'Brown1943'),
-            ('Dickins19350', 'Dickins1935'),
-            ('Horstmann1895-6', 'Horstmann1895-96'),
-            ('James1900-04', 'James1900-4'),
-            ('James1930-3', 'James1930-32'),
-            ('Kaufman1873', 'Kaufmann1873'),
-            ('Kirke1868-6', 'Kirke1868-69'),
-            ('Mackenzie1932', 'MacKenzie1932'),
-            ('Manley1907', 'Manly1907'),
-            ('Morris1892-94', 'Morris1882-94'),
-            ('Murdoch1873-97', 'Murdoch1873-96'),
-            ('Poole1951ww', 'Poole1951'),
-            ('Small1884-93-93', 'Small1884-93'),
-            ('Thompson1889/', 'Thompson1889'),
-            ('Wright1846c/', 'Wright1846c'),
-            ('Benson1971', 'BensonL1971'),
-            ('Brown1939', 'Brown1939a'),
-            ('Buhler1935', 'Buhler1940'),
-            ('Dobson1970', 'DobsonRB1970'),
-            ('Legge1963', 'Legge1971'),
-            ('Murray1911', 'MurrayHMR1911'),
-            ('Schipper1892-93a', 'Schipper1892-93a-d'),
-            ('Schipper1892-93b', 'Schipper1892-93a-d'),
-            ('Smith1779', 'SmithJS1779'),
-            ('Whitaker1813', 'Whitaker1814'),
-            ('Zupitza1883-9', 'Zupitza1883-91'),
-            ('Briggs1891', 'Briggs1890'),
-            ('Brown1942', 'Brown1943'),
-            ('FitzGibbon1827', 'Fitzgibbon1888'),
-            ('Fitzgibbon1827', 'Fitzgibbon1888'),
-            ('Horstmann1878', 'Horstmann1878a'),
-            ('Morris1967', 'Morris1867'),
-            ('Whiting1934', 'WhitingBJ1934'),
-            ('Wright1847', 'Wright1847a'),
-            ('Banks1939', 'Banks1937'),
-            ('Bennett1963', 'Bennett1962'),
-            ('Burrow1977', 'Burrow1971'),
-            ('Forster1918', 'Forster1918-19'),
-            ('Harris1908', 'Harris1907-13'),
-            ('Henderson1933', 'Henderson1931'),
-            ('Mackay00', 'Mackay1866-68'),
-            ('Patterson1916', 'Patterson1916a'),
-            ('Skeat1887', 'Morris1882-94'),
-            ('Walpole1924', 'Walpole1796'),
-            ('Holmyard1929', 'Holmyard1928'),
-            ('Rastall1557', 'RastallW1557'),
-            ('G1885', 'G1855')
-            }
     for elem in root.iter():
         if elem.tag in target_tags:
             key = elem.get('key')
@@ -149,7 +108,7 @@ def replace_bibl_keys(root):
                     elem.set('key', keypair[1])
                     count += 1
                     break
-    print(f'Updated {count} bibliography keys.')
+    print(f'Updated {count} keys.')
     print('Done\n')
     return root
 
