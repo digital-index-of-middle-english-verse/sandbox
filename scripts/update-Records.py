@@ -21,6 +21,14 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
+    # restructure bibliographic lists
+    root = restructure_bibl_lists(root)
+
+    # rename a tag
+    target_tags = ['insc']
+    new_tag_name = 'mss'
+    root = rename_tags(root, target_tags, new_tag_name)
+
     # Combine form terms
     #root = combine_form_terms(root)
 
@@ -68,6 +76,35 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def restructure_bibl_lists(root):
+    print(f'Restructuring the "repertories", "editions", and "facsimiles" blocks...')
+    target_tags = ['repertories', 'editions', 'facsimiles']
+    for elem in root.iter():
+        if elem.tag in target_tags:
+            parent = elem.getparent()
+            index = parent.index(elem)
+            new_elem = add_intermediate_element_and_rename_child(elem, 'item', 'biblio')
+            parent.insert(index, new_elem)
+            parent.remove(elem)
+    print('Done\n')
+    return root
+
+def add_intermediate_element_and_rename_child(old_elem, intermediate_element_tag_name, new_tag_name):
+    new_elem = etree.Element(old_elem.tag)
+    for child in old_elem:
+        middle_elem = etree.Element(intermediate_element_tag_name)
+        middle_elem.append(child)
+        new_elem.append(middle_elem)
+    return new_elem
+
+def rename_tags(root, target_tags, new_tag_name):
+    print(f'Renaming {", ".join(target_tags)} as {new_tag_name}...')
+    for elem in root.iter():
+        if elem.tag in target_tags:
+            elem.tag = new_tag_name
+    print('Done\n')
+    return root
 
 def combine_form_terms(root):
     print('Merging "versePatterns" into "verseForms" and deleting "versePatterns"...')
