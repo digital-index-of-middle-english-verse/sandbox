@@ -25,17 +25,17 @@ def main():
     #root = combine_form_terms(root)
 
     ## Fix bibl keys
-    target_tags = ['mss']
-    crosswalk = {
-        ('BodEngPoed27', 'BodEngPoetd27'),
-        ('STC2996.7', 'STC29967'),
-        ('CoventryAcc351', 'CovAcc351'),
-        ('HM127', 'HunHM127'),
-        ('OxfLin52', 'OxfLinLat52'),
-        ('BLLan704', 'BLLan204'),
-        ('CamFitz41-1950', 'CamFitz41-1951')
-            }
-    root = replace_bibl_keys(root, target_tags, crosswalk)
+    #target_tags = ['mss']
+    #crosswalk = {
+    #    ('BodEngPoed27', 'BodEngPoetd27'),
+    #    ('STC2996.7', 'STC29967'),
+    #    ('CoventryAcc351', 'CovAcc351'),
+    #    ('HM127', 'HunHM127'),
+    #    ('OxfLin52', 'OxfLinLat52'),
+    #    ('BLLan704', 'BLLan204'),
+    #    ('CamFitz41-1950', 'CamFitz41-1951')
+    #        }
+    #root = replace_bibl_keys(root, target_tags, crosswalk)
 
     ## Rebuild the facsimiles element
     #root = update_facsimiles(root)
@@ -46,8 +46,8 @@ def main():
     ## Update subjects
     #root = update_subjects(root)
 
-    # Update forms
-    # root = update_verseForms(root)
+    ## Update forms
+    #root = update_verseForms(root)
 
     ## Move formal terms misplaced in subjects
     #root = move_misplaced_form_terms(root)
