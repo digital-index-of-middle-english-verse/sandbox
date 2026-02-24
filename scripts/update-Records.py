@@ -21,13 +21,16 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # restructure bibliographic lists
-    root = restructure_bibl_lists(root)
+    # rewrite zero-prefixed refs as bibliographic citations
+    root = transform_zero_prefixed_refs(root)
 
-    # rename a tag
-    target_tags = ['insc']
-    new_tag_name = 'mss'
-    root = rename_tags(root, target_tags, new_tag_name)
+    ## restructure bibliographic lists
+    #root = restructure_bibl_lists(root)
+
+    ## rename a tag
+    #target_tags = ['insc']
+    #new_tag_name = 'mss'
+    #root = rename_tags(root, target_tags, new_tag_name)
 
     # Combine form terms
     #root = combine_form_terms(root)
@@ -76,6 +79,25 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def transform_zero_prefixed_refs(root):
+    print('Converting ref elements with zero-prefixed values into bibliographic references to IMEV and Supplement...')
+    count = 0
+    for elem in root.iter('ref'):
+        ref = elem.get(namespace + 'target', '')
+        pattern = r'0\.'
+        if re.match(pattern, ref):
+            ref = re.sub('^' + pattern, '', ref)
+            del elem.attrib[namespace + 'target']
+            elem.tag = 'bibl'
+            if '.' in ref:
+                elem.set('key', 'Robbins1965b')
+            else:
+                elem.set('key', 'Brown1943')
+            count += 1
+    print(f'Converted {count} ref elements')
+    print('Done\n')
+    return root
 
 def restructure_bibl_lists(root):
     print(f'Restructuring the "repertories", "editions", and "facsimiles" blocks...')
