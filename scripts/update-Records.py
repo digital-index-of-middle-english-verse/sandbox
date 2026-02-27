@@ -21,8 +21,11 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # rewrite zero-prefixed refs as bibliographic citations
-    root = transform_zero_prefixed_refs(root)
+    # Extract IMEV numbers from free text descriptions
+    root = extract_imev_numbers_from_desc(root)
+
+    ## rewrite zero-prefixed refs as bibliographic citations
+    #root = transform_zero_prefixed_refs(root)
 
     ## restructure bibliographic lists
     #root = restructure_bibl_lists(root)
@@ -79,6 +82,34 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def extract_imev_numbers_from_desc(root):
+    print('Extracting IMEV and Supplement numbers from content of description and descNote elements...')
+    count = 0
+    for record in root.findall('record'):
+        desc = record.find('description')
+        note = record.find('descNote')
+        pattern = r'[Ff]ormer(ly)? (\d+(\.\d)?)'
+        elem_list = [desc, note]
+        for elem in elem_list:
+            if elem is not None and elem.text is not None:
+                text = re.sub('\n', '', elem.text)
+                match = re.match(pattern, text)
+                if match:
+                    ref_number = re.sub('^' + pattern + '.*', r'\2', text)
+                    item = etree.Element('item')
+                    citation = etree.Element('bibl')
+                    citation.text = ref_number
+                    if '.' in ref_number:
+                        citation.set('key', 'Robbins1965b')
+                    else:
+                        citation.set('key', 'Brown1943')
+                    item.append(citation)
+                    record = add_repertory(record, item)
+                    count += 1
+    print(f'Found {count} matches and wrote corresponding repertory elements')
+    print('Done\n')
+
 
 def transform_zero_prefixed_refs(root):
     print('Converting ref elements with zero-prefixed values into bibliographic references to IMEV and Supplement...')
@@ -527,6 +558,7 @@ def extract_imev_etc(root):
     return root
 
 def add_repertory(record, new_repertory):
+    citation = new_repertory.find('bibl')
     repertories = record.find('repertories')
     alpha = record.find('alpha')
 
@@ -539,9 +571,10 @@ def add_repertory(record, new_repertory):
     # Test whether new_repertory already exists
     found_identical = False
     if len(repertories):
-        target_text = new_repertory.text
-        target_key = new_repertory.get('key')
-        for child in repertories:
+        target_text = citation.text
+        target_key = citation.get('key')
+        for item in repertories:
+            child = item.find('bibl')
             if child.text == target_text and child.get('key') == target_key:
                 found_identical = True
                 break
@@ -566,12 +599,12 @@ def atomize_records():
     cross_ref_count = 0
     cross_refs = etree.Element('records') # Create a new root for cross-references
     for record in root.findall('record'):
-    
+
         # If the <record> element has no child-element <witnesses>, the <record>
         # element is a cross-reference. These are handled differently from 'full'
         # record elements, per Documentation 2.2.1 and 2.2.3.  NOTE: I'm unsure
         # whether the deepcopy is necessary.
-    
+
         if record.find('witnesses') is None:
             new_record = process_record(copy.deepcopy(record))
             cross_refs.append(new_record)
@@ -593,9 +626,9 @@ def atomize_records():
                 # Write the new tree to a file.
                 new_tree.write(file_name, pretty_print=True, xml_declaration=True, encoding='UTF-8')
             record_count += 1
-    
+
     print(f'Wrote {record_count} full records to {output_dir}')
-    
+
     # Create a new ElementTree for the cross references and write to a file.
     new_tree = etree.ElementTree(cross_refs)
     new_tree.write(cross_ref_output_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
