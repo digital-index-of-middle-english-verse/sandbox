@@ -21,8 +21,11 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # Extract IMEV numbers from free text descriptions
-    root = extract_imev_numbers_from_desc(root)
+    # Extract refs to crossRef element
+    root = extract_refs(root)
+
+    ## Extract IMEV numbers from free text descriptions
+    #root = extract_imev_numbers_from_desc(root)
 
     ## rewrite zero-prefixed refs as bibliographic citations
     #root = transform_zero_prefixed_refs(root)
@@ -82,6 +85,62 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def extract_refs(root):
+    print('Extracting ref values and writing to the crossRef block...')
+    count = 0
+    for record in root.findall('record'):
+        if record.find('witnesses') is None: # limit to record stubs, for now
+            desc = record.find('description')
+            note = record.find('descNote')
+            elem_list = [desc, note]
+            targets = set()
+            for elem in elem_list:
+                if elem is not None and elem.text is not None:
+                    for ref in elem.iter('ref'):
+                        target_val = ref.get(namespace + 'target')
+                        target_val = format_target_val(target_val)
+                        targets.add(target_val)
+                        count += 1
+            if len(targets) > 0:
+                record = add_crossrefs(record, targets)
+    print(f'Found {count} cross-references')
+    print('Done\n')
+    return root
+
+def format_target_val(string):
+    if '#' in string:
+        string = re.sub(r'^\d+(\.\d+)?#', '', string)
+    return string
+
+def add_crossrefs(record, new_targets):
+    crossRefs = record.find('crossRefs')
+    if crossRefs is None:
+        crossRefs = etree.Element('crossRefs')
+        # get index
+        landmarks = ['editions', 'repertories', 'alpha']
+        for tag in landmarks:
+            elem = record.find(tag)
+            if elem is not None:
+                index = record.index(elem) + 1
+                break
+        record.insert(index, crossRefs)
+    # Create a list of existing cross-ref values
+    existing_targets = set()
+    for item in crossRefs:
+        if item is not None:
+            ref_elem = item.find('ref')
+            target_val = ref_elem.get(namespace + 'target')
+            existing_targets.add(target_val)
+    # add values from the list of new targets
+    for target_val in new_targets:
+        if target_val not in existing_targets:
+            item = etree.Element('item')
+            ref_elem = etree.Element('ref')
+            ref_elem.set(namespace + 'target', target_val)
+            item.append(ref_elem)
+            crossRefs.append(item)
+    return record
 
 def extract_imev_numbers_from_desc(root):
     print('Extracting IMEV and Supplement numbers from content of description and descNote elements...')
