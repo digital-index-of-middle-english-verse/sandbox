@@ -261,25 +261,24 @@ def replace_bibl_keys(root, target_tags, crosswalk):
     print('Done\n')
     return root
 
-def strip_glosses(root):
-    print('Stripping glosses from the name element')
-    for gloss in root.xpath('.//name/gloss'):
-        parent = gloss.getparent()
-        prev = gloss.getprevious()
+def strip_tag(parent, tagname):
+    # print(f'Stripping {tagname} tags from the content of {parent}')
+    for elem in parent.findall(tagname):
+        prev = elem.getprevious()
 
-        # Full string value of <gloss>, including any nested elements' text
-        gloss_string = ''.join(gloss.itertext())
+        # Full string value of <tagname>, including any nested elements' text
+        elem_string = ''.join(elem.itertext())
 
-        # Attach gloss_string + gloss.tail where the <gloss> node sits
+        # Attach elem_string + elem.tail
         if prev is not None:
-            prev.tail = (prev.tail or '') + gloss_string + (gloss.tail or '')
+            prev.tail = (prev.tail or '') + elem_string + (elem.tail or '')
         else:
-            parent.text = (parent.text or '') + gloss_string + (gloss.tail or '')
+            parent.text = (parent.text or '') + elem_string + (elem.tail or '')
 
-        # Finally remove the <gloss> element itself
-        parent.remove(gloss)
-    print('Done\n')
-    return root
+        # Finally remove the <tagname> element itself
+        parent.remove(elem)
+    # print('Done\n')
+    return parent
 
 def update_facsimiles(root):
     print('Rebuilding facsimile elements, omitting keys for on-line facsimiles of whole manuscripts...')
