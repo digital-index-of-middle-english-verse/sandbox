@@ -21,6 +21,9 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
+    # Compare name and alpha strings
+    compare_name_and_alpha(root)
+
     ## Extract refs to crossRef element
     #root = extract_refs(root)
 
@@ -82,6 +85,34 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def compare_name_and_alpha(root):
+    test_count = 0
+    error_count = 0
+    for record in root.findall('record'):
+        test_count += 1
+        alpha = record.find('alpha')
+        alpha_str = str(alpha.text)
+        name = record.find('name')
+        name = strip_tag(name, 'i')
+        name_str = str(name.text)
+
+        # pre-process name_str
+        patterns = [r'\n', "'", '/ ', '-', '^ +', r'\[', ']']
+        for pattern in patterns:
+            name_str = re.sub(pattern, '', name_str)
+        name_str = re.sub(' +', ' ', name_str)
+        name_str = re.sub('þ|Þ', 'th', name_str)
+
+        # pre-process alpha_str
+        for pattern in patterns:
+            alpha_str = re.sub(pattern, '', alpha_str)
+        alpha_str = re.sub(' +', ' ', alpha_str)
+
+        if not re.match(alpha_str.lower(), name_str.lower()):
+            error_count += 1
+            print(f'Strings do not match ({error_count}/{test_count}):\n\t{name_str}\n\t{alpha_str}')
+    print(f'\nFound {error_count} non-matching strings')
 
 def extract_refs(root):
     print('Extracting ref values and writing to the crossRef block...')
