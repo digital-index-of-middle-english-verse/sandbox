@@ -21,8 +21,11 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # Compare name and alpha strings
-    compare_name_and_alpha(root)
+    ## Compare name and alpha strings
+    #compare_name_and_alpha(root)
+
+    # Reformat ref elements
+    root = reformat_ref_elements(root)
 
     ## Extract refs to crossRef element
     #root = extract_refs(root)
@@ -85,6 +88,34 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def reformat_ref_elements(root):
+    print('Reformatting ref elements...')
+    for ref in root.iter('ref'):
+
+        # Strip text content. The text content was checked against xml:target
+        # in a previous step
+
+        ref.text = None
+
+        # Rewrite xml:target values to align with the current syntax of xml:id
+
+        target = ref.get(namespace + 'target')
+        if 'wit' in target:
+            # From a target value of type "1713#wit-1713-3" retain "wit-1713-3"
+            target = re.sub('^.+#', '', target)
+        elif 'record-' not in target:
+            # supply the 'record-' prefix and delimiter
+            target = 'record-' + target
+
+        # Write the processed values to the attribute 'target' and delete the
+        # attribute 'xml:target'
+
+        ref.set('target', target)
+        ref.attrib.pop(namespace + 'target')
+
+    print('Done.\n')
+    return root
 
 def compare_name_and_alpha(root):
     test_count = 0
