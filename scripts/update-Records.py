@@ -21,8 +21,8 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # Extract refs to crossRef element
-    root = extract_refs(root)
+    ## Extract refs to crossRef element
+    #root = extract_refs(root)
 
     ## Extract IMEV numbers from free text descriptions
     #root = extract_imev_numbers_from_desc(root)
@@ -56,9 +56,6 @@ def main():
 
     ## Rebuild the facsimiles element
     #root = update_facsimiles(root)
-
-    ## Strip glosses from <name>
-    #root = strip_glosses(root)
 
     ## Update subjects
     #root = update_subjects(root)
