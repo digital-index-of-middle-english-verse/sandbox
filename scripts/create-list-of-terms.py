@@ -7,29 +7,62 @@ from lxml import etree
 # Root variables
 
 data_dir = '../artefacts/'
-csv_source = 'subject-categories.csv'
+csv_source = 'form-terms.csv'
 
 output_dir = '../../dimev/data/'
 
+def process_str(raw_string):
+    term_list = []
+    if raw_string != 'DELETE':
+        if ';' in raw_string:
+            term_list = raw_string.split(';')
+        else:
+            term_list.append(raw_string)
+    return term_list
 
-# Create a list of subject-terms
-subjects = []
+def process_raw_list(raw_list):
+    terms = set()
+    for item in raw_list:
+        if item['new term'] == '':
+            # Add unmodified term
+            terms.add(item['term'])
+        else:
+            # Get modified terms from 'new term'
+            term_list = process_str(item['new term'])
+            for term in term_list:
+                terms.add(term.strip())
+    return terms
+
+# Create a list of valid terms
 path = data_dir + csv_source
+raw_list = []
 with open(path, 'r') as file:
     reader = csv.DictReader(file)
     for row in reader:
-        subjects.append(row['subject'])
+        raw_list.append(row)
+terms = process_raw_list(raw_list)
 
-# Create a XML tree
+# Add terms not in the CSV source
+new_terms = [
+        'prose, according to NIMEV',
+        'ballade',
+        'virelai'
+        ]
+for item in new_terms:
+    terms.add(item)
+
+terms = sorted(terms, key=str.lower)
+
+# Create XML root and label
 
 root = etree.Element('list')
 head = etree.Element('head')
-head.text = 'Subject terms'
+head.text = 'Verse form terms'
 root.append(head)
 
-# Serialize the subject terms as list items
+# Serialize the terms as XML elements
 
-for term in subjects:
+for term in terms:
     item_elem = etree.Element('item')
     term_elem = etree.Element('term')
     term_elem.text = term
@@ -39,7 +72,7 @@ for term in subjects:
 # Create an ElementTree and write to file
 
 tree = etree.ElementTree(root)
-path = output_dir + 'subject-terms.xml'
+path = output_dir + 'form-terms.xml'
 
 etree.indent(tree, space="    ", level=0)
 tree.write(path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
