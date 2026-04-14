@@ -1,6 +1,7 @@
 import os
 from lxml import etree
 import re
+from update_records import rename_tags
 
 # top-level variables
 
@@ -13,8 +14,13 @@ def main():
     tree = etree.parse(src_dir + source_file)
     root = tree.getroot()
 
-    # Add facsimiles
-    root = add_facsimile_urls(root)
+    ## Add facsimiles
+    #root = add_facsimile_urls(root)
+
+    # rename a tag
+    target_tags = ['loc']
+    new_tag_name = 'settlement'
+    root = rename_tags(root, target_tags, new_tag_name)
 
     print('All transformations complete')
     etree.indent(tree, space="    ", level=0)
