@@ -21,14 +21,11 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # convert `illust` and `music` to boolean values
-    convert_illust(root)
+    # convert from DIMEV 1.0
+    convert_from_dimev1(root)
 
     ## Compare name and alpha strings
     #compare_name_and_alpha(root)
-
-    ## Reformat ref elements
-    #root = reformat_ref_elements(root)
 
     ## Extract refs to crossRef element
     #root = extract_refs(root)
@@ -38,17 +35,6 @@ def main():
 
     ## rewrite zero-prefixed refs as bibliographic citations
     #root = transform_zero_prefixed_refs(root)
-
-    ## restructure bibliographic lists
-    #root = restructure_bibl_lists(root)
-
-    ## rename a tag
-    #target_tags = ['insc']
-    #new_tag_name = 'mss'
-    #root = rename_tags(root, target_tags, new_tag_name)
-
-    # Combine form terms
-    #root = combine_form_terms(root)
 
     ## Fix bibl keys
     #target_tags = ['mss']
@@ -81,9 +67,6 @@ def main():
     ## Create a verseForm term for items deleted by NIMEV as prose
     #root = add_prose_as_term(root)
 
-    ## Create repertories and populate with IMEV, NIMEV, and Ringler
-    #root = extract_imev_etc(root)
-
     ## Add ME Compendium as repertory
     #root = add_mec_refs(root)
 
@@ -92,15 +75,53 @@ def main():
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
 
+def convert_from_dimev1(root):
+    print('Converting from DIMEV 1.0...\n')
+
+    # rename tags
+    crosswalk = [
+            ('insc', 'mss'),
+            ('biblio', 'bibl'),
+            ('edition', 'bibl'),
+            ('facsimile', 'bibl'),
+            ('language', 'term'),
+            ('subject', 'term'),
+            ('verseForm', 'term'),
+            ('versePattern', 'term')
+            ]
+    root = rename_tags(root, crosswalk)
+
+    # Create repertories and populate with IMEV, NIMEV, and Ringler
+    root = extract_imev_etc(root)
+
+    # restructure bibliographic lists
+    root = restructure_bibl_lists(root)
+
+    # Combine form terms
+    root = combine_form_terms(root)
+
+    # convert `illust` and `music` to boolean values
+    root = convert_illust(root)
+
+    # Reformat ref elements
+    root = reformat_ref_elements(root)
+
+    return root
+
+
 def convert_illust(root):
     print('Converting `illust` and `music` to Boolean values...')
     attr_list = ['music', 'illust']
+    permitted_values = ['true', 'false']
+    count = 0
     for witness in root.iter('witness'):
         for attr_name in attr_list:
             attr_val = witness.get(attr_name)
-            if attr_val is not None:
+            if attr_val is not None and attr_val not in permitted_values:
                 bool_val = convert_to_bool(attr_val)
                 witness.set(attr_name, bool_val)
+                count += 1
+    print(f'Converted {count} attribute values.')
     print('Done.\n')
     return root
 
@@ -115,6 +136,7 @@ def convert_to_bool(str_):
 
 def reformat_ref_elements(root):
     print('Reformatting ref elements...')
+    count = 0
     for ref in root.iter('ref'):
 
         # Strip text content. The text content was checked against xml:target
@@ -125,19 +147,22 @@ def reformat_ref_elements(root):
         # Rewrite xml:target values to align with the current syntax of xml:id
 
         target = ref.get(namespace + 'target')
-        if 'wit' in target:
-            # From a target value of type "1713#wit-1713-3" retain "wit-1713-3"
-            target = re.sub('^.+#', '', target)
-        elif 'record-' not in target:
-            # supply the 'record-' prefix and delimiter
-            target = 'record-' + target
+        if target is not None:
+            if 'wit' in target:
+                # From a target value of type "1713#wit-1713-3" retain "wit-1713-3"
+                target = re.sub('^.+#', '', target)
+            elif 'record-' not in target:
+                # supply the 'record-' prefix and delimiter
+                target = 'record-' + target
 
-        # Write the processed values to the attribute 'target' and delete the
-        # attribute 'xml:target'
+            # Write the processed values to the attribute 'target' and delete the
+            # attribute 'xml:target'
 
-        ref.set('target', target)
-        ref.attrib.pop(namespace + 'target')
+            ref.set('target', target)
+            ref.attrib.pop(namespace + 'target')
+            count += 1
 
+    print(f'Restructured {count} elements')
     print('Done.\n')
     return root
 
@@ -273,15 +298,21 @@ def transform_zero_prefixed_refs(root):
     return root
 
 def restructure_bibl_lists(root):
-    print(f'Restructuring the "repertories", "editions", and "facsimiles" blocks...')
-    target_tags = ['repertories', 'editions', 'facsimiles']
+    target_tags = ['editions', 'facsimiles']
+    print(f'Restructuring the blocks {", ".join(target_tags)}...')
+    count = 0
     for elem in root.iter():
         if elem.tag in target_tags:
-            parent = elem.getparent()
-            index = parent.index(elem)
-            new_elem = add_intermediate_element_and_rename_child(elem, 'item', 'biblio')
-            parent.insert(index, new_elem)
-            parent.remove(elem)
+            # Check whether the new structure is already implemented
+            child = elem[0]
+            if isinstance(child.tag, str) and child.tag != 'item':
+                parent = elem.getparent()
+                index = parent.index(elem)
+                new_elem = add_intermediate_element_and_rename_child(elem, 'item', 'bibl')
+                parent.insert(index, new_elem)
+                parent.remove(elem)
+                count += 1
+    print(f'Restructured {count} blocks.')
     print('Done\n')
     return root
 
@@ -293,11 +324,15 @@ def add_intermediate_element_and_rename_child(old_elem, intermediate_element_tag
         new_elem.append(middle_elem)
     return new_elem
 
-def rename_tags(root, target_tags, new_tag_name):
-    print(f'Renaming {", ".join(target_tags)} as {new_tag_name}...')
-    for elem in root.iter():
-        if elem.tag in target_tags:
-            elem.tag = new_tag_name
+def rename_tags(root, crosswalk):
+    count = 0
+    for item_pair in crosswalk:
+        print(f'Renaming {item_pair[0]} as {item_pair[1]}...')
+        for elem in root.iter():
+            if elem.tag == item_pair[0]:
+                elem.tag = item_pair[1]
+                count += 1
+    print(f'Renamed {count} tags.')
     print('Done\n')
     return root
 
@@ -318,7 +353,7 @@ def combine_form_terms(root):
             if versePatterns is not None:
                 for child in versePatterns:
                     if child.text is not None:
-                        verseForms = add_unique_terms(verseForms, 'verseForm', child.text)
+                        verseForms = add_unique_terms(verseForms, 'term', child.text)
                 record.remove(versePatterns)
                 count += 1
 
@@ -640,12 +675,14 @@ def remove_alpha(record):
 
 def extract_imev_etc(root):
     print('Extracting NIMEV and IMEV references to child element repertories...')
+    count = 0
     for record in root.findall('record'):
         # @imev and @nimev values that map to no repertory
         junk_values = {'', 'n', 'C16', 'C 19', 'delete', 'delete C16', 'delete: C16', 'delete: prose', 'Dubar', 'Dunbar (?)', 'Dunbar', 'not ME', 'Old English', 'post-1500', 'post medieval', 'post-medieval', 'prose', 'Skelton'}
         dimev_id = record.get(namespace + 'id')
         if 'imev' in record.attrib:
             value = record.attrib.pop('imev').strip()
+            count += 1
             if value not in junk_values:
                 validate_numeric(value, dimev_id)
                 if '.' in value: # Decimals are new in the Supplement
@@ -656,6 +693,7 @@ def extract_imev_etc(root):
                 record = add_repertory(record, repertory)
         if 'nimev' in record.attrib:
             value = record.attrib.pop('nimev').strip()
+            count += 1
             if value not in junk_values:
 
                 # The 'nimev' attribute has been used inconsistently, for reference
@@ -695,6 +733,7 @@ def extract_imev_etc(root):
                     repertory = etree.Element('repertory', key=attr)
                     repertory.text = value
                     record = add_repertory(record, repertory)
+    print(f'Converted {count} attributes.')
     print('Done\n')
     return root
 
@@ -722,7 +761,9 @@ def add_repertory(record, new_repertory):
 
     # Add the child element 'new_repertory' if it does not already exist
     if found_identical == False:
-        repertories.append(new_repertory)
+        wrapper = etree.Element('item')
+        wrapper.append(new_repertory)
+        repertories.append(wrapper)
     return record
 
 def validate_numeric(value, dimev_id):
