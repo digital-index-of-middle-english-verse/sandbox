@@ -21,11 +21,14 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
+    # convert `illust` and `music` to boolean values
+    convert_illust(root)
+
     ## Compare name and alpha strings
     #compare_name_and_alpha(root)
 
-    # Reformat ref elements
-    root = reformat_ref_elements(root)
+    ## Reformat ref elements
+    #root = reformat_ref_elements(root)
 
     ## Extract refs to crossRef element
     #root = extract_refs(root)
@@ -88,6 +91,27 @@ def main():
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
     print(f'Wrote the revised tree to {source_file}')
+
+def convert_illust(root):
+    print('Converting `illust` and `music` to Boolean values...')
+    attr_list = ['music', 'illust']
+    for witness in root.iter('witness'):
+        for attr_name in attr_list:
+            attr_val = witness.get(attr_name)
+            if attr_val is not None:
+                bool_val = convert_to_bool(attr_val)
+                witness.set(attr_name, bool_val)
+    print('Done.\n')
+    return root
+
+def convert_to_bool(str_):
+    if str_ == 'y':
+        str_ = 'true'
+    elif str_ == 'n':
+        str_ = 'false'
+    else:
+        print(f'WARNING: unexpected value: {str_}')
+    return str_
 
 def reformat_ref_elements(root):
     print('Reformatting ref elements...')
