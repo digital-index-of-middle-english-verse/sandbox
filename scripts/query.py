@@ -14,11 +14,68 @@ namespace = '{http://www.w3.org/XML/1998/namespace}'
 def main():
     MStree = etree.parse(src_dir + ManuscriptsXML)
     MSroot = MStree.getroot()
+    tree = etree.parse(src_dir + RecordsXML)
+    root = tree.getroot()
 
-    # Export manuscript shelfmarks as csv
-    export_shelfmarks_as_csv(MSroot)
+    ## Export manuscript shelfmarks as csv
+    #export_shelfmarks_as_csv(MSroot)
+
+    # Export person names
+    retrieve_person_names(root)
 
     print('Goodbye')
+
+def print_to_csv(data, csv_file):
+    with open(write_dir + csv_file, 'w', newline='') as file:
+        writer = csv.writer(file, lineterminator='\n')
+        writer.writerows(data)
+    print(f"Data have been written to '{csv_file}'")
+
+
+def retrieve_person_names(root):
+    print('Retrieving person names from Records.xml...')
+    data = []
+    column_labels = ['firstname', 'lastname', 'suffix']
+    data.append(column_labels)
+    target_tags = ['author', 'scribe']
+    for elem in root.iter():
+        if elem.tag in target_tags:
+            # retrieve elements
+            firstname = elem.find('first')
+            lastname = elem.find('last')
+            suffix = elem.find('suffix')
+            name_parts = [firstname, lastname, suffix]
+
+            # create a container
+            new_name = []
+
+            # retrieve text content
+            for part in name_parts:
+                if part is not None:
+                    text = str(part.text)
+                    text = clean_text(text)
+                else:
+                    text = ''
+                new_name.append(text)
+
+            # add to list, if not already present
+
+            if new_name in data:
+                continue
+            else:
+                data.append(new_name)
+
+    count = len(data) - 1
+    print(f'Found {count} unique names')
+
+    # print to csv
+    csv_file = 'person-names.csv'
+    print_to_csv(data, csv_file)
+
+def clean_text(string):
+    string = re.sub(r'\n', '', string)
+    string = re.sub(' +', ' ', string)
+    return string
 
 def export_shelfmarks_as_csv(root):
 
@@ -55,10 +112,8 @@ def export_shelfmarks_as_csv(root):
         data_row = [ms_id, location.text, repository.text, shelfmark_txt, alt_id_txt, facs_link]
         data.append(data_row)
 
-    with open(write_dir + csv_file, 'w', newline='') as file:
-        writer = csv.writer(file, lineterminator='\n')
-        writer.writerows(data)
-    print(f"Manuscript shelfmarks have been written to '{csv_file}'")
+    # print to csv
+    print_to_csv(data, csv_file)
 
 def get_facs_link(item):
     facs_link = ''
