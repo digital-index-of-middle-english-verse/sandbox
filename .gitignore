@@ -4,3 +4,4 @@ Gemfile.lock
 _site/
 temp*
 warnings.txt
+*.log
