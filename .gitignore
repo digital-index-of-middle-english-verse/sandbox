@@ -5,3 +5,4 @@ _site/
 temp*
 warnings.txt
 *.log
+__pycache__/
