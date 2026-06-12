@@ -102,7 +102,7 @@ def overwrite_from_estc(root):
     estc_file_list = [f for f in os.listdir(estc_download_dir) if os.path.isfile(os.path.join(estc_download_dir, f))]
     count = 0
     idno_count = 0
-    title_count = 0
+    publisher_count = 0
 
     for item in root.findall(TEI + "biblStruct"):
         id_ = item.get(NAMESPACE + "id")
@@ -135,16 +135,25 @@ def overwrite_from_estc(root):
                         estc_el.text = estc_record["001"][0]
                         idno_count += 1
 
-                        # replace title
-                        title = monogr.find(TEI + "title")
-                        marc_fields = ["130", "240"]
-                        # MARC 130 is Main Entry Uniform Title; MARC 240 is Title: Uniform Title
-                        for field in marc_fields:
-                            if field in estc_record.keys():
-                                estc_title = estc_record[field][0]["subfields"]["a"][0]
-                                title.text = estc_title.strip(".")
-                                title_count += 1
-                                break
+                        # NOTE: titles were replaced from MARC 130/240 in a
+                        # previous run (see git history) and then manually
+                        # curated; do not touch them again
+
+                        # replace publisher with the name(s) extracted from
+                        # the transcribed imprint statement (MARC 260 $b)
+                        if "260" in estc_record:
+                            b_values = estc_record["260"][0]["subfields"].get("b")
+                            if b_values:
+                                name, confident = extract_publisher_name(b_values[0])
+                                publisher = monogr.find(TEI + "imprint/" + TEI + "publisher")
+                                publisher.text = name
+                                publisher_count += 1
+                                if not confident:
+                                    log.warning("Low-confidence publisher extraction for item %s: %r", id_, name)
+                            else:
+                                log.warning("No MARC 260 $b for item %s; publisher unchanged.", id_)
+                        else:
+                            log.warning("No MARC 260 field for item %s; publisher unchanged.", id_)
                     else:
                         matching_records = estc_data["matching_records"]
                         log.warning("Found %d matching records for item %s. Skipping.", matching_records, id_)
@@ -154,8 +163,63 @@ def overwrite_from_estc(root):
                 log.info("No STC number found for item %s. Skipping.", id_)
         else:
             log.info("No element `idno` found on item %s. Skipping.", id_)
-    log.info("Found %d items. Added or updated %d ESTC numbers. Replaced %d titles.", count, idno_count, title_count)
+    log.info("Found %d items. Added or updated %d ESTC numbers. Replaced %d publishers.", count, idno_count, publisher_count)
     return root
+
+ADDRESS_WORDS = (
+    r"(dwell\w*|strete|streate|street|sygne|signe|chirche|chyrche|churche|church"
+    r"|yerde|yarde|yard|lane|gate|brigge|bridge|hous|house|shoppe|shop|buith"
+    r"|market|abbay|abbey|cathedral|town|towne|cite|citie|city)"
+)
+
+def extract_publisher_name(statement):
+    """Extract the publisher name(s) from a transcribed imprint statement
+    (MARC 260 $b). Returns (text, confident). When extraction is not
+    confident, text is the full statement, lightly normalized."""
+
+    # Square brackets mark text supplied by the cataloguer; DIMEV does not
+    # claim to give imprint statements as printed, so drop them everywhere
+    s = re.sub(r"[\[\]]", "", statement)
+    s = re.sub(r"\s+", " ", s).strip().strip(",.;: ")
+    original = s
+
+    # Drop a leading printing verb ("Enprynted", "Newlie Imprintit", ...)
+    s = re.sub(
+        r"^(newlie |newlye |fyrst )?(printed|prynted|imprinted|imprynted"
+        r"|inprinted|inprynted|enprynted|enprinted|emprented|enprented"
+        r"|emprynted|prentyd|imprintit|impressit)\b[,:;]?\s*",
+        "", s, flags=re.I)
+
+    # Drop a leading location clause through the first agent marker
+    # ("In Fletestrete at the synge of the Sonne, by me ..."), else a bare
+    # leading agent marker ("By ...", "Be ...", "per ...")
+    m = re.search(r"^(at|in|on|vpon|within)\b.*?\b(by|be)\b\s+", s, flags=re.I)
+    if m:
+        s = s[m.end():]
+    else:
+        s = re.sub(r"^(by|be|per)\b\s+", "", s, flags=re.I)
+    s = re.sub(r"^(me|my)\s+", "", s, flags=re.I)
+
+    # An agent marker stranded mid-string by bracket removal
+    # ("[I. Charlewood for] By Rycharde Ihones" -> "for By")
+    s = re.sub(r"\b(for)\s+(by|be)\b\s*", r"\1 ", s, flags=re.I)
+
+    # Cut trailing matter: retail clauses, offices, addresses. Locational
+    # prepositions survive when they introduce an expense clause, which
+    # names a second party ("at the expensis of Henrie Charteris")
+    s = re.split(r"\s*[,:;]?\s*\band ar?e? to be (sa|so)u?lde?\b", s, flags=re.I)[0]
+    s = re.split(r"\s*[,:;.]?\s*\b(prynter|printer|prentar|boke ?seller|bookseller|stationer)\b", s, flags=re.I)[0]
+    s = re.split(r"\s*[,:;]?\s*\bdwell\w*\b", s, flags=re.I)[0]
+    s = re.split(
+        r"\s*[,:;.]?\s*\b(?:at|in|on|ouer|over|vpon|next|besyde|beside|by ?syde)\b"
+        r"(?!\s+(?:the|ye|his|her)?\s*expen)",
+        s, flags=re.I)[0]
+    s = s.strip().strip(",.;: ")
+
+    confident = bool(s) and len(s) <= 60 and not re.search(ADDRESS_WORDS, s, flags=re.I)
+    if confident:
+        return s, True
+    return original, False
 
 def get_idno(refs, target_att_type):
     ref_number = ""
