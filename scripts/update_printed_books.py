@@ -5,6 +5,7 @@ import os
 import re
 import logging
 import json
+import collections
 
 # ---------------------------------------------------------------------------
 # CONFIGURATION
@@ -102,7 +103,7 @@ def overwrite_from_estc(root):
     estc_file_list = [f for f in os.listdir(estc_download_dir) if os.path.isfile(os.path.join(estc_download_dir, f))]
     count = 0
     idno_count = 0
-    date_count = 0
+    author_tally = collections.Counter()
 
     for item in root.findall(TEI + "biblStruct"):
         id_ = item.get(NAMESPACE + "id")
@@ -143,23 +144,18 @@ def overwrite_from_estc(root):
                         # from MARC 260 $b in a previous run (see git history)
                         # and then manually curated; do not touch them again
 
-                        # replace date with the year(s) from MARC 008
-                        # (positions 06-14), with uncertainty markers taken
-                        # from the transcribed date statement (MARC 260 $c)
-                        text, attrs, confident = extract_date(estc_record)
-                        date_el = monogr.find(TEI + "imprint/" + TEI + "date")
-                        old_text = date_el.text
-                        for att in ("when", "notBefore", "notAfter", "cert"):
-                            if att in date_el.attrib:
-                                del date_el.attrib[att]
-                        date_el.text = text
-                        for att, value in attrs.items():
-                            date_el.set(att, value)
-                        date_count += 1
-                        if not confident:
-                            log.warning("Low-confidence date extraction for item %s: %r", id_, text)
-                        elif old_text not in text:
-                            log.info("Date changed for item %s: %r -> %r", id_, old_text, text)
+                        # NOTE: dates were replaced from MARC 008 / 260 $c in
+                        # a previous run (see git history) and then manually
+                        # curated; do not touch them again
+
+                        # overwrite author from MARC 100 $a (personal name).
+                        # Author in PrintedBooks.xml is only an identification
+                        # aid -- the canonical attributions live in Records.xml
+                        # -- so ESTC's main entry is an acceptable default. The
+                        # KEEP/DROP lists preserve DIMEV's better-curated forms
+                        # (translators, fuller name forms) and suppress names
+                        # that do not aid identification.
+                        update_author(monogr, estc_record, id_, author_tally)
                     else:
                         matching_records = estc_data["matching_records"]
                         log.warning("Found %d matching records for item %s. Skipping.", matching_records, id_)
@@ -169,7 +165,8 @@ def overwrite_from_estc(root):
                 log.info("No STC number found for item %s. Skipping.", id_)
         else:
             log.info("No element `idno` found on item %s. Skipping.", id_)
-    log.info("Found %d items. Added or updated %d ESTC numbers. Replaced %d dates.", count, idno_count, date_count)
+    log.info("Found %d items. Added or updated %d ESTC numbers.", count, idno_count)
+    log.info("Author actions: %s", dict(author_tally))
     return root
 
 ADDRESS_WORDS = (
@@ -290,6 +287,95 @@ def extract_date(estc_record):
     else:
         text = date1
     return text, attrs, True
+
+# xml:ids whose existing DIMEV <author> is better curated than ESTC's main
+# entry and must be preserved: translator-inclusive forms, the Middle English
+# author credited over a source author, and fuller/Latinate name forms
+KEEP_DIMEV_AUTHOR = {
+    # Middle English author or translator credited over ESTC's source author
+    "STC1855",                                  # Henryson, not Aesop
+    "STC3177",                                  # Lydgate, not Boccaccio
+    "STC5728", "STC57285",                      # Copland, not Gringore
+    "STC21429",                                 # Caxton (trans.), not Laurent
+    # translator named in the DIMEV form
+    "STC13438", "STC13439", "STC13440",
+    "STC13440a", "STC13440b",                   # Higden, trans. Trevisa
+    "STC3200",                                  # Boethius, trans. Walton
+    "STC152575", "STC15258",                    # La Sale, trans. Copland
+    # fuller / Latinate / locative name forms
+    "STC1536", "STC1537", "STC1538",            # Bartholomeus Anglicus
+    "STC4921",                                  # Jacobus de Cessolis
+    "STC24875",                                 # Jacobus de Voragine
+    "STC6473",                                  # Guillaume de Deguileville
+    "STC20972",                                 # Richard, of St. Victor
+    "STC25853",                                 # Robert of Shrewsbury
+    "STC197673",                                # Perottus, Nicolaus
+    "STC29967",                                 # [Wedderburn, John] (conjectural)
+}
+
+# ESTC personal-name main entries that do not aid identification and should
+# not be imported (leave the DIMEV value as it stands)
+DROP_ESTC_AUTHOR = {
+    "Jesus Christ",
+}
+
+def marc_subfield_a(field):
+    """The $a of the first instance of a MARC name field, with the trailing
+    cataloguer's punctuation stripped."""
+    a = field[0]["subfields"].get("a", [""])
+    return a[0].strip().strip(".,").strip() if a else ""
+
+def update_author(monogr, estc_record, id_, tally):
+    """Overwrite the DIMEV <author> with ESTC's personal-name main entry
+    (MARC 100 $a), subject to the KEEP/DROP lists. Records each action under a
+    category in `tally` and logs the noteworthy ones to aid `git add -p`."""
+
+    authors = monogr.findall(TEI + "author")
+
+    # never collapse a multi-author DIMEV record onto a single ESTC name
+    if len(authors) > 1:
+        tally["MULTI (skipped)"] += 1
+        log.info("MULTI   %s: %d authors; left unchanged", id_,
+                 len(authors))
+        return
+
+    # only personal names (MARC 100); corporate main entries (110) do not
+    # serve as authors here
+    if not estc_record.get("100"):
+        tally["CORPORATE/none (skipped)"] += 1
+        if estc_record.get("110"):
+            log.info("CORP    %s: ESTC main entry is corporate %r; left unchanged",
+                     id_, marc_subfield_a(estc_record["110"]))
+        return
+
+    name = marc_subfield_a(estc_record["100"])
+    if not name:
+        tally["CORPORATE/none (skipped)"] += 1
+        return
+
+    author = authors[0]
+    old = (author.text or "").strip()
+
+    if name in DROP_ESTC_AUTHOR:
+        tally["DROP (filtered)"] += 1
+        log.info("DROP    %s: suppressed ESTC name %r; kept %r", id_, name, old)
+        return
+    if id_ in KEEP_DIMEV_AUTHOR:
+        tally["KEPT (DIMEV form)"] += 1
+        log.info("KEPT    %s: kept DIMEV %r over ESTC %r", id_, old, name)
+        return
+
+    if old == name:
+        tally["identical"] += 1
+        return
+
+    author.text = name
+    if not old:
+        tally["FILL"] += 1
+        log.info("FILL    %s: %r", id_, name)
+    else:
+        tally["REPLACE"] += 1
+        log.info("REPLACE %s: %r -> %r", id_, old, name)
 
 def get_idno(refs, target_att_type):
     ref_number = ""
