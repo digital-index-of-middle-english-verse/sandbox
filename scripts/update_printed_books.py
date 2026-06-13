@@ -102,7 +102,7 @@ def overwrite_from_estc(root):
     estc_file_list = [f for f in os.listdir(estc_download_dir) if os.path.isfile(os.path.join(estc_download_dir, f))]
     count = 0
     idno_count = 0
-    publisher_count = 0
+    date_count = 0
 
     for item in root.findall(TEI + "biblStruct"):
         id_ = item.get(NAMESPACE + "id")
@@ -139,21 +139,27 @@ def overwrite_from_estc(root):
                         # previous run (see git history) and then manually
                         # curated; do not touch them again
 
-                        # replace publisher with the name(s) extracted from
-                        # the transcribed imprint statement (MARC 260 $b)
-                        if "260" in estc_record:
-                            b_values = estc_record["260"][0]["subfields"].get("b")
-                            if b_values:
-                                name, confident = extract_publisher_name(b_values[0])
-                                publisher = monogr.find(TEI + "imprint/" + TEI + "publisher")
-                                publisher.text = name
-                                publisher_count += 1
-                                if not confident:
-                                    log.warning("Low-confidence publisher extraction for item %s: %r", id_, name)
-                            else:
-                                log.warning("No MARC 260 $b for item %s; publisher unchanged.", id_)
-                        else:
-                            log.warning("No MARC 260 field for item %s; publisher unchanged.", id_)
+                        # NOTE: publishers were replaced with names extracted
+                        # from MARC 260 $b in a previous run (see git history)
+                        # and then manually curated; do not touch them again
+
+                        # replace date with the year(s) from MARC 008
+                        # (positions 06-14), with uncertainty markers taken
+                        # from the transcribed date statement (MARC 260 $c)
+                        text, attrs, confident = extract_date(estc_record)
+                        date_el = monogr.find(TEI + "imprint/" + TEI + "date")
+                        old_text = date_el.text
+                        for att in ("when", "notBefore", "notAfter", "cert"):
+                            if att in date_el.attrib:
+                                del date_el.attrib[att]
+                        date_el.text = text
+                        for att, value in attrs.items():
+                            date_el.set(att, value)
+                        date_count += 1
+                        if not confident:
+                            log.warning("Low-confidence date extraction for item %s: %r", id_, text)
+                        elif old_text not in text:
+                            log.info("Date changed for item %s: %r -> %r", id_, old_text, text)
                     else:
                         matching_records = estc_data["matching_records"]
                         log.warning("Found %d matching records for item %s. Skipping.", matching_records, id_)
@@ -163,7 +169,7 @@ def overwrite_from_estc(root):
                 log.info("No STC number found for item %s. Skipping.", id_)
         else:
             log.info("No element `idno` found on item %s. Skipping.", id_)
-    log.info("Found %d items. Added or updated %d ESTC numbers. Replaced %d publishers.", count, idno_count, publisher_count)
+    log.info("Found %d items. Added or updated %d ESTC numbers. Replaced %d dates.", count, idno_count, date_count)
     return root
 
 ADDRESS_WORDS = (
@@ -220,6 +226,70 @@ def extract_publisher_name(statement):
     if confident:
         return s, True
     return original, False
+
+def extract_date(estc_record):
+    """Build a TEI date from MARC 008 (machine-readable years) and 260 $c
+    (uncertainty markers). Returns (text, attrs, confident); attrs holds
+    att.datable.w3c attributes (@when or @notBefore/@notAfter) plus @cert.
+    When extraction is not confident, text is the 260 $c statement, lightly
+    normalized, with no attributes."""
+
+    f008 = estc_record.get("008", [""])[0]
+    date_type = f008[6:7]
+    date1 = f008[7:11]
+    date2 = f008[11:15].strip()
+
+    statement = ""
+    if "260" in estc_record:
+        c_values = estc_record["260"][0]["subfields"].get("c")
+        if c_values:
+            statement = c_values[0]
+    fallback = re.sub(r"[\[\]]", "", statement)
+    fallback = re.sub(r"\s+", " ", fallback).strip().strip(",.;: ")
+
+    # "ca." must precede a digit, lest "[et]⁻c.lxxxxvi" read as circa
+    circa = bool(re.search(r"\bca?\.\s*\d|\bcirca\b|\bapproximately\b", statement, flags=re.I))
+    uncertain = circa or "?" in statement
+
+    if not re.fullmatch(r"\d{4}", date1):
+        return fallback, {}, False
+
+    # termini from the date statement ("after 2 July 1482", "not after
+    # 1509"); MARC 008 records these as plain single dates. Anchored at the
+    # start: "1481 (after 8 March)" is a single date, not a terminus
+    if re.match(r"not after\b", fallback, flags=re.I):
+        return "not after " + date1, {"notAfter": date1}, True
+    if re.match(r"after\b", fallback, flags=re.I):
+        return "after " + date1, {"notBefore": date1}, True
+
+    # date type "e" gives a day-level date: Date2 is MMDD, not a year
+    if date_type == "e":
+        date2 = ""
+
+    if date2 and not re.fullmatch(r"\d{4}", date2):
+        return fallback, {}, False
+
+    if date2 and date2 != date1:
+        attrs = {"notBefore": date1, "notAfter": date2}
+        if re.search(r"\bor\b", statement, flags=re.I):
+            text = date1 + " or " + date2
+        elif uncertain:
+            text = date1 + "–" + date2 + "?"
+            attrs["cert"] = "medium"
+        else:
+            text = date1 + "–" + date2
+        return text, attrs, True
+
+    attrs = {"when": date1}
+    if circa:
+        text = "ca. " + date1
+        attrs["cert"] = "medium"
+    elif uncertain:
+        text = date1 + "?"
+        attrs["cert"] = "medium"
+    else:
+        text = date1
+    return text, attrs, True
 
 def get_idno(refs, target_att_type):
     ref_number = ""
