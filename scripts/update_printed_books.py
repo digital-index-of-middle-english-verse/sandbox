@@ -103,7 +103,7 @@ def overwrite_from_estc(root):
     estc_file_list = [f for f in os.listdir(estc_download_dir) if os.path.isfile(os.path.join(estc_download_dir, f))]
     count = 0
     idno_count = 0
-    author_tally = collections.Counter()
+    place_tally = collections.Counter()
 
     for item in root.findall(TEI + "biblStruct"):
         id_ = item.get(NAMESPACE + "id")
@@ -148,14 +148,13 @@ def overwrite_from_estc(root):
                         # a previous run (see git history) and then manually
                         # curated; do not touch them again
 
-                        # overwrite author from MARC 100 $a (personal name).
-                        # Author in PrintedBooks.xml is only an identification
-                        # aid -- the canonical attributions live in Records.xml
-                        # -- so ESTC's main entry is an acceptable default. The
-                        # KEEP/DROP lists preserve DIMEV's better-curated forms
-                        # (translators, fuller name forms) and suppress names
-                        # that do not aid identification.
-                        update_author(monogr, estc_record, id_, author_tally)
+                        # NOTE: authors were overwritten from MARC 100 $a in a
+                        # previous run (see git history) and then manually
+                        # curated; do not touch them again
+
+                        # add place of printing from MARC 260 $a, normalized
+                        # to a standard modern name via the gazetteer
+                        update_pubplace(monogr, estc_record, id_, place_tally)
                     else:
                         matching_records = estc_data["matching_records"]
                         log.warning("Found %d matching records for item %s. Skipping.", matching_records, id_)
@@ -166,7 +165,7 @@ def overwrite_from_estc(root):
         else:
             log.info("No element `idno` found on item %s. Skipping.", id_)
     log.info("Found %d items. Added or updated %d ESTC numbers.", count, idno_count)
-    log.info("Author actions: %s", dict(author_tally))
+    log.info("Place actions: %s", dict(place_tally))
     return root
 
 ADDRESS_WORDS = (
@@ -376,6 +375,85 @@ def update_author(monogr, estc_record, id_, tally):
     else:
         tally["REPLACE"] += 1
         log.info("REPLACE %s: %r -> %r", id_, old, name)
+
+# Ordered map of substrings (in the bracket-stripped, lower-cased place
+# statement) to the normalized place name. Order matters: Westminster is
+# tested before London, since some Westminster colophons mention London
+# ("in thabbey of Westmenstre by london").
+PLACE_GAZETTEER = [
+    (r"westm", "Westminster"),
+    (r"edinburgh", "Edinburgh"),
+    (r"sanctandrois|standrois|sanct ?androis|st\.? ?andrews", "St Andrews"),
+    (r"aberden", "Aberdeen"),
+    (r"cantorbury|canterbury", "Canterbury"),
+    (r"tauestok|tavestok|tavistok", "Tavistock"),
+    (r"southwark|southwerke", "Southwark"),
+    (r"st\.? ?albans|saint albans", "St Albans"),
+    (r"oxford", "Oxford"),
+    (r"\byork\b", "York"),
+    (r"lothbury", "London"),
+    (r"rothomagi", "Rouen"),
+    (r"andewerpe|andewarpe|andwarpe|antwerp|braband", "Antwerp"),
+    (r"paris|parys|parisi", "Paris"),
+    (r"londo|londin|loudon", "London"),
+    (r"northern england", "Northern England"),
+    (r"\bscotland\b", "Scotland"),
+]
+
+def extract_place(statement):
+    """Normalize a transcribed place statement (MARC 260 $a) to a standard
+    modern place name. Returns (text, cert, confident): cert is True when ESTC
+    marks the place conjectural ("?"); when no gazetteer entry matches, text is
+    the cleaned statement and confident is False."""
+
+    cert = "?" in statement
+    s = re.sub(r"[\[\]]", "", statement)
+    s = re.sub(r"\bsic\b", "", s, flags=re.I)
+    s = re.sub(r"\s+", " ", s).strip().strip(" :;,.?")
+    low = s.lower()
+
+    if re.fullmatch(r"s\.?\s*l\.?", low):
+        return "S.l.", False, True
+
+    for pattern, name in PLACE_GAZETTEER:
+        if re.search(pattern, low):
+            return name, cert, True
+    return s, cert, False
+
+def update_pubplace(monogr, estc_record, id_, tally):
+    """Insert (or refresh) a <pubPlace> in <imprint>, before <publisher>, from
+    the normalized MARC 260 $a. Records each action under a category in
+    `tally` and logs the noteworthy ones."""
+
+    if "260" not in estc_record:
+        tally["no 260 (skipped)"] += 1
+        log.info("NOPLACE %s: no MARC 260; pubPlace not added", id_)
+        return
+    a_values = estc_record["260"][0]["subfields"].get("a")
+    if not a_values:
+        tally["no $a (skipped)"] += 1
+        log.info("NOPLACE %s: no MARC 260 $a; pubPlace not added", id_)
+        return
+
+    text, cert, confident = extract_place(a_values[0])
+
+    imprint = monogr.find(TEI + "imprint")
+    pubplace = imprint.find(TEI + "pubPlace")
+    if pubplace is None:
+        pubplace = etree.Element(TEI + "pubPlace")
+        imprint.insert(0, pubplace)
+    pubplace.text = text
+    if cert:
+        pubplace.set("cert", "medium")
+    elif "cert" in pubplace.attrib:
+        del pubplace.attrib["cert"]
+
+    if not confident:
+        tally["LOW (unmatched)"] += 1
+        log.warning("LOWPLACE %s: no gazetteer match for %r; wrote %r",
+                    id_, a_values[0], text)
+    else:
+        tally[text + (" (cert)" if cert else "")] += 1
 
 def get_idno(refs, target_att_type):
     ref_number = ""
