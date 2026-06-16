@@ -3,7 +3,7 @@ MelSLV096G94,Australia,Melbourne,State Library of Victoria,*096/G94,,,,,,,,https
 SanFlorXI57,Austria,Sankt Florian,Stiftsbibliothek,XI 57,,,,,,,,,
 Antwerp305,Belgium,Antwerp,Museum Plantin-Moretus,M 305,olim MS lat. 57,,,,,,,,
 Brussels2054,Belgium,Brussels,Bibliothèque Royale,2054,,,,,,,,https://uurl.kbr.be/bib/10737136,
-Brussels4628,Belgium,Brussels,Bibliothèque Royale,7396,Van den Gheyn Cat. 4628,,,,,,,https://uurl.kbr.be/bib/17038463,
+Brussels4628,Belgium,Brussels,Bibliothèque Royale,7396,,,,,Van den Gheyn Cat. 4628,,,https://uurl.kbr.be/bib/17038463,
 BrusselsIV354,Belgium,Brussels,Bibliothèque Royale,IV. 354,olim Sarum Officium Mortuorum,,,,"Sotheby's Sale, 10 Oct., 1962, Lot 146",,,https://uurl.kbr.be/bib/17282184,
 BrusselsIV998,Belgium,Brussels,Bibliothèque Royale,IV. 998,,,,,,,,https://uurl.kbr.be/bib/10711118,https://uurl.kbr.be/bib/10711118
 BrusselsIV231,Belgium,Brussels,Bibliothèque Royale,IV.231,,,,Horae Sarum,,,,https://uurl.kbr.be/bib/19517987,
@@ -103,17 +103,17 @@ VaticanOtto,Italy,Rome,Biblioteca Apostolica Vaticana,Ottoboni 626,,,,,,,,,
 RomeEC1306,Italy,Rome,Collegio Inglese,AVCAU MS Liber 1405,,,,,,,,https://www.vecheritage.org/visit-the-reading-room#catalogue,
 Trento,Italy,Trento,Biblioteca capitolare,Codex 88,,,,,,,,https://manus.iccu.sbn.it/risultati-ricerca-manoscritti/-/manus-search/detail/1733283?struct%3A7007=ricerca.parole_tutte%3A4%3D6&struct%3A1016=ricerca.parole_tutte%3A4%3D6&struct%3A4091=ricerca.parole_tutte%3A4%3D6&struct%3A3041=ricerca.parole_tutte%3A4%3D6&struct%3A5003=ricerca.parole_tutte%3A4%3D6&struct%3A5005=ricerca.parole_tutte%3A4%3D6&struct%3A5004=ricerca.parole_tutte%3A4%3D6&struct%3A5091=ricerca.parole_tutte%3A4%3D6&item%3A1016%3AKeywords=cod.+88&fieldstruct%5B0%5D=ricerca.parole_tutte%3A4%3D6&fieldaccess%5B0%5D=nome_t%3A1003&struct%3A20044=ricerca.parole_tutte%3A4%3D6&struct%3A4=ricerca.parole_tutte%3A4%3D6&struct%3A20046=ricerca.parole_tutte%3A4%3D6&struct%3A9041=ricerca.parole_tutte%3A4%3D6&struct%3A5041=ricerca.parole_tutte%3A4%3D6&page=6,
 Vercelli,Italy,Vercelli,Biblioteca capitolare,MS CCXXV,,,,,,,,https://manus.iccu.sbn.it/risultati-ricerca-manoscritti/-/manus-search/detail/812130?struct%3A7007=ricerca.parole_tutte%3A4%3D6&struct%3A1016=ricerca.parole_tutte%3A4%3D6&struct%3A4091=ricerca.parole_tutte%3A4%3D6&struct%3A3041=ricerca.parole_tutte%3A4%3D6&struct%3A5003=ricerca.parole_tutte%3A4%3D6&struct%3A5005=ricerca.parole_tutte%3A4%3D6&struct%3A5004=ricerca.parole_tutte%3A4%3D6&struct%3A5091=ricerca.parole_tutte%3A4%3D6&item%3A1016%3AKeywords=ccxxv&fieldstruct%5B0%5D=ricerca.parole_tutte%3A4%3D6&fieldaccess%5B0%5D=nome_t%3A1003&struct%3A20044=ricerca.parole_tutte%3A4%3D6&struct%3A4=ricerca.parole_tutte%3A4%3D6&struct%3A20046=ricerca.parole_tutte%3A4%3D6&struct%3A9041=ricerca.parole_tutte%3A4%3D6&struct%3A5041=ricerca.parole_tutte%3A4%3D6&,
-KeioHopton,Japan,Tokyo,Keio University Library,Hopton Hall MS,"olim Hopton Hall, Sotheby 1989, post Quaritch",,,,,,,https://search.lib.keio.ac.jp/permalink/81SOKEI_KEIO/188bto4/alma990014025820204034,
-TokyoAsahata,Japan,Tokyo,S. Asahata,,"olim Bute 13, Sotheby's 13 June 1983",,,,,,,,
-Senshu1,Japan,Tokyo,Senshu University Library,Senshu University MS 1,olim Schøyen 194; post Penrose 12,,,,,,,https://www.senshu-u.ac.jp/socio/ms_anglo/MS01_english.html,
-AmsterdamBPHM199,Netherlands,Amsterdam,Bibliotheca Philosophica Hermetica,MS M 199,olim Christie's catalogue 26 June 1991,,,,,,,https://embassyofthefreemind.com/en/library/online-catalogue/detail/971ddf7a-7a5c-5f31-03a1-46a584b7673b/media/undefined,
+KeioHopton,Japan,Tokyo,Keio University Library,Hopton Hall MS,olim Hopton Hall,,,,"Sotheby 1989, post Quaritch",,,https://search.lib.keio.ac.jp/permalink/81SOKEI_KEIO/188bto4/alma990014025820204034,
+TokyoAsahata,Japan,Tokyo,S. Asahata,,olim Bute 13,,,,Sotheby's 13 June 1983,,,,
+Senshu1,Japan,Tokyo,Senshu University Library,Senshu University MS 1,olim Schøyen 194,olim Penrose 12,,,,,,https://www.senshu-u.ac.jp/socio/ms_anglo/MS01_english.html,
+AmsterdamBPHM199,Netherlands,Amsterdam,Bibliotheca Philosophica Hermetica,MS M 199,,,,,Christie's catalogue 26 June 1991,,,https://embassyofthefreemind.com/en/library/online-catalogue/detail/971ddf7a-7a5c-5f31-03a1-46a584b7673b/media/undefined,
 Leiden,Netherlands,Leiden,Universiteits­bibliotheek,Vossius Germ. Gall. Q.9,,,,,,,,http://hdl.handle.net/1887.1/item:1523394,http://hdl.handle.net/1887.1/item:1523394
 NijmegenUL194,Netherlands,Nijmegen,Universiteitsbibliotheek,194,,,,,,,,https://ru.on.worldcat.org/oclc/868154014,
 HagueKB135G18,Netherlands,The Hague,Nationale Bibliotheek,135.G.18,,,,,,,,,
 Wellington140,New Zealand,Wellington,Alexander Turnbull Library,MS 140,,,,,,,,,
 Schoyen33,Norway,Oslo and London,Schøyen Collection,33,,,,,,,,https://www.schoyencollection.com/history-collection-introduction/medieval-history-collection/chronicles-kings-england-ms-033,
-Schoyen689,Norway,Oslo and London,Schøyen Collection,689,"olim Windsor, Beaumont College, sold Christie's 28 June 1973, lot 48",,,,,,,,
-Schoyen16772,Norway,Oslo and London,Schøyen Collection,1677/2,"olim Phillipps (single leaf), sold Sotheby's, London, 21-2 June 1993, lot 49",,,,,,,https://onlineonly.christies.com/s/history-western-music-manuscripts-schoyen-collection/st-gall-neumes-early-german-neumes-13/197927,
+Schoyen689,Norway,Oslo and London,Schøyen Collection,689,"olim Windsor, Beaumont College",,,,"sold Christie's 28 June 1973, lot 48",,,,
+Schoyen16772,Norway,Oslo and London,Schøyen Collection,1677/2,olim Phillipps,,,,"sold Sotheby's, London, 21-2 June 1993, lot 49",,,https://onlineonly.christies.com/s/history-western-music-manuscripts-schoyen-collection/st-gall-neumes-early-german-neumes-13/197927,
 Leningrad,Russia,Saint Petersburg,Saltykov-Schedrin Library,O.v.XIV.1,,,,,,,,,
 EscorIVa24,Spain,Madrid,Real Biblioteca del Monasterio de El Escorial,a-IV-24,IV. a. 24,,,,,,,https://rbme.patrimonionacional.es/s/rbme/item/15082,https://rbme.patrimonionacional.es/s/rbme/item/15082
 EscorGII19,Spain,Madrid,Real Biblioteca del Monasterio de El Escorial,g-II-19,,,,,,,,https://rbme.patrimonionacional.es/s/rbme/item/15082,https://rbme.patrimonionacional.es/s/rbme/item/13591
@@ -121,7 +121,7 @@ StockhX90,Sweden,Stockholm,Kungliga biblioteket,X.90,,,,,,,,https://kortkataloge
 UppsalaC494,Sweden,Uppsala,Universitets­bibli‍otek,C.494,,,,,,,,https://uub.primo.exlibrisgroup.com/permalink/46LIBRIS_UUB/d23b4h/alma991018899779507596,
 Basel,Switzerland,Basel,Universitätsbibliothek,B.VIII.4,,,,,,,,https://swisscollections.ch/Record/991170524909705501?sid=171682308,
 Bodmer110,Switzerland,Cologny (Geneva),Fondation Martin Bodmer,Cod. Bodmer 110,olim Harmsworth,,,,"Sotheby's Sale, Oct. 1945, lot 1963",,,https://www.e-codices.unifr.ch/en/description/fmb/cb-0110/Mooney,https://www.e-codices.unifr.ch/en/fmb/cb-0110/
-Bodmer48,Switzerland,Cologny (Geneva),Fondation Martin Bodmer,Cod. Bodmer 48,"olim Rosenbach 156, prior Phillipps 8136",,,,,,,https://www.e-codices.unifr.ch/en/list/one/fmb/cb-0048,http://www.e-codices.unifr.ch/en/cb/0048
+Bodmer48,Switzerland,Cologny (Geneva),Fondation Martin Bodmer,Cod. Bodmer 48,olim Rosenbach 156,olim Phillipps 8136,,,,,,https://www.e-codices.unifr.ch/en/list/one/fmb/cb-0048,http://www.e-codices.unifr.ch/en/cb/0048
 Bodmer178,Switzerland,Cologny (Geneva),Private owner,Martin Bodmer MS CB 178,olim Gurney 121,,,,,,,,
 AbeSas1,UK,Aberdeen,Aberdeen City Archives,"City Charter Room Sasine Register, 1.774",,,,,,,,,
 AbeSeis2,UK,Aberdeen,Aberdeen City Archives,Minute Book of Seisins ii,,,,,,,,,
@@ -164,8 +164,8 @@ NLWPen26,UK,Aberystwyth,National Library of Wales,Peniarth 26,olim Hengwrt 133,,
 NLWPen27,UK,Aberystwyth,National Library of Wales,Peniarth 27,,,,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992129636102419,https://viewer.library.wales/4575723
 NLWPen334A,UK,Aberystwyth,National Library of Wales,Peniarth 334A,,,,,,,,https://viewer.library.wales/4848340,
 NLWPen356,UK,Aberystwyth,National Library of Wales,Peniarth 356,,,,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992097589802419,
-NLWPen392,UK,Aberystwyth,National Library of Wales,Peniarth 392 D,,,Hengwrt,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992139434702419,https://viewer.library.wales/4628556#?xywh=-3925%2C-1311%2C11475%2C7954
-NLWPen393,UK,Aberystwyth,National Library of Wales,Peniarth 393,,,‘Hengwrt’,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992161706002419,https://viewer.library.wales/4398051
+NLWPen392,UK,Aberystwyth,National Library of Wales,Peniarth 392 D,,,Hengwrt Chaucer,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992139434702419,https://viewer.library.wales/4628556#?xywh=-3925%2C-1311%2C11475%2C7954
+NLWPen393,UK,Aberystwyth,National Library of Wales,Peniarth 393,Formerly Hengwrt MS 328,,,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992161706002419,https://viewer.library.wales/4398051
 NLWPen394,UK,Aberystwyth,National Library of Wales,Peniarth 394,,,,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992097586302419,
 NLWPen395,UK,Aberystwyth,National Library of Wales,Peniarth 395D,,,,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992097586202419,
 NLWPen396D,UK,Aberystwyth,National Library of Wales,Peniarth 396D,,,,,,,,https://discover.library.wales/permalink/44WHELF_NLW/6kpfmq/alma992162159202419,
@@ -184,14 +184,14 @@ Alnwick468,UK,Alnwick Castle,Duke of Northumberland,MS 468,formerly D.XI.1,,,,,,
 Alnwick78,UK,Alnwick Castle,Duke of Northumberland,MS 78,,,,,,,,,
 Alnwick79,UK,Alnwick Castle,Duke of Northumberland,MS 79,,,,,,,,,
 Alnwick82,UK,Alnwick Castle,Duke of Northumberland,MS 82,,,,,,,,,
-Appleby,UK,Appleby Castle,Lord Hothfield,Yorkshire Archaeological Society DD 121/109,,,,,,on deposit at Leeds,,https://explore.library.leeds.ac.uk/multimedia/18951/YAS_DD121.pdf,
+Appleby,UK,Appleby Castle,Lord Hothfield,Yorkshire Archaeological Society DD 121/109,,,,,,On deposit at Leeds,,https://explore.library.leeds.ac.uk/multimedia/18951/YAS_DD121.pdf,
 ArmaghReg,UK,Armagh,Armagh Diocesan Registry,Bishop John Swayne's Register,,,,,,,,https://catalogue.nli.ie/Record/vtls000144010,
 ArunHar,UK,Arundel Castle,Duke of Norfolk,MS Arundel-Harrington,,,,,,,,,
 ArunLives,UK,Arundel Castle,Duke of Norfolk,MS Lives of Sts Edmund and Fremund,,,,,,,,,
 ArunPrick,UK,Arundel Castle,Duke of Norfolk,MS Prick of Conscience,,,,,,,,,
 Aylesford,UK,Aylesford,Earl of Aylesford,Kings of England,,,,,,,,,
 Badminton,UK,Badminton,Duke of Beaufort,MS 704.1.16,,,,,,,,,
-Cox,UK,"Beaminster, Dorset",J. Stevens Cox,,olim Harmsworth,,,,"Sotheby Sale, Oct., 1945, lot 1956",now privately owned,,,
+Cox,UK,"Beaminster, Dorset",J. Stevens Cox,,olim Harmsworth,,,,"Sotheby Sale, Oct., 1945, lot 1956",privately owned,,,
 Woburn181,UK,Bedfordshire,Woburn Abbey,MS 181,,,,,,,,,
 Belfast,UK,Belfast,Queen's University,3/11B,,,,,,,,https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/FileStore/Filetoupload607189en.pdf,
 Belvoir,UK,Belvoir Castle,Duke of Rutland,Fall of Princes MS,,,,,,,,,
@@ -200,13 +200,13 @@ Beverley,UK,"Beverly, East Yorkshire",Humberside County Record Office,"MS DDHE 3
 Halesowen,UK,Birmingham,Birmingham City Archives,"Hagley Hall collection, No. 346333",,,,Halesowen Court Rolls,,,,https://calmview.birmingham.gov.uk/CalmView/Record.aspx?src=CalmView.Catalog,
 Blackburn,UK,Blackburn,"Blackburn, Museum and Art Gallery",MS 091.21040,olim Petworth 3,,,,,,,,
 BrechinFordun,UK,Brechin Castle,Earl of Dalhousie,,,,,Fordun's Chronicle,,"On deposit at Edinburgh, Scottish Record Office, MS GD5/26/48",,https://catalogue.nrscotland.gov.uk/nrsonlinecatalogue/details.aspx?reference=GD45%2f26%2f48&st=1&tc=y&tl=n&tn=n&tp=n&k=&ko=a&r=5%2f26%2f48&ro=c&df=&dt=&di=y,
-BrechinSTC3215,UK,Brechin Castle,Earl of Dalhousie,,,,,"Printed book: John Barbour, Buik of Alexander the grit, Edinburgh, Arbuthnet, c. 1580 (STC 321.5)",,,,,
+BrechinSTC3215,UK,Brechin Castle,Earl of Dalhousie,,,,,"John Barbour, Buik of Alexander the grit, Edinburgh, Arbuthnet, c. 1580 (STC 321.5)",,,Printed book,,
 BrechinWintoun,UK,Brechin Castle,Earl of Dalhousie,,,,,Wintoun's Chronicle,,,,,
 BristolAS2,UK,Bristol,All Saints Church,MS 2,,,,,,,,,
 BristolAvon,UK,Bristol,Avon County Library,MS 10,,,,,,,,,
 BristolClifton,UK,Bristol,Clifton College,Norton's Ordinal of Alchemy,,,,,,,,https://hdl.handle.net/2027/inu.32000007078720,
-ButeConf,UK,Bute,Marquess of Bute,,"olim Bute, now privately owned",,,,,,,,
-Buteolim,UK,Bute,Marquess of Bute,,"olim Bute, Christie's Sale 13 June 1983",,,,,,,,
+ButeConf,UK,Bute,Marquess of Bute,,olim Bute,,,,,privately owned,,,
+Buteolim,UK,Bute,Marquess of Bute,,olim Bute,,,,Christie's Sale 13 June 1983,,,,
 CambFrag,UK,Cambridge,Cambridge University Library,2 binding fragments,,,,,,,,,
 CULAdd2585,UK,Cambridge,Cambridge University Library,"Addit. 2585, Part I",,,,,,,,https://www.repository.cam.ac.uk/handle/1810/320408,
 CULAdd2585b,UK,Cambridge,Cambridge University Library,"Addit. 2585, Part II",,,,,,,,https://www.repository.cam.ac.uk/handle/1810/320408,
@@ -293,7 +293,7 @@ CULEe435b,UK,Cambridge,Cambridge University Library,"Ee.4.35, Part II",,,,,,,,ht
 CULEe437,UK,Cambridge,Cambridge University Library,Ee.4.37,,,,,,,,https://www.repository.cam.ac.uk/handle/1810/320531,
 CULEe513,UK,Cambridge,Cambridge University Library,Ee.5.13,,,,,,,,https://archive.org/details/catalogueofmanus02cambuoft/page/174/mode/2up,
 CULEe629,UK,Cambridge,Cambridge University Library,Ee.6.29,,,,,,,,https://archive.org/details/catalogueofmanus02cambuoft/page/266/mode/2up,
-CULF150,UK,Cambridge,Cambridge University Library,F150.a.4.1,formerly Res.b.162,,,printed book,,,,,
+CULF150,UK,Cambridge,Cambridge University Library,F150.a.4.1,formerly Res.b.162,,,,,,printed book,,
 CULFf114,UK,Cambridge,Cambridge University Library,Ff.1.14,,,,,,,,https://www.repository.cam.ac.uk/handle/1810/320610,
 CULFf117,UK,Cambridge,Cambridge University Library,Ff.1.17,,,,,,,,https://www.repository.cam.ac.uk/handle/1810/320613,
 CULFf127,UK,Cambridge,Cambridge University Library,Ff.1.27,,,,,,,,https://www.repository.cam.ac.uk/handle/1810/320625,https://cudl.lib.cam.ac.uk/view/MS-FF-00001-00027/1
@@ -511,7 +511,7 @@ CamMag5,UK,Cambridge,Magdalene College,5 (F.4.5),,,,,,,,https://babel.hathitrust
 CamMagPep1036,UK,Cambridge,Magdalene College,Pepys 1036,,,,,,,,,
 CamMagPep1047,UK,Cambridge,Magdalene College,Pepys 1047,,,,,,,,https://archive.org/details/bibliothecapepys00pepy/page/4/mode/2up,
 CamMagPep1236,UK,Cambridge,Magdalene College,Pepys 1236,,,,,,,,https://cudl.lib.cam.ac.uk/view/MS-MAGDALENE-PEPYS-01236/1,https://cudl.lib.cam.ac.uk/view/MS-MAGDALENE-PEPYS-01236/1
-CamMagPep1254,UK,Cambridge,Magdalene College,Pepys 1254,,,,Printed book (STC 3543),,,,,
+CamMagPep1254,UK,Cambridge,Magdalene College,Pepys 1254,,,STC 3543,,,,printed book,,
 CamMagPep1408,UK,Cambridge,Magdalene College,Pepys 1408,,,Maitland Quarto,,,,,,
 CamMagPep1461,UK,Cambridge,Magdalene College,Pepys 1461,,,,,,,,https://archive.org/details/bibliothecapepys00pepy/page/12/mode/2up?q=1408,
 CamMagPep1576,UK,Cambridge,Magdalene College,Pepys 1576,,,,,,,,https://archive.org/details/bibliothecapepys00pepy/page/14/mode/2up?q=1408,
@@ -531,7 +531,7 @@ CamMagPep2498,UK,Cambridge,Magdalene College,Pepys 2498,,,,,,,,https://archive.o
 CamMagPep2505,UK,Cambridge,Magdalene College,Pepys 2505,,,,,,,,,
 CamMagPep2553,UK,Cambridge,Magdalene College,Pepys 2553,,,,,,,,,
 CamMagPep2833,UK,Cambridge,Magdalene College,Pepys 2833,,,,,,,,,
-CamMagPepEx,UK,Cambridge,Magdalene College,"Pepys, Example of Virtue",,,,Printed book (STC 12945),,,,,
+CamMagPepEx,UK,Cambridge,Magdalene College,"Pepys, Example of Virtue",,,,STC 12945,,,printed book,,
 CamNewn4,UK,Cambridge,Newnham College,4,olim Yates-Thompson,,,,,,,https://cudl.lib.cam.ac.uk/view/MS-NEWNHAM-00004/1,https://cudl.lib.cam.ac.uk/view/MS-NEWNHAM-00004/1
 CamPem32,UK,Cambridge,Pembroke College,32,,,,,,,,https://archive.org/details/descriptivecatal00pemb_0/page/34/mode/2up,
 CamPem82,UK,Cambridge,Pembroke College,82,,,,,,,,https://archive.org/details/descriptivecatal00pemb_0/page/70/mode/2up,
@@ -550,7 +550,7 @@ CamPem307,UK,Cambridge,Pembroke College,307,,,,,,,,https://archive.org/details/d
 CamPem312,UK,Cambridge,Pembroke College,312,,,,,,,,,
 CamPem313,UK,Cambridge,Pembroke College,313,,,,,,,,,
 CamPem314,UK,Cambridge,Pembroke College,314,,,,,,,,,
-CamPem312C6,UK,Cambridge,Pembroke College,312.C.6,,,,fragment of Piers Plowman,,,,,
+CamPem312C6,UK,Cambridge,Pembroke College,312.C.6,,,,Piers Plowman (fragment),,,,,
 CamPem85,UK,Cambridge,Pembroke College,"85, Part III",,,,,,,,https://archive.org/details/descriptivecatal00pemb_0/page/74/mode/2up,
 CamPeter57,UK,Cambridge,Peterhouse,57,,,,,,,,https://archive.org/details/descriptivecatal0000pete/page/76/mode/2up,
 CamPeter104,UK,Cambridge,Peterhouse,104,,,,,,,,https://archive.org/details/descriptivecatal0000pete/page/120/mode/2up,
@@ -623,14 +623,14 @@ CamTCC365,UK,Cambridge,Trinity College,B.15.30 (365),,,,,,,,https://mss-cat.trin
 CamTCC366,UK,Cambridge,Trinity College,B.15.31 (366),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.31,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.31/UV
 CamTCC367,UK,Cambridge,Trinity College,B.15.32 (367),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.32,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.32/UV
 CamTCC370,UK,Cambridge,Trinity College,B.15.35 (370),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.35,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.35/UV
-CamTCC181,UK,Cambridge,Trinity College,B.15.39 (374),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.39 ,
-CamTCC376,UK,Cambridge,Trinity College,B.15.40 (376),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.40,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.40/UV#?c=0&m=0&s=0&cv=0
+CamTCC181,UK,Cambridge,Trinity College,B.15.39 (374),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.39 ,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.39/UV
+CamTCC376,UK,Cambridge,Trinity College,B.15.40 (376),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.40,https://mss-cat.trin.cam.ac.uk/Manuscript/B.15.40/UV
 CamTCC394,UK,Cambridge,Trinity College,B.16.31 (394),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.31,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.31/UV
 CamTCCB1631,UK,Cambridge,Trinity College,B.16.31 (394),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.31,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.31/UV
-CamTCCB1641,UK,Cambridge,Trinity College,B.16.41 (402),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.41,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.41/UV#?c=0&m=0&s=0&cv=0&r=0&xywh=-4749%2C-350%2C13419%2C6999
+CamTCCB1641,UK,Cambridge,Trinity College,B.16.41 (402),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.41,https://mss-cat.trin.cam.ac.uk/Manuscript/B.16.41/UV
 CamTCC61,UK,Cambridge,Trinity College,B.2.18 (61),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.2.18,https://mss-cat.trin.cam.ac.uk/Manuscript/B.2.18/UV
 CamTCC108,UK,Cambridge,Trinity College,B.3.29 (108),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.3.29,https://mss-cat.trin.cam.ac.uk/Manuscript/B.3.29/UV
-CamTCCParis1525,UK,Cambridge,Trinity College,L.12.36,,,,"Printed book: Michaelis Menoti Sermones Quadragesimales, Paris 1525",,,,https://lib-cat.trin.cam.ac.uk/Record/9650055f-5fe9-4638-acc0-040172fa29a9/Permalink?sid=22713357,
+CamTCCParis1525,UK,Cambridge,Trinity College,L.12.36,,,,"Michaelis Menoti Sermones Quadragesimales, Paris 1525",,,printed book,https://lib-cat.trin.cam.ac.uk/Record/9650055f-5fe9-4638-acc0-040172fa29a9/Permalink?sid=22713357,
 CamTCC1037,UK,Cambridge,Trinity College,O.1.13 (1037),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.1.13,https://mss-cat.trin.cam.ac.uk/Manuscript/O.1.13/UV
 CamTCC1041,UK,Cambridge,Trinity College,O.1.17 (1041),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.1.17,https://mss-cat.trin.cam.ac.uk/Manuscript/O.1.17/UV
 CamTCC1053,UK,Cambridge,Trinity College,O.1.29 (1053),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.1.29,https://mss-cat.trin.cam.ac.uk/Manuscript/O.1.29/UV
@@ -643,19 +643,19 @@ CamTCC1117,UK,Cambridge,Trinity College,O.2.13 (1117),,,,,,,,https://mss-cat.tri
 CamTCC1119,UK,Cambridge,Trinity College,O.2.15 (1119),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.15,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.15/UV
 CamTCC1120,UK,Cambridge,Trinity College,O.2.16 (1120),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.16,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.16/UV
 CamTCC1137,UK,Cambridge,Trinity College,O.2.33 (1137),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.33,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.33/UV
-CamTCC1144,UK,Cambridge,Trinity College,O.2.40 (1144),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.40,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.40/UV#?c=0&m=0&s=0&cv=0&r=0&xywh=-1658%2C-1%2C5553%2C2897
+CamTCC1144,UK,Cambridge,Trinity College,O.2.40 (1144),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.40,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.40/UV
 CamTCC1149,UK,Cambridge,Trinity College,O.2.45 (1149),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.45,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.45/UV
 CamTCC1109,UK,Cambridge,Trinity College,O.2.5 (1109),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.5,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.5/UV
-CamTCC1157,UK,Cambridge,Trinity College,O.2.53 (1157),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.53,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.53/UV#?c=0&m=0&s=0&cv=0&r=0&xywh=-1922%2C-155%2C5919%2C3087
+CamTCC1157,UK,Cambridge,Trinity College,O.2.53 (1157),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.53,https://mss-cat.trin.cam.ac.uk/Manuscript/O.2.53/UV
 CamTCC1184,UK,Cambridge,Trinity College,O.3.12 (1184),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.12,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.12/UV
 CamTCC1174,UK,Cambridge,Trinity College,O.3.2 (1174),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.2,
 CamTCC1209,UK,Cambridge,Trinity College,O.3.37 (1209),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.37,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.37/UV
-CamTCC1212,UK,Cambridge,Trinity College,O.3.40 (1212),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.40,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.40/UV#?c=0&m=0&s=0&cv=0
+CamTCC1212,UK,Cambridge,Trinity College,O.3.40 (1212),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.40,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.40/UV
 CamTCC1230,UK,Cambridge,Trinity College,O.3.58 (1230),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.58,https://mss-cat.trin.cam.ac.uk/Manuscript/O.3.58/UV
 CamTCC1269,UK,Cambridge,Trinity College,O.4.39 (1269),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.4.39,https://mss-cat.trin.cam.ac.uk/Manuscript/O.4.39/UV
 CamTCC1283,UK,Cambridge,Trinity College,O.5.2 (1283),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.2,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.2/UV
 CamTCC1312,UK,Cambridge,Trinity College,O.5.31 (1312),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.31,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.31/UV
-CamTCC1287,UK,Cambridge,Trinity College,O.5.6 (1287),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.6,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.6/UV#?c=0&m=0&s=0&cv=0&r=0&xywh=-3395%2C-271%2C10373%2C5411
+CamTCC1287,UK,Cambridge,Trinity College,O.5.6 (1287),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.6,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.6/UV
 CamTCC1289,UK,Cambridge,Trinity College,O.5.8 (1289),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.8,https://mss-cat.trin.cam.ac.uk/Manuscript/O.5.8/UV
 CamTCC1359,UK,Cambridge,Trinity College,O.7.31 (1359),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.7.31,https://mss-cat.trin.cam.ac.uk/Manuscript/O.7.31/UV
 CamTCC1413,UK,Cambridge,Trinity College,O.9.1 (1413),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/O.9.1,https://mss-cat.trin.cam.ac.uk/Manuscript/O.9.1/UV
@@ -673,16 +673,16 @@ CamTCC910,UK,Cambridge,Trinity College,R.14.38 (910),,,,,,,,https://mss-cat.trin
 CamTCC911,UK,Cambridge,Trinity College,R.14.39 (911),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.39,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.39/UV
 CamTCC913,UK,Cambridge,Trinity College,R.14.41 (913),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.41,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.41/UV
 CamTCC915,UK,Cambridge,Trinity College,R.14.44 (915),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.44,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.44/UV
-CamTCC916,UK,Cambridge,Trinity College,R.14.45 (916),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.45,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.45/UV#?c=0&m=0&s=0&cv=0
-CamTCC921,UK,Cambridge,Trinity College,R.14.51 (921),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.51,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.51/UV#?c=0&m=0&s=0&cv=0
+CamTCC916,UK,Cambridge,Trinity College,R.14.45 (916),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.45,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.45/UV
+CamTCC921,UK,Cambridge,Trinity College,R.14.51 (921),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.51,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.51/UV
 CamTCC925,UK,Cambridge,Trinity College,R.14.56 (925),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.56,https://mss-cat.trin.cam.ac.uk/Manuscript/R.14.56/UV
 CamTCC536,UK,Cambridge,Trinity College,R.2.36 (536),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.2.36,
 CamTCC559,UK,Cambridge,Trinity College,R.2.59 (559),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.2.59,
-CamTCCR264,UK,Cambridge,Trinity College,R.2.64,olim W. Aldis Wright; olim Le Neve (Norroy),,,,,,Not in James,https://mss-cat.trin.cam.ac.uk/Manuscript/R.2.64,https://mss-cat.trin.cam.ac.uk/Manuscript/R.2.64/UV#?c=0&m=0&s=0&cv=0&r=0
+CamTCCR264,UK,Cambridge,Trinity College,R.2.64,olim W. Aldis Wright,olim Le Neve (Norroy),,,,,Not in James,https://mss-cat.trin.cam.ac.uk/Manuscript/R.2.64,https://mss-cat.trin.cam.ac.uk/Manuscript/R.2.64/UV
 CamTCC593,UK,Cambridge,Trinity College,R.3.13 (593),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.13,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.13/UV
 CamTCC594,UK,Cambridge,Trinity College,R.3.14 (594),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.14,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.14/UV
 CamTCC595,UK,Cambridge,Trinity College,R.3.15 (595),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.15,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.15/UV
-CamTCC597,UK,Cambridge,Trinity College,R.3.17 (597),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.17,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.17/UV#?c=0&m=0&s=0&cv=0&r=0&xywh=-4893%2C0%2C13756%2C5394
+CamTCC597,UK,Cambridge,Trinity College,R.3.17 (597),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.17,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.17/UV
 CamTCC599,UK,Cambridge,Trinity College,R.3.19 (599),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.19,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.19/UV
 CamTCC581,UK,Cambridge,Trinity College,R.3.2 (581),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.2,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.2/UV
 CamTCC600,UK,Cambridge,Trinity College,R.3.20 (600),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.20,https://mss-cat.trin.cam.ac.uk/Manuscript/R.3.20/UV
@@ -697,9 +697,9 @@ CamTCC655,UK,Cambridge,Trinity College,R.4.26 (655),,,,,,,,https://mss-cat.trin.
 CamTCC731,UK,Cambridge,Trinity College,R.5.43 (731),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.5.43 ,https://mss-cat.trin.cam.ac.uk/Manuscript/R.5.43/UV
 CamTCC759,UK,Cambridge,Trinity College,R.7.23 (759),,,,,,,,https://mss-cat.trin.cam.ac.uk/Manuscript/R.7.23 ,https://mss-cat.trin.cam.ac.uk/Manuscript/R.7.23/UV
 CamTCCfrag,UK,Cambridge,Trinity College,uncatalogued,,,,binding fragments,,,,,
-CamTCCVI182,UK,Cambridge,Trinity College,VI.18.2,,,,Printed book (STC 6826),,,,https://mss-cat.trin.cam.ac.uk/Manuscript/B.11.1,
+CamTCCVI182,UK,Cambridge,Trinity College,VI.18.2,,,,STC 6826,,,printed book,https://mss-cat.trin.cam.ac.uk/Manuscript/B.11.1,
 CamTH16,UK,Cambridge,Trinity Hall,shelf no (16),,,,,,,,https://www.trinhall.cam.ac.uk/manuscripts/cibus-anime/,https://cudl.lib.cam.ac.uk/view/MS-TRINITYHALL-00016/1
-CULInc5J12,UK,Cambridge,University Library,Inc. 5. J. 1. 2. (3569),,,,Printed book (STC 17032a),,,,https://idiscover.lib.cam.ac.uk/permalink/44CAM_INST/c1j9q5/alma9948298293403606,
+CULInc5J12,UK,Cambridge,University Library,Inc. 5. J. 1. 2. (3569),,,,STC 17032a,,,printed book,https://idiscover.lib.cam.ac.uk/permalink/44CAM_INST/c1j9q5/alma9948298293403606,
 CantAdd46,UK,Canterbury,Canterbury Cathedral Library,Addit. 46,,,,,,,,,
 CantAdd68,UK,Canterbury,Canterbury Cathedral Library,Addit. 68,olim Ingilby,,,,,,,,
 CantLetters173,UK,Canterbury,Canterbury Cathedral Library,"CCA-DCc-ChCh Letterbook II, 173",,,,,,,,,
@@ -733,7 +733,7 @@ DurCathA425,UK,Durham,Durham Cathedral Library,A.IV.25,,,,,,,,https://reed.dur.a
 DurCathBI18,UK,Durham,Durham Cathedral Library,B.I.18,,,,,,,,https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s1f1881k965.xml,
 DurCathB334,UK,Durham,Durham Cathedral Library,B.III.34,,,,,,,,https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s1f1881k965.xml,
 DurCathB419,UK,Durham,Durham Cathedral Library,B.IV.19,,,,,,,,https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s1f1881k965.xml,
-DULBamSel13,UK,Durham,Durham University Library,Bamburgh Sel 13.,,,,"printed book; Higden's Polychronicon, trans. Trevisa, 1495",,,,,
+DULBamSel13,UK,Durham,Durham University Library,Bamburgh Sel 13,,,,"Higden's Polychronicon, trans. Trevisa, 1495",,,printed book,,
 DULCosVi12,UK,Durham,Durham University Library,Cosin V.i.12,,,,,,,,https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s1jd472w557.xml;query=cosin%20v.i.12#1,https://iiif.durham.ac.uk/index.html?manifest=t2msx61dn21d
 DULCosVi2,UK,Durham,Durham University Library,Cosin V.i.2,,,,,,,,https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s20g354f24z.xml;query=cosin%20v.i.2#1,
 DULCosVi9,UK,Durham,Durham University Library,Cosin V.i.9,,,,,,,,https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s20g354f23m.xml;query=cosin%20v.i.9#1,https://iiif.durham.ac.uk/index.html?manifest=t1mf1881m230
@@ -776,8 +776,8 @@ EDULaiv27,UK,Edinburgh,Edinburgh University Library,La.IV.27,,,,,,,,https://arch
 EDULaiv28,UK,Edinburgh,Edinburgh University Library,La.IV.28,,,,,,,,,
 NLS651,UK,Edinburgh,National Library of Scotland,651,olim Alexander Boswell,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/19042,
 NLS6128,UK,Edinburgh,National Library of Scotland,6128,,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/6197,
-Asloan,UK,Edinburgh,National Library of Scotland,16500,formerly Acc. 4233; Asloan MS,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/18684,https://digital.nls.uk/early-manuscripts/browse/archive/235163104#?c=0&m=0&s=0&cv=0
-ColumbaHse,UK,Edinburgh,National Library of Scotland,Acc. 10301/6,"Columba House, Scottish Catholic Archives, Fordun's Chronicles or Scotticronicon",,,,,On deposit at National Library of Scotland,,https://manuscripts.nls.uk/repositories/2/resources/870,
+Asloan,UK,Edinburgh,National Library of Scotland,16500,formerly Acc. 4233,,,Asloan MS,,,,https://manuscripts.nls.uk/repositories/2/resources/18684,https://digital.nls.uk/early-manuscripts/browse/archive/235163104#?c=0&m=0&s=0&cv=0
+ColumbaHse,UK,Edinburgh,Scottish Catholic Archives,,"Edinburgh, National Library of Scotland, Acc. 10301/6",,Fordun's Chronicles (Scotticronicon),,,Deposited at National Library of Scotland 1991-2005,idno SCA/MM/2/1 ? (https://archive.catholic-heritage.net/Record.aspx?src=CalmView.Catalog&id=SCA%2fMM%2f2%2f1&pos=3),https://manuscripts.nls.uk/repositories/2/resources/870,
 Banna,UK,Edinburgh,National Library of Scotland,Advocates 1.1.6,,,Bannatyne MS,,,,,https://manuscripts.nls.uk/repositories/2/resources/14976,https://digital.nls.uk/early-manuscripts/browse/archive/232641635#?c=0&m=0
 NLS17122,UK,Edinburgh,National Library of Scotland,Advocates 17.1.22,olim Phillipps 27369,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/19596,
 NLS1817,UK,Edinburgh,National Library of Scotland,Advocates 18.1.7,,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/19303,https://digital.nls.uk/early-manuscripts/browse/archive/219603956
@@ -801,25 +801,25 @@ NLS3473,UK,Edinburgh,National Library of Scotland,Advocates 34.7.3,,,,,,,,https:
 NLS3517,UK,Edinburgh,National Library of Scotland,Advocates 35.1.7,,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/16247,https://digital.nls.uk/early-manuscripts/browse/archive/217342500
 NLS72127,UK,Edinburgh,National Library of Scotland,Advocates 72.1.27,olim Lismore,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/21714,https://digital.nls.uk/gaelic-manuscripts-of-scotland/archive/75217197
 NLSb442,UK,Edinburgh,National Library of Scotland,b. 44. 2,,,,,,,old shelfmark?,,
-BlairsColl22,UK,Edinburgh,National Library of Scotland,Deposit 221/1,Blairs College 22,,Talbot Book of Hours,,,,,,
+BlairsColl22,UK,Edinburgh,Scottish Catholic Archives,,"olim Edinburgh, National Library of Scotland, Deposit 221/1",Blairs College 22,Talbot Book of Hours,,,,transferred to Scottish Catholic Archives on 9 August 2005,,
 BlairsColl13,UK,Edinburgh,National Library of Scotland,Deposit 221/9,Blairs College 13,,,,,,,,
 Stafford,UK,Edinburgh,National Library of Scotland,Deposit 313/3633,,,,medieval fragments,,deposited by Marquis of Stafford,,,
 Dunrobin,UK,Edinburgh,National Library of Scotland,Deposit 314/18,,,,Calendar of Fearn Abbey,,"deposited by Marquis of Sutherland, Dunrobin Castle",,,
 Abbotsford,UK,Edinburgh,National Library of Scotland,Deposit from Abbotsford,,,,,,,,,
-NLSGaelic37,UK,Edinburgh,National Library of Scotland,Gaelic 37,,,,,,,,,
+NLSGaelic37,UK,Edinburgh,National Library of Scotland,Adv.MS.72.1.37.,olim Gaelic 37,,,,,,,,
 NLSACC10225,UK,Edinburgh,National Library of Scotland,"Sutherland Estates Papers, Acc. 10225, Box I, File 4 (fragment)",,,,,,,,https://manuscripts.nls.uk/repositories/2/resources/1549,
 EDCPAN,UK,Edinburgh,"Royal College of Physicians, Edinburgh","Anonyma 2, Vol. V, Part II",,,,,,,,,
-EDCPCM,UK,Edinburgh,"Royal College of Physicians, Edinburgh","MS Cursor Mundi, Northern Homily Cycle",,,,,,,,http://archives.rcpe.ac.uk/calmView/Record.aspx?src=CalmView.Catalog&id=DEP%2fDRU%2f1&pos=2,
-EDCPRS,UK,Edinburgh,"Royal College of Physicians, Edinburgh",Ripley Scroll,,,,,,,,http://archives.rcpe.ac.uk/calmView/Record.aspx?src=CalmView.Catalog&id=DEP%2fERG%2f2&pos=3,
+EDCPCM,UK,Edinburgh,"Royal College of Physicians, Edinburgh",DEP/DRU/1,,,,"Cursor Mundi, Northern Homily Cycle",,,,http://archives.rcpe.ac.uk/calmView/Record.aspx?src=CalmView.Catalog&id=DEP%2fDRU%2f1&pos=2,
+EDCPRS,UK,Edinburgh,"Royal College of Physicians, Edinburgh",DEP/ERG/2,,,Ripley Scroll,,,,,http://archives.rcpe.ac.uk/calmView/Record.aspx?src=CalmView.Catalog&id=DEP%2fERG%2f2&pos=3,
 ESROGD112,UK,Edinburgh,Scottish Record Office,GD 112/71/9,,,,,,,,,
-ESROGD12,UK,Edinburgh,Scottish Record Office,GD 12,,,Breadalbane Papers,,,,,,
-ESROGD5,UK,Edinburgh,Scottish Record Office,GD 5/26/48,,,,,,"on deposit from Brechin Castle, Earl of Dalhousie",,https://catalogue.nrscotland.gov.uk/nrsonlinecatalogue/details.aspx?reference=GD5%2f26&st=1&tc=y&tl=n&tn=n&tp=n&k=gd5&ko=a&r=&ro=c&df=&dt=&di=y,
+ESROGD12,UK,Edinburgh,Scottish Record Office,GD 12,,,,Breadalbane Papers,,,"Scottish Record Office GD 12 is a collection rather than a ms, I can't tell where this item is in it",,
+ESROGD5,UK,Edinburgh,Scottish Record Office,GD 5/26/48,,,,,,"On deposit from Brechin Castle, Earl of Dalhousie",,https://catalogue.nrscotland.gov.uk/nrsonlinecatalogue/details.aspx?reference=GD5%2f26&st=1&tc=y&tl=n&tn=n&tp=n&k=gd5&ko=a&r=&ro=c&df=&dt=&di=y,
 ESRORH13,UK,Edinburgh,Scottish Record Office,RH 13/35,,,,,,,,https://catalogue.nrscotland.gov.uk/nrsonlinecatalogue/details.aspx?reference=RH13&st=1&tc=y&tl=n&tn=n&tp=n&k=rh13&ko=a&r=&ro=c&df=&dt=&di=y,
 ESROSC121,UK,Edinburgh,Scottish Record Office,SC/1/2/1,,,,,,,,https://catalogue.nrscotland.gov.uk/nrsonlinecatalogue/details.aspx?reference=SC1&st=1&tc=y&tl=n&tn=n&tp=n&k=sc1&ko=a&r=&ro=c&df=&dt=&di=y,
 EDSROGD112,UK,Edinburgh,Scottish Register House,MS GD 112/71/9,,,,,,,,,
 EDULaiii318,UK,Edinburgh,University Library,Laing II.318,,,,,,,,https://archives.collections.ed.ac.uk/repositories/2/archival_objects/4383,
 Weymyss,UK,"Edinburgh, Weymyss Castle",Lord Weymyss,Wyntoun's Chronicle,,,,,,,,,
-Ely,UK,Ely,Ely Cathedral,Ely Cathedral MS,,,,,,,,,
+Ely,UK,Ely,Ely Cathedral,Ely Cathedral MS,,,,,,,Untraced in on-line searches March 2026,,
 Eton34,UK,Eton,Eton College,34,,,,,,,,https://catalogue.etoncollege.com/B49983,
 Eton36,UK,Eton,Eton College,36,,,,,,,,https://catalogue.etoncollege.com/B49985,
 Eton98,UK,Eton,Eton College,98,,,,,,,,https://catalogue.etoncollege.com/B50022,
@@ -856,7 +856,7 @@ GULHun89,UK,Glasgow,Glasgow University Library,Hunterian 89 (T.4.6),,,,,,,,https
 Marchmont,UK,Glasgow,Mitchell Library,308876,olim Marchmount House,,,,,,,,
 GlouCath5,UK,Gloucester,Gloucester Cathedral Library,5,,,,,,,,,
 GlouCath36,UK,Gloucester,Gloucester Cathedral Library,36,,,,,,,,,
-GlouPLPynson,UK,Gloucester,Gloucester Public Library,,,,,"STC 12973.5. Dyuerse My[racles whi]che God hath shewed for the [Portion] of his precyous Blod in Hay[les], Pynson, ca. 1515",,deposit,,,
+GlouPLPynson,UK,Gloucester,Gloucester Public Library,,,,,"Dyuerse My[racles whi]che God hath shewed for the [Portion] of his precyous Blod in Hay[les], Pynson, ca. 1515 (STC 12973.5)",,On deposit,printed book,,
 Gorhambury,UK,"Gorhambury House, Hertfordshire",Earl of Verulam,Orosius manuscript,,,,,,,,,
 HatCFEPS1,UK,Hatfield House,Marquess of Salisbury,C.F. and E.P. Box S/1,,,,,,,,,
 HatCP270,UK,Hatfield House,Marquess of Salisbury,C.P. 270,,,,,,,,,
@@ -878,17 +878,17 @@ Holkham667,UK,Holkham Hall,Earl of Leicester,MS 667,,,,,,,,,
 Holkham668,UK,Holkham Hall,Earl of Leicester,MS 668,,,,,,,,,
 Holkham670,UK,Holkham Hall,Earl of Leicester,MS 670,,,,,,,,,
 Huddersfield,UK,Huddersfield,West Yorkshire Archive Service,DD/R/dd/V/30,,,Ramsden rental,,,,,,
-IpswichPL6,UK,Ipswich,Ipswich Public Library,6,,,,,,on deposit at Ipswich School,,,
-IpswichSRO,UK,Ipswich,Suffolk Record Office,"Ipswich Great Doomsday, Book VI",,,,,,,,https://www.suffolkarchives.co.uk/collections/getrecord/GB173_C_4_1_4,
+IpswichPL6,UK,Ipswich,Ipswich Public Library,6,,,,,,On deposit at Ipswich School,,,
+IpswichSRO,UK,Ipswich,Suffolk Record Office,C/4/1,,,,"Great Domesday Book of Ipswich, Liber Sextus",,,,https://www.suffolkarchives.co.uk/collections/getrecord/GB173_C_4_1_4,
 Kendal,UK,Kendal,Kendal Grammar School,,,,,"A. de Clavasio, Summa de casibus conscientiae, Nuremberg, 1498",,On deposit at Newcastle University Library,,,
 LeedsBro10,UK,Leeds,Leeds University Library,Brotherton 10,,,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/372692,https://explore.library.leeds.ac.uk/special-collections-explore/372692 
-LeedsBro15,UK,Leeds,Leeds University Library,Brotherton 15,olim Braddyll; olim Ingilby,,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/372697 ,https://explore.library.leeds.ac.uk/special-collections-explore/372697
+LeedsBro15,UK,Leeds,Leeds University Library,Brotherton 15,olim Braddyll,olim Ingilby,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/372697 ,https://explore.library.leeds.ac.uk/special-collections-explore/372697
 LeedsBro17,UK,Leeds,Leeds University Library,Brotherton 17,,,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/372698 ,https://explore.library.leeds.ac.uk/special-collections-explore/372698 
 LeedsBro18,UK,Leeds,Leeds University Library,Brotherton 18,,,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/372699 ,https://explore.library.leeds.ac.uk/special-collections-explore/372699
-LeedsBro500,UK,Leeds,Leeds University Library,Brotherton 500,"olim Harmsworth, olim Neale; Sotheby's Sale, 1920; Hope Allen Addit. MS. III",,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/118291 ,https://explore.library.leeds.ac.uk/special-collections-explore/118291
-LeedsBro501,UK,Leeds,Leeds University Library,Brotherton 501,"olim Horton Hold Hall, Maggs Bros. Sale Cat. No. 580, Item 450",,,,,,,https://explore.library.leeds.ac.uk/special-collections-explore/118292 ,https://explore.library.leeds.ac.uk/special-collections-explore/118292 
-LeedsRipon,UK,Leeds,Leeds University Library,Ripon Minster fragment 33,,,,,,on deposit from Ripon Minster,,,
-LeedsAppleby,UK,Leeds,Yorkshire Archaeological Society,DD 121/109,,,,,,on deposit from Appleby Castle,,https://explore.library.leeds.ac.uk/special-collections-explore/444474,
+LeedsBro500,UK,Leeds,Leeds University Library,Brotherton 500,olim Harmsworth,olim Neale,,,"Sotheby's Sale, 1920; Hope Allen Addit. MS. III",,,https://explore.library.leeds.ac.uk/special-collections-explore/118291 ,https://explore.library.leeds.ac.uk/special-collections-explore/118291
+LeedsBro501,UK,Leeds,Leeds University Library,Brotherton 501,olim Horton Hold Hall,,,,"Maggs Bros. Sale Cat. No. 580, Item 450",,,https://explore.library.leeds.ac.uk/special-collections-explore/118292 ,https://explore.library.leeds.ac.uk/special-collections-explore/118292 
+LeedsRipon,UK,Leeds,Leeds University Library,Ripon Minster fragment 33,,,,,,On deposit from Ripon Minster,,,
+LeedsAppleby,UK,Leeds,Yorkshire Archaeological Society,DD 121/109,,,,,,On deposit from Appleby Castle,,https://explore.library.leeds.ac.uk/special-collections-explore/444474,
 Leicester4,UK,Leicester,Leicestershire Record Office,6D32/2,"Formerly Old Town Hall Library, MS 4",,,,,,,,
 LeicesterBRII33,UK,Leicester,Leicestershire Record Office,BR II/3/3,Formerly Old Town Hall MS,,,,,,,,
 Lichfield5,UK,Lichfield,Lichfield Cathedral Library,5,,,,,,,,https://ehive.com/collections/201690/objects/1351938/documents-of-st-blaises-chantry-cantarium-scti-blasii,
@@ -914,8 +914,8 @@ Lincoln44,UK,Lincoln,Lincoln Cathedral Library,44 (A.2.13),,,,,,,,,
 Lincoln,UK,Lincoln,Lincoln Cathedral Library,,,,,,,Untraced,,,
 LincolnArchK1,UK,Lincoln,Lincolnshire Archives Office,"2, Tennyson d'Eyncourt K/1",,,,,,,,,
 LiverpoolCity,UK,Liverpool,Liverpool City Library,f909 HI,,,,,,,,,
-LiverpoolULF48,UK,Liverpool,Liverpool University Library,F.4.8,"olim Horton Hold Hall, olim Chaderton",,,,,,,https://libguides.liverpool.ac.uk/library/sca/LULMSF48,https://digitalheritagelab.liverpool.ac.uk/Documents/Detail/piers-plowman/80861
-LiverpoolULF49,UK,Liverpool,Liverpool University Library,F.4.9,"olim Harmsworth, olim Quaritch Sale Cat. 328, Item 577",,,,,,,https://libguides.liverpool.ac.uk/library/sca/LULMSF49,
+LiverpoolULF48,UK,Liverpool,Liverpool University Library,F.4.8,olim Horton Hold Hall,olim Chaderton,,,,,,https://libguides.liverpool.ac.uk/library/sca/LULMSF48,https://digitalheritagelab.liverpool.ac.uk/Documents/Detail/piers-plowman/80861
+LiverpoolULF49,UK,Liverpool,Liverpool University Library,F.4.9,olim Harmsworth,,,,"Quaritch Sale Cat. 328, Item 577",,,https://libguides.liverpool.ac.uk/library/sca/LULMSF49,
 LiverpoolULCath6,UK,Liverpool,"Liverpool University Library, Cathedral Library",6,,,,,,on deposit from Cathedral,,,
 LiverpoolCathRad16,UK,Liverpool,"Liverpool University Library, Cathedral Library",Radcliffe 16,,,,,,,,,
 BLAddCh5960,UK,London,British Library,Add. Charter 5960,,,,,,,,,
@@ -1204,7 +1204,7 @@ BLCottNeroCXII,UK,London,British Library,Cotton Nero C.XII,,,,,,,,,
 BLCottNeroDV,UK,London,British Library,Cotton Nero D.V,,,,,,,,,
 BLCottNeroDXI,UK,London,British Library,Cotton Nero D.XI,,,,,,,,,
 BLCottNeroEIII,UK,London,British Library,Cotton Nero E.III,,,,,,,,,
-BLCottOthoAXVIII,UK,London,British Library,Cotton Otho A.XVIII,,,,,,"MS destroyed by fire; transcribed by William Thomas, 1721.",,,
+BLCottOthoAXVIII,UK,London,British Library,Cotton Otho A.XVIII,,,,,,"Destroyed by fire; transcribed by William Thomas, 1721.",,,
 BLCottOthBV,UK,London,British Library,Cotton Otho B.V,,,,,,,,,
 BLCottOthCXIII,UK,London,British Library,Cotton Otho C.XIII,,,,,,,,,
 BLCottRollsII23,UK,London,British Library,Cotton Rolls II 23,,,,,,,,,
@@ -1265,8 +1265,8 @@ BLEge2726,UK,London,British Library,Egerton 2726,olim Haistwell,,,,,,,,
 BLEge2788,UK,London,British Library,Egerton 2788,,,,,,,,,
 BLEge2810,UK,London,British Library,Egerton 2810,olim Allan of Darlington,,,,,,,,
 BLEge2862,UK,London,British Library,Egerton 2862,"olim Sutherland, Trentham Hall",,,,,,,,
-BLEge2863,UK,London,British Library,Egerton 2863,"olim Norton, post Compton Hall",,,,,,,,
-BLEge2864,UK,London,British Library,Egerton 2864,"olim Ingilby, post Compton Hall",,,,,,,,
+BLEge2863,UK,London,British Library,Egerton 2863,olim Norton,olim Compton Hall,,,,,,,
+BLEge2864,UK,London,British Library,Egerton 2864,olim Ingilby,olim Compton Hall,,,,,,,
 BLEge2891,UK,London,British Library,Egerton 2891,,,,,,,,,
 BLEge3002,UK,London,British Library,Egerton 3002,,,,,,,,,
 BLEge3143,UK,London,British Library,Egerton 3143,olim Clumber,,,,,,,,
@@ -1565,13 +1565,13 @@ BLLan851,UK,London,British Library,Lansdowne 851,,,,,,,,,
 BLLan96,UK,London,British Library,Lansdowne 96,,,,,,,,,
 BLLoaPor29,UK,London,British Library,Loan 29/333 (Portland),,,,,,,,,
 BL1379a27,UK,London,British Library,Printed Book 1379.a2(7),,,,,,,,,
-BLC10b23,UK,London,British Library,Printed Book C.10.b.23,,,,Printed book (STC 4921),,,,,
-BLC10b5,UK,London,British Library,Printed Book C.10.b.5,,,,"IB.55041, IB.55040",,,,,
-BLC15C7,UK,London,British Library,Printed Book C.15.C.7,,,,STC 24877,,,,,
+BLC10b23,UK,London,British Library,Printed Book C.10.b.23,,,,STC 4921,,,Printed book,,
+BLC10b5,UK,London,British Library,Printed Book C.10.b.5,,,,"IB.55041, IB.55040",,,printed book,,
+BLC15C7,UK,London,British Library,Printed Book C.15.C.7,,,,STC 24877,,,printed book,,
 BLC21,UK,London,British Library,Printed Book C.21,,,,,,,,,
 BLC39b17,UK,London,British Library,Printed Book C.39.b.17,,,,,,,,,
-BLC39,UK,London,British Library,Printed Book C.39.e.1,,,,Printed book (STC 22593),,,,,
-BLHuth32,UK,London,British Library,Printed Book Huth 32,,,,Printed book (STC 106065),,,,,
+BLC39,UK,London,British Library,Printed Book C.39.e.1,,,,STC 22593,,,Printed book,,
+BLHuth32,UK,London,British Library,Printed Book Huth 32,,,,STC 106065,,,Printed book,,
 BLIA3420,UK,London,British Library,Printed Book IA.3420,,,,,,,,,
 BLIB49408,UK,London,British Library,Printed Book IB.49408 (Alliaco1480),,,,,,,,,
 BLRoy11Ciii,UK,London,British Library,Royal 11 C.III,,,,,,,,,
@@ -1782,7 +1782,7 @@ BLSto951,UK,London,British Library,Stowe 951,,,,,,,,,
 BLSto952,UK,London,British Library,Stowe 952,,,,,,,,,
 BLSto953,UK,London,British Library,Stowe 953,,,,,,,,,
 BLSto982,UK,London,British Library,Stowe 982,,,,,,,,,
-BLYT13,UK,London,British Library,Yates Thompson 13,olim Taymouth Hours; olim Ashburnham App. (?)230; olim Yates Thompson 57,,,,,,,,
+BLYT13,UK,London,British Library,Yates Thompson 13,olim Taymouth Hours,olim Ashburnham App. (?)230; olim Yates Thompson 57,,,,,,,
 BLYT47,UK,London,British Library,Yates Thompson 47,olim Mostyn Hall 84,,,,,,,,
 CollArmsAr58,UK,London,College of Arms,58,olim Arundel 58,,,,,,,,
 CollArms2M16,UK,London,College of Arms,2.M.16,,,,,,,,,
@@ -1861,7 +1861,7 @@ Lam783,UK,London,Lambeth Palace Library,783,,,,,,,,,
 Lam853,UK,London,Lambeth Palace Library,853,,,,,,,,,
 Lam878,UK,London,Lambeth Palace Library,878,,,,,,,,,
 Lam935,UK,London,Lambeth Palace Library,935,,,,,,,,,
-Lam3597,UK,London,Lambeth Palace Library,3597,"olim Coughton Court, sold Christie's, 20 Dec. 1972",,,,,,,,
+Lam3597,UK,London,Lambeth Palace Library,3597,olim Coughton Court,,,,"sold Christie's, 20 Dec. 1972",,,,
 LamCarew617,UK,London,Lambeth Palace Library,Carew 617,,,,,,,,,
 LamCarew623,UK,London,Lambeth Palace Library,Carew 623,,,Book of Howth,,,,,,
 SionArcL402E25,UK,London,Lambeth Palace Library,Sion College Arc. L.40.2/E.25,,,,,,,,,
@@ -1869,7 +1869,7 @@ SionArcL402E44,UK,London,Lambeth Palace Library,Sion College Arc. L.40.2/E.44,,,
 LawSoc2,UK,London,Law Society,2 (107e),,,,,,,,,
 LincInnH135,UK,London,Lincoln's Inn,Hale 135,,,,,,,,,
 LincInnH150,UK,London,Lincoln's Inn,Hale 150,,,,,,,,,
-LincInnH186,UK,London,Lincoln's Inn,Hale 186,Catalogue number XL,,,,,,,,
+LincInnH186,UK,London,Lincoln's Inn,Hale 186,,,,,,Catalogue number XL,,,
 LincInnH74,UK,London,Lincoln's Inn,Hale 74,,,,,,,,,
 LincInnH84,UK,London,Lincoln's Inn,Hale 84,,,,,,,,,
 LincInnH90,UK,London,Lincoln's Inn,Hale 90,,,,,,,,,
@@ -1877,14 +1877,14 @@ LincInnMisc2,UK,London,Lincoln's Inn,Misc. 2,"formerly Class V, 46; or Misc. 46"
 GuildhallLegibus,UK,London,London Metropolitan Archives [formerly Corporation of London Records Office; prev. Guildhall],Liber de antiquis legibus,,,,,,,,,
 PROLancA23,UK,London,"London, Public Record Office",Duchy of Lancaster Records A.23,,,,,,,,,
 MercersWhit,UK,London,Mercer's Company Archives,Ordinances for Richard Whittington's Almshouse,,,,,,,,,
-QuaritchHop,UK,London,Quaritch,,"olim Hopton Hall, Sotheby's, Dec. 1989",,,,,,,,
+QuaritchHop,UK,London,Quaritch,,olim Hopton Hall,,,,"Sotheby's, Dec. 1989",,,,
 LonPhys388,UK,London,Royal College of Physicians,388 (13),,,,,,,,,
 SocAnt101,UK,London,Society of Antiquaries,101,,,,,,,,,
 SocAnt134,UK,London,Society of Antiquaries,134,,,,,,,,,
 SocAnt252,UK,London,Society of Antiquaries,252,,,,,,,,,
 SocAnt288,UK,London,Society of Antiquaries,288,,,,,,,,,
-SocAnt687,UK,London,Society of Antiquaries,687,"olim Bright, Sotheby's Sale, 1924, Lot 378; Hope Allen Addit. MS. VI",,,,,,,,
-StPauls47G3,UK,London,St Paul's Cathedral Library,CSE0706.01,formerly 47.G.3,,,printed book,,,,,
+SocAnt687,UK,London,Society of Antiquaries,687,olim Bright,,,,"Sotheby's Sale, 1924, Lot 378; Hope Allen Addit. MS. VI",,,,
+StPauls47G3,UK,London,St Paul's Cathedral Library,CSE0706.01,formerly 47.G.3,,,,,,printed book,,
 StPauls9Dxix,UK,London,St Paul's Cathedral Library,MS 8,formerly 9.D.xix,,,,,,,,
 LonUnivColl,UK,London,"University College, London",Fragment Angl.1,olim Phillipps 22914,,,,,,,,
 UnivLon278,UK,London,University of London,MS 278,olim Mostyn Hall 259,,,,,,,,
@@ -1904,14 +1904,14 @@ Wellcome71,UK,London,Wellcome Collection Library,71,,,,,,,,,
 Wellcome225,UK,London,Wellcome Collection Library,225,,,,,,,,,https://wellcomecollection.org/search/works?query=MS.225
 Wellcome404,UK,London,Wellcome Collection Library,404,,,,,,,,,
 Wellcome405,UK,London,Wellcome Collection Library,405,,,,,,,,,
-Wellcome406,UK,London,Wellcome Collection Library,406,"olim Loscombe, olim Ashburnham 122",,,,,,,,https://wellcomecollection.org/search/works?query=MS.406
+Wellcome406,UK,London,Wellcome Collection Library,406,olim Loscombe,olim Ashburnham 122,,,,,,,https://wellcomecollection.org/search/works?query=MS.406
 Wellcome411,UK,London,Wellcome Collection Library,411,,,,,,,,,
 Wellcome519,UK,London,Wellcome Collection Library,519,,,,,,,,,
 Wellcome542,UK,London,Wellcome Collection Library,542,olim Payne,,,,,,,,https://wellcomecollection.org/search/works?query=MS.542
 Wellcome577,UK,London,Wellcome Collection Library,577,,,,,,,,,
 Wellcome580,UK,London,Wellcome Collection Library,580,,,,,,,,,
 Wellcome632,UK,London,Wellcome Collection Library,632,olim Pullen,,,,,,,,
-Wellcome673,UK,London,Wellcome Collection Library,673,olim Phillipps 18134; Quaritch Sale. Cat. 164,,,,,,,,
+Wellcome673,UK,London,Wellcome Collection Library,673,olim Phillipps 18134,,,,Quaritch Sale. Cat. 164,,,,
 Wellcome692,UK,London,Wellcome Collection Library,692,,,,,,,,,https://wellcomecollection.org/works/b38k86ch
 Wellcome693,UK,London,Wellcome Collection Library,693,,,,,,,,,https://wellcomecollection.org/works/m4h6yewy
 Wellcome5650,UK,London,Wellcome Collection Library,5650,,,,,,,,,https://wellcomecollection.org/search/works?query=MS.5650
@@ -1973,8 +1973,8 @@ BLAshb27,UK,Manchester,John Rylands Library,Eng 86,olim Ashburnham 27,,,,,,,,
 RylandsEng1,UK,Manchester,John Rylands Library,Eng. 1,olim Osterley Park,,,,,,,,
 RylandsEng113,UK,Manchester,John Rylands Library,Eng. 113,olim Hodson 39,,,,,,,,
 RylandsEng2,UK,Manchester,John Rylands Library,Eng. 2,olim Osterley Park,,,,,,,,
-RylandsEng50,UK,Manchester,John Rylands Library,Eng. 50,MS 45388,"olim Quaritch Sale Cat. 328, Item 584",,,,,,,
-RylandsEng51,UK,Manchester,John Rylands Library,Eng. 51,"olim Quaritch Sale Cat. 344, Item 28",,,,,,,,
+RylandsEng50,UK,Manchester,John Rylands Library,Eng. 50,MS 45388,,,,"Quaritch Sale Cat. 328, Item 584",,,,
+RylandsEng51,UK,Manchester,John Rylands Library,Eng. 51,,,,,"Quaritch Sale Cat. 344, Item 28",,,,
 RylandsEng63,UK,Manchester,John Rylands Library,Eng. 63,,,Oxford Fragments,,,,,,
 RylandsEng82,UK,Manchester,John Rylands Library,Eng. 82,,,,,,,,,
 RylandsEng90,UK,Manchester,John Rylands Library,Eng. 90,olim Ashburnham App. 243; Corser,,,,,,,,
@@ -2001,7 +2001,7 @@ FinchHatton323,UK,Northampton,Record Office,Finch Hatton MS 323,,,,,,,,,
 NorfRO17b,UK,Norwich,Norfolk Record Office,"Case 17, shelf b",,,,,,,,,
 NorfRO21f,UK,Norwich,Norfolk Record Office,"Case 21, shelf f, no. 68",,,,,,,,,
 Norwich158926,UK,Norwich,Norwich Castle Museum,158.926 (4g-5),olim St Peter Hungate Museum 48 158.926,,,,,,,,
-NottsULMeLm1,UK,Nottingham,Nottingham University Library,Mellish Lm 1,olim Mellish; olim Hodsock Priory nr Worksop,,,,,,,,
+NottsULMeLm1,UK,Nottingham,Nottingham University Library,Mellish Lm 1,olim Mellish,olim Hodsock Priory nr Worksop,,,,,,,
 NottsULMiDc7,UK,Nottingham,Nottingham University Library,Middleton Dc 7,"olim Wollaton Hall, Register of Abbey of Burton-on-Trent",,,,,,,,
 NottsULMiLm7,UK,Nottingham,Nottingham University Library,Middleton Lm 7/1,olim Wollaton Hall,,,,,,,,
 NottsULMiLm8,UK,Nottingham,Nottingham University Library,Middleton Lm 8,olim Wollaton Hall,,,,,,,,
@@ -2027,7 +2027,7 @@ OxfBal353,UK,Oxford,Balliol College,353,,,,,,,,,
 OxfBal354,UK,Oxford,Balliol College,354,,,,,,,,,http://image.ox.ac.uk/show?collection=balliol&manuscript=ms354
 OxfBal316A,UK,Oxford,Balliol College,316A,,,,,,,,,
 OxfBal316B,UK,Oxford,Balliol College,316B,,,,,,,,,
-OxBal695h6,UK,Oxford,Balliol College,695 h 6,Formerly 575.g.6,,,printed book,,,,,
+OxBal695h6,UK,Oxford,Balliol College,695 h 6,Formerly 575.g.6,,,,,,printed book,,
 Bod80G40Med,UK,Oxford,Bodleian Library,80.G.40.Med,,,,,,now with Eng. poet. e.94,,,
 BodAddA106,UK,Oxford,Bodleian Library,Addit. A.106,SC 29003,,,,,,,,
 BodAddA11,UK,Oxford,Bodleian Library,Addit. A.11,SC 28746,,,,,,,,
@@ -2044,7 +2044,7 @@ BodAddC38,UK,Oxford,Bodleian Library,Addit. C.38,SC 30236,,,,,,,,
 BodAddE4,UK,Oxford,Bodleian Library,Addit. E.4,SC 29110,,,,,,,,
 BodAddE6,UK,Oxford,Bodleian Library,Addit. E.6,SC 30314,,,,,,,,
 BodAddE7,UK,Oxford,Bodleian Library,Addit. E.7,SC 29284,,,,,,,,
-BodArchDd1,UK,Oxford,Bodleian Library,Arch. Dd.1,SC 31502,,,photographic facsimile (1893) of,,,,,
+BodArchDd1,UK,Oxford,Bodleian Library,Arch. Dd.1,SC 31502,,,"photographic facsimile (1893) of <mss key=""BodDHumd2""/>",,,,,
 BodArchGe35,UK,Oxford,Bodleian Library,Arch. G.e 35,,,,,,,,,
 BodArchGg39,UK,Oxford,Bodleian Library,Arch. Gg.39,Gough Missale 173,,,,,,,,
 BodArcSelB10,UK,Oxford,Bodleian Library,Arch. Selden B. 10,SC 3356,,,,,,,,
@@ -2141,7 +2141,7 @@ BodAsh970,UK,Oxford,Bodleian Library,Ashmole 970,SC 6616,,,,,,,,
 BodAshRol21,UK,Oxford,Bodleian Library,Ashmole Rolls 21,SC 7081,,,,,,,,
 BodAshRol40,UK,Oxford,Bodleian Library,Ashmole Rolls 40,SC 8447,,,,,,,,
 BodAshRol52,UK,Oxford,Bodleian Library,Ashmole Rolls 52,SC 7662,,,,,,,,
-BodAuct7Q221,UK,Oxford,Bodleian Library,Auct. 7.Q.2.21,,,,printed book,,,,,
+BodAuct7Q221,UK,Oxford,Bodleian Library,Auct. 7.Q.2.21,,,,,,,printed book,,
 BodAuctF516,UK,Oxford,Bodleian Library,Auct. F. 5.16,SC 2581,,,,,,,,
 BodBar20,UK,Oxford,Bodleian Library,Barlow 20,SC 6420,,,,,,,,https://digital.bodleian.ox.ac.uk/inquire/p/2476f906-e65d-4a49-8e8c-9a668511d946
 BodBar24,UK,Oxford,Bodleian Library,Barlow 24,SC 6470,,,,,,,,
@@ -2150,7 +2150,7 @@ BodLatLitE10,UK,Oxford,Bodleian Library,Bodl. Lat. liturg. e.10,SC 32942,,,,,,,,
 BodLatLitE17,UK,Oxford,Bodleian Library,Bodl. Lat. liturg. e.17,,,,,,,,,
 BodLatLitE47,UK,Oxford,Bodleian Library,Bodl. Lat. liturg. e.47,,,,,,,,,
 BodLatLitG1,UK,Oxford,Bodleian Library,Bodl. Lat. liturg. g.1,SC 31379,,,,,,,,
-BodLatLitG8,UK,Oxford,Bodleian Library,Bodl. Lat. liturg. g.8,"olim Brough Hall, Wymundham Abbey Psalter",,,,,,,,
+BodLatLitG8,UK,Oxford,Bodleian Library,Bodl. Lat. liturg. g.8,olim Brough Hall,,Wymundham Abbey Psalter,,,,,,
 Bod100,UK,Oxford,Bodleian Library,Bodley 100,SC 1947,,,,,,,,
 Bod110,UK,Oxford,Bodleian Library,Bodley 110,SC 1963,,,,,,,,
 Bod120,UK,Oxford,Bodleian Library,Bodley 120,SC 27643,,,,,,,,
@@ -2210,7 +2210,7 @@ Bod693,UK,Oxford,Bodleian Library,Bodley 693,SC 2875,,,,,,,,
 Bod75,UK,Oxford,Bodleian Library,Bodley 75,SC 2253,,,,,,,,
 Bod754,UK,Oxford,Bodleian Library,Bodley 754,SC 27653,,,,,,,,
 Bod758,UK,Oxford,Bodleian Library,Bodley 758,SC 2670,,,,,,,,
-Bod77,UK,Oxford,Bodleian Library,Bodley 77,SC,,,,,,,,
+Bod77,UK,Oxford,Bodleian Library,Bodley 77,,,,,,,,,
 Bod770,UK,Oxford,Bodleian Library,Bodley 770,SC 2552,,,,,,,,
 Bod776,UK,Oxford,Bodleian Library,Bodley 776,SC 2559,,,,,,,,
 Bod779,UK,Oxford,Bodleian Library,Bodley 779,SC 2567,,,,,,,,
@@ -2227,7 +2227,7 @@ Bod850,UK,Oxford,Bodleian Library,Bodley 850,SC 2604,,,,,,,,
 Bod851,UK,Oxford,Bodleian Library,Bodley 851,SC 3041,,,,,,,,
 Bod857,UK,Oxford,Bodleian Library,Bodley 857,SC 2760,,,,,,,,
 Bod859,UK,Oxford,Bodleian Library,Bodley 859,SC 2722,,,,,,,,
-Bod88,UK,Oxford,Bodleian Library,Bodley 88,SC 1873,,,printed book,,,,,
+Bod88,UK,Oxford,Bodleian Library,Bodley 88,SC 1873,,,,,,printed book,,
 Bod89,UK,Oxford,Bodleian Library,Bodley 89,SC 1886,,,,,,,,
 Bod9,UK,Oxford,Bodleian Library,Bodley 9,SC 1851,,,,,,,,
 Bod902,UK,Oxford,Bodleian Library,Bodley 902,SC 27573,,,,,,,,
@@ -2281,7 +2281,7 @@ BodDod55,UK,Oxford,Bodleian Library,Dodsworth 55,SC 4197,,,,,,,,
 BodDod95,UK,Oxford,Bodleian Library,Dodsworth 95,SC 5036,,,,,,,,
 BodDonC13,UK,Oxford,Bodleian Library,Don. C.13,,,,,,,,,
 BodDond206,UK,Oxford,Bodleian Library,Don. d. 206,,,,,,,,,
-BodDonE120,UK,Oxford,Bodleian Library,Don. e.120,"olim Littledale, olim Pudsey",,,,,,,,
+BodDonE120,UK,Oxford,Bodleian Library,Don. e.120,olim Littledale,olim Pudsey,,,,,,,
 BodDou1,UK,Oxford,Bodleian Library,Douce 1,SC 21575,,,,,,,,
 BodDou100,UK,Oxford,Bodleian Library,Douce 100,SC 21674,,,,,,,,
 BodDou103,UK,Oxford,Bodleian Library,Douce 103,SC 21677,,,,,,,,
@@ -2336,13 +2336,13 @@ BodDou84,UK,Oxford,Bodleian Library,Douce 84,SC 21658,,,,,,,,
 BodDou88,UK,Oxford,Bodleian Library,Douce 88,SC 21662,,,,,,,,
 BodDou95,UK,Oxford,Bodleian Library,Douce 95,SC 21669,,,,,,,,
 BodDou98,UK,Oxford,Bodleian Library,Douce 98,SC 21672,,,,,,,,
-BodDouA314,UK,Oxford,Bodleian Library,Douce A.314,,,,printed book: Arnolds Chronicle,,,,,
+BodDouA314,UK,Oxford,Bodleian Library,Douce A.314,,,,Arnolds Chronicle,,,printed book,,
 BodDouAdd137,UK,Oxford,Bodleian Library,Douce Addit. 137,,,,,,,,,
 BodDoud4,UK,Oxford,Bodleian Library,Douce d.4,SC 21981,,,,,,,,https://digital.bodleian.ox.ac.uk/inquire/p/fffd2407-0212-4da7-8ec0-d402feb5bf48
-BodDoufrD48,UK,Oxford,Bodleian Library,Douce fragments D.48,,,,"printed book; ?Copland, c. 1500",,,,,
-BodDoufrE20,UK,Oxford,Bodleian Library,Douce fragments E.20,,,,printed book,,,,,
-BodDoufrE40,UK,Oxford,Bodleian Library,Douce fragments E.40,,,,printed book,,,,,
-BodDoufrF48,UK,Oxford,Bodleian Library,Douce fragments F.48,,,,printed book,,,,,
+BodDoufrD48,UK,Oxford,Bodleian Library,Douce fragments D.48,,,,,,,"printed book; ?Copland, c. 1500",,
+BodDoufrE20,UK,Oxford,Bodleian Library,Douce fragments E.20,,,,,,,printed book,,
+BodDoufrE40,UK,Oxford,Bodleian Library,Douce fragments E.40,,,,,,,printed book,,
+BodDoufrF48,UK,Oxford,Bodleian Library,Douce fragments F.48,,,,,,,printed book,,
 BodDoug2,UK,Oxford,Bodleian Library,Douce g.2,SC 22005,,,,,,,,
 BodDugd45,UK,Oxford,Bodleian Library,Dugdale 45,SC 6533,,,,,,,,
 BodDHumd2,UK,Oxford,Bodleian Library,Duke Humfrey d.2,olim Earl Fitzwilliam,,,,,,,,
@@ -2440,7 +2440,7 @@ BodJunius1,UK,Oxford,Bodleian Library,Junius 1,SC 5113,,,,,,,,https://digital.bo
 BodJunius56,UK,Oxford,Bodleian Library,Junius 56,SC 5167*,,,,,,,,
 BodKentCh233,UK,Oxford,Bodleian Library,Kent Charter 233,,,,,,,,,
 BodLatLitb14,UK,Oxford,Bodleian Library,Lat. liturg. b.14,,,,,,,,,
-BodLatMisB17,UK,Oxford,Bodleian Library,Lat. misc. b.17,"olim Robartes, no. 152",,,two leaves,,,,,
+BodLatMisB17,UK,Oxford,Bodleian Library,Lat. misc. b.17,"olim Robartes, no. 152",,,,,,two leaves,,
 BodLatMisC66,UK,Oxford,Bodleian Library,Lat. misc. c.66,olim Capesthorne,,,,,,,,
 BodLatMisE22,UK,Oxford,Bodleian Library,Lat. misc. e.22(R),SC 30586,,,,,,,,
 BodLatMisE85,UK,Oxford,Bodleian Library,Lat. misc. e.85,,,,,,,,,
@@ -2500,15 +2500,15 @@ BodLauMis77,UK,Oxford,Bodleian Library,Laud misc. 77,SC 997,,,,,,,,
 BodLauMis99,UK,Oxford,Bodleian Library,Laud misc. 99,SC 1123,,,,,,,,
 BodLiturg104,UK,Oxford,Bodleian Library,Liturg. 104,SC 30605,,,,,,,,
 BodLye16,UK,Oxford,Bodleian Library,Lyell 16,,,,,,,,,
-BodLye24,UK,Oxford,Bodleian Library,Lyell 24,"olim Quaritch Cat. Illuminated MSS, 1931, no. 66",,,,,,,,
+BodLye24,UK,Oxford,Bodleian Library,Lyell 24,,,,,"Quaritch Cat. Illuminated MSS, 1931, no. 66",,,,
 BodLye28,UK,Oxford,Bodleian Library,Lyell 28,,,,,,,,,
 BodLye30,UK,Oxford,Bodleian Library,Lyell 30,,,,,,,,,
 BodLye31,UK,Oxford,Bodleian Library,Lyell 31,,,,,,,,,
 BodLye34,UK,Oxford,Bodleian Library,Lyell 34,olim John Speed Davies,,,,,,,,
 BodLye35,UK,Oxford,Bodleian Library,Lyell 35,,,,,,,,,
-BodLyeEmp6,UK,Oxford,Bodleian Library,Lyell Empt. 6,"olim Strong, olim Phillipps 2734, Robinson Sale Cat. No. 50, Item l0; Robinson Sale Cat. 62, Item 125",,,,,,,,
+BodLyeEmp6,UK,Oxford,Bodleian Library,Lyell Empt. 6,olim Strong,olim Phillipps 2734,,,"Robinson Sale Cat. No. 50, Item l0; Robinson Sale Cat. 62, Item 125",,,,
 BodMal4,UK,Oxford,Bodleian Library,Malone 4,SC 20552,,,,,,,,
-BodMal941,UK,Oxford,Bodleian Library,Malone 941,,,,printed book; Launfal fragments,,,,,
+BodMal941,UK,Oxford,Bodleian Library,Malone 941,,,,Launfal fragments,,,printed book,,
 BodNorthC80,UK,Oxford,Bodleian Library,North C.80,,,,,,,,,
 BodRaw4,UK,Oxford,Bodleian Library,Rawlinson 4to 598 (10),,,,,,,,,
 BodRawA273,UK,Oxford,Bodleian Library,Rawlinson A.273,SC 11159,,,,,,,,
@@ -2521,7 +2521,7 @@ BodRawB171,UK,Oxford,Bodleian Library,Rawlinson B.171,SC 11539,,,,,,,,
 BodRawB187,UK,Oxford,Bodleian Library,Rawlinson B.187,SC 11548,,,,,,,,
 BodRawB190,UK,Oxford,Bodleian Library,Rawlinson B.190,SC 15500,,,,,,,,
 BodRawB196,UK,Oxford,Bodleian Library,Rawlinson B.196,SC 11556,,,,,,,,
-BodRawB205,UK,Oxford,Bodleian Library,Rawlinson B.205 (15506),,,,,,,,,
+BodRawB205,UK,Oxford,Bodleian Library,Rawlinson B.205,SC 15506,,,,,,,,
 BodRawB214,UK,Oxford,Bodleian Library,Rawlinson B.214,SC 11566,,,,,,,,
 BodRawB216,UK,Oxford,Bodleian Library,Rawlinson B.216,SC 11568,,,,,,,,
 BodRawB252,UK,Oxford,Bodleian Library,Rawlinson B.252,SC 11598,,,,,,,,
@@ -2609,7 +2609,7 @@ BodRawPoe35,UK,Oxford,Bodleian Library,Rawlinson poet. 35,SC 14529,,,,,,,,
 BodRawPoe36,UK,Oxford,Bodleian Library,Rawlinson poet. 36,SC 14530,,,,,,,,
 BodRawPoe38,UK,Oxford,Bodleian Library,Rawlinson poet. 38,SC 15563,,,,,,,,
 BodRawQb4,UK,Oxford,Bodleian Library,Rawlinson Q.b.4,SC 16032,,,,,,,,
-BodSelSup102,UK,Oxford,Bodleian Library,Selden Supra 102,SC 3490b,"Ker Pastedowns 1744, Lewis & McIntosh MV84",,,,,,,
+BodSelSup102,UK,Oxford,Bodleian Library,Selden Supra 102,SC 3490b,,,,,,"Ker Pastedowns 1744, Lewis & McIntosh MV84",,
 BodSelSup23,UK,Oxford,Bodleian Library,Selden Supra 23,SC 3411,,,,,,,,
 BodSelSup52,UK,Oxford,Bodleian Library,Selden Supra 52,SC 3440,,,,,,,,
 BodSelSup53,UK,Oxford,Bodleian Library,Selden Supra 53,SC 3441,,,,,,,,
@@ -2621,7 +2621,7 @@ BodTan11,UK,Oxford,Bodleian Library,Tanner 11,,,,,,,,,
 BodTan110,UK,Oxford,Bodleian Library,Tanner 110,SC 9936,,,,,,,,
 BodTan169,UK,Oxford,Bodleian Library,Tanner 169*,SC 9995,,,,,,,,
 BodTan17,UK,Oxford,Bodleian Library,Tanner 17,SC 9837,,,,,,,,
-BodTan178,UK,Oxford,Bodleian Library,Tanner 178,,,,Printed book (STC 5572),,,,,
+BodTan178,UK,Oxford,Bodleian Library,Tanner 178,,,,STC 5572,,,printed book,,
 BodTan196,UK,Oxford,Bodleian Library,Tanner 196,SC 10022,,,,,,,,
 BodTan201,UK,Oxford,Bodleian Library,Tanner 201,SC 10027,,,,,,,,
 BodTan346,UK,Oxford,Bodleian Library,Tanner 346,SC 10173,,,,,,,,
@@ -2629,8 +2629,8 @@ BodTan347,UK,Oxford,Bodleian Library,Tanner 347,SC 10174,,,,,,,,
 BodTan383,UK,Oxford,Bodleian Library,Tanner 383,SC 10210,,,,,,,,
 BodTan407,UK,Oxford,Bodleian Library,Tanner 407,SC 10234,,,,,,,,
 BodTan88,UK,Oxford,Bodleian Library,Tanner 88,SC 9914,,,,,,,,
-BodVetElc65,UK,Oxford,Bodleian Library,Vet. El. c.65,"Bede, Tomus Tercius, 1521",,,,,,,,
-BodWood396,UK,Oxford,Bodleian Library,Wood 396,,,,"printed book; Henricus Loritus Glareanus [Basel, 1547]",,,,,
+BodVetElc65,UK,Oxford,Bodleian Library,Vet. El. c.65,,,,"Bede, Tomus Tercius, 1521",,,,,
+BodWood396,UK,Oxford,Bodleian Library,Wood 396,,,,"Henricus Loritus Glareanus (Basel, 1547)",,,printed book,,
 BodWoodB15,UK,Oxford,Bodleian Library,Wood B.15,SC 8586,,,,,,,,
 BodWoodD18,UK,Oxford,Bodleian Library,Wood D.18,,,,,,,,,
 BodWoodD8,UK,Oxford,Bodleian Library,Wood D.8,,,,,,,,,
@@ -2665,10 +2665,10 @@ OxfCCC261,UK,Oxford,Corpus Christi College,261,,,,,,,,,
 OxfCCC274,UK,Oxford,Corpus Christi College,274,,,,,,,,,
 OxfCCC431,UK,Oxford,Corpus Christi College,431,,,,,,,,,
 OxfCCC491,UK,Oxford,Corpus Christi College,491,,,,,,,,,
-OxfCCCGlanv,UK,Oxford,Corpus Christi College,,,,,STC 1536,,,,,
+OxfCCCGlanv,UK,Oxford,Corpus Christi College,,,,,STC 1536,,,printed book,,
 OxfExe47,UK,Oxford,Exeter College,47,,,,,,,,,
 OxfExe129,UK,Oxford,Exeter College,129,,,,,,,,,
-ExeterSammelband,UK,Oxford,Exeter College,9.M.4815,,,,A sammelband,,,,,
+ExeterSammelband,UK,Oxford,Exeter College,9.M.4815,,,,Sammelband,,,,,
 OxfJesus29,UK,Oxford,Jesus College,29,,,,,,,,,
 OxfJesus39,UK,Oxford,Jesus College,39,,,,,,,,,
 OxfKeble47,UK,Oxford,Keble College,47,olim Brooke Horae,,,,,,,,
@@ -2693,7 +2693,7 @@ OxfMagd93,UK,Oxford,Magdalen College,Lat. 93,,,,,,,,,
 OxfMagdMolton,UK,Oxford,Magdalen College,Multon Hall Deeds 39a,,,,,,,,,
 OxfMagdStPet,UK,Oxford,Magdalen College,St Peter-in-the-East 18.e,,,,,,,,,
 OxfMert321,UK,Oxford,Merton College,321,,,,,,,,,
-OxfMert23b6,UK,Oxford,Merton College,23.b.6,Ker Pastedowns 919,,,,,,,,
+OxfMert23b6,UK,Oxford,Merton College,23.b.6,,,,,,,Ker Pastedowns 919,,
 OxfMert120,UK,Oxford,Merton College,Lat. 120,,,,,,,,,
 OxfMert204,UK,Oxford,Merton College,Lat. 204,,,,,,,,,
 OxfMert248,UK,Oxford,Merton College,Lat. 248,,,,,,,,,
@@ -2770,7 +2770,7 @@ ShrewsS3,UK,Shrewsbury,Shrewsbury School,3,,,,,,,,,
 ShrewsS6,UK,Shrewsbury,Shrewsbury School,6,,,,,,,,,
 ShrewsSConf,UK,Shrewsbury,Shrewsbury School,Confessio Amantis frag.,,,,,,,,,
 ShrewsLib16329,UK,Shrewsbury,"Shropshire Libraries, Local Studies Dept.",Deeds No. 16329,olim Lilleshall Abbey,,,Rental roll,,,,,
-ShrewsRO3232,UK,Shrewsbury,Shropshire Record Office,3232/3,,,,"a land grant, on deposit from Whitchurch Free Library",,,,,
+ShrewsRO3232,UK,Shrewsbury,Shropshire Record Office,3232/3,,,,Land grant,,on deposit from Whitchurch Free Library,,,
 SomersetDDS,UK,Somerset,Somerset Heritage Centre,MS DD/SF/18/2/3,,,,,,,,,
 SouthCL1597,UK,Southampton,Southampton Central Library/City Record Office,SC15/97,,,,,,,,,
 Southwell7,UK,Southwell,Southwell Cathedral Library,7,,,,,,,,,
@@ -2790,12 +2790,12 @@ Stonyh64,UK,Stonyhurst,Stonyhurst College,64,,,,,,,,,
 Stonyh30,UK,Stonyhurst,Stonyhurst College,30 (A.VI.23),,,,,,,,,
 Shakespeare,UK,Stratford on Avon,Shakespeare Birthplace Trust,DR 5/1994,olim Coughton Court,,,,,,,,
 Bridgewater,UK,Taunton,Somerset Records Office,MS D/B/bw 123,"olim Bridgewater, Corporation Muniments 123",,,,,,,,
-Uppington,UK,Uppington,Uppington School archives,unknown,,,,,,Currently missing,,,
-Urbana71,UK,Urbana,University of Illinois at Urbana-Champaign,71,"olim Harmsworth, Sotheby's sale, 16 Oct. 1945, Lot 2132",,,,,,,,
-Urbana83,UK,Urbana,University of Illinois at Urbana-Champaign,83,"Robinson Sale Cat. 72, No. 182",,,,,,,,
+Uppington,UK,Uppington,Uppington School archives,unknown,,,,,,Missing,,,
+Urbana71,UK,Urbana,University of Illinois at Urbana-Champaign,71,olim Harmsworth,,,,"Sotheby's sale, 16 Oct. 1945, Lot 2132",,,,
+Urbana83,UK,Urbana,University of Illinois at Urbana-Champaign,83,,,,,"Robinson Sale Cat. 72, No. 182",,,,
 Urbana84,UK,Urbana,University of Illinois at Urbana-Champaign,84,,,,,,,,,
-Urbana85,UK,Urbana,University of Illinois at Urbana-Champaign,85,olim Gloddaeth; post Mostyn Hall 257; sold 1920 to Quaritch,,,,,,,,
-Urbana116,UK,Urbana,University of Illinois at Urbana-Champaign,116,"olim Duke of Buccleuch; olim Lord Amherst of Hackney; olim Harmsworth, Sotheby Sale Oct. 15, 1945, lot 1951",,,,,,,,
+Urbana85,UK,Urbana,University of Illinois at Urbana-Champaign,85,olim Gloddaeth,olim Mostyn Hall 257,,,sold 1920 to Quaritch,,,,
+Urbana116,UK,Urbana,University of Illinois at Urbana-Champaign,116,olim Duke of Buccleuch,olim Lord Amherst of Hackney; olim Harmsworth,,,"Sotheby Sale Oct. 15, 1945, lot 1951",,,,
 Ushaw10,UK,Ushaw,St Cuthbert's College,10,,,,,,,,,
 Ushaw28,UK,Ushaw,St Cuthbert's College,28,,,,,,,,,
 Ushaw50,UK,Ushaw,St Cuthbert's College,50,,,,,,,,,
@@ -2803,11 +2803,11 @@ Wakefield,UK,"Wakefield, West Yorkshire",private owner,"John Goodchild, Northern
 Warwicks,UK,Warwickshire,Warwickshire Record Office,Z 155[L],,,,,,,,,
 Wells2,UK,Wells,Wells Cathedral Library,2,,,,,,,,,
 WellsMus,UK,Wells,Wells Cathedral Library,"Music MSS, Fayrfax frag.",,,,,,,,,
-Winchester29,UK,Winchester,Winchester Cathedral Library,29,"olim Mostyn Hall 186; sold Christie's 24 October 1974, lot 1479",,,,,,,,
+Winchester29,UK,Winchester,Winchester Cathedral Library,29,olim Mostyn Hall 186,,,,"sold Christie's 24 October 1974, lot 1479",,,,
 Winches4,UK,Winchester,Winchester College,4,,,,,,,,,
 Winches33,UK,Winchester,Winchester College,33,,,,,,,,,
 AclandHood,UK,Winchester,"Winchester, Hamphshire Record Office",13 M63/3,"olim Acland Hood, St. Audries, Somerset",,,,,,,,
-Beaumont9,UK,Windsor,Beaumont College,9,,,,,,,,https://search.library.yale.edu/catalog/9998950553408651,https://collections.library.yale.edu/catalog/10686741
+Beaumont9,USA,New Haven,Beinecke Library,1086,"olim Windsor, Beaumont College, MS 9",,,,,,,https://search.library.yale.edu/catalog/9998950553408651,https://collections.library.yale.edu/catalog/10686741
 StGeorgEII,UK,Windsor,"St George's Chapel, Windsor",E.I.I,,,,,,,,,
 Wisbech,UK,Wisbech,Wisbech Museum,21,formerly H.6.29,,,,,,,,
 Douai7,UK,"Woolhampton, Berkshire",Douai Abbey,7,,,,,,,,,
@@ -2826,105 +2826,104 @@ WorcQ46,UK,Worcester,Worcester Cathedral Library,Q.46,,,,,,,,,
 WorcQ50,UK,Worcester,Worcester Cathedral Library,Q.50,,,,,,,,,
 WorcQ79,UK,Worcester,Worcester Cathedral Library,Q.79,,,,,,,,,
 YorkBor11,UK,York,Borthwick Institute,Archbishops' Register No. 11,,,Archbishop Thoresby's Register,,,,,,
-YorkCityAC104,UK,York,"City Archives, York",AC 104/G1,olim Sykes; post Yorkshire Philosophical Society,,,,,,,,
+YorkCityAC104,UK,York,"City Archives, York",AC 104/G1,olim Sykes,olim Yorkshire Philosophical Society,,,,,,,
 YorkCity6,UK,York,"City Archives, York",House Book 6,,,,,,,,https://archives.exploreyork.org.uk/index.php/y-cou-1-1-6,
 YorkMinBarton,UK,York,York Minster,unknown,,,,,,"now missing, and considered lost since Raine's edition",,,
 YorkMinActa,UK,York,York Minster Library,Acta capitularia 1410-1429,,,,,,,,,
 YorkMinAdd2,UK,York,York Minster Library,Add. 2,olim Challoner,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+ADD%2f2&pos=1,https://www.calmview.eu/YorkMinster/GetImage.ashx?db=Catalog&type=default&fname=29%5c83f450-0224-4580-b998-9abe8d12321f.jpg
 YorkMinXIO28,UK,York,York Minster Library,XI.O.28,,,,,,,,,
-YorkMinXVIE32,UK,York,York Minster Library,XVI.E.32,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fE%2f32&pos=1,
-YorkMinXVII12,UK,York,York Minster Library,XVI.I.12,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fI%2f12&pos=1,
-YorkMinXVIK16,UK,York,York Minster Library,XVI.K.16,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fK%2f16&pos=1,
-YorkMinXVIK6,UK,York,York Minster Library,XVI.K.6,formerly XVI.G.5,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fK%2f6&pos=1,
-YorkMinXVIL12,UK,York,York Minster Library,XVI.L.12,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fL%2f12&pos=1,
-YorkMinXVIM4,UK,York,York Minster Library,XVI.M.4,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fM%2f4&pos=1,
-YorkMinXVIO10,UK,York,York Minster Library,XVI.O.10,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fO%2f10&pos=1,
+YorkMinXVIE32,UK,York,York Minster Library,XVI/E/32,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fE%2f32&pos=1,
+YorkMinXVII12,UK,York,York Minster Library,XVI/I/12,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fI%2f12&pos=1,
+YorkMinXVIK16,UK,York,York Minster Library,XVI/K/16,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fK%2f16&pos=1,
+YorkMinXVIK6,UK,York,York Minster Library,XVI/K/6,formerly XVI.G.5,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fK%2f6&pos=1,
+YorkMinXVIL12,UK,York,York Minster Library,XVI/L/12,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fL%2f12&pos=1,
+YorkMinXVIM4,UK,York,York Minster Library,XVI/M/4,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fM%2f4&pos=1,
+YorkMinXVIO10,UK,York,York Minster Library,XVI/O/10,,,,,,,,https://www.calmview.eu/YorkMinster/Record.aspx?src=CalmView.Catalog&id=MSS+XVI%2fO%2f10&pos=1,
 SPR1469,unknown,[No longer extant],Scottish Parliamentary Records,,,,,Act of 1469,,,,,
 Graham,unknown,unknown,Graham,Graham MS,,,,,"sold Sotheby's 12 Dec. 1966, lot 215; 10 July 1972, lot 22",,,,
-Fairhurst,unknown,unknown,James Fairhurst,,"olim sold Keen, 1948",,,,,,,,
+Fairhurst,unknown,unknown,James Fairhurst,,,,,,"sold Keen, 1948",,,,
 Peacock,unknown,unknown,olim Edward Peacock,"MS Calendar, ca. 1400",,,,,,,,,
 ElyFrag,unknown,unknown,olim Ely Cathedral,fragment,,,,,,,,,
-PriO1,unknown,unknown,Private owner,,"olim A. G. Thomas; Sotheby's, 10 Dec. 1962, lot 145] 1165",,,,,,,,
-PriO2,unknown,unknown,Private owner,,,,,,"ex R. C. Pearson, Cambridge, Cat. 13, 1953, item 219; once part of Beinecke Osborn fa. 1",,,,
+PriO1,unknown,unknown,Private owner,,olim A. G. Thomas,,,,"Sotheby's, 10 Dec. 1962, lot 145] 1165",,,,
+PriO2,unknown,unknown,Private owner,,,,,,"ex R. C. Pearson, Cambridge, Cat. 13, 1953, item 219",formerly part of Beinecke Osborn fa. 1,,,
 PriO3,unknown,unknown,Private owner,,,,Saxby Psalter,,"Edwards of London Sale Cat. 624, item 247",,,,
 PriO4,unknown,unknown,Private owner,,,,,,"ex Sotheby's, 9 Dec. 1963, lot 120",,,,
-PriO5,unknown,unknown,Private owner,,"olim Marquis of Bute, Sotheby's, 13 June 1983, lot 10] 2662",,,,,,,,
-PriO6,unknown,unknown,Private owner,,"olim Westminster (Eaton Hall), Sotheby's, 11 July 1966, lot 233, Quaritch] 1459",,,,,,,,
+PriO5,unknown,unknown,Private owner,,olim Marquis of Bute,,,,"Sotheby's, 13 June 1983, lot 10] 2662",,,,
+PriO6,unknown,unknown,Private owner,,olim Westminster (Eaton Hall),,,,"Sotheby's, 11 July 1966, lot 233, Quaritch] 1459",,,,
 PriO7,unknown,unknown,Private owner,,"olim Marquess of Bute MS 85; sold Sotheby's 13 June 1983, lot 10",,,,,,,,
 AshburnhamApp121,unknown,unknown,unknown,Ashburnham Appendix 121,,,,,,,,,
 Islip,unknown,unknown,unknown,Islip (Lady Richmond),,,,Horae,,,,,
-Maggs1953,unknown,unknown,unknown,"Maggs Sale Cat. 816 (1953), item 150",,,,fragment of Fall of Princes,,,,,
-Gray,unknown,unknown,unknown,unknown,olim T. Gray,"Maggs cat. 456, item 184",,,,,,,
-Anglesey,unknown,unknown,unknown,,"olim Anglesey, Earl of, d. 1684 (MS. 33 in list of his sale)",,,,,,,,
+Maggs1953,unknown,unknown,unknown,"Maggs Sale Cat. 816 (1953), item 150",,,,Fall of Princes (fragment),,,,,
+Gray,unknown,unknown,unknown,unknown,olim T. Gray,,,,"Maggs cat. 456, item 184",,,,
+Anglesey,unknown,unknown,unknown,,,,,,"olim Earl of Anglesey, d. 1684 (MS. 33 in list of his sale)",,,,
 Ashburn49,unknown,unknown,unknown,,olim Ashburnham 49,,,,,,,,
-Bagford,unknown,unknown,unknown,,,,Bagford Ballads,a single leaf,,,,,
+Bagford,unknown,unknown,unknown,,,,Bagford Ballads,,,,a single leaf,,
 Bateman,unknown,unknown,unknown,,olim Bateman,,,,,,,,
-BeeleighMirrour,unknown,unknown,unknown,,"olim Huth; olim Beeleigh Abbey (Christina Foyle), sold Christie's June 2000",,,,,,,,
-BeeleighPricke,unknown,unknown,unknown,,"olim Neale, sold Sotheby's 1920; Hope Allen Addit. MS III; olim Harmsworth; olim Beeleigh Abbey (Christina Foyle), sold Christie's June 2000",,,,,,,,
-BeeleighRolle,unknown,unknown,unknown,,olim Amherst; olim Harmsworth; olim Beeleigh Abbey (Christina Foyle); sold Christie's June 2000,,,,,,,,
+BeeleighMirrour,unknown,unknown,unknown,,olim Huth,olim Beeleigh Abbey (Christina Foyle),,,sold Christie's June 2000,,,,
+BeeleighPricke,unknown,unknown,unknown,,olim Neale,,,,"sold Sotheby's 1920; Hope Allen Addit. MS III; olim Harmsworth; olim Beeleigh Abbey (Christina Foyle), sold Christie's June 2000",,,,
+BeeleighRolle,unknown,unknown,unknown,,olim Amherst,olim Harmsworth; olim Beeleigh Abbey (Christina Foyle),,,sold Christie's June 2000,,,,
 BodRawFrag,unknown,unknown,unknown,,olim Oxford Bodleian Library Rawlinson fragment of Sir Tryamour,,,,,,,,
 BodRawShires,unknown,unknown,unknown,,"olim Oxford Bodleian Library Rawlinson, MS ed. Hearne 1710",,,,,,,,
 Bonaventure,unknown,unknown,unknown,,,,,"Tractatus Sancti Bonaventure doctoris…de Quatuor Exerciciis, added on flyleaves",,,,,
-Borneman,unknown,unknown,unknown,,olim Borneman,"Parke-Bernet Sale, Nov. 1955, Lot 796",,,,,,,
-Breslauer9016,unknown,unknown,unknown,,olim Merton 25,"Breslauer Cat. 90, item 16",,,,,,,
+Borneman,unknown,unknown,unknown,,olim Borneman,,,,"Parke-Bernet Sale, Nov. 1955, Lot 796",,,,
+Breslauer9016,unknown,unknown,unknown,,olim Merton 25,,,,"Breslauer Cat. 90, item 16",,,,
 CastleHoward,unknown,unknown,unknown,,olim Castle Howard (Earl of Carlisle),,,,"sold at Sotheby's 9 December, 1974, lot 25",,,,
 Charlemont,unknown,unknown,unknown,,olim Charlemont,,,,,,,,
-Clumber,unknown,unknown,unknown,,olim Clumber,"sold Sotheby's 1937, Lot 1129",,,,,,,
+Clumber,unknown,unknown,unknown,,olim Clumber,,,,"sold Sotheby's 1937, Lot 1129",,,,
 Cole,unknown,unknown,unknown,,olim Cole,,,,,,,,
 Colville,unknown,unknown,unknown,,olim Colville,,,,,,,,
 DaviesCooke30,unknown,unknown,unknown,,olim Davies-Cooke 30,,,,,,,,
 Davis1949,unknown,unknown,unknown,,,,,,"Davis and Orioli Sale Cat. 135 (1949), No. 2A",,,,
 Dawson196011,unknown,unknown,unknown,,,,,,"Dawson Sale Catalogue 102 (1960), Item 11",,,,
-Dod,unknown,unknown,unknown,,olim J. W. Dod,,,,,"lists as unidentified, missing or destroyed",,,
+Dod,unknown,unknown,unknown,,olim J. W. Dod,,,,,"Unidentified, missing or destroyed",,,
 Fellowes,unknown,unknown,unknown,,olim Fellowes,,,,"Sotheby sale cat., June 7, 1964, Lot 231",,,,
 Fenn,unknown,unknown,unknown,,,,,"Sir John Fenn's Letters, fragments of early prints",,Untraced,"See <biblio key=""Furnivall1865b""/>",,
-Goldschmidt50,unknown,unknown,unknown,,"olim Goldschmidt; Sale Cat. No. 50, Item 59",,,,,,,,
+Goldschmidt50,unknown,unknown,unknown,,olim Goldschmidt,,,,"Sale Cat. No. 50, Item 59",,,,
 GSmith,unknown,unknown,unknown,,olim George Smith,,,,"Harmsworth Sale, Lot 2018, Oct. 1945; Sotheby Sale, Feb. 2, 1960, Lot 317, Art. 3",,,,
-Haryngton,unknown,unknown,unknown,,,,,written by Sir James Haryngton,,,,,
+Haryngton,unknown,unknown,unknown,,,,,,,,written by Sir James Haryngton,,
 HelminghamHall,unknown,unknown,unknown,,,,,,,,"Cited in the as '? Helmingham Hall'; possibly Newberry Library MS f36; possibly in collection of Martin Schøyen, as cited in 1597",,
-Huth1911,unknown,unknown,unknown,,olim Huth,"Sotheby Nov. 15-24 1911, I. 154, lot 538",,roll,,,,,
-IllumMis,unknown,unknown,unknown,,"olim Illuminated Missal, flyleaf",,,,,,,,
+Huth1911,unknown,unknown,unknown,,olim Huth,,,roll,"Sotheby Nov. 15-24 1911, I. 154, lot 538",,,,
+IllumMis,unknown,unknown,unknown,,,,,"Illuminated Missal, flyleaf",,,,,
 Llanarth,unknown,unknown,unknown,,,,,,"olim Llanarth Priory, Raglan, Horae, Quaritch Sale Cat. 742, Item 13",,,,
 Mostyn133,unknown,unknown,unknown,,olim Mostyn Hall 133,,,,,,,,
 OwstonCooke21,unknown,unknown,unknown,,olim Davies Cooke 21,,,,,,,,
-Phillipps1936,unknown,unknown,unknown,,"olim Phillipps; Sotheby's Sale Cat., 29 June 1936, Lot 105",,,,,,,,
+Phillipps1936,unknown,unknown,unknown,,olim Phillipps,,,,"Sotheby's Sale Cat., 29 June 1936, Lot 105",,,,
 Phillipps58,unknown,unknown,unknown,,olim Phillipps 58,,,,,,,,
 Rokeby,unknown,unknown,unknown,,,,,1654 transcript by Sir Thomas Rokeby,,,,,
 Schwerdt,unknown,unknown,unknown,,olim Schwerdt,,,,"sold Sotheby's Mar. 12, 1946; sold again by Christie's on 26 January 2006 (Sale 7300, Lot 501) and was purchased by Quaritch's on behalf of an unknown collector",,,,
 Singh,unknown,unknown,unknown,,"olim Prince Frederick Duleep Singh's MS, Old Buckenham Hall, Norfolk",,,,"sold Sotheby's 7 Nov. 1899, lot 408",,,,
-Sotheby1976,unknown,unknown,unknown,,,,,fragment of Fall of Princes,"Sotheby's 5 April 1976, lot 623",,,,
-Sotheby1983,unknown,unknown,unknown,,,,,fragment of Fall of Princes,"Sotheby's 6 Dec. 1983, lot 20",,,,
+Sotheby1976,unknown,unknown,unknown,,,,,Fall of Princes (fragment),"Sotheby's 5 April 1976, lot 623",,,,
+Sotheby1983,unknown,unknown,unknown,,,,,Fall of Princes (fragment),"Sotheby's 6 Dec. 1983, lot 20",,,,
 Stephens,unknown,unknown,unknown,,,,,,,,,,
 StockdPs,unknown,unknown,unknown,,olim Stockdale Hardy Leicester Psalter,,,,,,,,
 Tenison,unknown,unknown,unknown,,olim Tenison,,,,,,,,
-Tiverton,unknown,unknown,unknown,,,,,"Tiverton, Parish Church, on cover of a Primer",,,,,
-Tregaskis,unknown,unknown,unknown,,,,,fragment of Fall of Princes,"Tregaskis Sale Cat., 1919",,,,
+Tiverton,unknown,unknown,unknown,,,,,,,,"Tiverton, Parish Church, on cover of a Primer",,
+Tregaskis,unknown,unknown,unknown,,,,,Fall of Princes (fragment),"Tregaskis Sale Cat., 1919",,,,
 Unknown,unknown,unknown,unknown,,,,,,,"Missing, lost, or destroyed. No known MS survives or MS not identified",,,
 WiltCorp,unknown,unknown,unknown,,olim Wilton Corporation,,,,,,,,
 Witten198,unknown,unknown,unknown,,,,,,"Quaritch Sale, 1931, item 82; Cat. 609, 1943, Lot 500; then Witten Cat., 1983, no. 22",,,,
-Witten5It47,unknown,unknown,unknown,,"olim Laurence Witten, New Haven, Cat. 5, Item 47",,,a Latin psalter,,,,,
+Witten5It47,unknown,unknown,unknown,,"olim Laurence Witten, New Haven, Cat. 5, Item 47",,,Latin psalter,,,,,
 Wright,unknown,unknown,unknown,,olim A[rthur] Dixon Wright,,,,,,,,
 UMich225,USA,"Ann Arbor, MI",University of Michigan Library,MS 225,,,,,,,,https://quod.lib.umich.edu/b/brut/x-1/225fm1r,https://quod.lib.umich.edu/b/brut/x-1/225fm1r
-Austin143,USA,"Austin, TX","University of Texas, Humanities Research Center",HRC Pre-1700 MS 143,"olim Deene Park; post Cardigan-Brudenell, sold Sotheby's, Feb. 1959",,,,,,,https://norman.hrc.utexas.edu/pubMnEM/details.cfm?id=143,https://norman.hrc.utexas.edu/mnemGal/143/HRC_143.pdf
-Austin46,USA,"Austin, TX","University of Texas, Humanities Research Center",HRC Pre-1700 MS 46,"olim Chicago, Newberry Library, Louis H. Silver 2; prior Philadelphia, Rosenbach Museum and Library 159, prior Phillipps 6750",,,,,,,https://norman.hrc.utexas.edu/pubMnEM/details.cfm?id=46,https://norman.hrc.utexas.edu/mnemGal/46/HRC_46.pdf
-Austin8,USA,"Austin, TX","University of Texas, Humanities Research Center",HRC Pre-1700 MS 8,olim Ashburnham; olim Sotheran,,,,,,,,
-Berkeley,USA,"Berkeley, CA",University of California Library,75,"olim Phillipps 8118; olim Bodmer; olim John Gribbel, Philadelphia; sold Sotheby's 4 Dec. 1962, lot 131",,,,,,,https://search.library.berkeley.edu/permalink/01UCS_BER/ergbi/alma991035153709706532,https://search.digital-scriptorium.org/catalog/DS12643
+Austin143,USA,"Austin, TX","University of Texas, Humanities Research Center",HRC Pre-1700 MS 143,olim Deene Park,post Cardigan-Brudenell,,,"sold Sotheby's, Feb. 1959",,,https://norman.hrc.utexas.edu/pubMnEM/details.cfm?id=143,https://norman.hrc.utexas.edu/mnemGal/143/HRC_143.pdf
+Austin46,USA,"Austin, TX","University of Texas, Humanities Research Center",HRC Pre-1700 MS 46,"olim Chicago, Newberry Library, Louis H. Silver 2","olim Philadelphia, Rosenbach Museum and Library 159, prior Phillipps 6750",,,,,,https://norman.hrc.utexas.edu/pubMnEM/details.cfm?id=46,https://norman.hrc.utexas.edu/mnemGal/46/HRC_46.pdf
+Austin8,USA,"Austin, TX","University of Texas, Humanities Research Center",HRC Pre-1700 MS 8,olim Ashburnham,olim Sotheran,,,,,,,
+Berkeley,USA,"Berkeley, CA",University of California Library,75,olim Phillipps 8118,"olim Bodmer; olim John Gribbel, Philadelphia",,,"sold Sotheby's 4 Dec. 1962, lot 131",,,https://search.library.berkeley.edu/permalink/01UCS_BER/ergbi/alma991035153709706532,https://search.digital-scriptorium.org/catalog/DS12643
 NatLibMed49,USA,"Bethesda, MD",National Library of Medicine,MS E 49,,,,,,,,https://catalog.nlm.nih.gov/permalink/01NLM_INST/7b9jl0/alma999411033406676,
 NatLibMed514,USA,"Bethesda, MD",National Library of Medicine,MS E 4,formerly 514,olim MS. 4,,,,,,https://catalog.nlm.nih.gov/permalink/01NLM_INST/5sjtne/alma998999063406676,https://collections.nlm.nih.gov/bookviewer?PID=nlm:nlmuid-100899906-bk
-BosPLMed100,USA,"Boston, MA",Boston Public Library,med. 100 (1527),"olim Kraus Cat. 22, no. 21",,,,,,,https://bpl.bibliocommons.com/v2/record/S75C8444788,https://www.digitalcommonwealth.org/search/commonwealth:rj433d736
-BosPLMed124,USA,"Boston, MA",Boston Public Library,med. 124 (1546),"olim Sowter, Sotheby Sale, May 20, 1947, Lot 371; olim Le Neve",,,Horae,,,,https://bpl.bibliocommons.com/v2/record/S75C8444798,https://www.digitalcommonwealth.org/search/commonwealth:m326r423s
+BosPLMed100,USA,"Boston, MA",Boston Public Library,med. 100 (1527),,,,,"Kraus Cat. 22, no. 21",,,https://bpl.bibliocommons.com/v2/record/S75C8444788,https://www.digitalcommonwealth.org/search/commonwealth:rj433d736
+BosPLMed124,USA,"Boston, MA",Boston Public Library,med. 124 (1546),olim Sowter,,,Horae,"Sotheby Sale, May 20, 1947, Lot 371; olim Le Neve",,,https://bpl.bibliocommons.com/v2/record/S75C8444798,https://www.digitalcommonwealth.org/search/commonwealth:m326r423s
 BosPLMed92,USA,"Boston, MA",Boston Public Library,med. 92 (1519),olim Gurney,,,,,,,https://bpl.bibliocommons.com/v2/record/S75C8444693,https://www.digitalcommonwealth.org/search/commonwealth:nc581732x
-BosPLMed94,USA,"Boston, MA",Boston Public Library,med. 94 (1521),"olim Campbell; Robinson Sale Cat. 74, 1944, No. 268 and Robinson Sale Cat. 76, 1947, No. 233",,,,,,,https://bpl.bibliocommons.com/v2/record/S75C8444696,https://search.digital-scriptorium.org/catalog/DS3361
+BosPLMed94,USA,"Boston, MA",Boston Public Library,med. 94 (1521),olim Campbell,,,,"Robinson Sale Cat. 74, 1944, No. 268 and Robinson Sale Cat. 76, 1947, No. 233",,,https://bpl.bibliocommons.com/v2/record/S75C8444696,https://search.digital-scriptorium.org/catalog/DS3361
 BosHistSoc,USA,"Boston, MA",Massachusetts Historical Society,Winthrop 20 C,,,,,,,,,
 BosMedLib,USA,"Boston, MA",Medical Library,23,,,,,,,,,
-Har27282,USA,"Cambridge, MA",Harvard University,*27282. 67.10,olim Ashburnham 131,,,,,,,,
-Har25258,USA,"Cambridge, MA",Harvard University,H.C.L. 25258.27.5,,,,,,,,,
+Har25258,USA,"Cambridge, MA",Harvard University,MS Engl 1507,olim H.C.L. 25258.27.5,,,,,,C18 compilation,https://id.lib.harvard.edu/alma/990096070170203941/catalog,
 HarEng1031,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 1031,,,,,,,,https://id.lib.harvard.edu/alma/990095743450203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:7517290$1i
 HarEng1032,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 1032,,,,,,,,https://id.lib.harvard.edu/alma/990095742320203941/catalog,
 HarEng1054,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 1054,,,,,,,,https://id.lib.harvard.edu/alma/990095686270203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:7697519$1i
-HarEng515,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 515,"olim Halliwell; Sotheby's Sale, 1920, Lot 515; Hope Allen Addit. MS. IV",,,,,,,https://id.lib.harvard.edu/alma/990097602390203941/catalog,
+HarEng515,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 515,olim Halliwell,,,,"Sotheby's Sale, 1920, Lot 515; Hope Allen Addit. MS. IV",,,https://id.lib.harvard.edu/alma/990097602390203941/catalog,
 HarEng530,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 530,,,,,,,,https://id.lib.harvard.edu/alma/990097568050203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:7835965$1i
-HarEng532,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 532F,,,,,,,,,
+HarEng532,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 532F,,,,,,,Nineteenth-century,https://id.lib.harvard.edu/alma/990097563300203941/catalog,
 HarEng587,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 587,,,,,,,,https://id.lib.harvard.edu/alma/990097400150203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:7557546$1i
 HarEng590,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 590,,,,,,,,https://id.lib.harvard.edu/alma/990097391550203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:7271430$1i
 HarEng752,USA,"Cambridge, MA","Harvard University, Houghton Library",Eng. 752,olim *27282. 67.10,prior Ashburnham 131,,,,,,https://id.lib.harvard.edu/alma/990097025000203941/catalog,http://nrs.harvard.edu/urn-3:FHCL.HOUGH:1192991
@@ -2938,48 +2937,48 @@ HarTYP193,USA,"Cambridge, MA","Harvard University, Houghton Library",TYP 193,,,,
 HarLaw58,USA,"Cambridge, MA","Harvard University, Law School Library",MS 58,,,,,,,,https://id.lib.harvard.edu/alma/990040151140203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:49291136$1i
 HarLaw6,USA,"Cambridge, MA","Harvard University, Law School Library",MS 6,,,,,,,,https://id.lib.harvard.edu/alma/990036915850203941/catalog,https://iiif.lib.harvard.edu/manifests/view/drs:46006024$1i
 HarWid1,USA,"Cambridge, MA","Harvard University, Widener Library",MS 1,olim Brough Hall,,,,,,,https://iiif.lib.harvard.edu/manifests/view/drs:7516814$1i,https://iiif.lib.harvard.edu/manifests/view/drs:44442370$1i
-CharlotHench10,USA,"Charlottesville, VA",University of Virginia Library,Hench 10,"olim Aldenham; Sold 1937, Lot 310, to Maggs Bros.",,,,,,,https://search.lib.virginia.edu/sources/uva_library/items/u4757884?idx=0&page=1,https://search.lib.virginia.edu/sources/uva_library/items/u4757884?idx=0&page=1
-ChicagoAdd12,USA,"Chicago, IL",Newberry Library,-32,"olim Condover Hall; Robinson Sale Cat. No. 63, Item 71",,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma998698938805867,https://collections.newberry.org/asset-management/2KXJ8Z8L6BNIH
+CharlotHench10,USA,"Charlottesville, VA",University of Virginia Library,Hench 10,olim Aldenham,,,,"Sold 1937, Lot 310, to Maggs Bros.",,,https://search.lib.virginia.edu/sources/uva_library/items/u4757884?idx=0&page=1,https://search.lib.virginia.edu/sources/uva_library/items/u4757884?idx=0&page=1
+ChicagoAdd12,USA,"Chicago, IL",Newberry Library,-32,olim Condover Hall,,,,"Robinson Sale Cat. No. 63, Item 71",,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma998698938805867,https://collections.newberry.org/asset-management/2KXJ8Z8L6BNIH
 Chicago31,USA,"Chicago, IL",Newberry Library,31,formerly Ry8; D26986,,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma998683588805867,
 Chicago329,USA,"Chicago, IL",Newberry Library,32.9,olim Helmingham Hall LJ II.1,,,,,,,https://collections.newberry.org/asset-management/2KXJ8Z9UTJX1?&WS=SearchResults&Flat=FP,https://collections.newberry.org/asset-management/2KXJ8Z9UTQL7?&WS=SearchResults&Flat=FP
 Chicago33,USA,"Chicago, IL",Newberry Library,33,formerly C. 19169,olim Peterborough Public Library; Hope Allen Additional MS I,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma998684678805867,https://collections.newberry.org/asset-management/2KXJ8Z9UTJX1?&WS=SearchResults&Flat=FP
-Chicago333,USA,"Chicago, IL",Newberry Library,33.3,olim Rosenbach 475; olim Louis H. Silver 4,,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma995291028805867,https://collections.newberry.org/asset-management/2KXJ8Z812GM9I?&WS=SearchResults&Flat=FP
-Chicago335,USA,"Chicago, IL",Newberry Library,33.5,olim Louis H. Silver 3; prior Castle Howard,,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma994296758805867,
+Chicago333,USA,"Chicago, IL",Newberry Library,33.3,olim Rosenbach 475,olim Louis H. Silver 4,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma995291028805867,https://collections.newberry.org/asset-management/2KXJ8Z812GM9I?&WS=SearchResults&Flat=FP
+Chicago335,USA,"Chicago, IL",Newberry Library,33.5,olim Louis H. Silver 3,prior Castle Howard,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma994296758805867,
 Chicago36,USA,"Chicago, IL",Newberry Library,"36 Gen. Library, Add. 8",,,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma998710308805867,
-Chicago337,USA,"Chicago, IL",Newberry Library,f33.7,"olim Merton 28; Breslauer Cat. 90, item 24",,,,,,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma995455368805867,
+Chicago337,USA,"Chicago, IL",Newberry Library,f33.7,olim Merton 28,,,,"Breslauer Cat. 90, item 24",,,https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma995455368805867,
 ChicagoUL253,USA,"Chicago, IL",University of Chicago Library,253,,,,,,,,http://pi.lib.uchicago.edu/1001/cat/bib/2713466,
 ChicagoUL254,USA,"Chicago, IL",University of Chicago Library,254,olim Holkham Hall 670,,,,,,,http://pi.lib.uchicago.edu/1001/cat/bib/2713478,
-ChicagoUL564,USA,"Chicago, IL",University of Chicago Library,564,"olim Ashburnham 126, post McCormick",,,,,,,http://pi.lib.uchicago.edu/1001/cat/bib/13158141,http://pi.lib.uchicago.edu/1001/dig/pres/2023-0360-01
+ChicagoUL564,USA,"Chicago, IL",University of Chicago Library,564,olim Ashburnham 126,post McCormick,,,,,,http://pi.lib.uchicago.edu/1001/cat/bib/13158141,http://pi.lib.uchicago.edu/1001/dig/pres/2023-0360-01
 ChicagoUL565,USA,"Chicago, IL",University of Chicago Library,565,olim Phillipps 4255,,,,,,,http://pi.lib.uchicago.edu/1001/cat/bib/4748709,
 ChicagoUL566,USA,"Chicago, IL",University of Chicago Library,566,olim Cockerell,,,,,,,http://pi.lib.uchicago.edu/1001/cat/bib/4748871,
-Cleveland,USA,"Cleveland, OH",Public Library,Wq091.92 C468,"olim Aldenham; Goldschmidt Sales Cat. 55, item 59",,,,,,,https://cplorg.contentdm.oclc.org/digital/collection/p4014coll9/id/2870/,https://cplorg.contentdm.oclc.org/digital/collection/p4014coll9/id/3015/rec/1
+Cleveland,USA,"Cleveland, OH",Public Library,Wq091.92 C468,olim Aldenham,,,,"Goldschmidt Sales Cat. 55, item 59",,,https://cplorg.contentdm.oclc.org/digital/collection/p4014coll9/id/2870/,https://cplorg.contentdm.oclc.org/digital/collection/p4014coll9/id/3015/rec/1
 MissouriFragment,USA,"Columbia, MO",University of Missouri Library,Fragmenta Manuscripta,,,,,,,,,
 Corning6,USA,"Corning, NY",Corning Museum of Glass,6,olim Currer,,,,,,,,
 VanKampen,USA,"Grand Haven, MI","The Scriptorium: Center for Biblical Antiquities, Van Kampen Collection",VK MS 678,,,,,,,,,
 Rauner3183,USA,"Hanover, NH",Dartmouth College Library,Codex MS 3183,,,,,,,,https://search.library.dartmouth.edu/discovery/fulldisplay?context=L&vid=01DCL_INST:01DCL&docid=alma991005315449705706,https://collections.dartmouth.edu/teitexts/ocn312771386/diplomatic/ocn312771386-diplomatic.html?_gl=1*dpmai5*_ga*OTYyMDE1MDkzLjE3NzA2NzMzODg.*_ga_X6T5RM37EZ*czE3NzA2NzMzODgkbzEkZzEkdDE3NzA2NzM1OTMkajYwJGwwJGgw
 MinULZ822,USA,Minneapolis MN,Minnesota University Library,Z.822.N.81,olim Phillipps 8122,,,,,,,,
-YaleBei15,USA,"New Haven, CT",Beinecke Library,15,olim Phillipps 9520; post Z109.150,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms015.htm,https://collections.library.yale.edu/catalog/11684571
+YaleBei15,USA,"New Haven, CT",Beinecke Library,15,olim Phillipps 9520,post Z109.150,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms015.htm,https://collections.library.yale.edu/catalog/11684571
 TokyoTak66,USA,"New Haven, CT",Beinecke Library,66,olim Bradfer-Lawrence 10,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms066.htm,https://collections.library.yale.edu/catalog/15473172
 YaleBei88,USA,"New Haven, CT",Beinecke Library,88,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms088.htm,https://collections.library.yale.edu/catalog/10267669
 YaleBei91,USA,"New Haven, CT",Beinecke Library,91,,,Mellon chansonnier,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms091.htm,https://collections.library.yale.edu/catalog/2008083
 TokyoTak94,USA,"New Haven, CT",Beinecke Library,94,olim Astor,,,,"Sotheby's 21 June 1988, lot 57",,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms094.htm,https://collections.library.yale.edu/catalog/16371265
-YaleBei163,USA,"New Haven, CT",Beinecke Library,163,"olim Wagstaff 9, prior Petworth 8",,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms163.htm,https://collections.library.yale.edu/catalog/2003060
+YaleBei163,USA,"New Haven, CT",Beinecke Library,163,olim Wagstaff 9,prior Petworth 8,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms163.htm,https://collections.library.yale.edu/catalog/2003060
 YaleBei228,USA,"New Haven, CT",Beinecke Library,228,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms228.htm,https://collections.library.yale.edu/catalog/10269812
 YaleBei281,USA,"New Haven, CT",Beinecke Library,281,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms281.htm,https://collections.library.yale.edu/catalog/10269814
 YaleBei288,USA,"New Haven, CT",Beinecke Library,288,,,,,,,,,
 YaleBei317,USA,"New Haven, CT",Beinecke Library,317,olim Phillipps 1052,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms317.htm,https://collections.library.yale.edu/catalog/2013989
 YaleBei323,USA,"New Haven, CT",Beinecke Library,323,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms323.htm,https://collections.library.yale.edu/catalog/14464099
-YaleBei331,USA,"New Haven, CT",Beinecke Library,331,olim Quaritch cat. 824,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms331.htm,https://collections.library.yale.edu/catalog/2035744
-YaleBei365,USA,"New Haven, CT",Beinecke Library,365,"olim Ipswich County Hall deposit, Hillwood; prior Brome Hall, Suffolk",,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms365.htm,https://collections.library.yale.edu/catalog/2006854
-YaleBei410,USA,"New Haven, CT",Beinecke Library,410,"olim Rosenbach, A Bibliophile's Miscellany (1941), no. 296",,,roll,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms410.htm,https://collections.library.yale.edu/catalog/10269867
-YaleBei492,USA,"New Haven, CT",Beinecke Library,492,"olim Brooke (sold Sotheby's 1921); Harmsworth (sold Sotheby's 1945); George Smith of Marlborough (sold Sotheby's Feb. 2, 1960, Lot 317); Bodmer",,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms492.htm,https://collections.library.yale.edu/catalog/2052958
-YaleBei493,USA,"New Haven, CT",Beinecke Library,493,olim Phillipps 8267; Robinson (July 1952); Bodmer,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms493.htm,https://collections.library.yale.edu/catalog/2112436
+YaleBei331,USA,"New Haven, CT",Beinecke Library,331,,,,,Quaritch cat. 824,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms331.htm,https://collections.library.yale.edu/catalog/2035744
+YaleBei365,USA,"New Haven, CT",Beinecke Library,365,"olim Ipswich County Hall deposit, Hillwood","prior Brome Hall, Suffolk",,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms365.htm,https://collections.library.yale.edu/catalog/2006854
+YaleBei410,USA,"New Haven, CT",Beinecke Library,410,olim Rosenbach,,,roll,,,"A Bibliophile's Miscellany (1941), no. 296",https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms410.htm,https://collections.library.yale.edu/catalog/10269867
+YaleBei492,USA,"New Haven, CT",Beinecke Library,492,olim Brooke,,,," Sold Sotheby's 1921; olim Harmsworth (sold Sotheby's 1945); George Smith of Marlborough (sold Sotheby's Feb. 2, 1960, Lot 317); Bodmer",,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms492.htm,https://collections.library.yale.edu/catalog/2052958
+YaleBei493,USA,"New Haven, CT",Beinecke Library,493,olim Phillipps 8267,,,,olim Robinson (July 1952); Bodmer,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms493.htm,https://collections.library.yale.edu/catalog/2112436
 YaleBei494,USA,"New Haven, CT",Beinecke Library,494,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms494.htm,https://collections.library.yale.edu/catalog/9998986
-YaleBei593,USA,"New Haven, CT",Beinecke Library,593,"olim Phillipps 3338; Robinson Sale Cat. 1950, item 28",,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms593.htm,https://collections.library.yale.edu/catalog/9998986
+YaleBei593,USA,"New Haven, CT",Beinecke Library,593,olim Phillipps 3338,,,,"Robinson Sale Cat. 1950, item 28",,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms593.htm,https://collections.library.yale.edu/catalog/9998986
 YaleBei660,USA,"New Haven, CT",Beinecke Library,660,olim Mostyn Hall?,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms660.htm,https://collections.library.yale.edu/catalog/9998987
 YaleBei661,USA,"New Haven, CT",Beinecke Library,661,olim Mostyn Hall 258,,,,,,,https://search.library.yale.edu/catalog/9616569,https://collections.library.yale.edu/catalog/9998988
 YaleBei1222,USA,"New Haven, CT",Beinecke Library,1222,olim Audley End,,,,"Sotheby's 8 July 1970, lot 98",,,https://search.library.yale.edu/catalog/15383623,https://collections.library.yale.edu/catalog/16655094
-Bein20082479,USA,"New Haven, CT",Beinecke Library,Beinecke 2008 2479,"De regulis iuris, Dinus de Mugello, Lyons, 1562",,,,,,,https://search.library.yale.edu/catalog/9984843843408651,
+Bein20082479,USA,"New Haven, CT",Beinecke Library,Beinecke 2008 2479,,,,"De regulis iuris, Dinus de Mugello, Lyons, 1562",,,printed book,https://search.library.yale.edu/catalog/9984843843408651,
 YaleBeiMel41,USA,"New Haven, CT",Beinecke Library,Mellon 41,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.mell041.htm,
 YaleBeiMel46,USA,"New Haven, CT",Beinecke Library,Mellon 6,,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.mell006.htm,
 YaleBeiOsa1,USA,"New Haven, CT",Beinecke Library,Osborn a1,olim Laurence Witten MS 5,,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.osborn.a1.htm,http://beinecke.library.yale.edu/dl_crosscollex/brbldl_getrec.asp?fld=img&id=15236159
@@ -2992,9 +2991,9 @@ YaleBeiOsfa19,USA,"New Haven, CT",Beinecke Library,Osborn fa.19,,,,,,,,https://p
 YaleBeiOsfa24,USA,"New Haven, CT",Beinecke Library,Osborn fa.24,formerly Osborn 22a or 22b,olim Fitzgerald,,roll,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.osborn.fa24.htm,http://beinecke.library.yale.edu/dl_crosscollex/callnumSRCHXC.asp?WC=N&SS=N&CN=Osborn_fa24
 YaleBeiOsfa45,USA,"New Haven, CT",Beinecke Library,Osborn fa.45,,,,"fragment, bifolium",,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.osborn.fa45.htm,https://collections.library.yale.edu/catalog/2054080
 YaleBeiOsfa1,USA,"New Haven, CT",Beinecke Library,Osborn fa1,"olim Laurence Witten, Cat. 5, item 24",,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.osborn.fa1.htm,http://beinecke.library.yale.edu/dl_crosscollex/brbldl_getrec.asp?fld=img&id=1325955
-YaleBeiOsfa2,USA,"New Haven, CT",Beinecke Library,Osborn fa2,"olim Laurence Witten, Cat. 5, item 51; prior Helmingham Hall LJ. V. 14",,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.osborn.fa2.htm,https://collections.library.yale.edu/catalog/11394887
+YaleBeiOsfa2,USA,"New Haven, CT",Beinecke Library,Osborn fa2,"olim Laurence Witten, Cat. 5, item 51",prior Helmingham Hall LJ. V. 14,,,,,,https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.osborn.fa2.htm,https://collections.library.yale.edu/catalog/11394887
 YaleBeiOs19558,USA,"New Haven, CT",Beinecke Library,Osborn MSS File Folder 19558,,,,,,,,,
-TokyoTak112,USA,"New Haven, CT",Beinecke Library,Takamiya 112,"olim Quaritch Sale, 1931, item 82; Cat. 609, 1943, Lot 500; then Witten Cat., 1983, no. 22",,,,,,,https://search.library.yale.edu/catalog/11777669,https://collections.library.yale.edu/catalog/15504633
+TokyoTak112,USA,"New Haven, CT",Beinecke Library,Takamiya 112,,,,,"olim Quaritch Sale, 1931, item 82; Cat. 609, 1943, Lot 500; then Witten Cat., 1983, no. 22",,,https://search.library.yale.edu/catalog/11777669,https://collections.library.yale.edu/catalog/15504633
 TokyoTak12,USA,"New Haven, CT",Beinecke Library,Takamiya 12,,,,,"Dawsons of Pall Mall, Catalogue 103, item 3, 1970",,,https://search.library.yale.edu/catalog/11735240,https://collections.library.yale.edu/catalog/16371207
 TokyoTak15,USA,"New Haven, CT",Beinecke Library,Takamiya 15,,,,,"Sotheby's, 10 Dec. 1969, Lot 43; acquired by Takamiya in 1976",,,https://search.library.yale.edu/catalog/11735646,https://collections.library.yale.edu/catalog/16037447
 TokyoTak17,USA,"New Haven, CT",Beinecke Library,Takamiya 17,,,,,,,,https://search.library.yale.edu/catalog/11750613,https://collections.library.yale.edu/catalog/16371210
@@ -3003,12 +3002,12 @@ TokyoTak22,USA,"New Haven, CT",Beinecke Library,Takamiya 22,"olim Sion College, 
 TokyoTak23,USA,"New Haven, CT",Beinecke Library,Takamiya 23,"olim Sion College, Arc. L 40 2/E 76",,,,,,,https://search.library.yale.edu/catalog/11736043,https://collections.library.yale.edu/catalog/16037448
 TokyoTak24,USA,"New Haven, CT",Beinecke Library,Takamiya 24,"olim Chatsworth, Duke of Devonshire",,,,,,,https://search.library.yale.edu/catalog/11726138,https://collections.library.yale.edu/catalog/16147032
 TokyoTak29,USA,"New Haven, CT",Beinecke Library,Takamiya 29,,,,,,,,https://search.library.yale.edu/catalog/11736757,https://collections.library.yale.edu/catalog/16371217
-TokyoTak30,USA,"New Haven, CT",Beinecke Library,Takamiya 30,olim John E. du Pont; olim John Hayward,,,,"sold Sotheby's 11 July 1966, lot 225",,,https://search.library.yale.edu/catalog/11775340,https://collections.library.yale.edu/catalog/16371218
-TokyoTak32,USA,"New Haven, CT",Beinecke Library,Takamiya 32,olim Penrose 6; prior Delamere,,,,,,,https://search.library.yale.edu/catalog/11726079,https://collections.library.yale.edu/catalog/14705200
+TokyoTak30,USA,"New Haven, CT",Beinecke Library,Takamiya 30,olim John E. du Pont,olim John Hayward,,,"sold Sotheby's 11 July 1966, lot 225",,,https://search.library.yale.edu/catalog/11775340,https://collections.library.yale.edu/catalog/16371218
+TokyoTak32,USA,"New Haven, CT",Beinecke Library,Takamiya 32,olim Penrose 6,prior Delamere,,,,,,https://search.library.yale.edu/catalog/11726079,https://collections.library.yale.edu/catalog/14705200
 TokyoTak33,USA,"New Haven, CT",Beinecke Library,Takamiya 33,,,,,"Christie's, 8 November 1978, Lot 198",,,https://search.library.yale.edu/catalog/11743426,https://collections.library.yale.edu/catalog/16371220
 TokyoTak35,USA,"New Haven, CT",Beinecke Library,Takamiya 35,,,,,"Sotheby's, 5 December, lot 40",,,https://search.library.yale.edu/catalog/11780883,https://collections.library.yale.edu/catalog/15482966
 TokyoTak4,USA,"New Haven, CT",Beinecke Library,Takamiya 4,olim Phillipps 8820,,,,,,,https://search.library.yale.edu/catalog/11728046,https://collections.library.yale.edu/catalog/16371200
-TokyoTak40,USA,"New Haven, CT",Beinecke Library,Takamiya 40,"olim Mostyn, olim Arthur Houghton 9",,,,"sold Christie's, 14 June 1979, lot 295",,,https://search.library.yale.edu/catalog/11736806,https://collections.library.yale.edu/catalog/16371223
+TokyoTak40,USA,"New Haven, CT",Beinecke Library,Takamiya 40,olim Mostyn,olim Arthur Houghton 9,,,"sold Christie's, 14 June 1979, lot 295",,,https://search.library.yale.edu/catalog/11736806,https://collections.library.yale.edu/catalog/16371223
 TokyoTak46,USA,"New Haven, CT",Beinecke Library,Takamiya 46,,,,,,,,https://search.library.yale.edu/catalog/11748628,https://collections.library.yale.edu/catalog/16156709
 TokyoTak51,USA,"New Haven, CT",Beinecke Library,Takamiya 51,,,,,"Sotheby's, 24 June 1980, lot 33",,,https://search.library.yale.edu/catalog/11797685,https://collections.library.yale.edu/catalog/16371229
 TokyoTak52,USA,"New Haven, CT",Beinecke Library,Takamiya 52,,,,,,,,https://search.library.yale.edu/catalog/11779802,https://collections.library.yale.edu/catalog/16371230
@@ -3016,24 +3015,24 @@ TokyoTak54,USA,"New Haven, CT",Beinecke Library,Takamiya 54,olim Weld,,,,"sold S
 TokyoTak56,USA,"New Haven, CT",Beinecke Library,Takamiya 56,,,,,,,,https://search.library.yale.edu/catalog/11778631,https://collections.library.yale.edu/catalog/16371232
 TokyoTak6,USA,"New Haven, CT",Beinecke Library,Takamiya 6,olim Helmingham Hall LJ. I. 10,,,,,,,https://search.library.yale.edu/catalog/11728511,https://collections.library.yale.edu/catalog/16371202
 TokyoTak61,USA,"New Haven, CT",Beinecke Library,Takamiya 61,olim Lawrence Witten,,,,"Sotheby's, 10 November 1952",,,https://search.library.yale.edu/catalog/11802524,https://collections.library.yale.edu/catalog/16371237
-TokyoTak64,USA,"New Haven, CT",Beinecke Library,Takamiya 64,olim Bradfer-Lawrence 7; olim J. P. R. Lyell,,,,,,,https://search.library.yale.edu/catalog/11756791,https://collections.library.yale.edu/catalog/16371239
-TokyoTak65,USA,"New Haven, CT",Beinecke Library,Takamiya 65,"olim Goldschmidt Cat. 71, 1943, item 1, olim Greg, olim Bradfer-Lawrence 8, olim Huth 153",,,,,,,https://search.library.yale.edu/catalog/11779588,https://collections.library.yale.edu/catalog/16371240
-TokyoTak67,USA,"New Haven, CT",Beinecke Library,Takamiya 67,"olim Ingilby (Sotheby's, 21 October 1920, lot 30); olim Bradfer-Lawrence 11",,,,,,,https://search.library.yale.edu/catalog/11775189,https://collections.library.yale.edu/catalog/16154682
+TokyoTak64,USA,"New Haven, CT",Beinecke Library,Takamiya 64,olim Bradfer-Lawrence 7,olim J. P. R. Lyell,,,,,,https://search.library.yale.edu/catalog/11756791,https://collections.library.yale.edu/catalog/16371239
+TokyoTak65,USA,"New Haven, CT",Beinecke Library,Takamiya 65,,,,,"Goldschmidt Cat. 71, 1943, item 1, olim Greg, olim Bradfer-Lawrence 8, olim Huth 153",,,https://search.library.yale.edu/catalog/11779588,https://collections.library.yale.edu/catalog/16371240
+TokyoTak67,USA,"New Haven, CT",Beinecke Library,Takamiya 67,olim Ingilby,olim Bradfer-Lawrence 11,,,"Sotheby's, 21 October 1920, lot 30",,,https://search.library.yale.edu/catalog/11775189,https://collections.library.yale.edu/catalog/16154682
 TokyoTak78,USA,"New Haven, CT",Beinecke Library,Takamiya 78,,,,,"Quaritch Sale Cat. 1088, Lot 88?",,,https://search.library.yale.edu/catalog/11777015,https://collections.library.yale.edu/catalog/16371250
 TokyoTak79,USA,"New Haven, CT",Beinecke Library,Takamiya 79,olim Plimpton,,,,"Sotheby's Sale 6 Dec. 1983, lot 20",,,https://search.library.yale.edu/catalog/11777046,https://collections.library.yale.edu/catalog/16371251
 TokyoTak96,USA,"New Haven, CT",Beinecke Library,Takamiya 96,olim Beeleigh Abbey (Foyle),,,,,,,https://search.library.yale.edu/catalog/11756328,https://collections.library.yale.edu/catalog/15605268
 TokyoTak97,USA,"New Haven, CT",Beinecke Library,Takamiya 97,,,,,"Foyle's sale at Christie's, 11 July 2000, lot 76",,,https://search.library.yale.edu/catalog/99117569103408651,https://collections.library.yale.edu/catalog/16156712
-TokyoTak98,USA,"New Haven, CT",Beinecke Library,Takamiya 98,"olim Quaritch, Cat. 1270 (2000), item 55; prior Mertoun, Duke of Sutherland",,,,,,,https://search.library.yale.edu/catalog/99117559303408651,https://collections.library.yale.edu/catalog/16037446
-TakamiyaBible,USA,"New Haven, CT",Beinecke Library,Takamiya Bible,"olim Quaritch; prior Ingilby, Ripley Castle, Harrowgate, Yorks.",,,"Biblia latina, Speier: Peter Drach, 1489. Goff B-587",,,,,
+TokyoTak98,USA,"New Haven, CT",Beinecke Library,Takamiya 98,"olim Mertoun, Duke of Sutherland",,,,"Quaritch, Cat. 1270 (2000), item 55",,,https://search.library.yale.edu/catalog/99117559303408651,https://collections.library.yale.edu/catalog/16037446
+TakamiyaBible,USA,"New Haven, CT",Beinecke Library,Takamiya Bible,olim Quaritch,"prior Ingilby, Ripley Castle, Harrowgate, Yorks.",,"Biblia latina, Speier: Peter Drach, 1489 (Goff B-587)",,,,,
 YaleMed27,USA,"New Haven, CT",Yale University Medical Library,27,,,,,,,,https://search.library.yale.edu/catalog/9947024353408651,https://collections.library.yale.edu/catalog/16960306
 YaleMed47,USA,"New Haven, CT",Yale University Medical Library,47,,,,,,,,https://search.library.yale.edu/catalog/9948693763408651,https://collections.library.yale.edu/catalog/16960325
 Plimpton253,USA,"New York, NY",Columbia University Library,Plimpton 253,olim Phillipps 9970,,,,,,,https://clio.columbia.edu/catalog/17016757,
 Plimpton255,USA,"New York, NY",Columbia University Library,Plimpton 255,,,,,,,,https://clio.columbia.edu/catalog/17016759,
-Plimpton256,USA,"New York, NY",Columbia University Library,Plimpton 256,,,,,,,,https://clio.columbia.edu/catalog/17016760,
+Plimpton256,USA,"New York, NY",Columbia University Library,Plimpton 256a,,,,,,,,https://clio.columbia.edu/catalog/17016760,
 Plimpton259,USA,"New York, NY",Columbia University Library,Plimpton 259,,,,,,,,https://clio.columbia.edu/catalog/17016764,
 Plimpton263,USA,"New York, NY",Columbia University Library,Plimpton 263,,,,,,,,https://clio.columbia.edu/catalog/17016768,
 Plimpton265,USA,"New York, NY",Columbia University Library,Plimpton 265,olim Claverly,,,,,,,https://clio.columbia.edu/catalog/17016769,
-Plimpton39,USA,"New York, NY",Columbia University Library,Plimpton 39,,,,,,,,,
+Plimpton39,USA,New Haven,Beinecke Library,Takamiya 70,"olim Columbia University Library, MS Plimpton 39",,,,,,,,
 Plimpton80,USA,"New York, NY",Columbia University Library,Plimpton 80,,,,,,,,https://clio.columbia.edu/catalog/17016932,
 PlimptonAd2,USA,"New York, NY",Columbia University Library,Plimpton Addenda 2,,,,,,,,https://clio.columbia.edu/catalog/17016796,
 PlimptonAd3,USA,"New York, NY",Columbia University Library,Plimpton Addenda 3,olim Pratt,,,,,,,https://clio.columbia.edu/catalog/17016797,
@@ -3047,15 +3046,15 @@ NYPLDrexFr4185,USA,"New York, NY",New York Public Library,Drexel Fragments 4185,
 NYPL120,USA,"New York, NY",New York Public Library,MS 120,,,,,,,,,https://digitalcollections.nypl.org/collections/d533f0b0-c5ca-012f-d4a0-58d385a7bc34?q=%22ma+120%22&sort=relevance
 NYPL146,USA,"New York, NY",New York Public Library,MS 146,,,,,,,,,https://digitalcollections.nypl.org/collections/d533f0b0-c5ca-012f-d4a0-58d385a7bc34?q=%22ma+146%22&sort=relevance
 NYPLSpenc19,USA,"New York, NY",New York Public Library,Spencer 19,olim Petworth 2,,,,,,,https://www.nypl.org/research/research-catalog/bib/b22824612?originalUrl=https%3A%2F%2Fcatalog.nypl.org%2Frecord%3Db22824612,https://digitalcollections.nypl.org/collections/6ba85c70-c6cf-012f-d0da-58d385a7bc34
-NYPLSpenc193,USA,"New York, NY",New York Public Library,Spencer 193,"olim Sotheby's 21 November 1972, lot 556",,,,,,,https://www.nypl.org/research/research-catalog/bib/b22884147,https://digitalcollections.nypl.org/items/e52fe4e0-c618-012f-370d-58d385a7bc34?canvasIndex=0
-PierpontAcc10360,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 28432,,,,,,,,,
-PierpontAcc28432,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 28432,,,,,,,,http://corsair.themorgan.org/vwebv/holdingsInfo?bibId=111834,
-PierpontAcc53095,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 53095,,,,,,,,,
-PierpontAcc676,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 676,Ch. L. 1759,,,STC 6826,,,,,
-PierpontAcc698,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 698,,,,STC 21429,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=134772,
-PierpontAcc775,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 775,,,,STC 3199,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=133786,
-PierpontB21,USA,"New York, NY",Pierpont Morgan Library,B.21,"olim Phillipps 7008; Katherine Fenwick; Thomas FitzRoy Fenwick; Alan George Fenwick; William H. Robinson Ltd., London; their sale, London, Sotheby's, July 17, 1950, lot 27; purchased for Curt F. Bühler at Sotheby's (London, Feb. 28, 1955, lot 169) by E.P. Goldschmidt, London",,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77148,https://ica.themorgan.org/manuscript/thumbs/77148
-PierpontB11,USA,"New York, NY",Pierpont Morgan Library,B11,,,,,,,,,
+NYPLSpenc193,USA,"New York, NY",New York Public Library,Spencer 193,,,,,"Sotheby's 21 November 1972, lot 556",,,https://www.nypl.org/research/research-catalog/bib/b22884147,https://digitalcollections.nypl.org/items/e52fe4e0-c618-012f-370d-58d385a7bc34?canvasIndex=0
+PierpontAcc10360,USA,"New York, NY",Pierpont Morgan Library,Printed Books E2 51 E,Acc. No. PML 1047,,,,,,printed book,,
+PierpontAcc28432,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 28432,,,,,,,printed book,http://corsair.themorgan.org/vwebv/holdingsInfo?bibId=111834,
+PierpontAcc53095,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 53095,,,,,,,printed book,,
+PierpontAcc676,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 676,Ch. L. 1759,,,STC 6826,,,printed book,,
+PierpontAcc698,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 698,,,,STC 21429,,,printed book,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=134772,
+PierpontAcc775,USA,"New York, NY",Pierpont Morgan Library,Acc. No. 775,,,,STC 3199,,,printed book,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=133786,
+PierpontB21,USA,"New York, NY",Pierpont Morgan Library,B.21,olim Phillipps 7008,,,,"Katherine Fenwick; Thomas FitzRoy Fenwick; Alan George Fenwick; William H. Robinson Ltd., London; their sale, London, Sotheby's, July 17, 1950, lot 27; purchased for Curt F. Bühler at Sotheby's (London, Feb. 28, 1955, lot 169) by E.P. Goldschmidt, London",,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77148,https://ica.themorgan.org/manuscript/thumbs/77148
+PierpontB11,USA,"New York, NY",Pierpont Morgan Library,B11,,,,,,,printed book,,
 PierpontB13,USA,"New York, NY",Pierpont Morgan Library,B13,olim Harmsworth,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=145668,https://www.themorgan.org/collection/pricke-conscience/145668
 PierpontB17,USA,"New York, NY",Pierpont Morgan Library,B17,,,,,,,,http://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77144,https://ica.themorgan.org/manuscript/thumbs/77144
 PierpontB5,USA,"New York, NY",Pierpont Morgan Library,B5,,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=76791,
@@ -3065,7 +3064,7 @@ PierpontG9,USA,"New York, NY",Pierpont Morgan Library,G9,olim Berkeley,,,,,,,htt
 PierpontM124,USA,"New York, NY",Pierpont Morgan Library,M124,olim Lee,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77053,https://ica.themorgan.org/manuscript/thumbs/77053
 PierpontM125,USA,"New York, NY",Pierpont Morgan Library,M125,"olim Hastings, Ashby-de-la-Zouche, Quaritch",,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77031,https://ica.themorgan.org/manuscript/thumbs/77031
 PierpontM126,USA,"New York, NY",Pierpont Morgan Library,M126,olim Narford; Fontaine,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77039,https://ica.themorgan.org/manuscript/thumbs/77039
-PierpontM249,USA,"New York, NY",Pierpont Morgan Library,M249,"olim Ashburnham 124, post Compton Hall",,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77248,
+PierpontM249,USA,"New York, NY",Pierpont Morgan Library,M249,olim Ashburnham 124,post Compton Hall,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77248,
 PierpontM275,USA,"New York, NY",Pierpont Morgan Library,M275,,,,,,,,,
 PierpontM4,USA,"New York, NY",Pierpont Morgan Library,M4,,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=76867,https://ica.themorgan.org/manuscript/thumbs/76867
 PierpontM486,USA,"New York, NY",Pierpont Morgan Library,M486,,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=112442,https://ica.themorgan.org/manuscript/thumbs/112442
@@ -3074,7 +3073,7 @@ PierpontM722,USA,"New York, NY",Pierpont Morgan Library,M722,,,,,,,,,
 PierpontM771,USA,"New York, NY",Pierpont Morgan Library,M771,,,,,,,,,
 PierpontM775,USA,"New York, NY",Pierpont Morgan Library,M775,,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=158842,https://ica.themorgan.org/manuscript/thumbs/158842
 PierpontM817,USA,"New York, NY",Pierpont Morgan Library,M817,olim Campsall Hall,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=147148,https://ica.themorgan.org/manuscript/thumbs/147148
-PierpontM818,USA,"New York, NY",Pierpont Morgan Library,M818,olim Harmsworth; olim Ingilby,,,,,,,https://corsair.themorgan.org/msdescr/BBM0818a.pdf,
+PierpontM818,USA,"New York, NY",Pierpont Morgan Library,M818,olim Harmsworth,olim Ingilby,,,,,,https://corsair.themorgan.org/msdescr/BBM0818a.pdf,
 PierpontM875,USA,"New York, NY",Pierpont Morgan Library,M875,olim Helmingham Hall,,,,,,,https://corsair.themorgan.org/msdescr/BBM0875a.pdf,
 PierpontM876,USA,"New York, NY",Pierpont Morgan Library,M876,olim Helmingham Hall,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77347,https://ica.themorgan.org/manuscript/thumbs/77347
 PierpontM898,USA,"New York, NY",Pierpont Morgan Library,M898,olim Edwardes,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=159779,
@@ -3082,31 +3081,31 @@ PierpontM957,USA,"New York, NY",Pierpont Morgan Library,M957,"olim Netherby, Sir
 PierpontM99,USA,"New York, NY",Pierpont Morgan Library,M99,,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=77006,https://ica.themorgan.org/manuscript/thumbs/77006
 PierpontMA717,USA,"New York, NY",Pierpont Morgan Library,MA 717,,,,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=134095,
 PierpontAcc35083,USA,"New York, NY",Pierpont Morgan Library,PML 35083,Ch. L 1787,"olim Earl of Oxford, Joseph Brereton, and the Earl of Dysart",,,,,,https://corsair.themorgan.org/vwebv/holdingsInfo?bibId=135805,
-PML722,USA,"New York, NY",Pierpont Morgan Library,PML 722,,,,Printed book (STC 5065),,,ChL 1799,,
+PML722,USA,"New York, NY",Pierpont Morgan Library,PML 722,,,,STC 5065,,,ChL 1799; Printed book,,
 Edelstein,USA,"New York, NY",Sidney M. Edelstein (private collection),,,,,,,,,,
-Cushwa-Leighton,USA,"Notre Dame, IN","St Mary's College, Cushwa-Leighton Library",qR 128 A95 1490,, ,,"Avenzohar, Liber Teisir, sive rectificatio medicationis et regiminis (Venice: Johannes and Gregorius Forlivio, 4 January 1490/91)",,,,,
+Cushwa-Leighton,USA,"Notre Dame, IN","St Mary's College, Cushwa-Leighton Library",qR 128 A95 1490,,,,"Avenzohar, Liber Teisir, sive rectificatio medicationis et regiminis (Venice: Johannes and Gregorius Forlivio, 4 January 1490/91)",,,,,
 PhilFree314,USA,"Philadelphia, PA",Philadelphia Free Library,15/487,olim Lewis 314,,,,,,,https://openn.library.upenn.edu/Data/0023/html/lewis_t487.html,https://openn.library.upenn.edu/Data/0023/html/lewis_t487.html
 PhilFree304,USA,"Philadelphia, PA",Philadelphia Free Library,15/488,olim Lewis 304,,,,,,,https://openn.library.upenn.edu/Data/0023/html/lewis_t488.html,https://openn.library.upenn.edu/Data/0023/html/lewis_t488.html
 Esopus,USA,"Philadelphia, PA",Redemptorist Archives of the Baltimore Province,,"olim Mount St Alphonsus Seminary, Esopus, New York",,,,,,,,
-PhilRos678,USA,"Philadelphia, PA",Rosenbach Museum and Library,678,olim Heber Incunabula,,,"Boethius, De Disciplina Scholarum, Deventer 1496","Sotheby's Sale Cat. 1834, Part III, No. 810",,,,
+PhilRos678,USA,"Philadelphia, PA",Rosenbach Museum and Library,678,olim Heber Incunabula,,,,"Sotheby's Sale Cat. 1834, Part III, No. 810",,Now at Princeton as Taylor RHT 16TH-86? (DUPLICATE ENTRY?),https://catalog.princeton.edu/catalog/9933152473506421,
 PhilRos108329,USA,"Philadelphia, PA",Rosenbach Museum and Library,1083/29,olim Earl of Aberdeen,,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_1083_029.html,https://openn.library.upenn.edu/Data/0028/html/ms_1083_029.html
 PhilRos108330,USA,"Philadelphia, PA",Rosenbach Museum and Library,1083/30,olim Phillipps 1099,,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_1083_030.html,https://openn.library.upenn.edu/Data/0028/html/ms_1083_030.html
-PhilRos10841,USA,"Philadelphia, PA",Rosenbach Museum and Library,1084/1,olim Rosenbach 157; prior Phillipps 8137,,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_1084_1.html,https://openn.library.upenn.edu/Data/0028/html/ms_1084_1.html
-PhilRos10842,USA,"Philadelphia, PA",Rosenbach Museum and Library,1084/2,olim Rosenbach 158; prior W. A. White,,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_1084_002.html,https://openn.library.upenn.edu/Data/0028/html/ms_1084_002.html
+PhilRos10841,USA,"Philadelphia, PA",Rosenbach Museum and Library,1084/1,olim Rosenbach 157,prior Phillipps 8137,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_1084_1.html,https://openn.library.upenn.edu/Data/0028/html/ms_1084_1.html
+PhilRos10842,USA,"Philadelphia, PA",Rosenbach Museum and Library,1084/2,olim Rosenbach 158,prior W. A. White,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_1084_002.html,https://openn.library.upenn.edu/Data/0028/html/ms_1084_002.html
 PhilRos43916,USA,"Philadelphia, PA",Rosenbach Museum and Library,439/16,olim Phillipps 4254,,,,,,,https://openn.library.upenn.edu/Data/0028/html/ms_439_016.html,https://openn.library.upenn.edu/Data/0028/html/ms_439_016.html
-PhilUPSmith4,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Codex 111,formerly Smith 4,,,,,,,https://find.library.upenn.edu/catalog/9915804573503681,https://colenda.library.upenn.edu/catalog/81431-p3mp4vp3r
-PhilUPEng2,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Codex 197,formerly Eng. 2E.VII,,,,"Quaritch Sale Cat. 328, item 586",,,https://find.library.upenn.edu/catalog/9915805953503681,https://colenda.library.upenn.edu/catalog/81431-p3dn3zx22
-PhilUPLat33,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Codex 721,olim Lat. 33; olim Harmsworth; olim Dewick,,,,"Sotheby's Sale, Oct. 15, 1943, Lot 2053; Raphael King, Ltd. Sale Cat. 53, No. 215, Dec. 1951",,,https://find.library.upenn.edu/catalog/9924875383503681,https://colenda.library.upenn.edu/catalog/81431-p32j6856v
-PhilUPLat35,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Lat. 35,"olim Lyell; Quaritch Sale Cat. 699, Item 61",,,,,,,https://find.library.upenn.edu/catalog/9924874663503681?hld_id=22283357630003681,
-PhilUPEng1,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Codex 196,formerly Eng. 1,"olim Gilbert Ireland Blackburne of Hale Hall, Liverpool",,,,,,https://find.library.upenn.edu/catalog/9915517823503681,https://colenda.library.upenn.edu/catalog/81431-p3154dp3x
-PhilUPEng6,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Codex 201,Formerly Eng. 6,"olim T. Edward Ross; olim Gilbert, Bishop of Bath and Wells",,,,,,https://find.library.upenn.edu/catalog/9915517833503681,https://colenda.library.upenn.edu/catalog/81431-p3vd6p84z
-PhilUPEng8,USA,"Philadelphia, PA",University of Pennsylvania Library,MS Codex 218,formerly Eng. 8,olim Stonor Park,,,,,,https://find.library.upenn.edu/catalog/9924864413503681?hld_id=resource_link_0,https://colenda.library.upenn.edu/catalog/81431-p3h70821r
-PUL21,USA,"Princeton, NJ",Princeton University Library,21,,,,,,,,,
+PhilUPSmith4,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 111,formerly Smith 4,,,,,,,https://find.library.upenn.edu/catalog/9915804573503681,https://colenda.library.upenn.edu/catalog/81431-p3mp4vp3r
+PhilUPEng2,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 197,formerly Eng. 2E.VII,,,,"Quaritch Sale Cat. 328, item 586",,,https://find.library.upenn.edu/catalog/9915805953503681,https://colenda.library.upenn.edu/catalog/81431-p3dn3zx22
+PhilUPLat33,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 721,olim Lat. 33,olim Harmsworth; olim Dewick,,,"Sotheby's Sale, Oct. 15, 1943, Lot 2053; Raphael King, Ltd. Sale Cat. 53, No. 215, Dec. 1951",,,https://find.library.upenn.edu/catalog/9924875383503681,https://colenda.library.upenn.edu/catalog/81431-p32j6856v
+PhilUPLat35,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 680,olim MS Lat. 35,olim Lyell,,,"Quaritch Sale Cat. 699, Item 61",,,https://find.library.upenn.edu/catalog/9924874663503681?hld_id=22283357630003681,
+PhilUPEng1,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 196,formerly Eng. 1,"olim Gilbert Ireland Blackburne of Hale Hall, Liverpool",,,,,,https://find.library.upenn.edu/catalog/9915517823503681,https://colenda.library.upenn.edu/catalog/81431-p3154dp3x
+PhilUPEng6,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 201,Formerly Eng. 6,"olim T. Edward Ross; olim Gilbert, Bishop of Bath and Wells",,,,,,https://find.library.upenn.edu/catalog/9915517833503681,https://colenda.library.upenn.edu/catalog/81431-p3vd6p84z
+PhilUPEng8,USA,"Philadelphia, PA",University of Pennsylvania Library,Codex 218,formerly Eng. 8,olim Stonor Park,,,,,,https://find.library.upenn.edu/catalog/9924864413503681?hld_id=resource_link_0,https://colenda.library.upenn.edu/catalog/81431-p3h70821r
+PUL21,USA,"Princeton, NJ",Princeton University Library,21,,,,,,,DELETE AS UNCITED DUPLICATE,,
 PUL93,USA,"Princeton, NJ",Princeton University Library,93,,,,,,,,https://dpul.princeton.edu/taylor-collections/catalog/vd66w366g,https://dpul.princeton.edu/taylor-collections/catalog/vd66w366g
 PUL100,USA,"Princeton, NJ",Princeton University Library,100,olim Helmingham Hall,,,,,,,https://catalog.princeton.edu/catalog/99111943163506421,https://catalog.princeton.edu/catalog/99111943163506421#viewer-container
 PULGar119,USA,"Princeton, NJ",Princeton University Library,Garrett 119,,,,,,,,https://catalog.princeton.edu/catalog/99113439393506421,https://catalog.princeton.edu/catalog/99113439393506421#viewer-container
 PULGar136,USA,"Princeton, NJ",Princeton University Library,Garrett 136,olim Phillipps 2298,,,,,,,https://catalog.princeton.edu/catalog/99113450493506421,https://catalog.princeton.edu/catalog/99113450493506421#viewer-container
-PULGar137,USA,"Princeton, NJ",Princeton University Library,Garrett 137,"olim Ashburnham 244, post Quaritch Sale Cat. 344, No. 18",,,,,,,https://catalog.princeton.edu/catalog/99108865363506421,https://catalog.princeton.edu/catalog/99108865363506421#viewer-container
+PULGar137,USA,"Princeton, NJ",Princeton University Library,Garrett 137,olim Ashburnham 244,,,,"Quaritch Sale Cat. 344, No. 18",,,https://catalog.princeton.edu/catalog/99108865363506421,https://catalog.princeton.edu/catalog/99108865363506421#viewer-container
 PULGar138,USA,"Princeton, NJ",Princeton University Library,Garrett 138,olim Yates Thompson,,,,,,,https://catalog.princeton.edu/catalog/99108868793506421#view,https://catalog.princeton.edu/catalog/99108868793506421#view
 PULGar139,USA,"Princeton, NJ",Princeton University Library,Garrett 139,olim Phillipps 8117,,,,,,,https://catalog.princeton.edu/catalog/99108869583506421,https://catalog.princeton.edu/catalog/99108869583506421#viewer-container
 PULGar140,USA,"Princeton, NJ",Princeton University Library,Garrett 140,olim Phillipps 8357,,,,,,,https://catalog.princeton.edu/catalog/99108870093506421#view,https://catalog.princeton.edu/catalog/99108870093506421#view
@@ -3115,22 +3114,22 @@ PULGar142,USA,"Princeton, NJ",Princeton University Library,Garrett 142,,,,,,,,ht
 PULGar143,USA,"Princeton, NJ",Princeton University Library,Garrett 143,,,,,,,,https://catalog.princeton.edu/catalog/99108881333506421#view,https://catalog.princeton.edu/catalog/99108881333506421#view
 PULGar151,USA,"Princeton, NJ",Princeton University Library,Garrett 151,,,,,,,,https://catalog.princeton.edu/catalog/99111828043506421#view,https://catalog.princeton.edu/catalog/99111828043506421#view
 PULKane21,USA,"Princeton, NJ",Princeton University Library,Kane 21,olim Huth,,,,,,,https://catalog.princeton.edu/catalog/99111915473506421#view,https://catalog.princeton.edu/catalog/99111915473506421#view
-Thompson,USA,"Princeton, NJ",Princeton University Library,Robert H. Taylor MS 17,"olim Thompson (Portland, Oregon)",olim Amherst 20 prior Phillipps,,,,,,https://catalog.princeton.edu/catalog/99113641203506421#view,https://catalog.princeton.edu/catalog/99113641203506421#view
+Thompson,USA,"Princeton, NJ",Princeton University Library,Robert H. Taylor MS 17,"olim Thompson (Portland, Oregon)",olim Amherst 20; prior Phillipps,,,,,,https://catalog.princeton.edu/catalog/99113641203506421#view,https://catalog.princeton.edu/catalog/99113641203506421#view
 PULSchei127,USA,"Princeton, NJ",Princeton University Library,Scheide 127,,,,,,,,,
 PULSchei66,USA,"Princeton, NJ",Princeton University Library,Scheide 66,,,,,,,,,
-PULSchei71,USA,"Princeton, NJ",Princeton University Library,Scheide 71,,,,,,,Blickling Homilies,https://catalog.princeton.edu/catalog/9934995233506421,https://catalog.princeton.edu/catalog/9934995233506421#view
-PULTayB741,USA,"Princeton, NJ",Princeton University Library,Taylor B 741,olim Rosenbach Foundation 678; olim John F. Fleming,,,"Printed book; Boethius de disciplina scholarium; Deventer, 1496",,,,https://catalog.princeton.edu/catalog/9933152473506421,
+PULSchei71,USA,"Princeton, NJ",Princeton University Library,Scheide 71,,,Blickling Homilies,,,,,https://catalog.princeton.edu/catalog/9934995233506421,https://catalog.princeton.edu/catalog/9934995233506421#view
+PULTayB741,USA,"Princeton, NJ",Princeton University Library,Taylor RHT 16TH-86,olim Taylor B 741,,Taylor Sammelband,,,,,https://catalog.princeton.edu/catalog/9933152473506421,
 PULTayM11,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 11,olim Petre,,,,"Sotheby's Sale, 10 March 1952, Lot 143; Quaritch Sale Cat. 704, Item 350, olim Laurence Witten",,,https://catalog.princeton.edu/catalog/99111942213506421,https://catalog.princeton.edu/catalog/99111942213506421
-PULTayM13,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 13,"olim Maggs Cat. 580, item 449",,,,,,,https://catalog.princeton.edu/catalog/99111942533506421,https://catalog.princeton.edu/catalog/99111942533506421
+PULTayM13,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 13,,,,,"Maggs Cat. 580, item 449",,,https://catalog.princeton.edu/catalog/99111942533506421,https://catalog.princeton.edu/catalog/99111942533506421
 PULTayM2,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 2,olim Wollaton Hall,,,,"Quaritch Cat. 1931, item 100 and Cat. 699, 1952, item 28",,,https://catalog.princeton.edu/catalog/99111915593506421#view,https://catalog.princeton.edu/catalog/99111915593506421#view
 PULTayM3,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 3,"olim Morent's Court, Kent, Meyerstein",,,,"Sotheby's 17 Dec. 1952, lot 466",,,https://catalog.princeton.edu/catalog/99111916763506421#view,https://catalog.princeton.edu/catalog/99111916763506421#view
 PULTayM5,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 5,olim Phillipps 8192,,,,,,,https://catalog.princeton.edu/catalog/99111918873506421,https://catalog.princeton.edu/catalog/99111918873506421#viewer-container
 PULTayM6,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 6,,,,,,,,https://catalog.princeton.edu/catalog/99111919253506421#view,https://catalog.princeton.edu/catalog/99111919253506421#view
-PULTayM9,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 9,"olim Bodmer, prior Ireland, Blackburn",,,,,,,https://catalog.princeton.edu/catalog/99111919643506421,https://dpul.princeton.edu/medieval_manuscripts/catalog/dc6w924q502
+PULTayM9,USA,"Princeton, NJ",Princeton University Library,Taylor Medieval 9,olim Bodmer,"prior Ireland, Blackburn",,,,,,https://catalog.princeton.edu/catalog/99111919643506421,https://dpul.princeton.edu/medieval_manuscripts/catalog/dc6w924q502
 HunEL1160,USA,"San Marino, CA",Huntington Library,EL 1160,,,,,,,,https://catalog.huntington.org/record=b1862043?_gl=1*172zjqu*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQzMjUkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQzMjUkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49307
 HunEL26A13,USA,"San Marino, CA",Huntington Library,EL 26.A.13,olim Bridgewater,,,,,,,https://catalog.huntington.org/record=b1823582?_gl=1*bfw5j7*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQxNTkkajIwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQxNTkkajIwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/18796
-HunEL26A17,USA,"San Marino, CA",Huntington Library,EL 26.A.17,olim Bridgewater,,the Stafford Gower,,,,,https://catalog.huntington.org/record=b1862038?_gl=1*16uo2rt*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQxMTkkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQxMTkkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49011
-HunEL26C9,USA,"San Marino, CA",Huntington Library,EL 26.C.9,,,Ellesmere,,,,,https://catalog.huntington.org/record=b1825265?_gl=1*glwgc5*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDQwNzQkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDQwNzQkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/2838
+HunEL26A17,USA,"San Marino, CA",Huntington Library,EL 26.A.17,olim Bridgewater,,Stafford Gower,,,,,https://catalog.huntington.org/record=b1862038?_gl=1*16uo2rt*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQxMTkkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDQxMTkkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49011
+HunEL26C9,USA,"San Marino, CA",Huntington Library,EL 26.C.9,,,Ellesmere Chaucer,,,,,https://catalog.huntington.org/record=b1825265?_gl=1*glwgc5*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDQwNzQkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDQwNzQkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/2838
 HunEL34A9,USA,"San Marino, CA",Huntington Library,EL 34.A.9,,,,,,,,,
 HunEL34B60,USA,"San Marino, CA",Huntington Library,EL 34.B.60,"olim Bridgewater, or EL 1160",,,,,,,https://catalog.huntington.org/record=b1862043?_gl=1*1froih9*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDM5MTUkajckbDAkaDA.*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDM5MTUkajckbDAkaDA.,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49307
 HunEL34B7,USA,"San Marino, CA",Huntington Library,EL 34.B.7,,,,,,,,https://catalog.huntington.org/record=b1861967?_gl=1*1x27ep*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDM4NzIkajUwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDM4NzIkajUwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49210
@@ -3149,8 +3148,8 @@ HunHM127,USA,"San Marino, CA",Huntington Library,HM 127,olim Powis 327,,,,,,,htt
 HunHM128,USA,"San Marino, CA",Huntington Library,HM 128,olim Ashburnham 130,,,,,,,https://catalog.huntington.org/record=b1862100?_gl=1*1wi0x5b*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMzNjkkajIkbDAkaDA.*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMzNjkkajIkbDAkaDA.,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50420
 HunHM129,USA,"San Marino, CA",Huntington Library,HM 129,olim Phillipps 20420,,,,,,,https://catalog.huntington.org/record=b1862101?_gl=1*3uzrc*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMzNDIkajI5JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMzNDIkajI5JGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49373
 HunHM130,USA,"San Marino, CA",Huntington Library,HM 130,olim Phillipps 3126,,,,,,,https://catalog.huntington.org/record=b1862102?_gl=1*gji2ig*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMzMTEkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMzMTEkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/52085
-HunHM131,USA,"San Marino, CA",Huntington Library,HM 131,"olim Buccleuch, Quaritch Cats. 303, 304",,,,,,,https://catalog.huntington.org/record=b1862103?_gl=1*1nayldj*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyODckajE4JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyODckajE4JGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50865
-HunHM132,USA,"San Marino, CA",Huntington Library,HM 132,olim George Dunn of Wooley Hall,"Sotheby's Sale, 11 February 1913, Lot 512",,,,,,https://catalog.huntington.org/record=b1862104?_gl=1*1ekbcfn*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyNTMkajUyJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyNTMkajUyJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50907
+HunHM131,USA,"San Marino, CA",Huntington Library,HM 131,olim Buccleuch,,,,"Quaritch Cats. 303, 304",,,https://catalog.huntington.org/record=b1862103?_gl=1*1nayldj*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyODckajE4JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyODckajE4JGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50865
+HunHM132,USA,"San Marino, CA",Huntington Library,HM 132,olim George Dunn of Wooley Hall,,,,"Sotheby's Sale, 11 February 1913, Lot 512",,,https://catalog.huntington.org/record=b1862104?_gl=1*1ekbcfn*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyNTMkajUyJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyNTMkajUyJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50907
 HunHM133,USA,"San Marino, CA",Huntington Library,HM 133,,,,,,,,https://catalog.huntington.org/record=b1862105?_gl=1*1q3ivwh*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyMjEkajMkbDAkaDA.*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMyMjEkajMkbDAkaDA.,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49688
 HunHM135,USA,"San Marino, CA",Huntington Library,HM 135,olim Phillipps 8980,,,,,,,https://catalog.huntington.org/record=b1862107?_gl=1*18yvegt*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMxODgkajM2JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMxODgkajM2JGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50636
 HunHM136,USA,"San Marino, CA",Huntington Library,HM 136,olim Phillipps 8858,,,,,,,https://catalog.huntington.org/record=b1849871?_gl=1*ah7pt*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDMxNjQkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDMxNjQkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/40969
@@ -3158,13 +3157,13 @@ HunHM137,USA,"San Marino, CA",Huntington Library,HM 137,olim Phillipps 8231,,,,,
 HunHM139,USA,"San Marino, CA",Huntington Library,HM 139,olim Phillipps 9412,,,,,,,https://catalog.huntington.org/record=b1862109?_gl=1*1j45r9t*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMwOTUkajM4JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMwOTUkajM4JGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49434
 HunHM140,USA,"San Marino, CA",Huntington Library,HM 140,olim Phillipps 8299,,,,,,,https://catalog.huntington.org/record=b1823545?_gl=1*1uyojq0*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMwNzMkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMwNzMkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/19150
 HunHM142,USA,"San Marino, CA",Huntington Library,HM 142,olim Bement,,,,,,,https://catalog.huntington.org/record=b1823583?_gl=1*2ubl22*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI5MzckajIxJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI5MzckajIxJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/19292
-HunHM143,USA,"San Marino, CA",Huntington Library,HM 143,"Sotheby's sale 24 July 1924, lot 129; post Rosenbach",,,,,,,https://catalog.huntington.org/record=b1862110?_gl=1*85z2pa*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI5MDUkajUzJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI5MDUkajUzJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/53252
+HunHM143,USA,"San Marino, CA",Huntington Library,HM 143,olim Rosenbach,,,,"Sotheby's sale 24 July 1924, lot 129",,,https://catalog.huntington.org/record=b1862110?_gl=1*85z2pa*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI5MDUkajUzJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI5MDUkajUzJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/53252
 HunHM144,USA,"San Marino, CA",Huntington Library,HM 144,olim Huth 7,,,,,,,https://catalog.huntington.org/record=b1849876?_gl=1*z9je8e*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDI4NTkkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDI4NTkkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/41289
 HunHM147,USA,"San Marino, CA",Huntington Library,HM 147,olim Ingilby,,,,"Sotheby's Sale 21 October 1920, lot 23; Maggs Cat. 404 (1921), n. 23",,,https://catalog.huntington.org/search?/lmssHM+147/lmsshm+147/-3%2C-1%2C0%2CB/frameset&FF=lmsshm+147&1%2C1%2C,
 HunHM183,USA,"San Marino, CA",Huntington Library,HM 183,olim Hawkins,,,,,,,https://catalog.huntington.org/record=b1862118?_gl=1*o4pglc*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI3NTUkajgkbDAkaDA.*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI3NTUkajgkbDAkaDA.,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/53256
-HunHM19914,USA,"San Marino, CA",Huntington Library,HM 19914,"olim Davies-Cooke, Sotheby's 15 June 1959, lot 203",,,,,,,https://catalog.huntington.org/record=b1861877?_gl=1*i8ic87*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2NzUkajIwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2NzUkajIwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/51519
-HunHM19916,USA,"San Marino, CA",Huntington Library,HM 19916,"olim Davies-Cooke, Sotheby's 15 June 1959, lot 205",,,,,,,https://catalog.huntington.org/record=b1862175?_gl=1*10vhml*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2MzUkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2MzUkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50683
-HunHM19999,USA,"San Marino, CA",Huntington Library,HM 19999,"olim Dyson Perrins 33, Sotheby's 29 Nov. 1960, lot 109",,,,,,,https://catalog.huntington.org/record=b1862080?_gl=1*1yquoe0*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxNTUkajI0JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxNTUkajI0JGwwJGgw,
+HunHM19914,USA,"San Marino, CA",Huntington Library,HM 19914,olim Davies-Cooke,,,,"Sotheby's 15 June 1959, lot 203",,,https://catalog.huntington.org/record=b1861877?_gl=1*i8ic87*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2NzUkajIwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2NzUkajIwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/51519
+HunHM19916,USA,"San Marino, CA",Huntington Library,HM 19916,olim Davies-Cooke,,,,"Sotheby's 15 June 1959, lot 205",,,https://catalog.huntington.org/record=b1862175?_gl=1*10vhml*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2MzUkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDI2MzUkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/50683
+HunHM19999,USA,"San Marino, CA",Huntington Library,HM 19999,olim Dyson Perrins 33,,,,"Sotheby's 29 Nov. 1960, lot 109",,,https://catalog.huntington.org/record=b1862080?_gl=1*1yquoe0*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxNTUkajI0JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxNTUkajI0JGwwJGgw,
 HunHM2,USA,"San Marino, CA",Huntington Library,HM 2,olim Devonshire,,,,,,,https://catalog.huntington.org/record=b1862080?_gl=1*1yquoe0*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxNTUkajI0JGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxNTUkajI0JGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/71027/
 HunHM26054,USA,"San Marino, CA",Huntington Library,HM 26054,"olim Tollemache, Helmingham Hall",,,,,,,https://catalog.huntington.org/record=b1862188?_gl=1*1hdb110*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxMjgkajUxJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIxMjgkajUxJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/48632/
 HunHM268,USA,"San Marino, CA",Huntington Library,HM 268,olim Ecton Hall,,,,,,,https://catalog.huntington.org/record=b1823584?_gl=1*tod3u7*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIwOTckajYkbDAkaDA.*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDIwOTckajYkbDAkaDA.,https://hdl.huntington.org/digital/collection/p15150coll7/id/19481/
@@ -3173,24 +3172,24 @@ HunHM28175,USA,"San Marino, CA",Huntington Library,HM 28715,olim Samuel Bowne Du
 HunHM30313,USA,"San Marino, CA",Huntington Library,HM 30313,olim Dyson Perrins,,,,"Sotheby's Dec. 1958, lot 42; Sotheby's Sale, 29 Nov. 1960, Lot 147; Kraus Cat. 100, item 32",,,https://catalog.huntington.org/record=b1844832?_gl=1*d5ku5d*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE2ODAkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE2ODAkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/30526/
 HunHM30986,USA,"San Marino, CA",Huntington Library,HM 30986,,,,,,,,https://catalog.huntington.org/record=b1861917?_gl=1*16ndvyj*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMwMDMkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDMwMDMkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/52370
 HunHM501,USA,"San Marino, CA",Huntington Library,HM 501,,,,,"Quaritch Cat. 344 (June 1916), n. 64",,,https://catalog.huntington.org/record=b1862122?_gl=1*1czgcuc*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0ODIkajIwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0ODIkajIwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/49440/
-HunHM502,USA,"San Marino, CA",Huntington Library,HM 502,"olim Phillipps 11929; olim Greene, olim Yates",,,,,,,https://catalog.huntington.org/record=b1862123?_gl=1*1fh5w2z*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0NDIkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0NDIkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/49130/
+HunHM502,USA,"San Marino, CA",Huntington Library,HM 502,olim Phillipps 11929,"olim Greene, olim Yates",,,,,,https://catalog.huntington.org/record=b1862123?_gl=1*1fh5w2z*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0NDIkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0NDIkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/49130/
 HunHM503,USA,"San Marino, CA",Huntington Library,HM 503,olim Cope,,,,,,,https://catalog.huntington.org/record=b1862173?_gl=1*4u13it*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0MDEkajQxJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDE0MDEkajQxJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/49482
 HunHM505,USA,"San Marino, CA",Huntington Library,HM 505,olim Phillipps 10603,,,,,,,https://catalog.huntington.org/record=b1862126?_gl=1*vu2vic*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEzNTUkajMkbDAkaDA.*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEzNTUkajMkbDAkaDA.,https://hdl.huntington.org/digital/collection/p15150coll7/id/49681/
 HunHM55,USA,"San Marino, CA",Huntington Library,HM 55,olim Phillipps 24309,,,,,,,https://catalog.huntington.org/record=b1862083?_gl=1*1087jgg*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEzMTckajQxJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEzMTckajQxJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/50940/
 HunHM58,USA,"San Marino, CA",Huntington Library,HM 58,olim Phillipps 11077,,,,,,,https://catalog.huntington.org/record=b1862086?_gl=1*1vxe19m*_gcl_au*NTUzNzM2NTE1LjE3NjcwNDExOTA.*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEyNDgkajMxJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEyNDgkajMxJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/52593
 HunHM64,USA,"San Marino, CA",Huntington Library,HM 64,olim Phillipps 6883,,,,,,,https://catalog.huntington.org/record=b1841462?_gl=1*1eyzrpw*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDExNTIkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDExNTIkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p16003coll14/id/1503
-HunHM744,USA,"San Marino, CA",Huntington Library,HM 744,olim Ashburnham 133; olim Gollancz,,,,,,,https://catalog.huntington.org/record=b1823517?_gl=1*1wsjbsk*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEwODAkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEwODAkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/18518/
+HunHM744,USA,"San Marino, CA",Huntington Library,HM 744,olim Ashburnham 133,olim Gollancz,,,,,,https://catalog.huntington.org/record=b1823517?_gl=1*1wsjbsk*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEwODAkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDEwODAkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/18518/
 HunHM901,USA,"San Marino, CA",Huntington Library,HM 901,,,,,,,,https://catalog.huntington.org/record=b1862133?_gl=1*6jacdr*_ga*MTEzMjYwMDM1MS4xNzY3MDQwNDg1*_ga_1BGEDHGTJ6*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDA4OTYkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDA0ODUkbzEkZzEkdDE3NjcwNDA4OTYkajYwJGwwJGgw,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/52687
 HunHM903,USA,"San Marino, CA",Huntington Library,HM 903,olim Lord Herries,,,,,,,https://babel.hathitrust.org/cgi/pt?id=mdp.39015013928794&seq=332,https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll7/id/52431
-HunHM906,USA,"San Marino, CA",Huntington Library,HM 906,"olim W. H. Robinson Cat. 12 (Newcastle 1925), n. 750",,,,,,,https://catalog.huntington.org/record=b1862049?_gl=1*vgt6qt*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDAyNDkkajUwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDAyNDkkajUwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/51012/
+HunHM906,USA,"San Marino, CA",Huntington Library,HM 906,,,,,"W. H. Robinson Cat. 12 (Newcastle 1925), n. 750",,,https://catalog.huntington.org/record=b1862049?_gl=1*vgt6qt*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDAyNDkkajUwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzEkdDE3NjcwNDAyNDkkajUwJGwwJGgw,https://hdl.huntington.org/digital/collection/p15150coll7/id/51012/
 HunHU1051,USA,"San Marino, CA",Huntington Library,HU 1051,,,,,,,,https://catalog.huntington.org/record=b1841463?_gl=1*1xp8zu6*_ga*NzI3OTg2NTE5LjE3NjcwNDAxNDI.*_ga_1BGEDHGTJ6*czE3NjcwNDAxNDIkbzEkZzAkdDE3NjcwNDAxNDIkajYwJGwwJGgw*_ga_K3S8LP16FY*czE3NjcwNDAxNDIkbzEkZzAkdDE3NjcwNDAxNDIkajYwJGwwJGgw,https://hdl.huntington.org/digital/collection/p16003coll14/id/946/
-HunRB14195,USA,"San Marino, CA",Huntington Library,Rare Books 14195,,,,Printed book (STC 10606),,,,https://catalog.huntington.org/record=b1498345,
-HunRB34001,USA,"San Marino, CA",Huntington Library,Rare Books 34001,,,,Printed book (STC 3175),,,,https://catalog.huntington.org/record=b1498852,
-HunRB60363,USA,"San Marino, CA",Huntington Library,Rare Books 60363,,,,Printed book (STC 4115),,,,https://catalog.huntington.org/record=b1507663,
-HunRB69798,USA,"San Marino, CA",Huntington Library,Rare Books 69798,,,,Printed book (STC 24875),,,,https://catalog.huntington.org/record=b1500710,
-HunPB82241,USA,"San Marino, CA",Huntington Library,Rare Books 82241,,,,Printed book (STC 19767.3),,,,https://catalog.huntington.org/record=b1506584,
+HunRB14195,USA,"San Marino, CA",Huntington Library,Rare Books 14195,,,STC 10606,,,,printed book,https://catalog.huntington.org/record=b1498345,
+HunRB34001,USA,"San Marino, CA",Huntington Library,Rare Books 34001,,,STC 3175,,,,printed book,https://catalog.huntington.org/record=b1498852,
+HunRB60363,USA,"San Marino, CA",Huntington Library,Rare Books 60363,,,STC 4115,,,,printed book,https://catalog.huntington.org/record=b1507663,
+HunRB69798,USA,"San Marino, CA",Huntington Library,Rare Books 69798,,,STC 24875,,,,printed book,https://catalog.huntington.org/record=b1500710,
+HunPB82241,USA,"San Marino, CA",Huntington Library,Rare Books 82241,,,STC 19767.3,,,,printed book,https://catalog.huntington.org/record=b1506584,
 Folger11862,USA,"Washington, DC",Folger Shakespeare Library,1186.2,V.b.135,,,,,,,https://catalog.folger.edu/record/234760?ln=en,
-Folger5031,USA,"Washington, DC",Folger Shakespeare Library,5031,"olim Macro 5, olim Gurney 170",V.a.454,,,,,,https://catalog.folger.edu/record/224524?ln=en,https://digitalcollections.folger.edu/bib224524-256061
+Folger5031,USA,"Washington, DC",Folger Shakespeare Library,5031,olim Macro 5,olim Gurney 170,,,,,,https://catalog.folger.edu/record/224524?ln=en,https://digitalcollections.folger.edu/bib224524-256061
 Folger420312,USA,"Washington, DC",Folger Shakespeare Library,420312,olim Clopton,V.b.236,,,,,,https://catalog.folger.edu/record/128950,https://digitalcollections.folger.edu/bib128950-280244
 Folger12323,USA,"Washington, DC",Folger Shakespeare Library,V.a.198,olim 1232.3,,,,,,,https://catalog.folger.edu/record/231264?ln=en,https://digitalcollections.folger.edu/bib231264-280213
 FolgerSM1,USA,"Washington, DC",Folger Shakespeare Library,V.b.29,formerly SM.1,olim Phillipps 8942; post Rosenbach,,,,,,https://catalog.folger.edu/record/231291,https://digitalcollections.folger.edu/img51114
