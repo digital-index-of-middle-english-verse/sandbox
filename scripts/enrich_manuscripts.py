@@ -79,7 +79,7 @@ TEI = "http://www.tei-c.org/ns/1.0"
 B = "{%s}" % TEI
 XML_B = "{http://www.w3.org/XML/1998/namespace}"
 
-OLIM_RE = re.compile(r"^olim\s+", re.IGNORECASE)
+OLIM_RE = re.compile(r"^(olim|post|prior|former(ly)?)\s+", re.IGNORECASE)
 
 # ---------------------------------------------------------------------------
 # LOGGING
@@ -213,7 +213,7 @@ def residual_text(desc, row):
             rest = rest.replace(value, " ")
             rest = rest.replace(OLIM_RE.sub("", value), " ")
     # drop scaffolding tokens that carry no independent information
-    rest = re.sub(r"\b(olim|SC|sic|MS)\b", " ", rest)
+    rest = re.sub(r"\b(olim|prior|post|former(ly)?|SC|sic|MS)\b", " ", rest)
     rest = re.sub(r"[()\[\].,;:’'\"=?/]", " ", rest)
     rest = re.sub(r"\s+", " ", rest).strip()
     return rest if re.search(r"[A-Za-z0-9]{2,}", rest) else ""
@@ -292,11 +292,20 @@ def enrich_msdesc(msdesc, row, tally, report):
     csv_surrogate = clean(row["surrogate"])
     if csv_surrogate and csv_surrogate not in surrogate_targets:
         if surrogate_targets:
-            tally["surrogate added to existing"] += 1
-            log.info(
-                "%s: surrogate added alongside %d existing -> %s",
-                xmlid, len(surrogate_targets), csv_surrogate,
-            )
+            if len(surrogate_targets) == 1:
+                # These have been checked. They are safe to overwrite.
+                tally["existing surrogate replaced"] += 1
+                log.info(
+                    "%s: %d existing surrogate replaced -> %s",
+                    xmlid, len(surrogate_targets), csv_surrogate,
+                )
+                surrogate_targets.clear()
+            else:
+                tally["surrogate added to existing"] += 1
+                log.info(
+                    "%s: surrogate added alongside %d existing -> %s",
+                    xmlid, len(surrogate_targets), csv_surrogate,
+                )
         surrogate_targets.append(csv_surrogate)
     elif surrogate_targets and not csv_surrogate:
         tally["surrogate kept (none in CSV)"] += 1
