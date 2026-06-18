@@ -26,7 +26,7 @@ MaldonAllSaints,monument,brass,high,"olim Maldon, Essex",Church of All Saints,br
 Chichele,monument,tomb,high,"Higham Ferrars, Northamptonshire",Church of St. Mary the Virgin,"tomb of William and Beatrice Chichele on floor at west end of south aisle, to right of
             Lady Chapel altar"
 Barton,monument,tomb,high,olim London,"St. Michael's Church, Basinghall","tomb of John Barton, Mercer (d. 1460)"
-Jannys,object,,low,"Norwich, Norfolk","Norwich City Council, Blackfriar's Hall","portrait of Robert Jannys, Mayor of Norwich, 1517 and 1524"
+Jannys,monument,(override),manual,"Norwich, Norfolk","Norwich City Council, Blackfriar's Hall","portrait of Robert Jannys, Mayor of Norwich, 1517 and 1524"
 Lammas,glazing,window,high,"olim Lammas, Norfolk",Church of St. Andrew,"North window, painted glass of Last Judgement, showing Virgin Mary performing seven
             works of mercy"
 Combs,glazing,glass,high,"olim Combs, Suffolk",Church of St. Mary,"glass in windows of side chapel, southeast corner of nave, farthest window to east,
@@ -39,7 +39,7 @@ Thurton,glazing,glass,high,"Thurton, Norfolk",Church of St Ethelbert,"painted gl
 Notingham,monument,brass,high,"Holme-next-the-Sea, Norfolk",Church of St. Mary,brass tomb of Henry Nottingham (d. 1405) on wall on south side of chancel arch
 BMMLA96727b,object,ewer,high,London,British Museum,"item BM MLA 96, 7-27, 1 (Bronze ewer, temp. Richard II), verses inscribed around neck
             of ewer"
-BMFrank683,object,,low,London,British Museum,Franks bequest (no. 683)
+BMFrank683,object,(override),manual,London,British Museum,Franks bequest (no. 683)
 Amys,monument,Brass,high,"Barton Turf, Norfolk",Church of St Michael & All Angels,"Brass tomb of Thomas and Margery Amys (d. 1445), on floor of south chapel, beside
             chancel (south-east corner of church)"
 CarlisleChoir,wallPainting,painted,high,"Carlisle, Cumbria",Carlisle Cathedral,"backs of choir stalls, painted"
@@ -79,32 +79,32 @@ StOlave,monument,epitaph,high,"Hart Street, London",St. Olave's Church,epitaph
 Hexham,architectural,inscription,high,"Hexham, Northumbria",Gilesgate,inscription over door of house
 Victor,monument,tomb,high,"St Albans, Hertfordshire, UK",St. Albans Abbey,"tomb of William and Grace Victor, A.D. 1486"
 Launceston,architectural,wall,high,Cornwall,olim Launceston Priory,"a wall inscription, no longer visible"
-Melford,object,,low,"Long Melford, Suffolk","Church of the Holy Trinity, Clopton Chapel",
+Melford,architectural,(override),manual,"Long Melford, Suffolk","Church of the Holy Trinity, Clopton Chapel",
 Melford2,wallPainting,wall painting,high,"Long Melford, Suffolk","Church of the Holy Trinity, Clopton Chapel",wall paintings around edge of ceiling and on ceiling
 Colney,monument,Tomb,high,Norfolk,Colney Church,"Tomb of Sir Thomas Bettys, A.D. 1481, no longer extant"
-Garboldesham,object,,low,"Garboldesham, Norfolk",Church of St. John the Baptist,
-None,object,,low,No surviving witness,,
+Garboldesham,architectural,(override),manual,"Garboldesham, Norfolk",Church of St. John the Baptist,
+None,monument,(override),manual,No surviving witness,,
 Horley,wallPainting,mural,high,"Horley, Oxon",parish church,"mural on north wall, two scrolls"
 Evans,object,ring,high,,,"Sir Arthur Evans, a ring: Exhibition of Eng. Med. Art, London, 1930, Item 862"
 StBride,monument,Tomb,high,London,St. Bride's Church,"Tomb of William Wever, A.D. 1409"
 Wever,monument,tomb,high,London (demolished in 1634),"St. Alban's, Wood Street","tomb epitaph of Sir Harry Wever and his wife Joan, ca. 1405"
 Mercer,monument,Epitaph,high,London,Mercer's Chapel,"Epitaph for Ambrose Cresacre, A.D. 1477"
-Atkinson,architectural,Inscription,high,present location unknown,olim Mrs Atkinson of Temple Sowerby,Inscription on a brooch
+Atkinson,object,(override),manual,present location unknown,olim Mrs Atkinson of Temple Sowerby,Inscription on a brooch
 Mercers,object,cup,high,London,Mercer's Company,cup
 Almondbury,architectural,running around,high,Yorkshire,Almondbury Church,"running around nave at tops of walls, below roof"
 MagdaleneMalvern,architectural,porch,high,"Bath, Somerset",Chapel of St Mary Magdalene in parish of Widcombe and Lyncombe,dedicatory lines inscribed in east side of the porch
-GreatMalvern,object,tile,high,"Malvern, Worcestershire","Great Malvern Priory, St. Anne's Chapel",a tile fixed in a pillar near the west end of the nave
-Grafton,object,,low,"Grafton Manor, Worcestershire",Inscription over parlor window,
+GreatMalvern,architectural,(override),manual,"Malvern, Worcestershire","Great Malvern Priory, St. Anne's Chapel",a tile fixed in a pillar near the west end of the nave
+Grafton,architectural,(override),manual,"Grafton Manor, Worcestershire",Inscription over parlor window,
 SalisburyMuseum,object,tile,high,"Salisbury, Wiltshire",Salisbury and South Wiltshire Museum,a tile
 Broughton,wallPainting,wall painting,high,"Broghton, Oxfordshire",Broughton Church,wall paintings of Life of Virgin on chancel wall
 Pickering,monument,tomb,high,London,St Lawrence-in-Jewry Church,tomb of Jon Pickering
 Drury,monument,tomb,high,"Wooburn, Buckinghamshire",Church of St Paul's,tomb of Sir Robert Drury
 Emberton,monument,epitaph,high,"Emberton, Buckinghamshire",Emberton Church,epitaph
 Woode,monument,tomb,high,?,,tomb of John Woode
-Notextant,object,,low,No longer extant,,
+Notextant,monument,(override),manual,No longer extant,,
 Royston,monument,brass,high,"Royston, Hertfordshire",Church of St John the Baptist,small rectangular brass on east wall of north aisle
 Street,monument,epitaph,high,olim London,"St Anthony's [Antlins] Church, Budge Row",epitaph of Simon and Agnes Street (d. 1440)
-Marsham,object,,low,Norwich,house on corner of St John Maddermarket and Charing Cross,No longer extant?
+Marsham,architectural,(override),manual,Norwich,house on corner of St John Maddermarket and Charing Cross,No longer extant?
 Jug,object,copper,high,London,British Museum,"copper jug, temp. Richard II"
 Lakenheath,glazing,glass,high,"olim Lakenheath Grove, Norwich",summerhouse,"fifteenth-century glass fitted to eighteenth-century building, surviving in 1932;
             possibly (?)originally from Duke of Norfolk's house in Newgate, Norwich"
@@ -121,7 +121,7 @@ JCaxton,monument,Epitaph,high,"Canterbury, Kent",St. Alphege Church,Epitaph of J
 Palmer,monument,Epitaph,high,"Snodland, Kent",church of Snodland,Epitaph of Thomas and Mary Palmer (1407)
 Flint,monument,tomb,high,Norwich,St. Peter Maddermarket,"tomb of Ann Flint, d. 1525 (no longer extant)"
 Brigge,monument,Brass,high,"Salle, Norfolk",Church of SS Peter and Paul,Brass of John Brigge (d. 1454) ('an emaciated figure in a shroud')
-Barber,monument,Monument,high,"Abingdon, Berkshire","Christ's Hospital, Governor's Archives","Object 13 (MS), 'Forman's Monument'"
+Barber,object,(override),manual,"Abingdon, Berkshire","Christ's Hospital, Governor's Archives","Object 13 (MS), 'Forman's Monument'"
 Payne,monument,epitaph,high,London,St. Nicholas Acons Church,epitaph of Richard Payne (1463)
 Burlton,monument,epitaph,high,"Dartford, Kent",Church of the Holy Trinity,"epitaph (brass) on the tomb of Catherine Burlton and Richard, her husband (1496)"
 Stokys,monument,epitaph,high,"Hampton-in-Arden, Warwickshire",church,epitaph tomb of R. Stokys
@@ -129,7 +129,7 @@ Acworth,monument,brass,high,"Luton, Bedfordshire",church,Acworth brass (1513)
 Witney,monument,epitaph,high,"Witney, Oxfordshire",church,epitaph on the tomb of Richard Waynman
 Busby,monument,Brass,high,"Great Tew, Oxfordshire",church,Brass epitaph for William Bosby (1513)
 Brightwell,monument,Brass,high,"Brightwell, Oxfordshire",Brightwell Church,"Brass epitaph for John the Smith, mounted on the wall"
-Yarnton,object,,low,"Yarnton, Oxfordshire",Church. stained glass window (no longer extant),
+Yarnton,glazing,(override),manual,"Yarnton, Oxfordshire",Church. stained glass window (no longer extant),
 Barrington,graffito,graffit,high,"Barrington, Cambridgeshire",Barrington Church,a graffito
 Campsall,architectural,wall,high,"Campsall, Yorkshire",church,wall inscription
 Cowling,architectural,inscription,high,"nr. Cobham, Kent",Cowling Castle,inscription on the eastern tower of the gateway
@@ -157,10 +157,10 @@ Robinson,object,jug,high,London,"Victoria and Albert Museum, 217-1879","inscript
 Maners,monument,tomb,high,olim Warwick,Collegiate Church of St Mary,"floor of nave, tomb of John Maners, d. 1492"
 Ormsby,monument,brass,high,"Great Ormsby, Norfolk",,"brass tomb, A. D. 1440"
 Edmonton,monument,tomb,high,London,Edmonton church,[a Mandevill or Dacier tomb?]
-Foster,object,copper,high,olim London,Ludgate Chapel,copper plate
+Foster,monument,(override),manual,olim London,Ludgate Chapel,copper plate
 Middleton,architectural,font,high,"Middleton, Suffolk",Church of the Holy Trinity,baptismal font
 Streatham,monument,tomb,high,"Streatham, Surrey",[Saint Leonard's?] Church,tomb of Margaret Cantelowe
-Hedon,object,picture,high,"Hedon, Yorkshire",St Austin's Church,picture once hanging on wall
+Hedon,architectural,(override),manual,"Hedon, Yorkshire",St Austin's Church,picture once hanging on wall
 Dalusse,monument,Epitaph,high,London,St Martin's Church,"Epitaph, A.D. 1469, for Robert Dalusse"
 Bowf,monument,brass,high,"Pakefield, Norfolk",Church of All Saints and St Margaret,brass tomb of John Bowf mounted on north wall
 Pickering2,wallPainting,wall painting,high,"Pickering, North Yorkshire",Church of Sts Peter and Paul,wall painting of martyrdom of St Edmund on eastern end of northern wall of nave
@@ -187,9 +187,9 @@ Clarrell,monument,monument,high,"Rawmarsh, Yorkshire",,Probably a monumental bra
 Middletone,monument,Monument,high,"Spofforth, Yorkshire",,"Monumental brass for Thomas Middleton of Kirkby Overblow, brother of Nicholas Midleton  and wife Joan, (daughter of Sir William Plumpton)"
 Marshall,monument,monument,high,"Fishlake, Yorkshire",,Probably a monumental brass (1505)
 Godstow,object,hoop,high,"Godstow Oxfordshire (excavated at the Benedictine nunnery at Godstow, Oxfordshire, before 1868)",British Museum (MME AF 1075),"A broad hoop engraved on the outer side with flowers and leaves. Within this are lozenge-shaped panels, engraved with the Trinity, the Virgin and Child, and a bearded male saint"
-EvansJ,architectural,inscription,high,Unknown,,Black letter inscription on the inner surface. From the uncatalogued collection of Joan Evans
+EvansJ,object,(override),manual,Unknown,,Black letter inscription on the inner surface. From the uncatalogued collection of Joan Evans
 Godard,monument,memorial,high,"Addlethorpe, Lincolnshire",,Carved memorial in church porch; late fifteenth century
-Shavelocke,object,,low,"olim Boston, Lincolnshire",,"Transcription in BL, MS Add. 36295, f.17r [MS owned by John Anstis, antiquarian (1669 –1744)]"
+Shavelocke,monument,(override),manual,"olim Boston, Lincolnshire",,"Transcription in BL, MS Add. 36295, f.17r [MS owned by John Anstis, antiquarian (1669 –1744)]"
 Tylney,monument,monument,high,olim Lincoln Cathedral,,"Not extant; monumental brass for Sir Philip Tilney, husband of Isabel, daughter and coheiress of Sir Edmund Thorp of Ashwellthorpe, Norfolk.  After her death he became a secular canon and was admitted to St Botolph's prebend in Lincoln Cathedral where he was buried in 1453"
 Ballotts,monument,incised,high,"Strubby, Lincolnshire",,Small incised slab
 Todenham,monument,Monument,high,"St John Maddermarket, Norwich",,"Monumental brass for John Toddenham, c. 1450"
