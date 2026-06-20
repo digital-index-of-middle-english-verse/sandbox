@@ -1,28 +1,22 @@
 # Bodleian links — dry-run match report (issue #64)
 
 - Bodleian clone indexed: **11122** TEI files, **11124** shelfmark idnos.
-- DIMEV Bodleian Library entries: **609** (598 type=manuscript [linked], 11 type=printed [excluded — see footprint]).
-- Matched: **506** (293 exact, 213 after abbreviation folding).
+- DIMEV Bodleian Library entries: **573** (563 type=manuscript [linked], 10 type=printed [excluded — see footprint]).
+- Matched: **497** (288 exact, 209 after abbreviation folding).
 - Ambiguous (normalized to >1 Bodleian record): **2**.
-- Near miss (close Bodleian record exists — likely a shelfmark discrepancy to reconcile): **14**.
-- Absent (no close record in medieval-mss — uncatalogued there, lost, or DIMEV-only): **76**.
-- Of matched, **209** have at least one digital facsimile.
-- Already carry links in DIMEV (skip on write): 0 catalogue, 10 surrogates.
+- Near miss (close Bodleian record exists — likely a shelfmark discrepancy to reconcile): **8**.
+- Absent (no close record in medieval-mss — uncatalogued there, lost, or DIMEV-only): **56**.
+- Of matched, **204** have at least one digital facsimile.
+- Already carry links in DIMEV (skip on write): 2 catalogue, 10 surrogates.
 
 ## Printed-book footprint (type="printed", excluded from linking)
 
-11 Bodleian entries are copies of printed books. The Bodleian catalogue records manuscripts only, so these are not linked. Any apparent hit below is a shelfmark-string collision with an unrelated manuscript, not a real match.
+10 Bodleian entries are copies of printed books. The Bodleian catalogue records manuscripts only, so these are not linked. Any apparent hit below is a shelfmark-string collision with an unrelated manuscript, not a real match.
 
-- Would-be exact/abbrev hits (spurious): **1**
+- Would-be exact/abbrev hits (spurious): **0**
 - Would-be ambiguous: **0**
 - Would-be near miss: **1**
 - No Bodleian record at all: **9**
-
-Spurious would-be matches (excluded because type=printed):
-
-| DIMEV xml:id | DIMEV idno | Collided with |
-|---|---|---|
-| Bod88 | Bodley 88 | MS. Bodl. 88* |
 
 ## Matched only after abbreviation folding
 
@@ -85,7 +79,6 @@ DIMEV's spelling differs from the Bodleian's by convention only. Consider regula
 | Bod480 | Bodley 480 | MS. Bodl. 480 |
 | Bod483 | Bodley 483 | MS. Bodl. 483 |
 | Bod505 | Bodley 505 | MS. Bodl. 505 |
-| Bod534 | Bodley 534 | MS. Bodl. 534 |
 | Bod54 | Bodley 54 | MS. Bodl. 54 |
 | Bod546 | Bodley 546 | MS. Bodl. 546 |
 | Bod549 | Bodley 549 | MS. Bodl. 549 |
@@ -100,7 +93,6 @@ DIMEV's spelling differs from the Bodleian's by convention only. Consider regula
 | Bod648 | Bodley 648 | MS. Bodl. 648 |
 | Bod649 | Bodley 649 | MS. Bodl. 649 |
 | Bod652 | Bodley 652 | MS. Bodl. 652 |
-| Bod678 | Bodley 678 | MS. Bodl. 678 |
 | Bod686 | Bodley 686 | MS. Bodl. 686 |
 | Bod687 | Bodley 687 | MS. Bodl. 687 |
 | Bod692 | Bodley 692 | MS. Bodl. 692 |
@@ -138,7 +130,6 @@ DIMEV's spelling differs from the Bodleian's by convention only. Consider regula
 | BodEngTheold36 | Eng. theol. d. 36 | MS. Eng. th. d. 36 |
 | BodEngTheole1 | Eng. theol. e.1 | MS. Eng. th. e. 1 |
 | BodEngTheole16 | Eng. theol. e.16 | MS. Eng. th. e. 16 |
-| BodEngTheole181 | Eng. theol. e.181 | MS. Eng. th. e. 181 |
 | BodEngTheolf39 | Eng. theol. f.39 | MS. Eng. th. f. 39 |
 | BodHatDon1 | Hatton Donati 1 | MS. Hatton donat. 1 |
 | BodLatTheD1 | Lat. theol. d.1 | MS. Lat. th. d. 1 |
@@ -182,7 +173,6 @@ DIMEV's spelling differs from the Bodleian's by convention only. Consider regula
 | BodRawC670 | Rawlinson C.670 | MS. Rawl. C. 670 |
 | BodRawC699 | Rawlinson C.699 | MS. Rawl. C. 699 |
 | BodRawC72 | Rawlinson C.72 | MS. Rawl. C. 72 |
-| BodRawC81 | Rawlinson C.81 | MS. Rawl. C. 81 |
 | BodRawC813 | Rawlinson C.813 | MS. Rawl. C. 813 |
 | BodRawC83 | Rawlinson C.83 | MS. Rawl. C. 83 |
 | BodRawC86 | Rawlinson C.86 | MS. Rawl. C. 86 |
@@ -248,8 +238,8 @@ DIMEV's spelling differs from the Bodleian's by convention only. Consider regula
 
 | DIMEV xml:id | DIMEV idno | Bodleian shelfmarks |
 |---|---|---|
-| BodSelSup102 | Selden Supra 102 | MS. Selden Supra 102*; MS. Selden Supra 102 |
-| BodeMus198 | e Musaeo 198 | MS. e Mus. 198*; MS. e Mus. 198 |
+| BodSelSup102 | Selden Supra 102* | MS. Selden Supra 102*; MS. Selden Supra 102 |
+| BodeMus198 | e Mus. 198 | MS. e Mus. 198*; MS. e Mus. 198 |
 
 ## Near miss — probable shelfmark discrepancy to reconcile
 
@@ -257,19 +247,13 @@ A close Bodleian record exists, so this is most likely a spelling difference rat
 
 | DIMEV xml:id | DIMEV idno | Closest Bodleian shelfmark |
 |---|---|---|
-| BodArchDd1 | Arch. Dd.1 | MS. Bywater adds. 1 |
 | BodAsh48 | Ashmole 48 | MS. Marshall 48 |
 | BodAsh50 | Ashmole 50 | MS. Ash. Rolls 50 |
 | BodAsh53 | Ashmole 53 | MS. Ash. Rolls 53 |
 | BodDouAdd137 | Douce Addit. 137 | MS. Douce 137 |
-| BodEngTheole15 | Eng. theol. e.15 | MS. Eng. poet. e. 15 |
-| BodEngTheole17 | Eng. theol. e.17 | MS. Eng. poet. e. 17 |
-| BodEngTheole18 | Eng. theol. e.18 | MS. Lat. th. e. 18 |
-| BodEngTheole94 | Eng. theol. e.94 | MS. Eng. poet. e. 94 |
 | BodJam34 | James 34 | MS. Ashmole 34 |
 | BodJam6 | James 6 | MS. Ashmole 6 |
 | BodMal4 | Malone 4 | MS. Hamilton 4 |
-| BodRawPoe13 | Rawlinson poet. 13 | MS. Roe 13 |
 | BodTan88 | Tanner 88 | MS. Canon. Gr. 88 |
 
 ## Absent — no close record in medieval-mss
@@ -278,11 +262,7 @@ Nothing comparable in the clone. The Bodleian's coverage is partial (e.g. only s
 
 | DIMEV xml:id | DIMEV idno |
 |---|---|
-| Bod80G40Med | 80.G.40.Med |
-| BodAddA60 | Addit. A.60 |
 | BodAddC287 | Addit. C.287 |
-| BodArchGe35 | Arch. G.e 35 |
-| BodArcSelC813 | Arch. Selden C. 813 |
 | BodAsh1382 | Ashmole 1382, Part II |
 | BodAsh1386 | Ashmole 1386 |
 | BodAsh1394XIiii | Ashmole 1394, Part XI.iii |
@@ -301,11 +281,9 @@ Nothing comparable in the clone. The Bodleian's coverage is partial (e.g. only s
 | BodAsh781 | Ashmole 781 |
 | BodAsh863 | Ashmole 863 |
 | Bod175 | Bodley 175 |
-| Bod2C | Bodley 2C dep. C12930 |
 | BodCorne2 | Corn e.2 |
 | BodCorne3 | Corn. e.3 |
 | BodDepc130 | Dep. c.130 |
-| BodDepd324 | Dep. d.324 |
 | BodDod10 | Dodsworth 10 |
 | BodDod116 | Dodsworth 116 |
 | BodDod147 | Dodsworth 147 |
@@ -314,31 +292,20 @@ Nothing comparable in the clone. The Bodleian's coverage is partial (e.g. only s
 | BodDod55 | Dodsworth 55 |
 | BodDod95 | Dodsworth 95 |
 | BodDou124 | Douce 124 |
-| BodDou170 | Douce 170 |
 | BodDou175 | Douce 175 |
 | BodDou261 | Douce 261 |
 | BodDou309 | Douce 309 |
 | BodDou376 | Douce 376 |
-| BodDou65 | Douce 65 |
-| BodEngmiscc95 | Eng. misc. c.95 |
 | BodEngMise241 | Eng. misc. e.241 |
 | BodEngPoetb5 | Eng. poet. b.5 |
-| BodEngPoetd27 | Eng. poet. d.27 |
-| BodEngPoetf1 | Eng. poet. f.1 |
-| BodFacsd24 | Facs. d.24 |
-| BodFacse23 | Facs. e.23 |
-| BodFird14 | Firth d.14 |
-| BodHerD104 | Hearne's Diary 104 |
 | BodRawK38 | Hearne's diaries 38 |
 | BodRawK42 | Hearne's diaries 42 |
 | BodJones8 | Jones 8 |
 | BodKentCh233 | Kent Charter 233 |
 | BodLatMisB17 | Lat. misc. b.17, no. 152 |
 | BodNorthC80 | North C.80 |
-| BodRaw4 | Rawlinson 4to 598 (10) |
 | BodRawB252 | Rawlinson B.252 |
 | BodRawB471 | Rawlinson B.471 |
-| BodRawC85 | Rawlinson C.85 |
 | BodRawD1046 | Rawlinson D.1046 |
 | BodRawD1062 | Rawlinson D.1062 |
 | BodRawD375 | Rawlinson D.375 |
@@ -346,11 +313,8 @@ Nothing comparable in the clone. The Bodleian's coverage is partial (e.g. only s
 | BodRawPoe172 | Rawlinson poet. 172 |
 | BodRawPoe182 | Rawlinson poet. 182 |
 | BodRawPoe26 | Rawlinson poet. 26 |
-| BodTan383 | Tanner 383 |
 | BodVetElc65 | Vet. El. c.65 |
-| BodWoodB15 | Wood B.15 |
 | BodWoodD18 | Wood D.18 |
-| BodWoodE1 | Wood E.1 |
 | BodeMus180 | e Musaeo 180 |
 | BodeMus243 | e Musaeo 243 |
 | BodeMus75 | e Musaeo 75 |
