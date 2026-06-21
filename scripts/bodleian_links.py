@@ -30,8 +30,19 @@ For facsimiles, surrogates/bibl[@type="digital-facsimile"]//ref/@target.
 Usage:
     python3 bodleian_links.py        # dry run -> ../artefacts/bodleian-links-report.md
                                      #         -> ../artefacts/bodleian-links-matches.csv
+    python3 bodleian_links.py --write  # also apply the matched links to Manuscripts.xml
+
+The --write pass edits ../../dimev/data/Manuscripts.xml in place, adding to each
+matched msDesc a listBibl[@type="catalogue"] for the catalogue record and, where
+the Bodleian record carries them, a surrogates block of digital-facsimile refs.
+It only touches the *matched* set (exact + abbreviation-folded); ambiguous, near
+miss, and absent entries are never written. A link is skipped when the msDesc
+already carries one of that kind, so the pass is idempotent. The file is written
+through the same lxml indent pipeline as scripts/formatter.py, so the diff
+contains only the inserted elements.
 """
 
+import argparse
 import csv
 import difflib
 import re
@@ -222,7 +233,83 @@ def classify(entries, base, folded, by_sig):
     return exact, abbrev, ambiguous, nearmiss, absent
 
 
+# Child order within <additional>, per manuscripts.xsd: adminInfo, surrogates,
+# listBibl. New elements are appended then the children re-sorted to this order.
+ADDITIONAL_ORDER = {"adminInfo": 0, "surrogates": 1, "listBibl": 2}
+
+
+def apply_links(matched):
+    """Write the matched catalogue/surrogate links into Manuscripts.xml in place.
+
+    Idempotent: a link is added only when the msDesc lacks one of that kind, so
+    re-running (or running after manual pre-emption) is a no-op for already-linked
+    entries. Returns (n_cat, n_surr, n_new_additional, skipped_cat, skipped_surr).
+    """
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse(str(DIMEV_MSS), parser)
+    root = tree.getroot()
+    by_id = {m.get(f"{{{XML}}}id"): m for m in root.findall(".//t:msDesc", NS)}
+
+    n_cat = n_surr = n_new_add = skipped_cat = skipped_surr = 0
+    for e, hits in matched:
+        rec = hits[0]
+        msd = by_id.get(e["xml_id"])
+        if msd is None:
+            continue
+        additional = msd.find("t:additional", NS)
+        has_surr = additional is not None and additional.find("t:surrogates", NS) is not None
+        has_cat = (
+            additional is not None
+            and additional.find('t:listBibl[@type="catalogue"]', NS) is not None
+        )
+        want_surr = bool(rec["facsimiles"]) and not has_surr
+        want_cat = bool(rec["cat_url"]) and not has_cat
+        if rec["facsimiles"] and has_surr:
+            skipped_surr += 1
+        if rec["cat_url"] and has_cat:
+            skipped_cat += 1
+        if not (want_surr or want_cat):
+            continue
+
+        if additional is None:
+            additional = etree.SubElement(msd, f"{{{TEI}}}additional")
+            n_new_add += 1
+        if want_surr:
+            surr = etree.SubElement(additional, f"{{{TEI}}}surrogates")
+            for url in rec["facsimiles"]:
+                ref = etree.SubElement(
+                    etree.SubElement(surr, f"{{{TEI}}}bibl"), f"{{{TEI}}}ref"
+                )
+                ref.set("target", url)
+            n_surr += 1
+        if want_cat:
+            lb = etree.SubElement(additional, f"{{{TEI}}}listBibl")
+            lb.set("type", "catalogue")
+            ref = etree.SubElement(
+                etree.SubElement(lb, f"{{{TEI}}}bibl"), f"{{{TEI}}}ref"
+            )
+            ref.set("target", rec["cat_url"])
+            n_cat += 1
+
+        for child in sorted(
+            additional, key=lambda c: ADDITIONAL_ORDER.get(etree.QName(c).localname, 99)
+        ):
+            additional.append(child)  # move into schema order
+
+    etree.indent(tree, space=4 * " ", level=0)
+    tree.write(str(DIMEV_MSS), pretty_print=True, xml_declaration=True, encoding="UTF-8")
+    return n_cat, n_surr, n_new_add, skipped_cat, skipped_surr
+
+
 def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument(
+        "--write",
+        action="store_true",
+        help="apply the matched links to Manuscripts.xml (default: dry run only)",
+    )
+    args = ap.parse_args()
+
     base, folded, n_files, n_shelf = build_index()
     all_entries = load_dimev_bodleian()
 
@@ -357,6 +444,13 @@ def main():
           f"hits, {len(p_near)} near, {len(p_absent)} absent")
     print(f"Report  -> {REPORT_FILE}")
     print(f"Matches -> {MATCHES_CSV}")
+
+    if args.write:
+        n_cat, n_surr, n_new_add, sk_cat, sk_surr = apply_links(matched)
+        print(f"\nWrote links into {DIMEV_MSS}:")
+        print(f"  catalogue listBibl added : {n_cat}  (skipped {sk_cat} already present)")
+        print(f"  surrogates blocks added  : {n_surr}  (skipped {sk_surr} already present)")
+        print(f"  new <additional> created : {n_new_add}")
 
 
 if __name__ == "__main__":
