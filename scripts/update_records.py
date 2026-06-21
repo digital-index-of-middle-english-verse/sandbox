@@ -21,8 +21,8 @@ def main():
     tree = etree.parse(source_file)
     root = tree.getroot()  # root element <records>
 
-    # convert from DIMEV 1.0
-    convert_from_dimev1(root)
+    ## convert from DIMEV 1.0
+    #convert_from_dimev1(root)
 
     ## Compare name and alpha strings
     #compare_name_and_alpha(root)
@@ -70,6 +70,9 @@ def main():
     ## Add ME Compendium as repertory
     #root = add_mec_refs(root)
 
+    # Restructure MEC references
+    restructure_mec_refs(root)
+
     print('All transformations complete')
     etree.indent(tree, space="    ", level=0)
     tree.write(source_file, pretty_print=True, xml_declaration=True, encoding='UTF-8')
@@ -107,7 +110,6 @@ def convert_from_dimev1(root):
     root = reformat_ref_elements(root)
 
     return root
-
 
 def convert_illust(root):
     print('Converting `illust` and `music` to Boolean values...')
@@ -481,6 +483,15 @@ def add_mec_refs(root):
     print(f'Added {count} references to the Middle English Compendium Bibliography')
     print('Done\n')
     return root
+
+def restructure_mec_refs(root):
+    print("Restructuring MEC references")
+    for ref in root.findall("record/repertories/item/bibl"):
+        if ref.get("key") == "MECompendium":
+            del ref.attrib["key"]
+            ref.set("target", "https://quod.lib.umich.edu/m/middle-english-dictionary/bibliography/" + ref.text)
+            ref.text = None
+            ref.tag = "ref"
 
 def add_prose_as_term(root):
     print('Applying "prose, according to NIMEV" as form term, extracted from values of the "nimev" attribute...')
